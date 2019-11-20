@@ -1,0 +1,136 @@
+.projects-section
+  padding-bottom: 34px
+  background: #0f1320 url('../img/bg-projects.jpg') no-repeat 50% 0
+  background-size: 100% auto
+  +below(small)
+    background-size: auto auto
+
+.projects-filter
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  padding: 12px 0
+  border-top: 1px solid rgba(245, 249, 254, 0.102)
+  border-bottom: 1px solid rgba(245, 249, 254, 0.102)
+  +below(small)
+    margin-left: -20px
+    margin-right: -20px
+
+.projects-filter__categories
+  display: flex
+  +below(medium)
+    justify-content: center
+    width: 100%
+  +below(small)
+    flex-wrap: wrap
+
+.projects-filter__category
+  +below(small)
+    padding: 0 10px
+
+.projects-filter__years
+  display: flex
+  align-items: center
+  +below(medium)
+    justify-content: center
+    width: 100%
+    margin-top: 20px
+
+.projects-filter__year
+  color: #a7b9cd
+  font-size: 18px
+  line-height: 1
+  margin-left: 50px
+  font-family: $font-family-alt
+  background: transparent
+  padding: 0
+  border: none
+  transition: color .3s ease
+  cursor: pointer
+  &:first-child
+    margin-left: 0
+  &:hover
+    color: #ff971d
+  &._active
+    color: #ff971d
+    font-size: 24px
+  +below(large)
+    margin-left: 20px
+
+.projects-list
+  margin-top: 24px
+  margin-bottom: 37px
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  +below(medium)
+    grid-template-columns: 1fr 1fr 1fr
+  +below(small)
+    margin-left: -20px
+    margin-right: -20px
+    grid-template-columns: 1fr 1fr
+
+.projects-list__cell:nth-child(2),
+.projects-list__cell:nth-child(6),
+.projects-list__cell:nth-child(10),
+.projects-list__cell:nth-child(11),
+.projects-list__cell:nth-child(20),
+.projects-list__cell:nth-child(24)
+  grid-row: span 2
+  grid-column: span 2
+  +below(medium)
+    grid-row: span 1
+    grid-column: span 1
+
+.projects-item
+  overflow: hidden
+  position: relative
+  &:hover
+    .projects-item__magnify
+      opacity: 1
+    .projects-item__image
+      opacity: .6
+      transform: scale(1.1) translate(-50%, -50%)
+
+.projects-item::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 80%
+  transition-delay: .03s
+  transition-duration: .3s
+
+.projects-item__image
+  +pouring-image
+  transition: 1s ease-out
+  transition-property: transform, opacity
+
+.projects-item__magnify
+  +absolute-centering
+  opacity: 0
+  transition: .5s ease-out
+  transition-property: opacity
+
+.projects-item__tags
+  position: absolute
+  top: 5px
+  right: 5px
+  display: flex
+
+.projects-item__tag
+  border: none
+  padding: 0
+  margin-left: 3px
+  width: 32px
+  height: 32px
+  line-height: 32px
+  text-align: center
+  border-radius: 50%
+  color: #a7b9cd
+  cursor: pointer
+  background-color: rgba(0, 0, 0, 0.6)
+  svg
+    width: 16px
+    height: 16px
+  &:hover
+    background-color: rgb(0, 0, 0)

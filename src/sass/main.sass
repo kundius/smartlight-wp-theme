@@ -1,0 +1,1506 @@
+.main-intro__section
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  background: rgb(13, 26, 60) url('../img/bg-intro.jpg') no-repeat 50% 0
+  @media (max-width: $breakpoint-large-max)
+    background-size: calc(100% + 50vw) auto
+  @media (max-width: $breakpoint-small-max)
+    min-height: 508px
+  @media (max-width: $breakpoint-xsmall-max)
+    min-height: 368px
+    background-image: url('../img/bg-intro-mobile.jpg')
+    background-size: auto auto
+    background-position: 50% 0
+
+.main-intro__container
+  width: 100%
+  box-sizing: border-box
+  margin-left: auto
+  margin-right: auto
+  padding-left: 20px
+  padding-right: 20px
+  &::before,
+  &::after
+    content: ''
+    display: table
+  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-large-max)
+    padding-left: 56px
+    padding-right: 56px
+  @media (min-width: $breakpoint-xlarge)
+    max-width: 1425px
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding-left: 10px
+  padding-right: 10px
+  &::before
+    content: ''
+    display: block
+    width: 100%
+    height: 190px
+    margin-bottom: 48px
+    @media (max-height: 800px), (max-width: $breakpoint-medium-max)
+      height: 100px
+    @media (max-width: $breakpoint-xsmall-max)
+      height: 56px
+      margin-bottom: 0
+  &::after
+    content: ''
+    display: block
+    width: 100%
+    padding-bottom: 20%
+    margin-top: 48px
+    @media (max-width: $breakpoint-small-max)
+      display: none
+
+.main-intro__title
+  font-family: $font-family-alt
+  font-size: 60px
+  color: rgb(255, 255, 255)
+  line-height: 1.15
+  text-align: center
+  font-weight: 500
+  margin-bottom: 22px
+  letter-spacing: 0.02em
+  @media (max-width: $breakpoint-medium-max)
+    font-size: adaptive(48px, 60px, $breakpoint-medium, $breakpoint-large)
+  @media (max-width: $breakpoint-small-max)
+    margin-bottom: 20px
+    font-size: adaptive(32px, 48px, $breakpoint-small, $breakpoint-medium)
+    letter-spacing: 0.05em
+    line-height: 1.25
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: adaptive(24px, 32px, $breakpoint-xsmall, $breakpoint-small)
+    line-height: 1.2
+    margin-bottom: 18px
+    letter-spacing: 0
+
+.main-intro__description
+  font-family: $font-family-alt
+  font-size: 34px
+  letter-spacing: 0.04em
+  line-height: 1.2
+  color: rgb(255, 255, 255)
+  text-align: center
+  font-weight: 300
+  margin-bottom: 48px
+  @media (max-width: $breakpoint-medium-max)
+    font-size: adaptive(28px, 34px, $breakpoint-medium, $breakpoint-large)
+  @media (max-width: $breakpoint-small-max)
+    font-size: adaptive(20px, 28px, $breakpoint-small, $breakpoint-medium)
+    letter-spacing: 0.02em
+  @media (max-width: $breakpoint-xsmall-max)
+    margin-bottom: adaptive(15px, 48px, $breakpoint-xsmall, $breakpoint-small)
+    font-size: adaptive(15px, 20px, $breakpoint-xsmall, $breakpoint-small)
+    letter-spacing: 0.05em
+    line-height: 1
+
+.main-intro__button
+  font-family: $font-family-alt
+  font-size: 24px
+  letter-spacing: 0.05em
+  line-height: 72px
+  border-radius: 36px
+  text-align: center
+  cursor: pointer
+  color: rgb(255, 255, 255)
+  font-weight: 600
+  background-color: #ff8a00
+  border: none
+  width: 367px
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  transition: .3s ease
+  transition-property: background-color, text-shadow
+  position: relative
+  span
+    position: relative
+    z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    transition: .3s ease
+    transition-property: border-radius, background-color, left, top, right, bottom
+    background-color: #ff8a00
+    border-radius: 36px
+    z-index: 1
+  &:hover
+    background-color: #ff7e00
+    text-shadow: -1px -1px 0px rgba(185, 91, 0, 0.8)
+    &::before
+      left: -10px
+      top: -10px
+      right: -10px
+      bottom: -10px
+      background-color: #ff7e00
+      border-radius: 46px
+  @media (max-width: $breakpoint-small-max)
+    font-size: 18px
+    line-height: 48px
+    width: 248px
+
+.main-intro__header
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+
+.main-second-section
+  background: url('../img/bg-intro.jpg') no-repeat 50% -100vh,
+  url('../img/bg-second.jpg') no-repeat 50% calc(100% - 668px),
+  linear-gradient(180deg, #172037 0%, #172037 calc(100% - 668px), rgba(15,19,32,1) calc(100% - 668px), rgba(15,19,32,1) 100%)
+  @media (max-width: $breakpoint-large-max)
+    background-size: calc(100% + 50vw) auto
+  @media (max-width: $breakpoint-small-max)
+    background: url('../img/bg-intro.jpg') no-repeat 50% -100vh,
+    url('../img/bg-second.jpg') no-repeat 50% calc(100% - 518px),
+    linear-gradient(180deg, #172037 0%, #172037 calc(100% - 518px), rgba(15,19,32,1) calc(100% - 518px), rgba(15,19,32,1) 100%)
+  @media (max-width: $breakpoint-xsmall-max)
+    background: #172037 url('../img/bg-second.jpg') no-repeat
+    background-size: 900px auto
+    background-position: -90px 305px
+
+
+.main-services
+  @media (max-width: $breakpoint-large-max)
+    // 128 - это расстояние от краев экрана
+    // 1482 - это размер xlarge минус 128
+    font-size: calc(calc(calc(100vw - 118px) / 1482) * 18)
+  @media (max-width: $breakpoint-small-max)
+    font-size: 100%
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: calc(calc(100vw / 768) * 18)
+    margin-left: -20px
+    margin-right: -20px
+  @media (max-width: $breakpoint-xsmall-max * 0.5)
+    font-size: 50%
+
+
+@media (min-width: $breakpoint-medium)
+  .main-services__primary
+    height: 0
+    > *
+      transform: translateY(-100%)
+
+.main-services-primary
+  position: relative
+  background: #292937
+  overflow: hidden
+  display: block
+  text-decoration: none
+  color: rgb(255, 255, 255)
+  &:hover
+    .main-services-primary__image
+      opacity: 0.3
+      transform: scale(1.1) translate(-50%, -50%)
+    .main-services-primary__icons
+      opacity: 0
+      img:first-child
+        transform: translateX(px2em(-20)) scale(.8)
+      img:last-child
+        transform: translateX(px2em(20)) scale(.8)
+    .main-services-primary__title
+      transform: scale(1.2)
+    .main-services-primary__separator
+      width: px2em(136)
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 120%
+
+.main-services-primary__placeholder
+  display: block
+  width: 100%
+  padding-bottom: 80%
+
+.main-services-primary__image
+  @include pouring-image
+  opacity: 0.2
+  transition: 1s ease-out
+  transition-property: transform, opacity
+
+.main-services-primary__inner
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  width: 100%
+
+.main-services-primary__icons
+  display: flex
+  align-items: center
+  justify-content: center
+  height: px2em(100)
+  margin: 0 auto
+  transition: opacity .3s ease
+  img
+    height: 100%
+    display: block
+    transition: transform .3s ease
+  @media (max-width: $breakpoint-xsmall-max)
+    height: px2em(80)
+
+.main-services-primary__separator
+  display: block
+  width: 0
+  height: 1px
+  background: #ff8a00
+  margin: px2em(8) auto px2em(22)
+  transition: width .5s ease
+
+.main-services-primary__title
+  font-size: px2em(18)
+  font-family: $font-family-alt
+  font-weight: bold
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  line-height: 1.2
+  text-align: center
+  display: block
+  transform-origin: 50% 50%
+  transition: transform .5s ease
+
+.main-services-projects
+  position: relative
+
+.main-services-projects__items
+  overflow: hidden
+  position: relative
+  &::before
+    content: ''
+    display: block
+    width: 100%
+    padding-bottom: 160%
+
+.main-services-projects__slider
+  display: flex
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 50%
+
+.main-services-projects__item
+  position: relative
+  width: 100%
+  flex: none
+  text-decoration: none
+  &:hover
+    .main-services-projects__magnify
+      opacity: 1
+    .main-services-projects__image img
+      opacity: .6
+      transform: scale(1.1) translate(-50%, -50%)
+    .main-services-projects__title
+      color: #ffffff
+      &::before,
+      &::after
+        background-color: #ffffff
+
+.main-services-projects__info
+  position: absolute
+  width: 100%
+  top: 100%
+  padding-top: px2em(50)
+  &::before
+    content: ''
+    width: 1px
+    height: px2em(87)
+    background-color: #a2a2a2
+    position: absolute
+    top: px2em(-48)
+    left: px2em(42)
+    transition: background-color .3s ease
+  &::after
+    content: ''
+    width: 7px
+    height: 7px
+    background-color: #a2a2a2
+    border-radius: 50%
+    position: absolute
+    top: px2em(-48)
+    left: px2em(39)
+    transition: background-color .3s ease
+
+.main-services-projects__title
+  display: block
+  color: #ff971d
+  font-family: $font-family-alt
+  font-size: px2em(20)
+  line-height: 1
+  letter-spacing: px2em(1, 20)
+  transition: color .3s ease
+
+.main-services-projects__description
+  display: block
+  color: #fefefe
+  font-family: $font-family-alt
+  font-size: px2em(16)
+  font-weight: 300
+  letter-spacing: px2em(0.8, 16)
+  line-height: 1.2
+  margin-top: px2em(11, 16)
+
+.main-services-projects__image
+  overflow: hidden
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background: #000000
+  img
+    @include pouring-image
+    transition: 1s ease-out
+    transition-property: transform, opacity
+
+.main-services-projects__magnify
+  @include absolute-centering
+  opacity: 0
+  transition: .5s ease-out
+  transition-property: opacity
+
+.main-services-projects__more
+  position: absolute
+  left: px2em(30)
+  bottom: px2em(65)
+
+.main-services-projects__nav
+  position: absolute
+  right: 0
+  top: 0
+  display: flex
+  justify-content: flex-end
+  z-index: 20
+
+.main-services-projects__next,
+.main-services-projects__previous
+  padding: 0
+  border: none
+  width: px2em(48)
+  height: px2em(48)
+  margin-left: px2em(2)
+  background-color: rgba(55, 58, 70, 0.6)
+  color: #ffffff
+  cursor: pointer
+  position: relative
+  transition: background-color .3s ease
+  &:hover
+    background-color: rgb(55, 58, 70)
+  &:active
+    background-color: rgb(70, 70, 70)
+
+.main-services-projects__previous
+  &::before
+    @include absolute-centering
+    content: ''
+    height: 1px
+    width: 16px
+    background: currentColor
+  &::after
+    @include absolute-centering
+    content: ''
+    height: 0
+    width: 0
+    margin-left: -5px
+    border-width: 3px 6px 3px 0
+    border-style: solid
+    border-color: transparent currentColor transparent transparent
+
+.main-services-projects__next
+  &::before
+    @include absolute-centering
+    content: ''
+    height: 1px
+    width: 16px
+    background: currentColor
+  &::after
+    @include absolute-centering
+    content: ''
+    height: 0
+    width: 0
+    margin-left: 5px
+    border-width: 3px 0 3px 6px
+    border-style: solid
+    border-color: transparent transparent transparent currentColor
+
+.main-actions-slider
+  position: relative
+  background: #3d3d3d
+
+.main-actions-slider__slider
+  overflow: hidden
+  position: relative
+  padding-bottom: 40%
+  width: 100%
+
+.main-actions-slider__items
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+
+.main-actions-slider__item
+  padding: px2em(20) px2em(20) px2em(48) px2em(60)
+  width: 100%
+  height: 100%
+  background: #3d3d3d
+  flex: none
+  display: flex
+  flex-direction: column
+  justify-content: center
+  text-decoration: none
+  transition: background-color .3s ease
+  &:hover
+    background-color: #373737
+  @media (max-width: $breakpoint-xsmall-max)
+    padding: px2em(20) px2em(20) px2em(40) px2em(40)
+
+.main-actions-slider__date
+  font-size: px2em(14)
+  font-family: $font-family-alt
+  color: rgb(255, 255, 255)
+  line-height: 1.2
+  display: block
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 10px
+
+.main-actions-slider__title
+  font-size: px2em(36)
+  font-family: $font-family-alt
+  color: rgb(255, 151, 29)
+  font-weight: bold
+  line-height: 1.167
+  display: block
+  letter-spacing: 0.045em
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+  margin-top: px2em(25, 36)
+
+.main-actions-slider__description
+  font-size: px2em(24)
+  font-family: $font-family-alt
+  color: rgb(255, 255, 255)
+  line-height: 1.75
+  display: block
+  margin-top: px2em(4)
+  letter-spacing: 0.035em
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+.main-actions-slider__dots
+  display: flex
+  position: absolute
+  left: px2em(60)
+  bottom: px2em(40)
+  @media (max-width: $breakpoint-xsmall-max)
+    left: px2em(40)
+    bottom: px2em(20)
+
+.main-actions-slider__dot
+  padding: 0
+  width: 12px
+  height: 12px
+  margin-right: 20px
+  background: transparent
+  position: relative
+  display: block
+  border: none
+  cursor: pointer
+  &::before
+    content: ''
+    border-radius: 50%
+    background-color: rgba(205, 205, 205, 0.702)
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 6px
+    height: 6px
+    transition: .3s ease
+    transition-property: width, height, background-color
+  &:hover::before
+    background-color: rgb(162, 162, 162)
+    width: 10px
+    height: 10px
+
+.main-actions-slider__dot._active::before,
+.main-actions-slider__dot._active:hover::before
+  background-color: rgb(255, 178, 80)
+  width: 12px
+  height: 12px
+
+.main-special-offer
+  display: block
+  width: 100%
+  text-decoration: none
+  position: relative
+  box-sizing: content-box
+  padding-bottom: 80%
+  background-color: #e4a76c
+  transition: background-color .3s ease
+  &:hover
+    background-color: #dd9652
+
+.main-special-offer__text
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  font-size: px2em(24)
+  font-family: $font-family-alt
+  padding: px2em(20, 24) px2em(40, 24) px2em(20, 24) px2em(60, 24)
+  color: rgb(255, 255, 255)
+  font-weight: bold
+  line-height: 1.25
+  letter-spacing: 0.05em
+  @media (max-width: $breakpoint-xsmall-max)
+    padding: px2em(20, 24) px2em(20, 24) px2em(20, 24) px2em(40, 24)
+
+.main-action
+  position: relative
+  display: block
+  text-decoration: none
+  width: 100%
+  padding-bottom: 80%
+  box-sizing: content-box
+  background-color: #485395
+  transition: background-color .3s ease
+  &:hover
+    background-color: #37448f
+
+.main-action__inner
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.main-action__date
+  text-align: center
+  font-family: $font-family-alt
+  font-size: px2em(14)
+  color: rgb(255, 255, 255)
+  line-height: 1.2
+  display: block
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 10px
+
+.main-action__title
+  text-align: center
+  font-family: $font-family-alt
+  font-size: px2em(72)
+  color: rgb(255, 255, 255)
+  line-height: 1
+  font-weight: bold
+  letter-spacing: 0.05em
+  display: block
+  margin-top: px2em(30, 72)
+
+.main-action__description
+  text-align: center
+  font-family: $font-family-alt
+  font-size: px2em(36)
+  color: #ff971d
+  letter-spacing: 0.05em
+  line-height: 1
+  display: block
+  margin-top: px2em(6, 36)
+  margin-bottom: px2em(22, 36)
+  font-weight: 600
+
+.main-h-service
+  display: flex
+  flex-wrap: wrap
+
+.main-h-service__item
+  position: relative
+  width: 50%
+  background: #292937
+  display: block
+  text-decoration: none
+  color: rgb(255, 255, 255)
+  z-index: 20
+  &:hover
+    .main-h-service__title::before,
+    .main-h-service__title::after
+      background-color: #ffffff
+    .main-h-service__titleText
+      transform: scale(1.2)
+      color: #ffffff
+    .main-h-service__image img
+      transform: scale(1.1) translate(-50%, -50%)
+
+.main-h-service__image
+  overflow: hidden
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  img
+    @include pouring-image
+    transition: 1s ease-out
+    transition-property: transform, opacity
+
+.main-h-service__placeholder
+  display: block
+  width: 100%
+  padding-bottom: 80%
+
+.main-h-service__title
+  position: absolute
+  top: px2em(60)
+  left: 100%
+  width: 100%
+  padding-left: px2em(50)
+  &::before
+    content: ''
+    background-color: rgb(162, 162, 162)
+    border-radius: 50%
+    width: 7px
+    height: 7px
+    position: absolute
+    left: px2em(-28)
+    top: 50%
+    transform: translateY(-50%)
+    transition: background-color 0.5s ease-out
+  &::after
+    content: ''
+    background-color: rgb(162, 162, 162)
+    width: px2em(56)
+    height: 1px
+    position: absolute
+    left: px2em(-28)
+    top: 50%
+    transform: translateY(-50%)
+    transition: background-color 0.5s ease-out
+
+.main-h-service__titleText
+  display: block
+  font-size: px2em(20)
+  font-family: $font-family-alt
+  color: rgb(255, 151, 29)
+  font-weight: bold
+  line-height: 1
+  transition: transform 0.5s ease-out
+  transform-origin: 0 50%
+
+.main-h-service__moreWrap
+  width: 50%
+  position: relative
+  z-index: 10
+
+.main-h-service__moreButton
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  @media (max-width: $breakpoint-xsmall-max)
+    top: auto
+    transform: none
+    left: px2em(40)
+    bottom: px2em(40)
+
+.main-about
+  margin-top: 184px
+  margin-bottom: 70px
+  +below(medium)
+    margin-top: 69px
+    margin-bottom: 24px
+  +below(small)
+    margin-top: 61px
+    margin-bottom: 27px
+
+.main-about__title
+  font-family: $font-family-alt
+  font-size: 40px
+  color: #ffffff
+  letter-spacing: 0.05em
+  line-height: 1
+  position: relative
+  max-width: 620px
+  span
+    position: relative
+  &::first-line
+    font-size: 48px
+    font-weight: 600
+  +below(medium)
+    font-size: 20px
+    max-width: initial
+    &::first-line
+      font-size: 32px
+      letter-spacing: 0.085em
+  +below(small)
+    font-size: 19px
+    &::first-line
+      font-size: 24px
+      letter-spacing: 0.05em
+
+.main-about__title::before
+  content: ''
+  position: absolute
+  left: 72.4%
+  top: -16%
+  width: 90.2%
+  bottom: -41.2%
+  background: url('../img/bg-stripe-gray.png')
+  +below(medium)
+    right: -26px
+    top: -37px
+    width: 295px
+    height: 98px
+    left: auto
+  +below(small)
+    right: -20px
+    top: -46px
+    width: 145px
+    height: 65px
+
+.main-about__description
+  font-size: 18px
+  color: #ffffff
+  line-height: 1.67
+  letter-spacing: 0.05em
+  position: relative
+  margin-top: 74px
+  margin-left: 50%
+  +below(medium)
+    font-size: 14px
+    margin-top: 56px
+    margin-left: 114px
+    line-height: 1.35
+  +below(small)
+    font-size: 16px
+    margin-top: 65px
+    margin-left: 0
+
+.main-about__description::before
+  content: ''
+  position: absolute
+  width: 136px
+  height: 1px
+  background: #e4a76c
+  left: -182px
+  top: 20px
+  +below(medium)
+    left: 50%
+    top: -39px
+    transform: translateX(-50%)
+
+.main-about__description p
+  margin-bottom: 43px
+  +below(medium)
+    margin-bottom: 27px
+  +below(small)
+    margin-bottom: 23px
+
+.main-about__description ul
+  list-style: none
+  padding: 0
+  margin: 0
+  +below(small)
+    font-size: 15px
+
+.main-about__description ul li
+  padding-left: 73px
+  position: relative
+  margin: 6px 0
+  +below(medium)
+    margin: 2px 0
+    padding-left: 20px
+  +below(small)
+    margin: 13px 0
+    padding-left: 23px
+    line-height: 1.25
+
+.main-about__description ul li::before
+  content: ''
+  position: absolute
+  left: 32px
+  top: 6px
+  width: 15px
+  height: 11px
+  border-left: 5px solid #9b9da2
+  border-bottom: 5px solid #9b9da2
+  transform: rotate(-45deg)
+  @media (max-width: $breakpoint-small-max)
+    left: 2px
+    top: 5px
+    width: 7px
+    height: 5px
+    border-left-width: 2px
+    border-bottom-width: 2px
+  @media (max-width: $breakpoint-xsmall-max)
+    top: 4px
+    width: 10px
+    height: 7px
+    border-left-width: 3px
+    border-bottom-width: 3px
+
+@media (min-width: $breakpoint-small)
+  .main-advantages
+    border-top: 1px solid rgba(255, 255, 255, 0.22)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22)
+    padding-top: px2em(50)
+    padding-bottom: px2em(40)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    @media (max-width: $breakpoint-medium-max)
+      font-size: adaptive(11px, $font-size, $breakpoint-small, $breakpoint-large)
+
+  .main-advantages__item
+    width: 25%
+
+  .main-advantages__number
+    font-size: px2em(72)
+    color: rgb(228, 167, 108)
+    font-weight: bold
+    line-height: 1
+    position: absolute
+    left: px2em(-40, 72)
+    bottom: px2em(4, 72)
+    width: px2em(40, 72)
+    text-align: center
+
+  .main-advantages__icon
+    width: px2em(120)
+    height: px2em(120)
+    position: relative
+    margin: 0 auto px2em(16)
+    img
+      display: block
+      position: relative
+      @include absolute-centering
+
+  .main-advantages__title
+    color: #ffffff
+    font-size: px2em(18)
+    line-height: 1.25
+    text-align: center
+    min-height: px2em(42, 18)
+    display: flex
+    align-items: center
+    justify-content: center
+    letter-spacing: 0.05em
+
+@media (max-width: $breakpoint-xsmall-max)
+  .main-advantages
+    border-top: 1px solid rgba(255, 255, 255, 0.22)
+    padding-top: 10px
+    padding-bottom: 27px
+
+  .main-advantages__item
+    margin: 3px 0
+    display: flex
+    align-items: center
+
+  .main-advantages__number
+    font-weight: bold
+    line-height: 1
+    font-size: 36px
+    color: #e4a76c
+    letter-spacing: 0.05em
+    position: absolute
+    left: -30px
+    top: 25px
+
+  .main-advantages__icon
+    width: 60px
+    height: 60px
+    position: relative
+    margin-left: 34px
+    margin-right: 12px
+    // padding-left: 34px
+    // padding-right: 14px
+    img
+      display: block
+      @include absolute-centering
+
+  .main-advantages__title
+    font-size: 15px
+    line-height: 1
+    letter-spacing: 0.05em
+    color: #ffffff
+
+.main-projects
+  padding-top: 118px
+  padding-bottom: 130px
+  position: relative
+  @media (max-width: $breakpoint-small-max)
+    padding-top: 83px
+    padding-bottom: 61px
+  @media (max-width: $breakpoint-xsmall-max)
+    background: #0f1320
+    margin-left: -20px
+    padding-left: 20px
+    margin-right: -20px
+    padding-right: 20px
+    padding-top: 42px
+    padding-bottom: 42px
+
+.main-projects__headline
+  position: relative
+  z-index: 20
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  align-items: flex-start
+  margin-bottom: 26px
+  @media (max-width: $breakpoint-small-max)
+    margin-bottom: 16px
+
+.main-projects__headline::before
+  content: ''
+  position: absolute
+  right: -67px
+  z-index: 10
+  top: 16px
+  width: 453px
+  height: 274px
+  background: url('../img/bg-stripe-gray.png')
+  @media (max-width: $breakpoint-small-max)
+    right: -31px
+    top: -29px
+    width: 220px
+    height: 168px
+  @media (max-width: $breakpoint-xsmall-max)
+    right: -20px
+    top: 1px
+    width: 194px
+    height: 115px
+
+.main-projects__title
+  position: relative
+  z-index: 20
+  font-weight: 600
+  letter-spacing: 0.05em
+  font-size: 36px
+  line-height: 42px
+  color: #ffffff
+  font-family: $font-family-alt
+  width: 100%
+  @media (max-width: $breakpoint-small-max)
+    width: 36.7%
+    font-size: 28px
+    line-height: 24px
+  @media (max-width: $breakpoint-xsmall-max)
+    line-height: 18px
+    font-size: 20px
+    width: 100%
+    padding-right: 40%
+
+.main-projects__filter
+  position: relative
+  z-index: 20
+  display: flex
+  margin-top: 25px
+  @media (max-width: $breakpoint-small-max)
+    margin-top: 0
+    margin-right: auto
+  @media (max-width: $breakpoint-xsmall-max)
+    margin-top: 22px
+
+.main-projects__filterItem
+  font-family: $font-family-alt
+  font-size: 24px
+  line-height: 48px
+  color: #ff971d
+  border-width: 0 0 1px
+  border-style: solid
+  border-color: transparent
+  background: transparent
+  padding: 0 14px
+  letter-spacing: 0.13em
+  margin-right: 20px
+  cursor: pointer
+  &._active
+    border-color: currentColor
+  @media (max-width: $breakpoint-small-max)
+    line-height: 40px
+    font-size: 22px
+    padding: 0 2px
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 16px
+    line-height: 30px
+
+.main-projects__nav
+  position: relative
+  z-index: 20
+  display: flex
+  margin-top: 30px
+  @media (max-width: $breakpoint-small-max)
+    margin-top: -8px
+  @media (max-width: $breakpoint-xsmall-max)
+    margin-top: 19px
+    margin-right: -11px
+
+.main-projects__prev,
+.main-projects__next
+  width: 64px
+  height: 64px
+  border: none
+  position: relative
+  margin-left: 6px
+  color: #ffffff
+  cursor: pointer
+  background-color: rgba(55, 58, 70, 0.6)
+  transition: background-color .3s ease
+  &:hover
+    background-color: rgba(55, 58, 70, 0.8)
+  &:active
+    background-color: rgb(70, 70, 70)
+  @media (max-width: $breakpoint-xsmall-max)
+    width: 48px
+    height: 48px
+    margin-left: 2px
+
+.main-projects__prev::before
+  @include absolute-centering
+  content: ''
+  height: 1px
+  width: 20px
+  background: currentColor
+
+.main-projects__prev::after
+  @include absolute-centering
+  content: ''
+  height: 0
+  width: 0
+  margin-left: -7px
+  border-width: 3px 6px 3px 0
+  border-style: solid
+  border-color: transparent currentColor transparent transparent
+
+.main-projects__next::before
+  @include absolute-centering
+  content: ''
+  height: 1px
+  width: 20px
+  background: currentColor
+  
+.main-projects__next::after
+  @include absolute-centering
+  content: ''
+  height: 0
+  width: 0
+  margin-left: 7px
+  border-width: 3px 0 3px 6px
+  border-style: solid
+  border-color: transparent transparent transparent currentColor
+
+.main-projects__items
+  position: relative
+  z-index: 20
+  @media (max-width: $breakpoint-xsmall-max)
+    margin-left: -20px
+    margin-right: -20px
+
+.main-projects__items::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 48%
+  @media (max-width: $breakpoint-small-max)
+    padding-bottom: 80%
+
+.main-projects__item
+  position: absolute
+  width: 20%
+  left: 0
+  top: 0
+  overflow: hidden
+  opacity: 0
+  visibility: hidden
+  transform: translateX(-10%)
+  transition-property: visibility, opacity, transform
+  transition-timing-function: ease
+  transition-duration: .4s
+  &._visible
+    opacity: 1
+    transform: translateX(0)
+    visibility: visible
+  &:hover
+    .main-projects__itemMagnify
+      opacity: 1
+    .main-projects__itemImage
+      opacity: .6
+      transform: scale(1.1) translate(-50%, -50%)
+
+.main-projects__item::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 80%
+  transition-delay: .03s
+  transition-duration: .3s
+
+@media (min-width: $breakpoint-medium)
+  .main-projects__item:nth-child(8n-7)
+    width: 20%
+    left: 0
+    top: 0
+    transition-delay: .06s
+    transition-duration: .33s
+  .main-projects__item:nth-child(8n-6)
+    width: 40%
+    left: 20%
+    top: 0
+    transition-duration: .36s
+  .main-projects__item:nth-child(8n-5)
+    width: 20%
+    left: 60%
+    top: 0
+    transition-delay: .12s
+    transition-duration: .39s
+  .main-projects__item:nth-child(8n-4)
+    width: 20%
+    left: 80%
+    top: 0
+    transition-delay: .15s
+    transition-duration: .41s
+  .main-projects__item:nth-child(8n-3)
+    width: 20%
+    left: 0
+    top: 33.33%
+    transition-delay: .18s
+    transition-duration: .44s
+  .main-projects__item:nth-child(8n-2)
+    width: 40%
+    left: 60%
+    top: 33.33%
+    transition-delay: .21s
+    transition-duration: .47s
+  .main-projects__item:nth-child(8n-1)
+    width: 20%
+    left: 20%
+    top: 66.66%
+    transition-delay: .24s
+    transition-duration: .5s
+  .main-projects__item:nth-child(8n)
+    width: 20%
+    left: 40%
+    top: 66.66%
+    transition-delay: .27s
+    transition-duration: .53s
+
+@media (max-width: $breakpoint-small-max)
+  .main-projects__item:nth-child(5n-4)
+    width: 33.33%
+    left: 0
+    top: 0
+    transition-delay: .15s
+    transition-duration: .41s
+  .main-projects__item:nth-child(5n-3)
+    width: 66.66%
+    left: 33.33%
+    top: 0
+    transition-delay: .18s
+    transition-duration: .44s
+  .main-projects__item:nth-child(5n-2)
+    width: 33.33%
+    left: 0
+    top: 33.33%
+    transition-delay: .21s
+    transition-duration: .47s
+  .main-projects__item:nth-child(5n-1)
+    width: 33.33%
+    left: 66.66%
+    top: 66.66%
+    transition-delay: .24s
+    transition-duration: .5s
+  .main-projects__item:nth-child(5n)
+    width: 33.33%
+    left: 33.33%
+    top: 66.66%
+    transition-delay: .27s
+    transition-duration: .53s
+
+.main-projects__itemImage
+  @include pouring-image
+  transition: 1s ease-out
+  transition-property: transform, opacity
+
+.main-projects__itemMagnify
+  @include absolute-centering
+  opacity: 0
+  transition: .5s ease-out
+  transition-property: opacity
+
+.main-partners
+  background-color: #1c202c
+  padding: 128px 0 75px
+  @media (max-width: $breakpoint-small-max)
+    padding: 77px 0 45px
+  @media (max-width: $breakpoint-xsmall-max)
+    padding-top: 51px
+    padding-bottom: 35px
+
+.main-partners__title
+  position: relative
+  font-family: $font-family-alt
+  font-size: 48px
+  line-height: 1
+  letter-spacing: 0.05em
+  color: #ffffff
+  font-weight: 600
+  display: flex
+  align-items: center
+  span
+    position: relative
+    z-index: 20
+  @media (max-width: $breakpoint-small-max)
+    font-size: 28px
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 20px
+    padding-right: 50%
+    line-height: 18px
+
+.main-partners__title::before
+  content: ''
+  position: absolute
+  z-index: 10
+  width: 624px
+  height: 154px
+  left: 279px
+  top: 50%
+  transform: translateY(-50%)
+  background: url('../img/bg-stripe-gray.png')
+  @media (max-width: $breakpoint-small-max)
+    width: 220px
+    height: 102px
+    top: -3px
+    transform: none
+  @media (max-width: $breakpoint-xsmall-max)
+    width: auto
+    height: 65px
+    top: 6px
+    left: 81px
+    right: -20px
+
+.main-partners__title::after
+  content: ''
+  position: relative
+  z-index: 20
+  display: block
+  width: 136px
+  height: 1px
+  top: 7px
+  background-color: #e4a76c
+  margin-left: 90px
+  @media (max-width: $breakpoint-small-max)
+    width: 97px
+    top: 27px
+    margin-left: 26px
+  @media (max-width: $breakpoint-xsmall-max)
+    position: absolute
+    margin: 0
+    top: auto
+    bottom: -20px
+    left: 50%
+    width: 138px
+    transform: translateX(-50%)
+
+.main-partners__description
+  font-family: $font-family-alt
+  font-size: 24px
+  letter-spacing: 0.05em
+  line-height: 1
+  color: #c8c8c8
+  font-weight: 600
+  margin-top: 90px
+  margin-bottom: 46px
+  @media (max-width: $breakpoint-small-max)
+    font-size: 18px
+    margin-top: 48px
+    margin-bottom: 19px
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 15px
+    margin-top: 40px
+
+.main-partners__items
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  margin-left: -25px
+  margin-top: -20px
+  position: relative
+  z-index: 20
+  @media (max-width: $breakpoint-xsmall-max)
+    margin-left: -7px
+    margin-top: -7px
+
+.main-partners__item
+  padding-left: 25px
+  padding-top: 20px
+  @media (max-width: $breakpoint-xsmall-max)
+    padding-top: 7px
+    padding-left: 7px
+  img
+    height: 68px
+    width: auto
+    display: block
+    @media (max-width: $breakpoint-small-max)
+      height: 59px
+    @media (max-width: $breakpoint-xsmall-max)
+      height: 40px
+
+.main-content
+  font-size: 18px
+  line-height: 1.35
+  color: #000000
+  padding-top: 83px
+  padding-bottom: 120px
+  @media (max-width: $breakpoint-small-max)
+    padding-top: 56px
+    padding-bottom: 92px
+    font-size: 16px
+    line-height: 1.15
+  @media (max-width: $breakpoint-xsmall-max)
+    padding-top: 54px
+    padding-bottom: 70px
+
+.main-content a
+  text-decoration: underline
+  color: #007dff
+  &:visited
+    color: #c663ff
+  &:hover
+    color: #f14f46
+
+.main-content h1
+  font-size: 48px
+  line-height: 1
+  letter-spacing: -0.025em
+  color: #000000
+  font-weight: 600
+  font-family: $font-family-alt
+  margin-bottom: 30px
+  @media (max-width: $breakpoint-small-max)
+    font-size: 28px
+    margin-bottom: 24px
+  @media (max-width: $breakpoint-xsmall-max)
+    font-size: 24px
+    line-height: 1.22
+    margin-bottom: 80px
+    position: relative
+    &::before
+      content: ''
+      z-index: -1
+      position: absolute
+      left: 185px
+      top: 32px
+      right: -20px
+      bottom: 19px
+      background: url('/images/bg-stripe-gray-transparent.png')
+    &::after
+      content: ''
+      width: 136px
+      height: 1px
+      position: absolute
+      bottom: -42px
+      left: 43px
+      background-color: #ff8a00
+
+.main-content h2
+  font-size: 36px
+  line-height: 1
+  font-weight: 600
+  color: #ff8a00
+  position: relative
+  font-family: $font-family-alt
+  margin: 93px 0
+  display: flex
+  align-items: center
+  @media (max-width: $breakpoint-small-max)
+    font-size: 20px
+    margin: 33px 0 66px
+  @media (max-width: $breakpoint-xsmall-max)
+    margin: 47px 0 16px
+
+.main-content h2::before
+  content: ''
+  z-index: -1
+  position: absolute
+  left: 24%
+  top: 50%
+  transform: translateY(-50%)
+  width: 45%
+  padding-bottom: 12%
+  background: url('/images/bg-stripe-gray-transparent.png')
+  @media (max-width: $breakpoint-small-max)
+    width: 259px
+    height: 84px
+    left: auto
+    right: 58px
+    top: 65px
+  @media (max-width: $breakpoint-xsmall-max)
+    display: none
+
+.main-content h2::after
+  content: ''
+  width: 136px
+  height: 1px
+  position: relative
+  top: 38px
+  left: -89px
+  background-color: currentColor
+  @media (max-width: $breakpoint-small-max)
+    top: 21px
+    left: -45px
+  @media (max-width: $breakpoint-xsmall-max)
+    display: none
+
+.main-content h3
+  font-size: 28px
+  line-height: 1
+  font-weight: 600
+  color: #ff8a00
+  position: relative
+  font-family: $font-family-alt
+  margin: 55px 0 37px
+  @media (max-width: $breakpoint-small-max)
+    font-size: 18px
+    margin: 38px 0 35px
+  @media (max-width: $breakpoint-xsmall-max)
+    margin: 56px 0 16px
+
+.main-content * + p
+  margin-top: 24px
+  @media (max-width: $breakpoint-small-max)
+    margin-top: 18px
+
+.main-content .paragraph_rightHand
+  padding-left: 40%
+  @media (max-width: $breakpoint-small-max)
+    padding-left: 0
+
+.main-content .image_leftHand
+  float: left
+  margin: 0 75px 75px
+  @media (max-width: $breakpoint-small-max)
+    margin: 0 47px 47px
+  @media (max-width: $breakpoint-xsmall-max)
+    float: none
+    width: 100%
+    margin: 0

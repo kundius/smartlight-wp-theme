@@ -1,0 +1,342 @@
+import svg4everybody from 'svg4everybody'
+import forEach from 'lodash/forEach'
+import throttle from 'lodash/throttle'
+
+
+const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+
+
+const easing = {
+  // no easing, no acceleration
+  linear: function (t) { return t },
+  // accelerating from zero velocity
+  easeInQuad: function (t) { return t*t },
+  // decelerating to zero velocity
+  easeOutQuad: function (t) { return t*(2-t) },
+  // acceleration until halfway, then deceleration
+  easeInOutQuad: function (t) { return t<.5 ? 2*t*t : -1+(4-2*t)*t },
+  // accelerating from zero velocity
+  easeInCubic: function (t) { return t*t*t },
+  // decelerating to zero velocity
+  easeOutCubic: function (t) { return (--t)*t*t+1 },
+  // acceleration until halfway, then deceleration
+  easeInOutCubic: function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 },
+  // accelerating from zero velocity
+  easeInQuart: function (t) { return t*t*t*t },
+  // decelerating to zero velocity
+  easeOutQuart: function (t) { return 1-(--t)*t*t*t },
+  // acceleration until halfway, then deceleration
+  easeInOutQuart: function (t) { return t<.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t },
+  // accelerating from zero velocity
+  easeInQuint: function (t) { return t*t*t*t*t },
+  // decelerating to zero velocity
+  easeOutQuint: function (t) { return 1+(--t)*t*t*t*t },
+  // acceleration until halfway, then deceleration
+  easeInOutQuint: function (t) { return t<.5 ? 16*t*t*t*t*t : 1+16*(--t)*t*t*t*t }
+}
+
+
+svg4everybody()
+
+
+forEach(document.querySelectorAll('.js-header'), function(header) {
+  let top = parseInt(window.getComputedStyle(header).getPropertyValue('top'))
+
+  const scrollHandler = throttle(() => {
+    if (window.pageYOffset > top) {
+      header.classList.add('header_fixed')
+    } else {
+      header.classList.remove('header_fixed')
+    }
+  }, 10)
+
+  window.addEventListener('scroll', scrollHandler)
+})
+
+
+forEach(document.querySelectorAll('.js-drawer'), function(drawer) {
+  let toggle = document.querySelector('.js-drawer-toggle')
+  let opened = false
+
+  const outsideClickListener = e => {
+    if (!drawer.contains(e.target) && isVisible(drawer)) {
+      close()
+    }
+  }
+
+  const close = () => {
+    drawer.classList.remove('header__drawer_opened')
+    toggle.classList.remove('header__toggle_close')
+    document.removeEventListener('click', outsideClickListener)
+    opened = false
+  }
+
+  const open = () => {
+    drawer.classList.add('header__drawer_opened')
+    toggle.classList.add('header__toggle_close')
+    document.addEventListener('click', outsideClickListener)
+    opened = true
+  }
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation()
+    if (opened) {
+      close()
+    } else {
+      open()
+    }
+  })
+
+  forEach(drawer.querySelectorAll('[data-next]'), function(arrow) {
+    arrow.addEventListener('click', () => {
+      forEach(drawer.querySelectorAll(`[data-parent]`), (parent) => {
+        if (parent.dataset.parent !== 'root') {
+          parent.classList.remove('header-drawer_opened')
+        }
+      })
+      drawer.querySelector(`[data-parent="${arrow.dataset.next}"]`).classList.add('header-drawer_opened')
+    })
+  })
+})
+
+
+class Timeline {
+  promise = null
+  queue = []
+  step = 0.03
+
+  add = callback => {
+    this.queue.push({
+      progress: 0,
+      callback
+    })
+  }
+  play = () => {
+    if (!this.queue.length) return
+
+    let item = this.queue[0]
+
+    item.progress += this.step
+    if (item.progress > 1) item.progress = 1
+
+    // item.callback(item.progress)
+    item.callback(easing.easeOutCubic(item.progress))
+
+    if (item.progress === 1) {
+      this.queue.shift()
+    }
+
+    requestAnimationFrame(this.play)
+  }
+  destroy = () => {
+    this.queue = []
+  }
+}
+forEach(document.querySelectorAll('.js-slider'), function(slider) {
+  let elItems = slider.querySelectorAll('.js-slider-item')
+  let elWrapper = slider.querySelector('.js-slider-wrapper')
+  let controls = slider.querySelectorAll('[data-slider-control]')
+  let active = 0
+  let timeline = new Timeline()
+  let prevElements = []
+  let nextElements = []
+  let dotElements = []
+
+  forEach(controls, control => {
+    if (control.dataset.sliderControl == 'previous') {
+      prevElements.push(control)
+    }
+    if (control.dataset.sliderControl == 'next') {
+      nextElements.push(control)
+    }
+    if (!isNaN(parseFloat(control.dataset.sliderControl)) && isFinite(control.dataset.sliderControl)) {
+      dotElements.push(control)
+    }
+  })
+
+  forEach(prevElements, el => el.addEventListener('click', () => previous()))
+  forEach(nextElements, el => el.addEventListener('click', () => next()))
+  forEach(dotElements, el => el.addEventListener('click', () => show(el.dataset.sliderControl)))
+
+  const previous = () => {
+    show((active - 1 + elItems.length) % elItems.length)
+  }
+  
+  const next = () => {
+    show((active + 1) % elItems.length)
+  }
+
+  const show = (index) => {
+    let retreat = active
+    active = index
+
+    forEach(dotElements, dot => {
+      dot.classList.remove('_active')
+      if (dot.dataset.sliderControl == active) {
+        dot.classList.add('_active')
+      }
+    })
+
+    let dist = Math.abs(retreat - active)
+    let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
+
+    if (dir < 0) {
+      let width = elItems[retreat].offsetWidth
+      timeline.add(progress => {
+        if (retreat > 0) {
+          elItems[retreat - 1].style.order = 1
+        } else {
+          elItems.forEach(slide => {
+            slide.style.order = null
+          })
+        }
+        elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
+      })
+    } else {
+      timeline.add(progress => {
+        let width = elItems[active].offsetWidth
+        elItems.forEach((slide, i) => {
+          slide.style.order = i < active ? null : -1
+        })
+        elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
+      })
+    }
+
+    timeline.play()
+  }
+
+  show(active)
+})
+
+
+forEach(document.querySelectorAll('.js-img-to-svg'), function(img) {
+  const xhttp = new XMLHttpRequest()
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const div = document.createElement('div')
+      div.innerHTML = this.responseText
+      const svg = div.querySelector('svg')
+      img.parentNode.insertBefore(svg, img.nextSibling)
+      img.parentNode.removeChild(img)
+    }
+  }
+  xhttp.open('GET', img.src, true)
+  xhttp.send()
+})
+
+
+forEach(document.querySelectorAll('.js-main-projects'), function(projects) {
+  let prev = projects.querySelector('.js-main-projects-prev')
+  let next = projects.querySelector('.js-main-projects-next')
+  let items = projects.querySelectorAll('.js-main-projects-item')
+  let page = 1
+  let limit = window.matchMedia('(max-width: 960px)').matches ? '5' : '8'
+  let pages = Math.ceil(items.length / limit)
+
+  const isVisible = (i) => {
+    return i >= limit * page - limit && i < limit * page
+  }
+  const show = index => {
+    page = index
+    forEach(items, (item, i) => {
+      if (isVisible(i)) {
+        item.classList.add('_visible')
+      } else {
+        item.classList.remove('_visible')
+      }
+    })
+  }
+  const nextHandler = () => {
+    show(page === pages ? 1 : page + 1)
+  }
+  const prevHandler = () => {
+    show(page === 1 ? pages : page - 1)
+  }
+
+  show(1)
+
+  prev.addEventListener('click', prevHandler)
+  next.addEventListener('click', nextHandler)
+})
+
+
+forEach(document.querySelectorAll('.js-scroll'), function(el) {
+  const header = document.querySelector('.js-header')
+  let top = 0
+  let left = 0
+  if (el.dataset.target) {
+    let target = document.querySelector(el.dataset.target)
+    if (target) {
+      top = target.offsetTop - header.offsetHeight
+    }
+  }
+  el.addEventListener('click', () => {
+    window.scroll({
+      top, 
+      left, 
+      behavior: 'smooth'
+    })
+  })
+})
+
+
+document.querySelectorAll('.js-form').forEach(function(form) {
+  let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
+  let messages = []
+  form.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    forEach(controls, el => el.classList.remove('_validation-error'))
+
+    forEach(messages, message => {
+      if (message.parentNode) {
+        message.parentNode.removeChild(message)
+      }
+    })
+    messages = []
+
+    const request = new XMLHttpRequest()
+    request.open('POST', form.action, true)
+    request.addEventListener('readystatechange', function() {
+      if (this.readyState != 4) return
+
+      const response = JSON.parse(request.response)
+
+      if (response.status == 'mail_sent') {
+        form.reset()
+        form.classList.add('_validation-mail_sent')
+        notifier.success(response.message)
+        setTimeout(() => {
+          form.classList.remove('_validation-mail_sent')
+        }, 5000)
+      }
+
+      if (response.status == 'acceptance_missing') {
+        notifier.warning(response.message)
+      }
+
+      if (response.status == 'mail_failed') {
+        notifier.alert(response.message)
+      }
+
+      if (response.status == 'validation_failed') {
+        forEach(response.invalidFields, field => {
+          const el = form.querySelector(field.into)
+          el.classList.add('_validation-error')
+          const message = document.createElement('span')
+          message.classList.add('form-error')
+          message.innerHTML = field.message
+          el.appendChild(message)
+          messages.push(message)
+          const close = document.createElement('span')
+          close.classList.add('form-error__close')
+          message.appendChild(close)
+          close.addEventListener('click', () => {
+            message.parentNode.removeChild(message)
+          })
+        })
+      }
+    })
+    request.send(new FormData(form))
+  })
+})

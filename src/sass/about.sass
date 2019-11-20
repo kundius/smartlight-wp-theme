@@ -1,0 +1,332 @@
+.about-section-first
+  background-color: #292f3f
+  border-top: 1px solid transparent
+  border-bottom: 1px solid transparent
+
+.about-section-second
+  background-color: #252d40
+  border-top: 1px solid transparent
+  border-bottom: 1px solid transparent
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.23)
+
+.about-headline
+  font-family: $font-family-alt
+  font-size: 48px
+  letter-spacing: -0.01em
+  color: #ffffff
+  position: relative
+  margin: 23px 0
+  +below(small)
+    font-size: 32px
+
+.about-headline span
+  position: relative
+  z-index: 20
+
+.about-headline::before
+  content: ''
+  position: absolute
+  z-index: 10
+  top: -28px
+  left: 309px
+  width: 624px
+  height: 202px
+  background: url('../img/bg-stripe-gray.png')
+  +below(small)
+    width: 202px
+    right: -20px
+    top: auto
+    height: 68px
+    bottom: -20px
+    left: auto
+
+.about-headline::after
+  content: ''
+  position: absolute
+  z-index: 10
+  top: 61px
+  left: 259px
+  width: 136px
+  height: 1px
+  background: #e4a76c
+  +below(small)
+    top: auto
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+
+.about-logo
+  padding-left: 20%
+  padding-right: 20%
+  @include below(large)
+    padding-left: 10%
+    padding-right: 10%
+
+.about-logo__image
+  display: block
+  width: 100%
+  height: auto
+  margin-top: -18%
+  +below(small)
+    margin-top: 40px
+
+.about-history
+  padding-bottom: 18%
+  margin-top: 109px
+  margin-bottom: 50px
+  +above(large)
+    margin-left: 20%
+  +below(small)
+    margin-top: 50px
+
+.about-history__item
+  position: relative
+  margin-left: 37.5%
+  & + .about-history__item
+    margin-top: 52px
+  +below(large)
+    margin-left: 33.5%
+  +below(small)
+    margin-left: 0
+
++above(small)
+  .about-history__item:first-child .about-history__itemYear
+    left: -208px
+    top: 8px
+  .about-history__item:first-child .about-history__itemYear::before
+    left: -102px
+    top: 0
+
+.about-history__itemYear
+  position: absolute
+  width: 103px
+  left: -168px
+  top: 2px
+  +below(small)
+    position: relative
+    top: auto
+    left: auto
+    margin-bottom: 15px
+
+.about-history__itemYear span
+  color: #ffffff
+  font-size: 36px
+  line-height: 1.5
+  letter-spacing: 0.05em
+  font-weight: boldx
+  text-align: center
+  background: #e4a76c
+  display: block
+  position: relative
+  z-index: 20
+  padding-bottom: 19px
+  +below(small)
+    padding-bottom: 0
+
+.about-history__itemYear::before
+  content: ''
+  position: absolute
+  z-index: 15
+  left: -16px
+  top: 120px
+  width: 136px
+  height: 1px
+  background: #e4a76c
+  +below(small)
+    top: auto
+    left: auto
+    right: -102px
+    bottom: 0
+
+.about-history__itemYear::after
+  content: ''
+  position: absolute
+  z-index: 10
+  right: -24px
+  top: -20px
+  width: 81px
+  height: 93px
+  background: #3d4251 url('../img/bg-stripe-gray.png')
+  +below(small)
+    height: 74px
+
+.about-history__itemText
+  font-size: 18px
+  line-height: 1.444
+  color: rgba(255, 255, 255, .71)
+  p
+    margin: 0
+  +below(small)
+    font-size: 16px
+    line-height: 1.25
+
+.about-projects
+  position: relative
+  z-index: 20
+  margin-top: -18%
+  margin-bottom: 258px
+  @include above(large)
+    margin-left: 20%
+    margin-right: 20%
+  +below(small)
+    margin-bottom: 172px
+
+.about-projects::after
+  content: ''
+  position: absolute
+  right: 6px
+  top: calc(100% + 44px)
+  width: 11px
+  height: 11px
+  background: #445275
+  border-radius: 50%
+  box-shadow: 0 43px 0 #445275, 0 86px 0 #445275, 0 129px 0 #445275, 0 172px 0 #445275
+  +below(small)
+    box-shadow: 0 43px 0 #445275, 0 86px 0 #445275
+
+.about-projects::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 100%
+
+.about-projects__item
+  position: absolute
+  width: 20%
+  left: 0
+  top: 0
+  overflow: hidden
+  transition-property: visibility, opacity, transform
+  transition-timing-function: ease
+  transition-duration: .4s
+
+.about-projects__item:hover
+  .about-projects__itemMagnify
+    opacity: 1
+  .about-projects__itemImage
+    opacity: .6
+    transform: scale(1.1) translate(-50%, -50%)
+
+.about-projects__item::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 75%
+
+.about-projects__itemImage
+  @include pouring-image
+  transition: 1s ease-out
+  transition-property: transform, opacity
+
+.about-projects__itemMagnify
+  @include absolute-centering
+  opacity: 0
+  transition: .5s ease-out
+  transition-property: opacity
+
+.about-projects__item:nth-child(5n-4)
+  width: 33.33%
+  left: 66.66%
+  top: 75%
+
+.about-projects__item:nth-child(5n-3)
+  width: 33.33%
+  left: 0
+  top: 50%
+
+.about-projects__item:nth-child(5n-2)
+  width: 33.33%
+  left: 33.33%
+  top: 50%
+
+.about-projects__item:nth-child(5n-1)
+  width: 33.33%
+  left: 0
+  top: 25%
+
+.about-projects__item:nth-child(5n)
+  width: 66.66%
+  left: 33.33%
+  top: 0
+
+.about-projects__more
+  position: absolute
+  width: 33.33%
+  left: 66.66%
+  top: 50%
+  +below(small)
+    left: 0
+    width: 66.66%
+    top: 75%
+
+.about-projects__more::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 75%
+  +below(small)
+    padding-bottom: 37.5%
+
+.about-projects__moreButton
+  display: block
+  position: absolute
+  border: 2px solid #ff8a00
+  border-radius: 24px
+  line-height: 44px
+  text-align: center
+  width: 244px
+  max-width: 94%
+  color: #ff8a00
+  letter-spacing: 0.05em
+  background-color: transparent
+  font-size: 16px
+  text-decoration: none
+  text-transform: uppercase
+  transition: .3s ease
+  transition-property: color, background-color
+  +above(large)
+    left: calc(100% + 14px)
+    top: 50%
+    transform: translateY(-50%)
+  +below(large)
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+  +below(small)
+    font-size: 12px
+    line-height: 36px
+  &:hover
+    color: #ffffff
+    background-color: #ff8a00
+    i
+      width: 25px
+      box-shadow: -1px -1px 0 rgba(185, 91, 0, 0.8)
+
+.about-projects__moreButton i
+  display: inline-block
+  vertical-align: middle
+  margin-left: 14px
+  position: relative
+  height: 1px
+  width: 20px
+  background: currentColor
+  transition: .3s ease
+  transition-property: box-shadow, width
+  &::before
+    content: ''
+    position: absolute
+    right: 0
+    top: -2px
+    width: 0
+    height: 0
+    border-bottom: 2px solid currentColor
+    border-right: 5px solid transparent
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    bottom: -2px
+    width: 0
+    height: 0
+    border-top: 2px solid currentColor
+    border-right: 5px solid transparent
