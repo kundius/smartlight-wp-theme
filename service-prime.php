@@ -30,28 +30,36 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             <?php endif; ?>
           </div>
           
-          <form class="service-prime-order">
+          <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="service-prime-order js-form">
+            <div class="service-prime-order__success">
+              Ваше сообщение<br /> успешно отправлено!
+            </div>
             <div class="service-prime-order__title">Заказать бесплатную консультацию</div>
             <div class="service-prime-order__rowField">
-              <input type='text' name='name' placeholder='Введите Ваше имя' class="service-prime-order__input" />
+              <input type='text' name='your-name' placeholder='Введите Ваше имя' class="service-prime-order__input" />
             </div>
             <div class="service-prime-order__rowField">
-              <input type='tel' name='phone' placeholder='Введите Ваш телефон**' class="service-prime-order__input" />
+              <span class="wpcf7-form-control-wrap your-phone">
+                <input type='tel' name='your-phone' placeholder='Введите Ваш телефон*' class="service-prime-order__input" />
+              </span>
             </div>
             <div class="service-prime-order__rowSubmit">
-              <button class="ui-button-primary service-prime-order__submit" type='submit'>
-                <span>
-                  Отправить
-                  <span class="ui-arrow-right service-prime-order__submitArrow"></span>
-                </span>
-              </button>
+              <input type="hidden" name="referrer" value="<?php the_title() ?>">
+              <span class="wpcf7-form-control-wrap submit">
+                <button class="ui-button-primary service-prime-order__submit" type='submit'>
+                  <span>
+                    Отправить
+                    <span class="ui-arrow-right service-prime-order__submitArrow"></span>
+                  </span>
+                </button>
+              </span>
             </div>
             <div class="service-prime-order__rowRules">
               <label class="rules-field">
                 <input type='checkbox' name='rules' value='1' class="rules-field__input" />
                 <span class="rules-field__checkbox"></span>
                 <span class="rules-field__text">
-                  Прочитал(-а) <a href='#' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='#' target='_blank'>Политикой обработки персональных данных</a>
+                  Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
                 </span>
               </label>
             </div>
