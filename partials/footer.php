@@ -164,7 +164,7 @@
   <div class="modal__body">
     <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="modal-form js-form">
       <div class="modal-form__success">
-        Ваше сообщение успешно отправлено!
+        Ваше сообщение<br /> успешно отправлено!
       </div>
       <div class="modal-form__body">
         <div class="modal-form__row">

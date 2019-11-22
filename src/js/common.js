@@ -497,26 +497,11 @@ document.querySelectorAll('.js-form').forEach(function(form) {
 
       if (response.status == 'acceptance_missing' || response.status == 'mail_failed') {
         showError(form.querySelector('.wpcf7-form-control-wrap.submit'), response.message)
-        // notifier.warning(response.message)
       }
 
       if (response.status == 'validation_failed') {
         forEach(response.invalidFields, field => {
           showError(form.querySelector(field.into), field.message)
-          // const el = form.querySelector(field.into)
-          // el.classList.add('_validation-error')
-          // const message = document.createElement('span')
-          // message.classList.add('ui-form-error')
-          // message.innerHTML = field.message
-          // el.appendChild(message)
-          // messages.push(message)
-          // const close = document.createElement('span')
-          // close.classList.add('ui-form-error__close')
-          // message.appendChild(close)
-          // close.addEventListener('click', e => {
-          //   e.stopPropagation()
-          //   message.parentNode.removeChild(message)
-          // })
         })
       }
     })
