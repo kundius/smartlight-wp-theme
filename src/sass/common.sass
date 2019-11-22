@@ -1821,6 +1821,8 @@ svg
 .block-feedback__formFields
   padding-left: 17px
   width: 46%
+  > * + *
+    margin-top: 10px
   @media (max-width: $breakpoint-small-max)
     width: 100%
     order: 1
@@ -1876,8 +1878,6 @@ svg
   padding: 0 18px
   border-radius: 0
   width: 100%
-  & + .block-feedback__input
-    margin-top: 10px
   @media (max-width: $breakpoint-small-max)
     min-height: 48px
 
