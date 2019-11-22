@@ -124,6 +124,64 @@ svg
 .wrapper
   overflow: hidden
 
+
+.wpcf7-form-control-wrap
+  position: relative
+  display: inline-block
+  width: 100%
+
+.ui-form-error
+  border-radius: 2px
+  padding: 16px 20px
+  background-color: #f9152e
+  letter-spacing: -0.005em
+  font-size: 14px
+  line-height: 1
+  color: #fff
+  position: absolute
+  right: 0
+  top: calc(100% + 5px)
+  width: 200px
+  z-index: 120
+  &::after
+    content: ''
+    right: 10px
+    top: -10px
+    position: absolute
+    border-top: 0
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    border-bottom: 10px solid #f9152e
+
+.ui-form-error__close
+  color: #fff
+  position: absolute
+  right: 5px
+  top: 5px
+  width: 12px
+  height: 12px
+  cursor: pointer
+  &::before
+    content: ''
+    width: 10px
+    height: 2px
+    background: currentColor
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%) rotate(-45deg)
+  &::after
+    content: ''
+    width: 10px
+    height: 2px
+    background: currentColor
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%) rotate(45deg)
+  &:hover
+    background-color: rgba(0,0,0,.2)
+
 .ui-slider-nav
   width: 64px
   height: 64px

@@ -474,7 +474,7 @@ document.querySelectorAll('.js-form').forEach(function(form) {
       if (response.status == 'mail_sent') {
         form.reset()
         form.classList.add('_validation-mail_sent')
-        notifier.success(response.message)
+        // notifier.success(response.message)
         setTimeout(() => {
           form.classList.remove('_validation-mail_sent')
         }, 5000)

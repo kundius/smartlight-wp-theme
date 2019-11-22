@@ -171,7 +171,7 @@
       </div>
       <div class="modal-form__row">
         <span class="wpcf7-form-control-wrap your-email">
-          <input type='email' name='your-email' placeholder='E-mail*' class="ui-input" required />
+          <input type='email' name='your-email' placeholder='E-mail*' class="ui-input" />
         </span>
       </div>
       <div class="modal-form__row">
@@ -179,7 +179,7 @@
       </div>
       <div class="modal-form__row">
         <label class="rules-field">
-          <input type='checkbox' name='rules' value='1' class="rules-field__input" required />
+          <input type='checkbox' name='rules' value='1' class="rules-field__input" />
           <span class="rules-field__checkbox"></span>
           <span class="rules-field__text">
             Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
