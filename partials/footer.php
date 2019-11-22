@@ -163,39 +163,44 @@
   <div class="modal__title">Обратная связь</div>
   <div class="modal__body">
     <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="modal-form js-form">
-      <div class="modal-form__row">
-        <input type='text' name='your-name' placeholder='Имя' class="ui-input" />
+      <div class="modal-form__success">
+        Ваше сообщение успешно отправлено!
       </div>
-      <div class="modal-form__row">
-        <input type='tel' name='your-phone' placeholder='Телефон' class="ui-input" />
-      </div>
-      <div class="modal-form__row">
-        <span class="wpcf7-form-control-wrap your-email">
-          <input type='email' name='your-email' placeholder='E-mail*' class="ui-input" />
-        </span>
-      </div>
-      <div class="modal-form__row">
-        <textarea name='your-message' placeholder='Сообщение' class="ui-textarea"></textarea>
-      </div>
-      <div class="modal-form__row">
-        <label class="rules-field">
-          <input type='checkbox' name='rules' value='1' class="rules-field__input" />
-          <span class="rules-field__checkbox"></span>
-          <span class="rules-field__text">
-            Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
+      <div class="modal-form__body">
+        <div class="modal-form__row">
+          <input type='text' name='your-name' placeholder='Имя' class="ui-input" />
+        </div>
+        <div class="modal-form__row">
+          <input type='tel' name='your-phone' placeholder='Телефон' class="ui-input" />
+        </div>
+        <div class="modal-form__row">
+          <span class="wpcf7-form-control-wrap your-email">
+            <input type='email' name='your-email' placeholder='E-mail*' class="ui-input" />
           </span>
-        </label>
-      </div>
-      <div class="modal-form__row">
-        <input type="hidden" name="referrer" value="<?php the_title() ?>">
-        <span class="wpcf7-form-control-wrap submit">
-          <button class="ui-button-primary modal-form__submit" type='submit'>
-            <span>
-              Отправить
-              <span class="ui-arrow-right"></span>
+        </div>
+        <div class="modal-form__row">
+          <textarea name='your-message' placeholder='Сообщение' class="ui-textarea"></textarea>
+        </div>
+        <div class="modal-form__row">
+          <label class="rules-field">
+            <input type='checkbox' name='rules' value='1' class="rules-field__input" />
+            <span class="rules-field__checkbox"></span>
+            <span class="rules-field__text">
+              Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
             </span>
-          </button>
-        </span>
+          </label>
+        </div>
+        <div class="modal-form__row">
+          <input type="hidden" name="referrer" value="<?php the_title() ?>">
+          <span class="wpcf7-form-control-wrap submit">
+            <button class="ui-button-primary modal-form__submit" type='submit'>
+              <span>
+                Отправить
+                <span class="ui-arrow-right"></span>
+              </span>
+            </button>
+          </span>
+        </div>
       </div>
     </form>
   </div>
