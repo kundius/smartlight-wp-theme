@@ -46,28 +46,36 @@ global $post;
             <?php endif; ?>
           </div>
 
-          <form class="charlie-order">
+          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="charlie-order js-form">
+            <div class="charlie-order__success">
+              Ваше сообщение<br /> успешно отправлено!
+            </div>
             <div class="charlie-order__title">Заказать бесплатный дизайн-проект</div>
             <div class="charlie-order__rowField">
-              <input type='text' name='name' placeholder='Имя' class="charlie-order__input" />
+              <input type='text' name='your-name' placeholder='Имя' class="charlie-order__input" />
             </div>
             <div class="charlie-order__rowField">
-              <input type='tel' name='phone' placeholder='Телефон*' class="charlie-order__input" />
+              <span class="wpcf7-form-control-wrap your-phone">
+                <input type='tel' name='your-phone' placeholder='Телефон*' class="charlie-order__input" />
+              </span>
             </div>
             <div class="charlie-order__rowSubmit">
-              <button class="ui-button-primary charlie-order__submit" type='submit'>
-                <span>
-                  Отправить
-                  <span class="ui-arrow-right charlie-order__submitArrow"></span>
-                </span>
-              </button>
+              <input type="hidden" name="referrer" value="<?php the_title() ?>">
+              <span class="wpcf7-form-control-wrap submit">
+                <button class="ui-button-primary charlie-order__submit" type='submit'>
+                  <span>
+                    Отправить
+                    <span class="ui-arrow-right charlie-order__submitArrow"></span>
+                  </span>
+                </button>
+              </span>
             </div>
             <div class="charlie-order__rowRules">
               <label class="rules-field">
                 <input type='checkbox' name='rules' value='1' class="rules-field__input" />
                 <span class="rules-field__checkbox"></span>
                 <span class="rules-field__text">
-                  Прочитал(-а) <a href='#' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='#' target='_blank'>Политикой обработки персональных данных</a>
+                  Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
                 </span>
               </label>
             </div>

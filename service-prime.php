@@ -30,7 +30,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             <?php endif; ?>
           </div>
           
-          <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="service-prime-order js-form">
+          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="service-prime-order js-form">
             <div class="service-prime-order__success">
               Ваше сообщение<br /> успешно отправлено!
             </div>
