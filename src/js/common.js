@@ -465,13 +465,12 @@ document.querySelectorAll('.js-form').forEach(function(form) {
     })
     messages = []
 
-    const request = new XMLHttpRequest()
-    request.open('POST', form.action, true)
-    request.addEventListener('readystatechange', function() {
-      if (this.readyState != 4) return
-
-      const response = JSON.parse(request.response)
-
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(response => {
       if (response.status == 'mail_sent') {
         form.reset()
         form.classList.add('_validation-mail_sent')
@@ -482,11 +481,11 @@ document.querySelectorAll('.js-form').forEach(function(form) {
       }
 
       if (response.status == 'acceptance_missing') {
-        notifier.warning(response.message)
+        // notifier.warning(response.message)
       }
 
       if (response.status == 'mail_failed') {
-        notifier.alert(response.message)
+        // notifier.alert(response.message)
       }
 
       if (response.status == 'validation_failed') {
@@ -494,12 +493,12 @@ document.querySelectorAll('.js-form').forEach(function(form) {
           const el = form.querySelector(field.into)
           el.classList.add('_validation-error')
           const message = document.createElement('span')
-          message.classList.add('form-error')
+          message.classList.add('ui-form-error')
           message.innerHTML = field.message
           el.appendChild(message)
           messages.push(message)
           const close = document.createElement('span')
-          close.classList.add('form-error__close')
+          close.classList.add('ui-form-error__close')
           message.appendChild(close)
           close.addEventListener('click', () => {
             message.parentNode.removeChild(message)
@@ -507,6 +506,5 @@ document.querySelectorAll('.js-form').forEach(function(form) {
         })
       }
     })
-    request.send(new FormData(form))
   })
 })
