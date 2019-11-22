@@ -65,7 +65,7 @@ $projects = new WP_Query(array(
             <?php $wp_query = $projects ?>
             <?php while($projects->have_posts()): $projects->the_post(); ?>
             <div class="projects-list__cell">
-              <div class="projects-item">
+              <div class="projects-item" data-project="<?php echo get_the_ID() ?>">
                 <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), 'large')): ?>
                 <img class="projects-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>" loading="lazy">
                 <?php else: ?>

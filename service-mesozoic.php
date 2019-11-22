@@ -23,7 +23,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
               <?php the_field('intro_title') ?>
               <small><?php the_field('intro_description') ?></small>
             </div>
-            <button class="mesozoic-intro__button"><span>Заказать консультацию</span></button>
+            <button class="mesozoic-intro__button" data-modal="#feedback"><span>Заказать консультацию</span></button>
             <?php if ($advantages = get_field('intro_advantages')): ?>
             <ul class="mesozoic-intro__advantages">
               <?php foreach ($advantages as $item): ?>
@@ -201,7 +201,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
               </div>
               <div class="mesozoic-arsenal__contentRight">
                 <?php the_field('arsenal_content_right') ?>
-                <button class="ui-button-primary mesozoic-arsenal__contentButton"><span>Заказать консультацию</span></button>
+                <button class="ui-button-primary mesozoic-arsenal__contentButton" data-modal="#feedback"><span>Заказать консультацию</span></button>
               </div>
             </div>
           </div>
@@ -231,7 +231,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
                 <div class="service-objects__grid js-slider-wrapper">
                   <?php foreach ($portfolio_list as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
                   <div class="service-objects__cell js-slider-item">
-                    <div class="service-objects__item">
+                    <div class="service-objects__item" data-project="<?php echo $item->ID ?>">
                       <img class="service-objects__itemImage" src="<?php echo $image ?>" alt='' />
                       <span class="service-objects__itemMagnify">
                         <a href="<?php echo $image ?>" class="ui-magnify-button">

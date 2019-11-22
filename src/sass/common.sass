@@ -1823,6 +1823,9 @@ svg
   @media (max-width: $breakpoint-small-max)
     min-height: 48px
 
+.block-feedback__submit
+  width: 100%
+
 .block-feedback__submit:hover .block-feedback__submitArrow
   width: 24px
 
@@ -3520,3 +3523,128 @@ svg
   position: absolute
   right: 15px
   top: 15px
+
+.modal
+  position: fixed
+  visibility: hidden
+  opacity: 0
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%) scale(.9)
+  z-index: 200
+  background: #fff
+  padding: 50px 70px
+  width: 460px
+  box-shadow: 0 0 8px rgba(0, 0, 0, .6)
+  transition: all ease .3s
+  &._opened
+    transform: translate(-50%, -50%) scale(1)
+    visibility: visible
+    opacity: 1
+
+.modal__close
+  position: absolute
+  right: 5px
+  top: 5px
+  width: 48px
+  height: 48px
+  background: none
+  border: none
+  padding: 0
+  cursor: pointer
+  &::before
+    content: ''
+    width: 40%
+    height: 2px
+    position: absolute
+    left: 50%
+    top: 50%
+    background: #b6b6b6
+    transform: rotate(-45deg) translate(-50%, -50%)
+    transform-origin: 0 0
+  &::after
+    content: ''
+    width: 40%
+    height: 2px
+    position: absolute
+    left: 50%
+    top: 50%
+    background: #b6b6b6
+    transform: rotate(45deg) translate(-50%, -50%)
+    transform-origin: 0 0
+  &:hover
+    background: rgba(0, 0, 0, .2)
+    &::before
+      background: #ffffff
+    &::after
+      background: #ffffff
+
+.modal__title
+  font-size: 24px
+  letter-spacing: -0.5px
+  line-height: 1
+  color: #000000
+  font-family: $font-family-alt
+  font-weight: bold
+  text-align: center
+  position: relative
+  text-transform: uppercase
+  padding-bottom: 12px
+  margin-bottom: 20px
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    height: 5px
+    width: 40px
+    background: #ff8a00
+
+.modal__body
+
+.modal-form
+
+.modal-form__row
+  margin: 10px 0
+
+.modal-form__submit
+  width: 100%
+  margin-top: 10px
+  &:hover .ui-arrow-right
+    width: 24px
+  
+.ui-input
+  border: 4px solid #bebebe
+  background: #ffffff
+  font-size: 14px
+  color: #505661
+  min-height: 56px
+  padding: 0 18px
+  border-radius: 0
+  width: 100%
+  &:focus
+    border-color: #ffcb15
+
+.ui-textarea
+  border: 4px solid #bebebe
+  background: #ffffff
+  font-size: 14px
+  color: #505661
+  padding: 18px
+  border-radius: 0
+  width: 100%
+  &:focus
+    border-color: #ffcb15
+
+
+// .block-feedback__textarea
+//   border: 4px solid #bebebe
+//   background: #ffffff
+//   font-size: 14px
+//   color: #505661
+//   min-height: 100%
+//   padding: 18px
+//   border-radius: 0
+//   width: 100%
+//   display: block

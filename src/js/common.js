@@ -5,7 +5,8 @@ import share from 'share-buttons'
 import 'whatwg-fetch'
 
 
-const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+const isVisible = elem => !!elem && !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length )
+// const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
 
 
 const easing = {
@@ -422,6 +423,30 @@ forEach(document.querySelectorAll('[data-project]'), function(button) {
       })
     })
   })
+})
+
+
+forEach(document.querySelectorAll('[data-modal]'), function(button) {
+  let modal = document.querySelector(button.dataset.modal)
+  let close = modal.querySelector('.js-modal-close')
+  const outsideClickListener = event => {
+    if (!modal.contains(event.target) && isVisible(modal) && !button.contains(event.target)) {
+      hide()
+      removeClickListener()
+    }
+  }
+  const removeClickListener = () => {
+    document.removeEventListener('click', outsideClickListener)
+  }
+  const show = () => {
+    modal.classList.add('_opened')
+    document.addEventListener('click', outsideClickListener)
+  }
+  const hide = () => {
+    modal.classList.remove('_opened')
+  }
+  button.addEventListener('click', show)
+  close.addEventListener('click', hide)
 })
 
 

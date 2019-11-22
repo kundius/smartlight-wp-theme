@@ -25,7 +25,7 @@ $projects = new WP_Query(array(
         <div class="main-intro__container">
           <div class="main-intro__title">Новогодняя праздничная подсветка<br> Вашего дома</div>
           <div class="main-intro__description">под "ключ" в Москве и Московской области</div>
-          <button class="main-intro__button">
+          <button class="main-intro__button" data-modal="#calculation">
             <span>Заказать расчет</span>
           </button>
         </div>

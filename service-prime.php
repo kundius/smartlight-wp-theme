@@ -64,7 +64,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
                 <div class="simple-slideshow__items">
                   <div class="simple-slideshow__slider js-slider-wrapper">
                     <?php foreach ($projects_small as $item): ?>
-                    <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="simple-slideshow__item js-slider-item">
+                    <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="simple-slideshow__item js-slider-item" data-project="<?php echo $item->ID ?>">
                       <img class="simple-slideshow__image" src="<?php echo get_the_post_thumbnail_url($item->ID, 'w480h480') ?>" alt="<?php echo $item->post_title ?>" loading="lazy">
                       <span class="ui-magnify-button simple-slideshow__magnify">
                         <span class="ui-magnify-button__arrow" ></span>
@@ -143,7 +143,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             <div class="principles-section__resultsText">
               <?php the_field('principles_description') ?>
             </div>
-            <button class="ui-button-primary principles-section__resultsOrder"><span>Заказать консультацию</span></button>
+            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#feedback"><span>Заказать консультацию</span></button>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
                 <div class="service-objects__grid js-slider-wrapper">
                   <?php foreach ($projects_large as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
                   <div class="service-objects__cell js-slider-item">
-                    <div class="service-objects__item">
+                    <div class="service-objects__item" data-project="<?php echo $item->ID ?>">
                       <img class="service-objects__itemImage" src="<?php echo $image ?>" alt='' />
                       <span class="service-objects__itemMagnify">
                         <a href="<?php echo $image ?>" class="ui-magnify-button">

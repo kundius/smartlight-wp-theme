@@ -130,11 +130,11 @@ $flatMenu = fn($menu, 'root', null);
         'theme_location' => 'headermenu'
       ]) ?>
 
-      <button class="header__callback">
+      <button class="header__callback" data-modal="#callback">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
       </button>
 
-      <button class="header__feedback">
+      <button class="header__feedback" data-modal="#feedback">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
       </button>
       
@@ -160,9 +160,9 @@ $flatMenu = fn($menu, 'root', null);
 
       <button class="header__scrollup js-scroll"><span></span></button>
 
-      <div class="header__sitemap">
+      <a href="<?php the_permalink(367) ?>" class="header__sitemap">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#sitemap' /></svg>
-      </div>
+      </a>
   </div>
 </div>
 <div class="header__placeholder"></div>
