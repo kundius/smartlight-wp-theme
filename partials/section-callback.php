@@ -3,27 +3,35 @@
     <div class="s-callback-wall">
       <div class="s-callback-wall__title">Заказать Обратный&nbsp;звонок</div>
       <div class="s-callback-wall__description">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
-      <form class="s-callback-form">
-        <div class="s-callback-form__rowField">
-          <input type='text' name='name' placeholder='Имя' class="s-callback-form__input" />
+      <form action="/wp-json/contact-form-7/v1/contact-forms/370/feedback" method="post" class="s-callback-form js-form">
+        <div class="s-callback-form__success">
+          Ваше сообщение<br /> успешно отправлено!
         </div>
         <div class="s-callback-form__rowField">
-          <input type='tel' name='phone' placeholder='Телефон*' class="s-callback-form__input" />
+          <input type='text' name='your-name' placeholder='Имя' class="s-callback-form__input" />
+        </div>
+        <div class="s-callback-form__rowField">
+          <span class="wpcf7-form-control-wrap your-phone">
+            <input type='tel' name='your-phone' placeholder='Телефон*' class="s-callback-form__input" />
+          </span>
         </div>
         <div class="s-callback-form__rowSubmit">
-          <button class="ui-button-primary s-callback-form__submit" type='submit'>
-            <span>
-              Отправить
-              <span class="ui-arrow-right s-callback-form__submitArrow"></span>
-            </span>
-          </button>
+          <input type="hidden" name="referrer" value="<?php the_title() ?>">
+          <span class="wpcf7-form-control-wrap submit">
+            <button class="ui-button-primary s-callback-form__submit" type='submit'>
+              <span>
+                Отправить
+                <span class="ui-arrow-right s-callback-form__submitArrow"></span>
+              </span>
+            </button>
+          </span>
         </div>
         <div class="s-callback-form__rowRules">
           <label class="rules-field">
             <input type='checkbox' name='rules' value='1' class="rules-field__input" />
             <span class="rules-field__checkbox"></span>
             <span class="rules-field__text">
-              Прочитал(-а) <a href='#' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='#' target='_blank'>Политикой обработки персональных данных</a>
+              Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
             </span>
           </label>
         </div>
