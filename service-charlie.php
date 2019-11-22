@@ -48,7 +48,7 @@ global $post;
 
           <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="charlie-order js-form">
             <div class="charlie-order__success">
-              Ваше сообщение<br /> успешно отправлено!
+              Ваше сообщение успешно отправлено!
             </div>
             <div class="charlie-order__title">Заказать бесплатный дизайн-проект</div>
             <div class="charlie-order__rowField">

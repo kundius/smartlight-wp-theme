@@ -32,7 +32,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
           
           <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="service-prime-order js-form">
             <div class="service-prime-order__success">
-              Ваше сообщение<br /> успешно отправлено!
+              Ваше сообщение успешно отправлено!
             </div>
             <div class="service-prime-order__title">Заказать бесплатную консультацию</div>
             <div class="service-prime-order__rowField">

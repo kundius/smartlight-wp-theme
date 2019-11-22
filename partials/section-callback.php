@@ -5,7 +5,7 @@
       <div class="s-callback-wall__description">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
       <form action="/wp-json/contact-form-7/v1/contact-forms/370/feedback" method="post" class="s-callback-form js-form">
         <div class="s-callback-form__success">
-          Ваше сообщение<br /> успешно отправлено!
+          Ваше сообщение успешно отправлено!
         </div>
         <div class="s-callback-form__rowField">
           <input type='text' name='your-name' placeholder='Имя' class="s-callback-form__input" />
