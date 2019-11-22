@@ -48,29 +48,34 @@
         </div>
       </div>
       <div class="section-contacts__feedback">
-        <form class="block-feedback">
+        <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="block-feedback js-form">
           <div class="block-feedback__formFields">
-            <input type='text' name='name' placeholder='Имя' class="block-feedback__input" />
-            <input type='email' name='email' placeholder='E-mail' class="block-feedback__input" />
-            <input type='tel' name='phone' placeholder='Телефон*' class="block-feedback__input" />
+            <input type='text' name='your-name' placeholder='Имя' class="block-feedback__input" />
+            <input type='email' name='your-email' placeholder='E-mail' class="block-feedback__input" />
+            <span class="wpcf7-form-control-wrap your-phone">
+              <input type='tel' name='your-phone' placeholder='Телефон*' class="block-feedback__input" />
+            </span>
           </div>
           <div class="block-feedback__formMessage">
-            <textarea name='message' placeholder='Текст сообщение' class="block-feedback__textarea"></textarea>
+            <textarea name='your-message' placeholder='Текст сообщение' class="block-feedback__textarea"></textarea>
           </div>
           <div class="block-feedback__formSubmit">
-            <button class="ui-button-primary block-feedback__submit" type='submit'>
-              <span>
-                Отправить
-                <span class="ui-arrow-right block-feedback__submitArrow"></span>
-              </span>
-            </button>
+            <input type="hidden" name="referrer" value="<?php the_title() ?>">
+            <span class="wpcf7-form-control-wrap submit">
+              <button class="ui-button-primary block-feedback__submit" type='submit'>
+                <span>
+                  Отправить
+                  <span class="ui-arrow-right block-feedback__submitArrow"></span>
+                </span>
+              </button>
+            </span>
           </div>
           <div class="block-feedback__formRules">
             <label class="rules-field">
               <input type='checkbox' name='rules' value='1' class="rules-field__input" />
               <span class="rules-field__checkbox"></span>
               <span class="rules-field__text">
-                Прочитал(-а) <a href='#' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='#' target='_blank'>Политикой обработки персональных данных</a>
+                Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
               </span>
             </label>
           </div>

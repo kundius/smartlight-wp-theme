@@ -181,12 +181,12 @@
           <input type='text' name='your-name' placeholder='Имя' class="ui-input" />
         </div>
         <div class="modal-form__row">
-          <input type='tel' name='your-phone' placeholder='Телефон' class="ui-input" />
+          <span class="wpcf7-form-control-wrap your-phone">
+            <input type='tel' name='your-phone' placeholder='Телефон*' class="ui-input" />
+          </span>
         </div>
         <div class="modal-form__row">
-          <span class="wpcf7-form-control-wrap your-email">
-            <input type='email' name='your-email' placeholder='E-mail*' class="ui-input" />
-          </span>
+          <input type='email' name='your-email' placeholder='E-mail' class="ui-input" />
         </div>
         <div class="modal-form__row">
           <textarea name='your-message' placeholder='Сообщение' class="ui-textarea"></textarea>
