@@ -224,7 +224,7 @@ global $post;
       <div class="mesozoic-arsenal js-slider">
         <div class="container">
           <div class="mesozoic-arsenal__wrapper">
-            <div class="mesozoic-arsenal__title"><?php the_field('arsenal_title') ?></div>
+            <div class="mesozoic-arsenal__title"><?php the_field('ng_arsenal_title', 'option') ?></div>
             <div class="mesozoic-arsenal__slider">
               <button class="ui-slider-nav mesozoic-arsenal__sliderPrev" data-slider-control="previous">
                 <span class="ui-arrow-left"></span>
@@ -234,14 +234,8 @@ global $post;
               </button>
               <div class="mesozoic-arsenal__sliderItems">
                 <div class="mesozoic-arsenal__grid js-slider-wrapper">
-
-                  <?php
-                    $list = get_field('arsenal_list');
-                    if (empty($list)) {
-                      $list = get_field('arsenal_list', 214);
-                    }
-                  ?>
-                  <?php foreach ($list as $item): ?>
+                
+                  <?php foreach (get_field('ng_arsenal_list', 'option') as $item): ?>
                   <div class="mesozoic-arsenal__cell js-slider-item">
                     <div class="mesozoic-arsenal-item">
                       <div class="mesozoic-arsenal-item__box js-cube">
@@ -272,10 +266,10 @@ global $post;
             </div>
             <div class="mesozoic-arsenal__content">
               <div class="mesozoic-arsenal__contentLeft">
-                <?php the_field('arsenal_content_left') ?>
+                <?php the_field('ng_arsenal_content_left', 'option') ?>
               </div>
               <div class="mesozoic-arsenal__contentRight">
-                <?php the_field('arsenal_content_right') ?>
+                <?php the_field('ng_arsenal_content_right', 'option') ?>
                 <button class="ui-button-primary mesozoic-arsenal__contentButton" data-modal="#feedback"><span>Заказать консультацию</span></button>
               </div>
             </div>
