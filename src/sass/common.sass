@@ -1813,10 +1813,30 @@ svg
   margin-left: -17px
   display: flex
   flex-wrap: wrap
+  &._validation-mail_sent
+    > *
+      opacity: 0
+      &.block-feedback__success
+        opacity: 1
   @media (max-width: $breakpoint-small-max)
     max-width: 297px
     margin-left: auto
     margin-right: auto
+
+.block-feedback__success
+  display: none
+  font-size: 24px
+  line-height: 1
+  color: #ffffff
+  font-family: $font-family-alt
+  font-weight: 600
+  position: absolute
+  width: 100%
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  ._validation-mail_sent &
+    display: block
 
 .block-feedback__formFields
   padding-left: 17px

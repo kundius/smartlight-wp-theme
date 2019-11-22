@@ -49,6 +49,9 @@
       </div>
       <div class="section-contacts__feedback">
         <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="block-feedback js-form">
+          <div class="block-feedback__success">
+            Ваше сообщение<br /> успешно отправлено!
+          </div>
           <div class="block-feedback__formFields">
             <input type='text' name='your-name' placeholder='Имя' class="block-feedback__input" />
             <input type='email' name='your-email' placeholder='E-mail' class="block-feedback__input" />
