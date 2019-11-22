@@ -471,38 +471,52 @@ document.querySelectorAll('.js-form').forEach(function(form) {
     })
     .then(response => response.json())
     .then(response => {
+      const showError = (el, text) => {
+        el.classList.add('_validation-error')
+        const message = document.createElement('span')
+        message.classList.add('ui-form-error')
+        message.innerHTML = text
+        messages.push(message)
+        el.appendChild(message)
+        const close = document.createElement('span')
+        close.classList.add('ui-form-error__close')
+        message.appendChild(close)
+        close.addEventListener('click', e => {
+          e.stopPropagation()
+          message.parentNode.removeChild(message)
+        })
+      }
+
       if (response.status == 'mail_sent') {
         form.reset()
         form.classList.add('_validation-mail_sent')
-        // notifier.success(response.message)
         setTimeout(() => {
           form.classList.remove('_validation-mail_sent')
         }, 5000)
       }
 
-      if (response.status == 'acceptance_missing') {
+      if (response.status == 'acceptance_missing' || response.status == 'mail_failed') {
+        showError(form.querySelector('.wpcf7-form-control-wrap.submit'), response.message)
         // notifier.warning(response.message)
-      }
-
-      if (response.status == 'mail_failed') {
-        // notifier.alert(response.message)
       }
 
       if (response.status == 'validation_failed') {
         forEach(response.invalidFields, field => {
-          const el = form.querySelector(field.into)
-          el.classList.add('_validation-error')
-          const message = document.createElement('span')
-          message.classList.add('ui-form-error')
-          message.innerHTML = field.message
-          el.appendChild(message)
-          messages.push(message)
-          const close = document.createElement('span')
-          close.classList.add('ui-form-error__close')
-          message.appendChild(close)
-          close.addEventListener('click', () => {
-            message.parentNode.removeChild(message)
-          })
+          showError(form.querySelector(field.into), field.message)
+          // const el = form.querySelector(field.into)
+          // el.classList.add('_validation-error')
+          // const message = document.createElement('span')
+          // message.classList.add('ui-form-error')
+          // message.innerHTML = field.message
+          // el.appendChild(message)
+          // messages.push(message)
+          // const close = document.createElement('span')
+          // close.classList.add('ui-form-error__close')
+          // message.appendChild(close)
+          // close.addEventListener('click', e => {
+          //   e.stopPropagation()
+          //   message.parentNode.removeChild(message)
+          // })
         })
       }
     })

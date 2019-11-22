@@ -188,12 +188,14 @@
       </div>
       <div class="modal-form__row">
         <input type="hidden" name="referrer" value="<?php the_title() ?>">
-        <button class="ui-button-primary modal-form__submit" type='submit'>
-          <span>
-            Отправить
-            <span class="ui-arrow-right"></span>
-          </span>
-        </button>
+        <span class="wpcf7-form-control-wrap submit">
+          <button class="ui-button-primary modal-form__submit" type='submit'>
+            <span>
+              Отправить
+              <span class="ui-arrow-right"></span>
+            </span>
+          </button>
+        </span>
       </div>
     </form>
   </div>
