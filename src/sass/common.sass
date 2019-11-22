@@ -3707,6 +3707,10 @@ svg
 
 .modal-form
   position: relative
+  &._validation-mail_sent > *
+    opacity: 0
+    &.modal-form__success
+      opacity: 1
 
 .modal-form__row
   margin: 10px 0
@@ -3731,10 +3735,6 @@ svg
   transform: translate(-50%, -50%)
   ._validation-mail_sent &
     display: block
-
-.modal-form__body
-  ._validation-mail_sent &
-    opacity: 0
 
 .ui-input
   border: 4px solid #bebebe
