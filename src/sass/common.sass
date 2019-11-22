@@ -3586,6 +3586,7 @@ svg
   position: fixed
   visibility: hidden
   opacity: 0
+  max-width: 100%
   top: 50%
   left: 50%
   transform: translate(-50%, -50%) scale(.9)
@@ -3595,6 +3596,8 @@ svg
   width: 460px
   box-shadow: 0 0 8px rgba(0, 0, 0, .6)
   transition: all ease .3s
+  +below(small)
+    padding: 40px 20px
   &._opened
     transform: translate(-50%, -50%) scale(1)
     visibility: visible
