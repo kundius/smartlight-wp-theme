@@ -1,6 +1,8 @@
 import svg4everybody from 'svg4everybody'
 import forEach from 'lodash/forEach'
 import throttle from 'lodash/throttle'
+import share from 'share-buttons'
+import 'whatwg-fetch'
 
 
 const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
@@ -275,6 +277,149 @@ forEach(document.querySelectorAll('.js-scroll'), function(el) {
       top, 
       left, 
       behavior: 'smooth'
+    })
+  })
+})
+
+
+forEach(document.querySelectorAll('.js-masonry-grid'), function(grid) {
+  for (let i = 0; i < grid.children.length; i++) {
+    let item = grid.children[i]
+    let paddingTop = parseInt(window.getComputedStyle(item).getPropertyValue('padding-top'))
+    let found = null
+    for (let k = 0; k < i; k++) {
+      if (grid.children[k].offsetLeft === item.offsetLeft) {
+        found = grid.children[k]
+      }
+    }
+    if (found) {
+      let cellHeight = found.getBoundingClientRect().height
+      let contentHeight = found.children[0].getBoundingClientRect().height
+      if (contentHeight < cellHeight) {
+        item.style.marginTop = `-${cellHeight - contentHeight - paddingTop}px`
+      }
+    }
+  }
+})
+
+
+forEach(document.querySelectorAll('.js-sticky-action'), function(el) {
+  let close = el.querySelector('.js-sticky-action-close')
+  close.addEventListener('click', () => {
+    el.classList.add('_hidden')
+  })
+})
+
+
+forEach(document.querySelectorAll('.js-cube'), function(cube) {
+  let offset = cube.offsetWidth * 0.82 / 2
+  let front = cube.querySelector('.js-cube-front')
+  let back = cube.querySelector('.js-cube-back')
+
+  cube.style.transform = `translateZ(-${offset}px)`
+  front.style.transform = `translateZ(${offset}px)`
+  back.style.transform = `translateY(-${offset}px) rotateX(90deg)`
+
+  cube.addEventListener('mouseenter', () => {
+    cube.style.transform = `rotateX(-90deg) translateY(${offset}px)`
+  })
+  cube.addEventListener('mouseleave', () => {
+    cube.style.transform = `translateZ(-${offset}px)`
+  })
+})
+
+
+forEach(document.querySelectorAll('[data-project]'), function(button) {
+  let id = button.dataset.project
+  let action = 'get_project'
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    let modal = document.createElement('div')
+    modal.classList.add('modal-project')
+    let overlay = document.createElement('div')
+    overlay.classList.add('modal-project__overlay')
+    let close = document.createElement('button')
+    close.classList.add('modal-project__close')
+    let body = document.createElement('div')
+    body.classList.add('modal-project__body')
+    let details = document.createElement('div')
+    details.classList.add('project-details')
+    let gallery = document.createElement('div')
+    gallery.classList.add('project-details__gallery')
+    let info = document.createElement('div')
+    info.classList.add('project-details__info')
+    let title = document.createElement('div')
+    title.classList.add('project-details__title')
+    let desc = document.createElement('div')
+    desc.classList.add('project-details__desc')
+    let image = document.createElement('img')
+    image.classList.add('project-details__image')
+    let prev = document.createElement('button')
+    prev.classList.add('ui-slider-nav', 'ui-slider-nav_small', 'project-details__previous')
+    let prevArrow = document.createElement('span')
+    prevArrow.classList.add('ui-arrow-left')
+    let next = document.createElement('button')
+    next.classList.add('ui-slider-nav', 'ui-slider-nav_small', 'project-details__next')
+    let nextArrow = document.createElement('span')
+    nextArrow.classList.add('ui-arrow-right')
+
+    next.appendChild(nextArrow)
+    prev.appendChild(prevArrow)
+    info.appendChild(title)
+    info.appendChild(desc)
+    gallery.appendChild(image)
+    gallery.appendChild(prev)
+    gallery.appendChild(next)
+    details.appendChild(gallery)
+    details.appendChild(info)
+    body.appendChild(details)
+    modal.appendChild(overlay)
+    modal.appendChild(close)
+    modal.appendChild(body)
+
+    let active = 0
+
+    document.body.appendChild(modal)
+    close.addEventListener('click', () => {
+      modal.parentElement.removeChild(modal)
+    })
+    overlay.addEventListener('click', () => {
+      modal.parentElement.removeChild(modal)
+    })
+
+    const show = url => {
+      let img = document.createElement('img')
+      body.classList.add('modal-project__body_loading')
+      img.onload = () => {
+        image.src = url
+        body.classList.remove('modal-project__body_loading')
+      }
+      img.src = url
+    }
+
+    let formData = new FormData()
+    formData.append('id', id)
+    formData.append('action', action)
+    fetch(myajax.url, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log(json)
+      title.innerHTML = json.post.post_title
+      desc.innerHTML = json.post.post_excerpt
+      image.src = json.gallery[active].url
+      prev.addEventListener('click', () => {
+        active = (active - 1 + json.gallery.length) % json.gallery.length
+        show(json.gallery[active].url)
+      })
+      next.addEventListener('click', () => {
+        active = (active + 1) % json.gallery.length
+        show(json.gallery[active].url)
+      })
     })
   })
 })

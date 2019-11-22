@@ -2,70 +2,13 @@
 /*
 Template Name: Главная
 */
-$actions = [[
-  'date' => 'до 30 ноября 2019',
-  'title' => 'При заказе от 50 м гирлянд',
-  'description' => '2х-канальный пульт в подарок'
-], [
-  'date' => 'до 30 ноября 2019',
-  'title' => 'При заказе от 50 м гирлянд 2',
-  'description' => '2х-канальный пульт в подарок'
-], [
-  'date' => 'до 30 ноября 2019',
-  'title' => 'При заказе от 50 м гирлянд 3',
-  'description' => '2х-канальный пульт в подарок'
-], [
-  'date' => 'до 30 ноября 2019',
-  'title' => 'При заказе от 50 м гирлянд 4',
-  'description' => '2х-канальный пульт в подарок'
-]];
-$projects = [
-  [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ], [
-    'image' => 'https://via.placeholder.com/1000'
-  ]
-];
+wp_enqueue_script('theme_main', get_template_directory_uri() . '/dist/main.js', ['theme_common'], false, true);
+
+global $wp_query;
+$projects = new WP_Query(array(
+  'post_type' => 'project',
+  'posts_per_page' => 30,
+));
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -95,7 +38,7 @@ $projects = [
               <div class="ui-width-1-2@m"></div>
               <div class="ui-width-1-2 ui-width-1-4@m">
                 <div class="main-services__primary">
-                  <a href="/" class="main-services-primary">
+                  <a href="<?php the_permalink(341) ?>" class="main-services-primary">
                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/cottage-lighting.jpg" alt="Освещение коттеджей" class="main-services-primary__image" />
                     <span class="main-services-primary__placeholder"></span>
                     <span class="main-services-primary__inner">
@@ -111,7 +54,7 @@ $projects = [
               </div>
               <div class="ui-width-1-2 ui-width-1-4@m">
                 <div class="main-services__primary">
-                  <a href="/" class="main-services-primary">
+                  <a href="<?php the_permalink(287) ?>" class="main-services-primary">
                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/office-lighting.jpg" alt="Освещение зданий и ТЦ" class="main-services-primary__image" />
                     <span class="main-services-primary__placeholder"></span>
                     <span class="main-services-primary__inner">
@@ -127,43 +70,31 @@ $projects = [
               </div>
               <div class="ui-width-1-4@m">
                 <div class="ui-visible@m">
+                  <?php if ($projects_small = get_field('projects_small')): ?>
                   <div class="main-services-projects js-slider">
                     <div class="main-services-projects__items">
                       <div class="main-services-projects__slider js-slider-wrapper">
-                        <a href="#" class="main-services-projects__item js-slider-item">
+                        <?php foreach ($projects_small as $item): ?>
+                        <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="main-services-projects__item js-slider-item" data-project="<?php echo $item->ID ?>">
                           <span class="main-services-projects__image">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/office-lighting.jpg" alt="Полесье, 2018 название в 2 строки текст смещается" />
+                            <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'w480h480') ?>" alt="" />
                           </span>
                           <span class="main-services-projects__magnify">
                             <span class="ui-magnify-button">
-                              <span class="ui-magnify-button__arrow" ></span>
+                              <span class="ui-magnify-button__arrow"></span>
                               <span class="ui-magnify-button__text">Увеличить</span>
                             </span>
                           </span>
                           <span class="main-services-projects__info">
-                            <span class="main-services-projects__title">Полесье, 2018 название в 2 строки текст смещается</span>
-                            <span class="main-services-projects__description">Новогоднее освещение коттеджа и дворовой территории</span>
+                            <span class="main-services-projects__title"><?php echo $item->post_title ?></span>
+                            <span class="main-services-projects__description"><?php echo $item->post_excerpt ?></span>
                           </span>
                         </a>
-                        <a href="#" class="main-services-projects__item js-slider-item">
-                          <span class="main-services-projects__image">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/cottage-lighting.jpg" alt="Полесье, 2018 название в 2 строки текст смещается" />
-                          </span>
-                          <span class="main-services-projects__magnify">
-                            <span class="ui-magnify-button">
-                              <span class="ui-magnify-button__arrow" ></span>
-                              <span class="ui-magnify-button__text">Увеличить</span>
-                            </span>
-                          </span>
-                          <span class="main-services-projects__info">
-                            <span class="main-services-projects__title">Полесье, 2018 название в 2 строки текст смещается</span>
-                            <span class="main-services-projects__description">Новогоднее освещение коттеджа и дворовой территории</span>
-                          </span>
-                        </a>
+                        <?php endforeach; ?>
                       </div>
                     </div>
                     <span class="main-services-projects__more">
-                      <a href="#" class="ui-more-button">
+                      <a href="<?php the_permalink(39) ?>" class="ui-more-button">
                         <span class="ui-more-button__arrow"></span>
                         <span class="ui-more-button__text">Смотреть больше</span>
                       </a>
@@ -173,33 +104,36 @@ $projects = [
                       <button class="main-services-projects__next" data-slider-control="next"></button>
                     </div>
                   </div>
+                  <?php endif; ?>
                 </div>
               </div>
               <div class="ui-width-3-4@m">
                 <div class="ui-grid">
                   <div class="ui-width-2-3@m">
-                    <div class="main-actions-slider js-slider">
-                      <div class="main-actions-slider__slider">
-                        <div class="main-actions-slider__items js-slider-wrapper">
+                    <?php if ($actions = get_field('actions_slider', 'option')): ?>
+                    <div class="actions-slider js-slider">
+                      <div class="actions-slider__slider">
+                        <div class="actions-slider__items js-slider-wrapper">
                           <?php foreach ($actions as $action): ?>
-                            <a href="<?php echo $action['href'] ?>" class="main-actions-slider__item js-slider-item">
-                              <span class="main-actions-slider__date"><?php echo $action['date'] ?></span>
-                              <span class="main-actions-slider__title"><?php echo $action['title'] ?></span>
-                              <span class="main-actions-slider__description"><?php echo $action['description'] ?></span>
+                            <a href="<?php echo $action['href'] ?>" class="actions-slider__item js-slider-item">
+                              <span class="actions-slider__date"><?php echo $action['date'] ?></span>
+                              <span class="actions-slider__title"><?php echo $action['title'] ?></span>
+                              <span class="actions-slider__description"><?php echo $action['description'] ?></span>
                             </a>
                           <?php endforeach; ?>
                         </div>
                       </div>
-                      <div class="main-actions-slider__dots">
+                      <div class="actions-slider__dots">
                         <?php foreach ($actions as $key => $action): ?>
-                          <button class="main-actions-slider__dot" data-slider-control="<?php echo $key ?>"></button>
+                          <button class="actions-slider__dot" data-slider-control="<?php echo $key ?>"></button>
                         <?php endforeach; ?>
                       </div>
                     </div>
+                    <?php endif; ?>
                   </div>
                   <div class="ui-width-1-2 ui-width-1-3@m">
-                    <a href="#" class="main-special-offer">
-                      <span class="main-special-offer__text">Выезд для замера и оценки в день обращения</span>
+                    <a href="#" class="block-special-offer">
+                      <span class="block-special-offer__text">Выезд для замера и оценки в день обращения</span>
                     </a>
                   </div>
                   <div class="ui-width-1-2 ui-width-1-3@m">
@@ -307,6 +241,7 @@ $projects = [
             </div>
           </div>
 
+          <?php if ($projects->have_posts()): ?>
           <div class="main-projects js-main-projects">
             <div class="main-projects__headline">
               <div class="main-projects__title">Выполненные проекты</div>
@@ -319,18 +254,17 @@ $projects = [
               </div>
             </div>
             <div class="main-projects__items">
-              <?php foreach ($projects as $project): ?>
-                <div class="main-projects__item js-main-projects-item">
-                  <img class="main-projects__itemImage" src="<?php echo $project['image'] ?>" alt='' />
-                  <span class="main-projects__itemMagnify">
-                    <span class="ui-magnify-button">
-                      <span class="ui-magnify-button__arrow"></span>
-                    </span>
-                  </span>
-                </div>
-              <?php endforeach; ?>
+              <?php while($projects->have_posts()): $projects->the_post(); ?>
+              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" class="main-projects__item js-main-projects-item" data-project="<?php echo get_the_ID() ?>">
+                <img class="main-projects__itemImage" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt='' />
+                <span class="ui-magnify-button main-projects__itemMagnify">
+                  <span class="ui-magnify-button__arrow"></span>
+                </span>
+              </a>
+              <?php endwhile; ?>
             </div>
           </div>
+          <?php endif; wp_reset_query(); ?>
 
         </div>
       </div>
@@ -384,7 +318,6 @@ $projects = [
       </div>
 
       <?php get_template_part('partials/section-contacts'); ?>
-
       <?php get_template_part('partials/footer'); ?>
     </div>
   </body>

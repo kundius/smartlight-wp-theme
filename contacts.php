@@ -2,6 +2,7 @@
 /*
 Template Name: Контакты
 */
+wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contacts.js', ['theme_common'], false, true);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -98,7 +99,13 @@ Template Name: Контакты
                       <textarea name='message' placeholder='Текст сообщение' class="contacts-form__textarea"></textarea>
                     </div>
                     <div class="contacts-form__row contacts-form__row_rules">
-                      <RulesField />
+                      <label class="rules-field">
+                        <input type='checkbox' name='rules' value='1' class="rules-field__input" />
+                        <span class="rules-field__checkbox"></span>
+                        <span class="rules-field__text">
+                          Прочитал(-а) <a href='#' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='#' target='_blank'>Политикой обработки персональных данных</a>
+                        </span>
+                      </label>
                     </div>
                     <div class="contacts-form__rowSubmit">
                       <button class="ui-button-primary contacts-form__submit" type='submit'>

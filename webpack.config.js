@@ -29,6 +29,18 @@ module.exports = {
       articles: [
         PATHS.source + 'sass/articles.sass',
       ],
+      article: [
+        PATHS.source + 'sass/article.sass',
+      ],
+      servicePrime: [
+        PATHS.source + 'sass/servicePrime.sass'
+      ],
+      serviceMesozoic: [
+        PATHS.source + 'sass/serviceMesozoic.sass'
+      ],
+      serviceCharlie: [
+        PATHS.source + 'sass/serviceCharlie.sass'
+      ],
       common: [
         PATHS.source + 'js/common.js',
         PATHS.source + 'sass/common.sass',

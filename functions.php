@@ -1,4 +1,5 @@
 <?php
+
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
@@ -12,20 +13,13 @@ add_post_type_support( 'page', 'excerpt' );
 
 add_action('after_setup_theme', function() {
 	register_nav_menus([
-		'mainmenu' => 'Основное меню',
-		'aboutmenu' => 'Меню о компании',
+		'headermenu' => 'Меню в шапке',
 		'sitemap' => 'Карта сайта'
 	]);
 });
 
 add_theme_support('post-thumbnails', array('post', 'page', 'project'));
-// add_image_size('w150h100', 150, 100, true);
-// add_image_size('w468h364', 468, 364, true);
-// add_image_size('w468h500', 468, 500, true);
-// add_image_size('w800h600', 800, 600, true);
-// add_image_size('w800h480', 800, 480, true);
-// add_image_size('w560h308', 560, 308, false);
-// add_image_size('w400h400', 400, 400, true);
+add_image_size('w480h480', 480, 480, true);
 
 // function srcset($image, $wh) {
 // 	$wh = !empty($wh) ? $wh : ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
@@ -144,6 +138,7 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 	}
 }
 
+
 add_shortcode('sitemap', function($atts) {
 	if (!has_nav_menu('sitemap')) return;
 
@@ -169,6 +164,7 @@ add_shortcode('sitemap', function($atts) {
 	return $output;
 });
 
+
 add_action('init', function() {
 	register_taxonomy('project_category', ['project'], array(
 		'label' => '',
@@ -192,6 +188,7 @@ add_action('init', function() {
 		'meta_box_cb' => 'post_categories_meta_box'
 	));
 });
+
 
 add_action('init', function() {
 	register_post_type('project', array(
@@ -217,9 +214,11 @@ add_action('init', function() {
 	));
 });
 
+
 add_action('init', function() {
 	register_taxonomy_for_object_type('project_category', 'project');
 });
+
 
 // function be_register_blocks() {
 //     if( ! function_exists('acf_register_block') )
@@ -310,15 +309,32 @@ function seo() {
 	}
 }
 
-add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
-function my_navigation_template( $template, $class ){
-	/*
-	Вид базового шаблона:
-	<nav class="navigation %1$s" role="navigation">
-		<h2 class="screen-reader-text">%2$s</h2>
-		<div class="nav-links">%3$s</div>
-	</nav>
-	*/
 
+add_filter('navigation_markup_template', function ($template, $class) {
 	return '<nav class="%1$s" role="navigation">%3$s</nav>';
+}, 10, 2);
+
+
+add_action('wp_enqueue_scripts', function () {
+	wp_deregister_script('jquery');
+	wp_enqueue_script('theme_common', get_template_directory_uri() . '/dist/common.js', [], false, true);
+
+	wp_localize_script('theme_common', 'myajax', [
+		'url' => admin_url('admin-ajax.php')
+	]);  
+}, 99);
+
+
+add_action('wp_ajax_get_project', 'ajax_get_project', 10, 2);
+add_action('wp_ajax_nopriv_get_project', 'ajax_get_project', 10, 2);
+function ajax_get_project() {
+	$id = intval($_REQUEST['id']);
+	$post = get_post($id, 'ARRAY_A');
+	$gallery = get_field('gallery', $id);
+	echo json_encode([
+		'post' => $post,
+		'gallery' => $gallery
+	]);
+
+	wp_die();
 }

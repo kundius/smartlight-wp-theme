@@ -1,0 +1,683 @@
+.service-prime-section
+  background-color: #152344
+  background-repeat: no-repeat
+  background-position: 50% 0
+  overflow: hidden
+  +below(medium)
+    background-size: calc(100% + 75vw) auto
+  +below(small)
+    background-size: calc(100% + 150vw) auto
+
+.service-prime-intro
+  margin-top: 8.15%
+  margin-bottom: 4.15%
+
+.service-prime-intro__title
+  font-size: 60px
+  line-height: 1.1
+  letter-spacing: 0.01em
+  font-weight: 500
+  color: #ffffff
+  text-align: center
+  font-family: $font-family-alt
+  margin-bottom: 48px
+  span
+    background-color: rgba(0, 0, 0, 0.4)
+  small
+    display: inline-block
+    font-size: 24px
+    letter-spacing: 0.025em
+    font-weight: 300
+    background-color: rgba(0, 0, 0, 0.4)
+  +below(medium)
+    font-size: adaptive(22px, 61px, $breakpoint-xsmall, $breakpoint-medium)
+    margin-bottom: adaptive(18px, 71px, $breakpoint-xsmall, $breakpoint-medium)
+    letter-spacing: 0
+    small
+      font-size: adaptive(16px, 35px, $breakpoint-xsmall, $breakpoint-medium)
+      margin-top: adaptive(8px, 28px, $breakpoint-xsmall, $breakpoint-medium)
+
+.service-prime-intro__advantages
+  padding: 9px 12px 4px
+  background-color: rgba(0, 0, 0, 0.4)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 0 auto
+  width: 1000px
+  max-width: 100%
+  +below(medium)
+    margin-top: adaptive(42px, 68px, $breakpoint-small, $breakpoint-medium)
+  +below(small)
+    max-width: 100vw
+    flex-wrap: wrap
+    padding: 10px 20px
+    margin-left: -20px
+    margin-right: -20px
+
+.service-prime-intro__advantages li
+  color: #e4c9a9
+  font-size: 18px
+  line-height: 1.111
+  letter-spacing: 0.05em
+  padding-left: 22px
+  position: relative
+  +below(medium)
+    font-size: 16px
+    padding-left: 0
+    padding-top: 22px
+    text-align: center
+  +below(small)
+    text-align: left
+    width: 100%
+    padding-left: 22px
+    padding-top: 0
+    margin: 6px 0
+
+.service-prime-intro__advantages li::after
+  content: ''
+  position: absolute
+  left: 0
+  margin-top: -3px
+  top: 50%
+  width: 12px
+  height: 8px
+  border-left: 3px solid #9b9da2
+  border-bottom: 3px solid #9b9da2
+  transform: rotate(-45deg) translateY(-50%)
+  +below(medium)
+    top: 0
+    left: 50%
+    transform: translateX(-50%) rotate(-45deg)
+  +below(small)
+    left: 0
+    transform: rotate(-45deg)
+    top: 6px
+
+.service-prime-order
+  background-color: rgba(62, 72, 96, 0.8)
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.11)
+  display: flex
+  padding: 24px 100px 25px 100px
+  flex-wrap: wrap
+  margin: 0 auto
+  width: 1000px
+  max-width: 100%
+  position: relative
+  +below(medium)
+    padding-left: 20px
+    padding-right: 20px
+    padding-top: 19px
+  +below(small)
+    margin: 0 -20px
+    max-width: 100vw
+
+.service-prime-order__title
+  text-align: center
+  width: 100%
+  font-weight: 600
+  color: #ffe090
+  font-size: 24px
+  line-height: 1
+  letter-spacing: 0.075em
+  text-transform: uppercase
+  font-family: $font-family-alt
+  margin-bottom: 17px
+  padding-bottom: 9px
+  position: relative
+  &::after
+    content: ''
+    width: 40px
+    height: 5px
+    background: #ff8a00
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+  +below(small)
+    margin-bottom: 10px
+    font-size: 20px
+
+.service-prime-order__rowField
+  width: 36%
+  padding-left: 11px
+  +below(medium)
+    width: 50%
+    order: 10
+  +below(small)
+    width: 100%
+    margin-top: 11px
+
+.service-prime-order__rowSubmit
+  width: 28%
+  padding-left: 16px
+  +below(medium)
+    width: 50%
+    order: 30
+    margin-top: 11px
+  +below(small)
+    width: 100%
+
+.service-prime-order__rowRules
+  width: 100%
+  padding-left: 11px
+  margin-top: 11px
+  color: #7e8798
+  +below(medium)
+    width: 50%
+    order: 20
+  +below(small)
+    width: 100%
+
+.service-prime-order__input
+  border: 2px solid rgb(97, 102, 124)
+  background: rgba(97, 97, 97, 0.259)
+  font-size: 16px
+  color: #c2d0eb
+  min-height: 48px
+  padding: 0 22px
+  border-radius: 4px
+  width: 100%
+  &::placeholder
+    color: #c2d0eb
+  &:focus
+    border-color: rgb(255, 203, 22)
+    background-color: rgb(255, 255, 255)
+
+.service-prime-order__submit
+  margin-top: -3px
+  margin-bottom: -3px
+  width: 100%
+
+.service-prime-order__submit:hover .service-prime-order__submitArrow
+  width: 24px
+
+.service-prime-order__submitArrow
+  margin-left: 14px
+
+.service-prime-actions
+  display: flex
+  flex-wrap: wrap
+  margin-top: 69px
+  position: relative
+  z-index: 20
+  +below(xlarge)
+    font-size: adaptive(12px, $font-size, $breakpoint-medium, $breakpoint-xlarge)
+  +below(medium)
+    font-size: 100%
+  +below(small)
+    font-size: calc(calc(100vw / 768) * 18)
+    margin-top: 0
+    margin-left: -20px
+    margin-right: -20px
+  @media (max-width: $breakpoint-xsmall-max * 0.5)
+    font-size: 50%
+
+.service-prime-actions__projects
+  width: 25%
+  +below(medium)
+    width: 50%
+    order: 2
+
+.service-prime-actions__actions
+  width: 50%
+  +below(medium)
+    width: 100%
+    order: 1
+
+.service-prime-actions__offer
+  width: 25%
+  +below(medium)
+    width: 50%
+    order: 3
+
+.service-prime-about
+  padding-top: 113px
+  padding-bottom: 25px
+  +below(medium)
+    padding-top: 60px
+  +below(small)
+    padding-bottom: px2em(40)
+
+.service-prime-about__title
+  font-size: 48px
+  color: #ffffff
+  line-height: 1
+  font-weight: 600
+  letter-spacing: 0.05em
+  position: relative
+  font-family: $font-family-alt
+  padding-bottom: 40px
+  margin-bottom: 16px
+  +below(medium)
+    padding-bottom: 20px
+    margin-bottom: 40px
+    font-size: 32px
+  +below(small)
+    font-size: 24px
+
+.service-prime-about__title::after
+  content: ''
+  position: absolute
+  height: 1px
+  width: 136px
+  background: #e2a66c
+  left: 510px
+  bottom: 0
+  +below(medium)
+    left: 50%
+    transform: translateX(-50%)
+
+.service-prime-about__title::before
+  content: ''
+  position: absolute
+  left: 504px
+  top: -115px
+  width: 625px
+  height: 198px
+  background: url('../img/bg-stripe-gray.png')
+  +below(medium)
+    right: -26px
+    top: -37px
+    width: 295px
+    height: 98px
+    left: auto
+  +below(small)
+    right: -20px
+    top: -46px
+    width: 145px
+    height: 65px
+
+.service-prime-about__content
+  margin-left: 50%
+  font-size: 18px
+  color: #ffffff
+  line-height: 1.67
+  letter-spacing: 0.05em
+  * + p
+    margin-top: 30px
+  +below(medium)
+    font-size: 14px
+    margin-top: 56px
+    margin-left: 114px
+    line-height: 1.35
+  +below(small)
+    font-size: 16px
+    margin-top: 40px
+    margin-left: 0
+
+.principles-section
+  padding-top: 25px
+  padding-bottom: 63px
+  background: linear-gradient(to bottom, #152344 0, #152344 px2em(230), #1c202c px2em(230), #1c202c 100%)
+
+.principles-section__title
+  font-size: 36px
+  line-height: 1.111
+  letter-spacing: 0.09em
+  color: #ffffff
+  font-family: $font-family-alt
+  position: relative
+  margin-bottom: 47px
+  span
+    display: block
+    max-width: 600px
+  +below(medium)
+    font-size: 28px
+  +below(small)
+    font-size: 20px
+
+.principles-section__title::before
+  content: ''
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  height: 1px
+  width: 136px
+  background: #e4a76c
+  +below(medium)
+    top: auto
+    transform: translateX(-50%)
+    bottom: -17px
+
+@media (min-width: $breakpoint-small)
+  .principles-section__items
+    display: flex
+    flex-wrap: wrap
+    margin-left: px2em(-25)
+    +below(large)
+      font-size: adaptive(12px, $font-size, $breakpoint-small, $breakpoint-large)
+  .principles-section__item
+    width: 25%
+    padding-left: px2em(25)
+  .principles-section__itemNumber
+    font-size: px2em(72)
+    color: rgb(228, 167, 108)
+    font-weight: bold
+    line-height: 1
+    position: absolute
+    left: px2em(-40, 72)
+    bottom: px2em(4, 72)
+    width: px2em(40, 72)
+    text-align: center
+  .principles-section__itemIcon
+    width: px2em(150)
+    height: px2em(150)
+    position: relative
+    margin: 0 auto
+    img
+      +absolute-centering
+      display: block
+  .principles-section__itemTitle
+    font-weight: 600
+    color: #ffffff
+    text-transform: uppercase
+    font-size: px2em(20)
+    line-height: 1.3
+    letter-spacing: 0.05em
+    font-family: $font-family-alt
+    position: relative
+    margin-top: px2em(-6, 20)
+    min-height: px2em(52, 20)
+    padding-left: px2em(21, 20)
+    padding-top: px2em(3, 20)
+    padding-bottom: px2em(6, 20)
+    span
+      position: relative
+      z-index: 20
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 10
+      background-color: rgba(0, 0, 0, 0.431)
+      width: px2em(175, 20)
+      height: px2em(65, 20)
+  .principles-section__itemDescription
+    font-size: px2em(18)
+    color: #68768a
+    line-height: 1.45
+    letter-spacing: 0.025em
+    margin-top: px2em(56)
+
+@media (max-width: $breakpoint-xsmall-max)
+  .principles-section__items
+    border-top: 1px solid rgba(255, 255, 255, 0.22)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22)
+    padding-top: 10px
+    padding-bottom: 27px
+  .principles-section__item
+    margin: 3px 0
+    display: flex
+    align-items: center
+  .principles-section__itemNumber
+    font-weight: bold
+    line-height: 1
+    font-size: 36px
+    color: #e4a76c
+    letter-spacing: 0.05em
+    position: absolute
+    left: -30px
+    top: 25px
+  .principles-section__itemIcon
+    width: 60px
+    height: 60px
+    min-width: 60px
+    min-height: 60px
+    position: relative
+    margin-left: 34px
+    margin-right: 12px
+    img
+      display: block
+      @include absolute-centering
+  .principles-section__itemTitle
+    font-size: 15px
+    line-height: 1
+    letter-spacing: 0.05em
+    color: #ffffff
+  .principles-section__itemDescription
+    display: none
+
+.principles-section__results
+  display: flex
+  align-items: center
+  margin-top: 57px
+  +below(medium)
+    flex-wrap: wrap
+  +below(small)
+    margin-top: 40px
+
+.principles-section__resultsText
+  font-size: 18px
+  line-height: 1.45
+  text-align: right
+  color: #e4a76c
+  letter-spacing: 0.025em
+  +below(medium)
+    text-align: center
+    font-size: 16px
+  +below(small)
+    font-size: 14px
+    text-align: center
+
+.principles-section__resultsOrder
+  width: 300px
+  margin: 0 40px
+  +below(medium)
+    margin: 30px auto 0
+
+.planning-section
+  background: #292f3f
+  padding: 140px 0
+  +below(small)
+    padding: 60px 0
+
+.planning-section__wrapper
+  display: flex
+  flex-wrap: wrap
+  margin-left: -40px
+  margin-top: -20px
+
+.planning-section__image
+  width: 50%
+  padding-left: 40px
+  padding-top: 20px
+  img
+    display: block
+    width: 100%
+    height: auto
+  +below(medium)
+    width: 100%
+
+.planning-section__info
+  width: 50%
+  padding-left: 40px
+  padding-top: 20px
+  display: flex
+  justify-content: center
+  flex-direction: column
+  +below(medium)
+    width: 100%
+
+.planning-section__title
+  font-weight: 600
+  color: #ffffff
+  font-family: $font-family-alt
+  font-size: 36px
+  line-height: 1
+  margin-bottom: 71px
+  +below(small)
+    margin-bottom: 40px
+    font-size: 28px
+
+.planning-section__content
+  font-size: 16px
+  letter-spacing: 0.025em
+  color: #cacaca
+  line-height: 1.625
+
+.prime-types
+  background: #9a804a
+  padding-top: px2em(65)
+  padding-bottom: px2em(66)
+  position: relative
+  z-index: 50
+  +below(large)
+    font-size: adaptive(12px, $font-size, $breakpoint-small, $breakpoint-xlarge)
+  +below(medium)
+    font-size: 100%
+  +below(small)
+    padding-top: px2em(40)
+    padding-bottom: px2em(40)
+
+.prime-types__title
+  position: relative
+  color: #ffffff
+  font-family: $font-family-alt
+  font-size: px2em(36)
+  line-height: 1.111
+  letter-spacing: 0.09em
+  margin-bottom: px2em(68, 36)
+  padding-bottom: px2em(28, 36)
+  max-width: px2em(550, 36)
+  +below(small)
+    font-size: px2em(28)
+    margin-bottom: px2em(40, 28)
+    padding-bottom: px2em(20, 28)
+    max-width: px2em(550, 28)
+
+.prime-types__title::after
+  content: ''
+  width: px2em(136, 36)
+  height: 1px
+  position: absolute
+  left: 0
+  bottom: 0
+  background-color: #e4a76c
+
+.prime-types__grid
+  display: flex
+  flex-wrap: wrap
+  margin-left: px2em(-12)
+  margin-top: px2em(-12)
+  position: relative
+  z-index: 10
+
+.prime-types__grid::before
+  content: ''
+  position: absolute
+  right: px2em(-38)
+  top: px2em(-64)
+  height: px2em(200)
+  width: px2em(625)
+  background: url('../img/bg-stripe-gray.png')
+  +below(small)
+    right: px2em(-20)
+    top: px2em(-20)
+    height: px2em(98)
+    width: px2em(265)
+
+.prime-types__cell
+  width: 25%
+  padding-top: px2em(12)
+  padding-left: px2em(12)
+  position: relative
+  z-index: 20
+  &:hover
+    z-index: 30
+  &:nth-child(2n) .prime-types__itemInner
+    background: #485395
+  +below(medium)
+    width: 50%
+  +below(small)
+    width: 100%
+
+.prime-types__item
+  position: relative
+  &::before
+    content: ''
+    display: block
+    position: relative
+    width: 100%
+    padding-bottom: 80%
+  &:hover
+    .prime-types__itemInner
+      opacity: 1
+      visibility: visible
+      transform: translateY(0)
+
+.prime-types__itemImage
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 10
+  overflow: hidden
+  img
+    +pouring-image
+
+.prime-types__itemTitle
+  position: absolute
+  left: 0
+  bottom: 0
+  z-index: 20
+  color: #ffffff
+  font-family: $font-family-alt
+  font-size: px2em(20)
+  line-height: 1.2
+  padding: px2em(12, 20) px2em(20, 20)
+  background: rgba(0, 0, 0, .6)
+
+.prime-types__itemInner
+  position: absolute
+  z-index: 30
+  opacity: 0
+  visibility: hidden
+  transform: translateY(px2em(20))
+  transition: .5s ease
+  transition-property: opacity, visibility, transform
+  background: #2c3142
+  left: 0
+  width: 100%
+  top: px2em(-64)
+  padding: px2em(48) px2em(25) px2em(25)
+
+.prime-types__itemInnerTitle
+  font-size: px2em(20)
+  text-align: center
+  line-height: px2em(18, 20)
+  color: #ffffff
+  letter-spacing: 0.05em
+  position: relative
+  font-family: $font-family-alt
+  text-transform: uppercase
+  padding-bottom: px2em(13, 20)
+  margin-bottom: px2em(14, 20)
+  &::after
+    content: ''
+    width: px2em(46, 20)
+    height: 1px
+    background: #e4a76c
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+
+.prime-types__itemInnerIcon
+  display: block
+  width: px2em(124)
+  height: auto
+  margin: 0 auto px2em(17)
+  border-radius: 50%
+
+.prime-types__itemInnerDesc
+  font-size: px2em(14)
+  color: #b8b8b8
+  text-align: center
+  letter-spacing: 0.03em
+  line-height: 1.15
+  * + p
+    margin-top: px2em(15, 14)

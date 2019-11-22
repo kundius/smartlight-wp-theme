@@ -14,7 +14,9 @@
     "acorn": "^7.1.0",
     "lodash": "^4.17.15",
     "sass-resources-loader": "^2.0.1",
-    "svg4everybody": "^2.1.9"
+    "share-buttons": "^1.4.0",
+    "svg4everybody": "^2.1.9",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

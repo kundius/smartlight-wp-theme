@@ -2,6 +2,7 @@
 /*
 Template Name: О компании
 */
+wp_enqueue_script('theme_about', get_template_directory_uri() . '/dist/about.js', ['theme_common'], false, true);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -95,7 +96,6 @@ Template Name: О компании
       </div>
 
       <?php get_template_part('partials/section-contacts') ?>
-
       <?php get_template_part('partials/footer') ?>
     </div>
   </body>

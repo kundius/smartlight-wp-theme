@@ -4,53 +4,53 @@ $menu = [
   [
     'key' => 'about',
     'title' => 'О компании',
-    'href' => '/about',
+    'href' => get_the_permalink(7),
     'icon' => 'menu-about'
   ], [
     'key' => 'lighting',
     'title' => 'Освещение',
-    'href' => '/',
+    'href' => get_the_permalink(85),
     'icon' => 'menu-lighting',
     'children' => [[
       'key' => 'lighting-new-year',
       'title' => 'Новогоднее Освещение',
-      'href' => '/osveshchenie/novogodnee-osveshchenie',
+      'href' => get_the_permalink(214),
       'icon' => 'lighting-new-year'
     ], [
       'key' => 'lighting-architectural',
       'title' => 'Архитектурное Освещение',
-      'href' => '/',
+      'href' => get_the_permalink(160),
       'icon' => 'lighting-architectural'
     ], [
       'key' => 'lighting-street',
       'title' => 'Уличное Освещение',
-      'href' => '/',
+      'href' => get_the_permalink(87),
       'icon' => 'lighting-street'
     ]]
   ], [
     'key' => 'works',
     'title' => 'Наши работы',
-    'href' => '/projects',
+    'href' => get_the_permalink(39),
     'icon' => 'menu-works'
   ], [
     'key' => 'prices',
     'title' => 'Цены',
-    'href' => '/prices',
+    'href' => get_the_permalink(11),
     'icon' => 'menu-prices'
   ], [
     'key' => 'stocks',
     'title' => 'Акции',
-    'href' => '/',
+    'href' => get_the_permalink(76),
     'icon' => 'menu-stocks'
   ], [
     'key' => 'articles',
     'title' => 'Статьи',
-    'href' => '/articles',
+    'href' => get_the_permalink(45),
     'icon' => 'menu-articles'
   ], [
     'key' => 'contacts',
     'title' => 'Контакты',
-    'href' => '/contacts',
+    'href' => get_the_permalink(9),
     'icon' => 'menu-contacts'
   ]
 ];
@@ -124,27 +124,11 @@ $flatMenu = fn($menu, 'root', null);
 
       <div class="header__phone">+7 (495) 928-15-15</div>
 
-      <div class="header__menu">
-        <ul class="header-menu__list">
-          <li class="header-menu__item">
-            <a href='/osveshchenie/novogodnee-osveshchenie' class="header-menu__link">Новогоднее освещение</a>
-            <ul class="header-menu__list">
-              <li class="header-menu__item">
-                <a href='/osveshchenie/novogodnee-osveshchenie/houses' class="header-menu__link">Освещение домов, таунхаусов, коттеджей</a>
-              </li>
-              <li class="header-menu__item">
-                <a href='/osveshchenie/novogodnee-osveshchenie/buildings' class="header-menu__link">Новогоднее освещение зданий, торговых центров, жилых комплексов, павильонов</a>
-              </li>
-            </ul>
-          </li>
-          <li class="header-menu__item">
-            <a href='/' class="header-menu__link">Архитектурное освещение</a>
-          </li>
-          <li class="header-menu__item">
-            <a href='/osveshchenie/osveshchenie-uchastka' class="header-menu__link">Уличное освещение</a>
-          </li>
-        </ul>
-      </div>
+      <?php wp_nav_menu([ 
+        'container_class' => 'header__menu',
+        'menu_class' => 'header-menu__list',
+        'theme_location' => 'headermenu'
+      ]) ?>
 
       <button class="header__callback">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
@@ -157,21 +141,21 @@ $flatMenu = fn($menu, 'root', null);
       <div class="header__email">info@s-lights.ru</div>
 
       <div class="header__share">
-        <!-- <FacebookShareButton url={location}>
-            <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
-        <TwitterShareButton url={location}>
-            <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
-        <PinterestShareButton url={location} media={'#'}>
-            <PinterestIcon size={32} round={true} />
-        </PinterestShareButton>
-        <VKShareButton url={location}>
-            <VKIcon size={32} round={true} />
-        </VKShareButton>
-        <OKShareButton url={location}>
-            <OKIcon size={32} round={true} />
-        </OKShareButton> -->
+        <button class="header__shareButton" data-id="fb">
+          <?php icon('fb', .8) ?>
+        </button>
+        <button class="header__shareButton" data-id="tw">
+          <?php icon('tw', .8) ?>
+        </button>
+        <button class="header__shareButton" data-id="pi">
+          <?php icon('pi', .8) ?>
+        </button>
+        <button class="header__shareButton" data-id="vk">
+          <?php icon('vk2', .8) ?>
+        </button>
+        <button class="header__shareButton" data-id="ok">
+          <?php icon('ok2', .8) ?>
+        </button>
       </div>
 
       <button class="header__scrollup js-scroll"><span></span></button>

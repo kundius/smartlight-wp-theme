@@ -2,6 +2,8 @@
 /*
 Template Name: Проекты
 */
+wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
+
 global $wp_query;
 $projects = new WP_Query(array(
   'post_type' => 'project',
@@ -111,7 +113,6 @@ $projects = new WP_Query(array(
       </div>
 
       <?php get_template_part('partials/section-contacts') ?>
-
       <?php get_template_part('partials/footer') ?>
     </div>
   </body>

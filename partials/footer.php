@@ -109,13 +109,13 @@
         © 2006-2019, Все права защищены
       </div>
       <div class="footer-minor__rules">
-        <a href=''>Пользовательское соглашение</a>
+        <a href="<?php the_permalink(360) ?>">Пользовательское соглашение</a>
       </div>
       <div class="footer-minor__policy">
-        <a href=''>Политика конфиденциальности и обработки персональных данных</a>
+        <a href="<?php the_permalink(3) ?>">Политика конфиденциальности и обработки персональных данных</a>
       </div>
       <div class="footer-minor__couters">
-        <img src='https://via.placeholder.com/90x30' alt='' />
+        <?php the_field('counters', 'option') ?>
       </div>
       <div class="footer-minor__creator">
         <a href='http://domenart-studio.ru/' target='_blank'>
@@ -126,5 +126,4 @@
   </div>
 </div>
 
-<script src="<?php echo get_bloginfo('template_url') ?>/dist/common.js"></script>
 <?php wp_footer() ?>

@@ -1,20 +1,17 @@
 <?php
-/*
-Template Name: Статьи
-*/
-wp_enqueue_script('theme_article', get_template_directory_uri() . '/dist/article.js', ['theme_common'], false, true);
+wp_enqueue_script('theme_articles', get_template_directory_uri() . '/dist/articles.js', ['theme_common'], false, true);
 
 global $wp_query;
 
-$rubric = get_field('rubric');
+$category = get_category(get_query_var('cat'));
 
 $favorite = new WP_Query(array(
   'post_type' => 'post',
   'posts_per_page' => 2,
-	'tax_query' => !empty($rubric) ? [[
-    'taxonomy' => 'category',
-    'terms' => $rubric
-  ]] : null,
+	'tax_query' => [[
+    'taxonomy' => $category->taxonomy,
+    'terms' => [$category->term_id]
+  ]],
   'meta_query' => [[
     'key' => 'favorite',
     'value' => '1',
@@ -30,10 +27,10 @@ endwhile; wp_reset_query();
 
 $articles = new WP_Query(array(
   'post__not_in' => $exclude_ids,
-	'tax_query' => !empty($rubric) ? [[
-    'taxonomy' => 'category',
-    'terms' => $rubric
-  ]] : null,
+	'tax_query' => [[
+    'taxonomy' => $category->taxonomy,
+    'terms' => [$category->term_id]
+  ]],
   'post_type' => 'post',
   'posts_per_page' => 12,
   'paged' => get_query_var('paged') ?: 1
@@ -59,9 +56,8 @@ $types = [
           <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <?php bcn_display() ?>
           </div>
-          <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
 
-          <h1 class="articles-headline"><span><?php the_title() ?></span></h1>
+          <h1 class="articles-headline"><span><?php echo $category->name ?></span></h1>
     
           <?php if ($articles->have_posts()): ?>
           <div class="articles-list">
@@ -137,9 +133,6 @@ $types = [
 
           <?php endif; wp_reset_query(); ?>
 
-          <?php endwhile; else: ?>
-              <p>Извините, ничего не найдено.</p>
-          <?php endif; ?>
         </div>
       </div>
 

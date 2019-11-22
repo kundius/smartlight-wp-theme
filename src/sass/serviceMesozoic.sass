@@ -1,0 +1,950 @@
+.service-mesozoic-section
+  background-color: #172037
+  background-repeat: no-repeat
+  background-position: 50% 0
+  overflow: hidden
+  +below(medium)
+    background-size: calc(100% + 40vw) auto
+  +below(small)
+    background-size: calc(100% + 80vw) auto
+
+.mesozoic-intro
+  margin-top: 8.5% // 118px
+  margin-bottom: 10.25% // 142px
+
+.mesozoic-intro__title
+  font-size: 61px
+  line-height: 1
+  letter-spacing: 0.01em
+  font-weight: 500
+  color: #ffffff
+  text-align: center
+  font-family: $font-family-alt
+  margin-bottom: 71px
+  small
+    font-size: 35px
+    letter-spacing: 0.025em
+    font-weight: 300
+    display: block
+    margin-top: 28px
+  +below(medium)
+    font-size: adaptive(22px, 61px, $breakpoint-xsmall, $breakpoint-medium)
+    margin-bottom: adaptive(18px, 71px, $breakpoint-xsmall, $breakpoint-medium)
+    letter-spacing: 0
+    small
+      font-size: adaptive(16px, 35px, $breakpoint-xsmall, $breakpoint-medium)
+      margin-top: adaptive(8px, 28px, $breakpoint-xsmall, $breakpoint-medium)
+
+.mesozoic-intro__button
+  font-family: $font-family-alt
+  font-size: 24px
+  letter-spacing: 0.05em
+  line-height: 72px
+  border-radius: 36px
+  text-align: center
+  cursor: pointer
+  color: rgb(255, 255, 255)
+  font-weight: 600
+  background-color: #ff8a00
+  border: none
+  width: 387px
+  display: block
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  transition: .3s ease
+  transition-property: background-color, text-shadow
+  position: relative
+  span
+    position: relative
+    z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    transition: .3s ease
+    transition-property: border-radius, background-color, left, top, right, bottom
+    background-color: #ff8a00
+    border-radius: 36px
+    z-index: 1
+  &:hover
+    background-color: #ff7e00
+    text-shadow: -1px -1px 0px rgba(185, 91, 0, 0.8)
+    &::before
+      left: -10px
+      top: -10px
+      right: -10px
+      bottom: -10px
+      background-color: #ff7e00
+      border-radius: 46px
+  +below(medium)
+    font-size: 18px
+    line-height: 48px
+    width: 268px
+
+.mesozoic-intro__advantages
+  padding: 14px 30px 11px
+  margin: 68px auto 0
+  background-color: rgba(15, 25, 58, 0.51)
+  display: flex
+  justify-content: space-between
+  width: 970px
+  max-width: 100%
+  +below(medium)
+    margin-top: adaptive(18px, 68px, $breakpoint-xsmall, $breakpoint-medium)
+  +below(small)
+    max-width: initial
+    flex-wrap: wrap
+    padding: 15px 20px
+    margin-left: -20px
+    margin-right: -20px
+
+.mesozoic-intro__advantages li
+  color: #ccd6ed
+  font-size: 18px
+  letter-spacing: 0.05em
+  padding-left: 22px
+  position: relative
+  +below(medium)
+    font-size: 16px
+    padding-left: 0
+    padding-top: 22px
+    text-align: center
+  +below(small)
+    text-align: left
+    width: 100%
+    padding-left: 22px
+    padding-top: 0
+
+.mesozoic-intro__advantages li::before
+  content: ''
+  position: absolute
+  left: 0
+  top: 6px
+  width: 12px
+  height: 8px
+  border-left: 3px solid #9b9da2
+  border-bottom: 3px solid #9b9da2
+  transform: rotate(-45deg)
+  +below(medium)
+    top: 0
+    left: 50%
+    transform: translateX(-50%) rotate(-45deg)
+  +below(small)
+    left: 0
+    transform: rotate(-45deg)
+    top: 6px
+
+.mesozoic-categories
+  display: flex
+  flex-wrap: wrap
+  +below(large)
+    font-size: adaptive(12px, $font-size, $breakpoint-medium, $breakpoint-large)
+  +below(medium)
+    font-size: $font-size
+  +below(small)
+    font-size: 11px
+    margin-left: -20px
+    margin-right: -20px
+
+.mesozoic-categories__category
+  position: relative
+  background: #292937
+  overflow: hidden
+  display: flex
+  flex-grow: 1
+  text-decoration: none
+  color: rgb(255, 255, 255)
+  &:nth-child(2n)
+    background: #151f3f
+    margin-left: 20px
+  +below(small)
+    &:nth-child(2n)
+      margin-left: 0
+  //    margin-top: 20px
+
+.mesozoic-categories__category:hover
+  .mesozoic-categories__categoryImage img
+    opacity: 0.3
+    transform: scale(1.1) translate(-50%, -50%)
+  .mesozoic-categories__categoryIcons
+    opacity: 0
+    img:first-child
+      transform: translateX(px2em(-20)) scale(.8)
+    img:last-child
+      transform: translateX(px2em(20)) scale(.8)
+  .mesozoic-categories__categoryTitle
+    transform: scale(1.2)
+  .mesozoic-categories__categorySeparator
+    width: px2em(136)
+
+.mesozoic-categories__category::before
+  content: ''
+  display: block
+  width: 100%
+  padding-bottom: 40%
+  +below(medium)
+    padding-bottom: 80%
+
+.mesozoic-categories__categoryImage
+  width: 50%
+  height: 100%
+  overflow: hidden
+  position: absolute
+  right: 0
+  top: 0
+  +below(medium)
+    width: 100%
+
+.mesozoic-categories__categoryImage img
+  +pouring-image
+  opacity: 0.2
+  transition: 1s ease-out
+  transition-property: transform, opacity
+
+.mesozoic-categories__categoryInner
+  width: 50%
+  top: 50%
+  transform: translateY(-50%)
+  position: absolute
+  left: 0
+  +below(medium)
+    width: 100%
+
+.mesozoic-categories__categoryIcons
+  display: flex
+  align-items: center
+  justify-content: center
+  height: px2em(100)
+  margin: 0 auto
+  transition: opacity .3s ease
+  img
+    height: 100%
+    display: block
+    transition: transform .3s ease
+  +below(small)
+    height: px2em(80)
+
+.mesozoic-categories__categorySeparator
+  display: block
+  width: 0
+  height: 1px
+  background: #ff8a00
+  margin: px2em(8) auto px2em(22)
+  transition: width .5s ease
+
+.mesozoic-categories__categoryTitle
+  font-size: px2em(18)
+  font-family: $font-family-alt
+  font-weight: bold
+  line-height: 1.2
+  text-align: center
+  color: #ffffff
+  text-decoration: none
+  display: block
+  transform-origin: 50% 50%
+  transition: transform .5s ease
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+
+.mesozoic-about
+  padding: 111px 0 98px
+  +below(medium)
+    padding: 60px 0 40px
+
+.mesozoic-about__title
+  font-family: $font-family-alt
+  font-size: 48px
+  color: #ffffff
+  font-weight: 600
+  letter-spacing: 0.05em
+  line-height: 1
+  position: relative
+  small
+    font-size: 40px
+    font-weight: 300
+  span
+    position: relative
+  +below(medium)
+    font-size: 32px
+    small
+      font-size: 20px
+  +below(small)
+    font-size: 24px
+    small
+      font-size: 19px
+
+.mesozoic-about__title::before
+  content: ''
+  position: absolute
+  left: 501px
+  top: -119px
+  width: 625px
+  height: 203px
+  background: url('../img/bg-stripe-gray.png')
+  +below(medium)
+    right: -26px
+    top: -37px
+    width: 295px
+    height: 98px
+    left: auto
+  +below(small)
+    right: -20px
+    top: -46px
+    width: 145px
+    height: 65px
+
+.mesozoic-about__description
+  font-size: 18px
+  color: #ffffff
+  line-height: 1.67
+  letter-spacing: 0.05em
+  position: relative
+  margin-top: 57px
+  margin-left: 50%
+  +below(medium)
+    font-size: 14px
+    margin-left: 114px
+    line-height: 1.35
+  +below(small)
+    font-size: 16px
+    margin-left: 0
+
+.mesozoic-about__description::before
+  content: ''
+  position: absolute
+  width: 136px
+  height: 1px
+  background: #e4a76c
+  left: -182px
+  top: 20px
+  +below(medium)
+    left: 50%
+    top: -39px
+    transform: translateX(-50%)
+
+.mesozoic-about__annotation
+  font-size: 18px
+  color: #ffffff
+  line-height: 1.67
+  letter-spacing: 0.05em
+  position: relative
+  margin-left: 50%
+  +below(medium)
+    font-size: 14px
+    margin-left: 114px
+    line-height: 1.35
+  +below(small)
+    font-size: 16px
+    margin-left: 0
+
+@media (min-width: $breakpoint-small)
+  .mesozoic-about__items
+    margin-top: px2em(43)
+    margin-bottom: px2em(42)
+    border-top: 1px solid rgba(255, 255, 255, 0.22)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22)
+    padding-top: px2em(75)
+    padding-bottom: px2em(30)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    +below(large)
+      font-size: adaptive(11px, $font-size, $breakpoint-small, $breakpoint-large)
+
+  .mesozoic-about__item
+    width: 25%
+
+  .mesozoic-about__itemIcon
+    width: px2em(135)
+    height: px2em(115)
+    position: relative
+    margin: 0 auto
+    img
+      +absolute-centering
+      display: block
+
+  .mesozoic-about__itemNumber
+    font-size: px2em(72)
+    color: rgb(228, 167, 108)
+    font-weight: bold
+    line-height: 1
+    position: absolute
+    left: px2em(-50, 72)
+    bottom: px2em(20, 72)
+    width: px2em(40, 72)
+    text-align: center
+
+  .mesozoic-about__itemTitle
+    margin-top: 5px
+    color: #ffffff
+    font-size: px2em(22)
+    line-height: 1
+    text-align: center
+    text-transform: uppercase
+    min-height: px2em(44, 22)
+    display: flex
+    align-items: center
+    justify-content: center
+    letter-spacing: 0.05em
+    font-family: $font-family-alt
+
+@media (max-width: $breakpoint-xsmall-max)
+  .mesozoic-about__items
+    border-top: 1px solid rgba(255, 255, 255, 0.22)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22)
+    padding-top: 15px
+    padding-bottom: 15px
+    margin: 15px 0
+
+  .mesozoic-about__item
+    margin: 10px 0
+    display: flex
+    align-items: center
+
+  .mesozoic-about__itemNumber
+    font-weight: bold
+    line-height: 1
+    font-size: 36px
+    color: #e4a76c
+    letter-spacing: 0.05em
+    position: absolute
+    left: -30px
+    top: 25px
+
+  .mesozoic-about__itemIcon
+    width: 60px
+    height: 60px
+    position: relative
+    margin-left: 34px
+    margin-right: 12px
+    img
+      @include absolute-centering
+      display: block
+
+  .mesozoic-about__itemTitle
+    font-size: 15px
+    line-height: 1
+    letter-spacing: 0.05em
+    color: #ffffff
+
+.mesozoic-types
+  background: linear-gradient(to bottom, rgba(79,92,151,1) 0, rgba(79,92,151,1) 311px, transparent 311px, transparent 100%)
+  padding-top: 64px
+  padding-bottom: 15px
+  +below(small)
+    padding: 40px 0
+
+.mesozoic-types_novogodnee-osveshhenie-domov
+  background: #172037
+  padding: 25px 0
+
+.mesozoic-types_novogodnee-osveshhenie-domov .mesozoic-types__items::before
+  content: ''
+  position: absolute
+  z-index: 12
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background: url('../img/ng-types-bg-houses.jpg') no-repeat 50% 0
+  background-size: 100% auto
+  +below(small)
+    display: none
+
+.mesozoic-types_novogodnee-osveshhenie-domov .mesozoic-types__title::after
+  display: none
+
+.mesozoic-types_novogodnee-osveshhenie-zdanij
+  background: #172037
+  padding: 25px 0
+
+.mesozoic-types_novogodnee-osveshhenie-zdanij .mesozoic-types__items::before
+  content: ''
+  position: absolute
+  z-index: 12
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background: url('../img/ng-types-bg-buildings.jpg') no-repeat 50% 0
+  background-size: 100% auto
+  +below(small)
+    display: none
+
+.mesozoic-types_novogodnee-osveshhenie-zdanij .mesozoic-types__title::after
+  display: none
+
+.mesozoic-types__wrapper
+  position: relative
+
+.mesozoic-types__title
+  font-weight: 600
+  font-family: $font-family-alt
+  color: #ffffff
+  font-size: 36px
+  line-height: 1.111
+  letter-spacing: 0.05em
+  position: relative
+  z-index: 20
+  padding-bottom: 31px
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 136px
+    height: 1px
+    background: #e4a76c
+  +below(small)
+    font-size: 28px
+
+.mesozoic-types__items
+  padding: 49px 30px 0
+  position: relative
+  z-index: 10
+  +below(medium)
+    padding: 0
+  &::after
+    content: ''
+    position: absolute
+    right: -50px // -30px
+    top: -50px // -61px
+    width: 625px
+    height: 203px
+    z-index: 10
+    background: url('../img/bg-stripe-gray.png')
+
+.mesozoic-types__grid
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  position: relative
+  z-index: 20
+  margin-left: -80px
+  margin-top: -62px
+  +below(large)
+    margin-top: -30px
+    margin-left: -30px
+
+.mesozoic-types__cell
+  width: 33.33%
+  padding-left: 80px
+  padding-top: 62px
+  +below(large)
+    padding-left: 30px
+    padding-top: 30px
+  +below(medium)
+    width: 50%
+  +below(small)
+    width: 100%
+
+.mesozoic-types__item
+  position: relative
+
+.mesozoic-types__itemImage
+  display: block
+  width: 100%
+  margin-bottom: 36px
+  overflow: hidden
+  position: relative
+  &::before
+    content: ''
+    display: block
+    position: relative
+    width: 100%
+    padding-bottom: 80%
+  img
+    +pouring-image
+
+.mesozoic-types__itemTitle
+  font-weight: 600
+  font-family: $font-family-alt
+  font-size: 28px
+  line-height: 24px
+  color: #ff8a00
+  margin-bottom: 28px
+
+.mesozoic-types__itemDescription
+  font-size: 18px
+  color: #68768a
+  line-height: 24px
+  margin-bottom: 25px
+
+.mesozoic-types__itemMore::after
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+
+.mesozoic-types__figures
+  position: relative
+  // margin-bottom: 62px
+
+.mesozoic-types__figures::after
+  content: ''
+  width: 100%
+  display: block
+  padding-bottom: 80%
+
+.mesozoic-types__figures:hover
+  .mesozoic-types__figuresImage
+    left: -40px
+    top: -100px
+    right: -40px
+    bottom: -60px
+    img
+      opacity: 0.16
+  .mesozoic-types__figuresInner
+    opacity: 1
+    visibility: visible
+    transition: opacity .4s ease .4s
+
+.mesozoic-types__figuresImage
+  position: absolute
+  z-index: 10
+  background: #23315a
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  transition: .6s ease
+  transition-property: left, right, top, bottom
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    display: block
+    transition: opacity .6s ease
+
+.mesozoic-types__figuresInner
+  position: absolute
+  opacity: 0
+  visibility: hidden
+  z-index: 20
+  left: -40px
+  top: -100px
+  right: -40px
+  bottom: -60px
+  padding: 15%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.mesozoic-types__figuresTitle
+  font-weight: 600
+  font-family: $font-family-alt
+  font-size: 28px
+  line-height: 24px
+  color: #ff8a00
+
+.mesozoic-types__figuresDescription
+  font-size: 18px
+  color: #68768a
+  line-height: 24px
+
+.mesozoic-types__figuresMore::after
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+
+.mesozoic-videos
+  padding-bottom: 50px
+  background: #172037
+  padding-top: 50px
+
+.mesozoic-arsenal
+  position: relative
+  padding-top: 79px
+  padding-bottom: 75px
+  background: linear-gradient(to bottom, #172037 0, #172037 367px, #1c202c 367px, #1c202c 100%)
+  +below(small)
+    padding: 40px 0
+
+.mesozoic-arsenal__wrapper
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    right: -50px
+    top: -40px
+    width: 453px
+    height: 274px
+    background: url('/images/bg-stripe-gray.png')
+
+.mesozoic-arsenal__title
+  color: #ffffff
+  font-size: 36px
+  line-height: 1.111
+  letter-spacing: 0.095em
+  font-family: $font-family-alt
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    width: 136px
+    height: 1px
+    left: 50%
+    transform: translateX(-50%)
+    background: #e4a76c
+    bottom: 30px
+  +below(small)
+    font-size: 24px
+    letter-spacing: 0
+    &::before
+      bottom: 0
+      left: initial
+      transform: none
+      right: 0
+
+.mesozoic-arsenal__content
+  display: flex
+  flex-wrap: wrap
+  margin-left: -60px
+  color: #68768a
+  font-size: 18px
+  font-weight: 400
+  line-height: 1.444
+  letter-spacing: 0.45px
+  margin-top: 52px
+  +below(small)
+    margin-top: 30px
+    font-size: 16px
+
+.mesozoic-arsenal__content * + p
+  margin: 26px 0 0
+
+.mesozoic-arsenal__content * + ul
+  padding: 0
+  margin: 35px 0 0
+  list-style: none
+
+.mesozoic-arsenal__content ul li
+  padding-left: 32px
+  position: relative
+  margin: 14px 0
+  line-height: 1.25
+
+.mesozoic-arsenal__content ul li::before
+  content: ''
+  position: absolute
+  left: 0
+  top: 6px
+  width: 15px
+  height: 11px
+  border-left: 5px solid #9b9da2
+  border-bottom: 5px solid #9b9da2
+  transform: rotate(-45deg)
+
+.mesozoic-arsenal__contentLeft
+  padding-left: 60px
+  width: 50%
+  +below(medium)
+    width: 100%
+
+.mesozoic-arsenal__contentRight
+  padding-left: 60px
+  width: 50%
+  em
+    color: #e4a76c
+  +below(medium)
+    width: 100%
+
+.mesozoic-arsenal__contentButton
+  width: 300px
+  max-width: 100%
+  margin-top: 40px
+
+.mesozoic-arsenal__slider
+  margin-top: 38px
+  position: relative
+  +below(small)
+    margin-top: 15px
+
+.mesozoic-arsenal__sliderItems
+  overflow: hidden
+  position: relative
+  z-index: 1
+
+.mesozoic-arsenal__sliderPrev
+  position: absolute !important
+  right: 68px
+  top: -68px
+  z-index: 20
+  +below(small)
+    right: auto
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+
+.mesozoic-arsenal__sliderNext
+  position: absolute !important
+  right: 0
+  top: -68px
+  z-index: 20
+  +below(small)
+    top: 50%
+    transform: translateY(-50%)
+
+.mesozoic-arsenal__grid
+  display: flex
+  margin-left: -12px
+
+.mesozoic-arsenal__cell
+  width: 25%
+  padding-left: 12px
+  flex: none
+  +below(large)
+    width: 33.33%
+  +below(medium)
+    width: 50%
+  +below(small)
+    width: 100%
+
+.mesozoic-arsenal-item
+  perspective: 800px
+
+.mesozoic-arsenal-item__box
+  width: 100%
+  position: relative
+  transform-style: preserve-3d
+  transition: transform .5s ease
+  padding-bottom: 82%
+  will-change: transform
+
+.mesozoic-arsenal-item__front
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  backface-visibility: hidden
+
+.mesozoic-arsenal-item__back
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  backface-visibility: hidden
+
+.mesozoic-arsenal-item__item_even .mesozoic-arsenal-item__inner
+  background: #485395
+
+.mesozoic-arsenal-item__image
+  +pouring-image
+  z-index: 10
+
+.mesozoic-arsenal-item__inner
+  background: #2c3142
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  z-index: 40
+  transition: opacity .3s ease
+  padding: 20px 10px
+  display: flex
+  justify-content: space-around
+  flex-direction: column
+
+.mesozoic-arsenal-item__title
+  color: #ffffff
+  font-family: $font-family-alt
+  font-size: 20px
+  line-height: 26px
+  text-transform: uppercase
+  letter-spacing: 0.085em
+  text-align: center
+  position: relative
+  padding-bottom: 5px
+  margin-bottom: 4px
+  &::after
+    content: ''
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+    width: 47px
+    height: 1px
+    background-color: #e4a76c
+
+.mesozoic-arsenal-item__thumb
+  img
+    width: 124px
+    height: 124px
+    object-fit: cover
+    border-radius: 50%
+    display: block
+    margin: 0 auto
+
+.mesozoic-arsenal-item__description
+  color: #b8b8b8
+  font-size: 14px
+  line-height: 16px
+  text-align: center
+  margin-top: 6px
+
+.mesozoic-arsenal-item__info
+  position: absolute
+  left: 0
+  bottom: 0
+  background-color: rgba(0, 0, 0, .6)
+  padding: 5px 20px 8px
+  z-index: 20
+  max-width: 175px
+
+.mesozoic-arsenal-item__infoTitle
+  color: #ffffff
+  font-family: $font-family-alt
+  font-size: 20px
+  line-height: 26px
+  text-transform: uppercase
+  letter-spacing: 0.085em
+  position: relative
+  white-space: nowrap
+  margin-bottom: 7px
+  padding-bottom: 5px
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 47px
+    height: 1px
+    background-color: #e4a76c
+
+.mesozoic-arsenal-item__infoPrice
+  color: #b8b8b8
+  font-size: 14px
+  font-weight: 400
+  line-height: 16px
+  letter-spacing: 0.42px
+  white-space: nowrap
+
+.mesozoic-arsenal-item__price
+  position: absolute
+  right: 0
+  bottom: 8px
+  background-color: rgba(0, 0, 0, .6)
+  line-height: 15px
+  padding: 0 15px
+  color: #d3d3d3
+  font-size: 14px
+  letter-spacing: 0.42px
+  z-index: 30
+  white-space: nowrap

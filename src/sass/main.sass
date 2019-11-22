@@ -431,147 +431,6 @@
     border-style: solid
     border-color: transparent transparent transparent currentColor
 
-.main-actions-slider
-  position: relative
-  background: #3d3d3d
-
-.main-actions-slider__slider
-  overflow: hidden
-  position: relative
-  padding-bottom: 40%
-  width: 100%
-
-.main-actions-slider__items
-  position: absolute
-  left: 0
-  top: 0
-  width: 100%
-  height: 100%
-  display: flex
-
-.main-actions-slider__item
-  padding: px2em(20) px2em(20) px2em(48) px2em(60)
-  width: 100%
-  height: 100%
-  background: #3d3d3d
-  flex: none
-  display: flex
-  flex-direction: column
-  justify-content: center
-  text-decoration: none
-  transition: background-color .3s ease
-  &:hover
-    background-color: #373737
-  @media (max-width: $breakpoint-xsmall-max)
-    padding: px2em(20) px2em(20) px2em(40) px2em(40)
-
-.main-actions-slider__date
-  font-size: px2em(14)
-  font-family: $font-family-alt
-  color: rgb(255, 255, 255)
-  line-height: 1.2
-  display: block
-  @media (max-width: $breakpoint-xsmall-max)
-    font-size: 10px
-
-.main-actions-slider__title
-  font-size: px2em(36)
-  font-family: $font-family-alt
-  color: rgb(255, 151, 29)
-  font-weight: bold
-  line-height: 1.167
-  display: block
-  letter-spacing: 0.045em
-  text-overflow: ellipsis
-  overflow: hidden
-  white-space: nowrap
-  margin-top: px2em(25, 36)
-
-.main-actions-slider__description
-  font-size: px2em(24)
-  font-family: $font-family-alt
-  color: rgb(255, 255, 255)
-  line-height: 1.75
-  display: block
-  margin-top: px2em(4)
-  letter-spacing: 0.035em
-  text-overflow: ellipsis
-  overflow: hidden
-  white-space: nowrap
-
-.main-actions-slider__dots
-  display: flex
-  position: absolute
-  left: px2em(60)
-  bottom: px2em(40)
-  @media (max-width: $breakpoint-xsmall-max)
-    left: px2em(40)
-    bottom: px2em(20)
-
-.main-actions-slider__dot
-  padding: 0
-  width: 12px
-  height: 12px
-  margin-right: 20px
-  background: transparent
-  position: relative
-  display: block
-  border: none
-  cursor: pointer
-  &::before
-    content: ''
-    border-radius: 50%
-    background-color: rgba(205, 205, 205, 0.702)
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    width: 6px
-    height: 6px
-    transition: .3s ease
-    transition-property: width, height, background-color
-  &:hover::before
-    background-color: rgb(162, 162, 162)
-    width: 10px
-    height: 10px
-
-.main-actions-slider__dot._active::before,
-.main-actions-slider__dot._active:hover::before
-  background-color: rgb(255, 178, 80)
-  width: 12px
-  height: 12px
-
-.main-special-offer
-  display: block
-  width: 100%
-  text-decoration: none
-  position: relative
-  box-sizing: content-box
-  padding-bottom: 80%
-  background-color: #e4a76c
-  transition: background-color .3s ease
-  &:hover
-    background-color: #dd9652
-
-.main-special-offer__text
-  position: absolute
-  left: 0
-  top: 0
-  width: 100%
-  height: 100%
-  display: flex
-  flex-direction: column
-  justify-content: center
-  font-size: px2em(24)
-  font-family: $font-family-alt
-  padding: px2em(20, 24) px2em(40, 24) px2em(20, 24) px2em(60, 24)
-  color: rgb(255, 255, 255)
-  font-weight: bold
-  line-height: 1.25
-  letter-spacing: 0.05em
-  @media (max-width: $breakpoint-xsmall-max)
-    padding: px2em(20, 24) px2em(20, 24) px2em(20, 24) px2em(40, 24)
-
 .main-action
   position: relative
   display: block
@@ -1126,6 +985,8 @@
 
 .main-projects__item
   position: absolute
+  text-decoration:none
+  display: block
   width: 20%
   left: 0
   top: 0

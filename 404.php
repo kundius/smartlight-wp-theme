@@ -1,28 +1,28 @@
-<?php
-$referer = '/';
-if (!empty($_SERVER['HTTP_REFERER'])) {
-    $referer = $_SERVER['HTTP_REFERER'];
-}
-?>
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <?php get_template_part('partials/head'); ?>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="page-not-found-section">
-                <?php get_template_part('partials/header'); ?>
-                <section class="page-not-found">
-                    <h1>404</h1>
-                    <div class="page-not-found-desc">
-                        <h2>Cтраница не найдена</h2>
-                        <p>Возможно, она была удалена или вы где-то ошиблись. Позвоните нам или вернитесь назад, чтобы поискать в другом месте</p>
-                        <a href="<?php echo $referer ?>" class="prev-page">Вернуться</a>
-                    </div>
-                </section>
-                <?php get_template_part('partials/footer') ?>
-            </div>
+  <head>
+    <?php get_template_part('partials/head') ?>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ui-page-section">
+        <?php get_template_part('partials/header') ?>
+
+        <div class="container">
+          <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+            <?php bcn_display() ?>
+          </div>
+
+          <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+          <h1 class="ui-headline"><span>404</span></h1>
+          <?php endwhile; else: ?>
+          <p>Извините, ничего не найдено.</p>
+          <?php endif; ?>
         </div>
-    </body>
+      </div>
+
+      <?php get_template_part('partials/section-callback') ?>
+      <?php get_template_part('partials/footer') ?>
+    </div>
+  </body>
 </html>

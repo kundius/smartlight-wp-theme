@@ -2,6 +2,7 @@
 /*
 Template Name: Цены
 */
+wp_enqueue_script('theme_prices', get_template_directory_uri() . '/dist/prices.js', ['theme_common'], false, true);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
