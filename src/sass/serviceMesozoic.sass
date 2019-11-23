@@ -1008,14 +1008,18 @@
       background: #ffffff
 
 .modal-type__image
-  width: calc(50vw - 554px)
   background-position: 50% 50%
   background-repeat: no-repeat
   background-size: cover
+  width: calc(50vw - 554px)
+  @media (max-width: 1385px)
+    width: calc(40vw)
 
 .modal-type__body
   padding: 100px 165px 100px 90px
   width: calc(50vw - 831px)
+  @media (max-width: 1385px)
+    width: calc(6vw)
 
 .modal-type__title
   font-size: 36px
