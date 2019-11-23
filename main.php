@@ -176,7 +176,7 @@ $projects = new WP_Query(array(
                       <div class="main-h-service__moreWrap">
                         <span class="main-h-service__placeholder"></span>
                         <span class="main-h-service__moreButton">
-                          <a href="<?php the_permalink(87) ?>" class="ui-more-button">
+                          <a href="<?php the_permalink(39) ?>" class="ui-more-button">
                             <span class="ui-more-button__arrow"></span>
                             <span class="ui-more-button__text">Смотреть больше</span>
                           </a>
