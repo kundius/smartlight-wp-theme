@@ -115,11 +115,19 @@ $projects = new WP_Query(array(
                       <div class="actions-slider__slider">
                         <div class="actions-slider__items js-slider-wrapper">
                           <?php foreach ($actions as $action): ?>
-                            <a href="<?php echo $action['href'] ?>" class="actions-slider__item js-slider-item">
+                          <?php if ($action['linl']['url']): ?>
+                          <a href="<?php echo $action['link']['url'] ?>" class="actions-slider__item js-slider-item">
+                          <?php else: ?>
+                          <button class="actions-slider__item js-slider-item" data-modal="#calculation">
+                          <?php endif; ?>
                               <span class="actions-slider__date"><?php echo $action['date'] ?></span>
                               <span class="actions-slider__title"><?php echo $action['title'] ?></span>
                               <span class="actions-slider__description"><?php echo $action['description'] ?></span>
-                            </a>
+                          <?php if ($action['linl']['url']): ?>
+                          </a>
+                          <?php else: ?>
+                          </button>
+                          <?php endif; ?>
                           <?php endforeach; ?>
                         </div>
                       </div>
@@ -132,18 +140,27 @@ $projects = new WP_Query(array(
                     <?php endif; ?>
                   </div>
                   <div class="ui-width-1-2 ui-width-1-3@m">
-                    <a href="#" class="block-special-offer">
+                    <button class="block-special-offer" data-modal="#calculation">
                       <span class="block-special-offer__text">Выезд для замера и оценки в день обращения</span>
-                    </a>
+                    </button>
                   </div>
                   <div class="ui-width-1-2 ui-width-1-3@m">
-                    <a href="#" class="main-action">
+                    <?php $action_at_main = get_field('action_at_main', 'option') ?>
+                    <?php if ($action_at_main['linl']['url']): ?>
+                    <a href="<?php echo $action_at_main['linl']['url'] ?>" class="main-action">
+                    <?php else: ?>
+                    <button class="main-action" data-modal="#calculation">
+                    <?php endif; ?>
                       <span class="main-action__inner">
-                        <span class="main-action__date">до 28 октября 2019</span>
-                        <span class="main-action__title">-30%</span>
-                        <span class="main-action__description">на демонтаж</span>
+                        <span class="main-action__date"><?php echo $action_at_main['date'] ?></span>
+                        <span class="main-action__title"><?php echo $action_at_main['discount'] ?></span>
+                        <span class="main-action__description"><?php echo $action_at_main['title'] ?></span>
                       </span>
+                    <?php if ($action_at_main['linl']['url']): ?>
                     </a>
+                    <?php else: ?>
+                    </button>
+                    <?php endif; ?>
                   </div>
                   <div class="ui-width-2-3@m">
                     <div class="main-h-service">

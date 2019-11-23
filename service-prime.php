@@ -97,12 +97,20 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
               <div class="actions-slider js-slider">
                 <div class="actions-slider__slider">
                   <div class="actions-slider__items js-slider-wrapper">
-                    <?php foreach ($actions as $action): print_r($action['href']); ?>
-                      <a href="<?php echo $action['href'] ?>" class="actions-slider__item js-slider-item">
+                    <?php foreach ($actions as $action): ?>
+                    <?php if ($action['linl']['url']): ?>
+                    <a href="<?php echo $action['link']['url'] ?>" class="actions-slider__item js-slider-item">
+                    <?php else: ?>
+                    <button class="actions-slider__item js-slider-item" data-modal="#calculation">
+                    <?php endif; ?>
                         <span class="actions-slider__date"><?php echo $action['date'] ?></span>
                         <span class="actions-slider__title"><?php echo $action['title'] ?></span>
                         <span class="actions-slider__description"><?php echo $action['description'] ?></span>
-                      </a>
+                    <?php if ($action['linl']['url']): ?>
+                    </a>
+                    <?php else: ?>
+                    </button>
+                    <?php endif; ?>
                     <?php endforeach; ?>
                   </div>
                 </div>
@@ -116,9 +124,9 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             </div>
 
             <div class="service-prime-actions__offer">
-              <a href="#" class="block-special-offer">
+              <button class="block-special-offer" data-modal="#calculation">
                 <span class="block-special-offer__text">Выезд для замера и оценки в день обращения</span>
-              </a>
+              </button>
             </div>
           </div>
 
