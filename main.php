@@ -115,15 +115,15 @@ $projects = new WP_Query(array(
                       <div class="actions-slider__slider">
                         <div class="actions-slider__items js-slider-wrapper">
                           <?php foreach ($actions as $action): ?>
-                          <?php if ($action['linl']['url']): ?>
-                          <a href="<?php echo $action['link']['url'] ?>" class="actions-slider__item js-slider-item">
+                          <?php if ($action['link']): ?>
+                          <a href="<?php echo $action['link'] ?>" class="actions-slider__item js-slider-item">
                           <?php else: ?>
                           <button class="actions-slider__item js-slider-item" data-modal="#calculation">
                           <?php endif; ?>
                               <span class="actions-slider__date"><?php echo $action['date'] ?></span>
                               <span class="actions-slider__title"><?php echo $action['title'] ?></span>
                               <span class="actions-slider__description"><?php echo $action['description'] ?></span>
-                          <?php if ($action['linl']['url']): ?>
+                          <?php if ($action['link']): ?>
                           </a>
                           <?php else: ?>
                           </button>
@@ -146,8 +146,8 @@ $projects = new WP_Query(array(
                   </div>
                   <div class="ui-width-1-2 ui-width-1-3@m">
                     <?php $action_at_main = get_field('action_at_main', 'option') ?>
-                    <?php if ($action_at_main['linl']['url']): ?>
-                    <a href="<?php echo $action_at_main['linl']['url'] ?>" class="main-action">
+                    <?php if ($action_at_main['link']): ?>
+                    <a href="<?php echo $action_at_main['link'] ?>" class="main-action">
                     <?php else: ?>
                     <button class="main-action" data-modal="#calculation">
                     <?php endif; ?>
@@ -156,7 +156,7 @@ $projects = new WP_Query(array(
                         <span class="main-action__title"><?php echo $action_at_main['discount'] ?></span>
                         <span class="main-action__description"><?php echo $action_at_main['title'] ?></span>
                       </span>
-                    <?php if ($action_at_main['linl']['url']): ?>
+                    <?php if ($action_at_main['link']): ?>
                     </a>
                     <?php else: ?>
                     </button>
