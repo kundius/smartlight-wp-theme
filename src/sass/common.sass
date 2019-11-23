@@ -3675,7 +3675,10 @@ svg
     transform: rotate(45deg) translate(-50%, -50%)
     transform-origin: 0 0
   &:hover
-    opacity: 1
+    background: #b6b6b6
+    &::before,
+    &::after
+      background: #ffffff
 
 .modal__title
   font-size: 24px
