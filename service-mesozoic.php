@@ -123,20 +123,23 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
                     </div>
                   </div>
                   <?php endif; ?>
-                  <div class="modal-type" id="modal-type-<?php echo $key ?>">
-                    <button class="modal-type__close" data-modal-close></button>
-                    <div class="modal-type__image" style="background-image: url(<?php echo $item['image']['url'] ?>)"></div>
-                    <div class="modal-type__body">
-                      <div class="modal-type__title"><?php echo $item['title'] ?></div>
-                      <div class="modal-type__content"><?php echo $item['content'] ?></div>
-                    </div>
-                  </div>
                   <?php endforeach; ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
+        <?php foreach (get_field('types_list') as $key => $item): ?>
+        <div class="modal-type" id="modal-type-<?php echo $key ?>">
+          <button class="modal-type__close" data-modal-close></button>
+          <div class="modal-type__image" style="background-image: url(<?php echo $item['image']['url'] ?>)"></div>
+          <div class="modal-type__body">
+            <div class="modal-type__title"><?php echo $item['title'] ?></div>
+            <div class="modal-type__content"><?php echo $item['content'] ?></div>
+          </div>
+        </div>
+        <?php endforeach; ?>
       
       </div>
 
