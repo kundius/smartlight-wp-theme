@@ -948,3 +948,92 @@
   letter-spacing: 0.42px
   z-index: 30
   white-space: nowrap
+
+.modal-type
+  position: fixed
+  visibility: hidden
+  opacity: 0
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 200
+  background: #fff
+  transform: scale(.9)
+  transition: all ease .3s
+  box-shadow: 0 0 8px rgba(0, 0, 0, .6)
+  display: flex
+  &._opened
+    transform: translate(-50%, -50%) scale(1)
+    visibility: visible
+    opacity: 1
+
+.modal-type__close
+  position: absolute
+  right: 0
+  top: 0
+  width: 72px
+  height: 72px
+  background: none
+  border: none
+  padding: 0
+  cursor: pointer
+  background-color: rgb(0,0,0)
+  opacity: 0.6
+  &::before
+    content: ''
+    width: 40%
+    height: 2px
+    position: absolute
+    left: 50%
+    top: 50%
+    background: rgb(255,255,255)
+    transform: rotate(-45deg) translate(-50%, -50%)
+    transform-origin: 0 0
+  &::after
+    content: ''
+    width: 40%
+    height: 2px
+    position: absolute
+    left: 50%
+    top: 50%
+    background: rgb(255,255,255)
+    transform: rotate(45deg) translate(-50%, -50%)
+    transform-origin: 0 0
+  &:hover
+    background: rgba(0, 0, 0, .2)
+    &::before
+      background: #ffffff
+    &::after
+      background: #ffffff
+
+.modal-type__image
+  width: calc(50vw - 554px)
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: cover
+
+.modal-type__body
+  padding: 100px 165px 100px 90px
+  width: calc(50vw - 831px)
+
+.modal-type__title
+  font-size: 36px
+  letter-spacing: 0px
+  line-height: 1
+  color: #172037
+  font-family: $font-family-alt
+  font-weight: bold
+  padding-bottom: 35px
+  position: relative
+  margin-bottom: 56px
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+    height: 1px
+    width: 136px
+    background: #ff8a00
+
+.modal-type__content
