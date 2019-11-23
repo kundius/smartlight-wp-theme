@@ -164,7 +164,7 @@ $projects = new WP_Query(array(
                   </div>
                   <div class="ui-width-2-3@m">
                     <div class="main-h-service">
-                      <a href="#" class="main-h-service__item">
+                      <a href="<?php the_permalink(87) ?>" class="main-h-service__item">
                         <span class="main-h-service__image">
                           <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/street-lighting.jpg" alt="Уличное освещение" />
                         </span>
@@ -176,7 +176,7 @@ $projects = new WP_Query(array(
                       <div class="main-h-service__moreWrap">
                         <span class="main-h-service__placeholder"></span>
                         <span class="main-h-service__moreButton">
-                          <a href="#" class="ui-more-button">
+                          <a href="<?php the_permalink(87) ?>" class="ui-more-button">
                             <span class="ui-more-button__arrow"></span>
                             <span class="ui-more-button__text">Смотреть больше</span>
                           </a>
