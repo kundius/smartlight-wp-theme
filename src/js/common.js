@@ -428,7 +428,7 @@ forEach(document.querySelectorAll('[data-project]'), function(button) {
 
 forEach(document.querySelectorAll('[data-modal]'), function(button) {
   let modal = document.querySelector(button.dataset.modal)
-  let close = modal.querySelector('.js-modal-close')
+  let close = modal.querySelector('[data-modal-close]')
   const outsideClickListener = event => {
     if (!modal.contains(event.target) && isVisible(modal) && !button.contains(event.target)) {
       hide()

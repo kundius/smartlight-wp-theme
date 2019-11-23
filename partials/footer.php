@@ -127,7 +127,7 @@
 </div>
 
 <div class="modal" id="callback">
-  <button class="modal__close js-modal-close"></button>
+  <button class="modal__close" data-modal-close></button>
   <div class="modal__title">Заказать обратный звонок</div>
   <div class="modal__body">
     <form action="/wp-json/contact-form-7/v1/contact-forms/370/feedback" method="post" class="modal-form js-form">
@@ -167,7 +167,7 @@
 </div>
 
 <div class="modal" id="feedback">
-  <button class="modal__close js-modal-close"></button>
+  <button class="modal__close" data-modal-close></button>
   <div class="modal__title">Обратная связь</div>
   <div class="modal__body">
     <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="modal-form js-form">
@@ -213,7 +213,7 @@
 </div>
 
 <div class="modal" id="calculation">
-  <button class="modal__close js-modal-close"></button>
+  <button class="modal__close" data-modal-close></button>
   <div class="modal__title">Заказать расчет</div>
   <div class="modal__body">
     <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="modal-form js-form">

@@ -93,36 +93,40 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
                 <div class="mesozoic-types__grid js-masonry-grid">
                   <?php foreach (get_field('types_list') as $key => $item): ?>
                   <?php if ($item['type'] == 'primary'): ?>
-                    <div class="mesozoic-types__cell">
-                      <div class="mesozoic-types__item">
-                        <div class="mesozoic-types__itemImage">
-                          <img src="<?php echo $item['image']['url'] ?>" alt='' />
-                        </div>
-                        <div class="mesozoic-types__itemTitle"><?php echo $item['title'] ?></div>
-                        <div class="mesozoic-types__itemDescription"><?php echo $item['description'] ?></div>
-                        <button class="ui-button-more mesozoic-types__itemMore">
+                  <div class="mesozoic-types__cell">
+                    <div class="mesozoic-types__item">
+                      <div class="mesozoic-types__itemImage">
+                        <img src="<?php echo $item['image']['sizes']['w500h400'] ?>" alt='' />
+                      </div>
+                      <div class="mesozoic-types__itemTitle"><?php echo $item['title'] ?></div>
+                      <div class="mesozoic-types__itemDescription"><?php echo $item['description'] ?></div>
+                      <button class="ui-button-more mesozoic-types__itemMore" data-modal="#modal-type-<?php echo $key ?>">
+                        <span class="ui-button-more__arrow"></span>
+                        Читать больше
+                      </button>
+                    </div>
+                  </div>
+                  <?php else: ?>
+                  <div class="mesozoic-types__cell">
+                    <div class="mesozoic-types__figures">
+                      <div class="mesozoic-types__figuresImage">
+                        <img src="<?php echo $item['image']['sizes']['w500h400'] ?>" alt='' />
+                      </div>
+                      <div class="mesozoic-types__figuresInner">
+                        <div class="mesozoic-types__figuresTitle"><?php echo $item['title'] ?></div>
+                        <div class="mesozoic-types__figuresDescription"><?php echo $item['description'] ?></div>
+                        <button class="ui-button-more mesozoic-types__figuresMore" data-modal="#modal-type-<?php echo $key ?>">
                           <span class="ui-button-more__arrow"></span>
                           Читать больше
                         </button>
                       </div>
                     </div>
-                  <?php else: ?>
-                    <div class="mesozoic-types__cell">
-                      <div class="mesozoic-types__figures">
-                        <div class="mesozoic-types__figuresImage">
-                          <img src="<?php echo $item['image']['url'] ?>" alt='' />
-                        </div>
-                        <div class="mesozoic-types__figuresInner">
-                          <div class="mesozoic-types__figuresTitle"><?php echo $item['title'] ?></div>
-                          <div class="mesozoic-types__figuresDescription"><?php echo $item['description'] ?></div>
-                          <button class="ui-button-more mesozoic-types__figuresMore">
-                            <span class="ui-button-more__arrow"></span>
-                            Читать больше
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
                   <?php endif; ?>
+                  <div class="modal" id="modal-type-<?php echo $key ?>">
+                    <button class="modal__close" data-modal-close></button>
+                    окно
+                  </div>
                   <?php endforeach; ?>
                 </div>
               </div>

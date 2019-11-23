@@ -20,6 +20,7 @@ add_action('after_setup_theme', function() {
 
 add_theme_support('post-thumbnails', array('post', 'page', 'project'));
 add_image_size('w480h480', 480, 480, true);
+add_image_size('w500h400', 500, 400, true);
 
 // function srcset($image, $wh) {
 // 	$wh = !empty($wh) ? $wh : ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
