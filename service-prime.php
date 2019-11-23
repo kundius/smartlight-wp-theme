@@ -97,7 +97,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
               <div class="actions-slider js-slider">
                 <div class="actions-slider__slider">
                   <div class="actions-slider__items js-slider-wrapper">
-                    <?php foreach ($actions as $action): ?>
+                    <?php foreach ($actions as $action): print_r($action['href']); ?>
                       <a href="<?php echo $action['href'] ?>" class="actions-slider__item js-slider-item">
                         <span class="actions-slider__date"><?php echo $action['date'] ?></span>
                         <span class="actions-slider__title"><?php echo $action['title'] ?></span>
