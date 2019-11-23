@@ -229,6 +229,25 @@
     font-size: 14px
 
 .contacts-form
+  position: relative
+  &._validation-mail_sent > *
+    opacity: 0
+    &.contacts-form__success
+
+.contacts-form__success
+  display: none
+  font-size: 24px
+  line-height: 1
+  color: #ffffff
+  font-family: $font-family-alt
+  font-weight: 600
+  position: absolute
+  width: 100%
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  ._validation-mail_sent &
+    display: block
 
 .contacts-form__description
   text-align: center
