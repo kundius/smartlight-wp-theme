@@ -118,7 +118,7 @@ global $post;
                         </div>
                         <div class="mesozoic-types__itemTitle"><?php echo $item['title'] ?></div>
                         <div class="mesozoic-types__itemDescription"><?php echo $item['description'] ?></div>
-                        <button class="ui-button-more mesozoic-types__itemMore">
+                        <button class="ui-button-more mesozoic-types__itemMore" data-modal="#modal-type-<?php echo $key ?>">
                           <span class="ui-button-more__arrow"></span>
                           Читать больше
                         </button>
