@@ -450,7 +450,7 @@ forEach(document.querySelectorAll('[data-modal]'), function(button) {
 })
 
 
-document.querySelectorAll('.js-form').forEach(function(form) {
+forEach(document.querySelectorAll('.js-form'), form => {
   let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
   let messages = []
   form.addEventListener('submit', function(e) {
