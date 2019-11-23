@@ -41,19 +41,19 @@
             <div class="footer-services__groupTitle">Освещение</div>
             <ul class="footer-services__menu">
               <li>
-                <a href='#'><i></i><span>Коттеджей</span></a>
+                <a><i></i><span>Коттеджей</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Домов</span></a>
+                <a><i></i><span>Домов</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Зданий</span></a>
+                <a><i></i><span>Зданий</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Торговых центров</span></a>
+                <a><i></i><span>Торговых центров</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Жилых комплексов</span></a>
+                <a><i></i><span>Жилых комплексов</span></a>
               </li>
             </ul>
           </div>
@@ -61,19 +61,19 @@
             <div class="footer-services__groupTitle">Подсветка</div>
             <ul class="footer-services__menu">
               <li>
-                <a href='#'><i></i><span>Архитектурная</span></a>
+                <a><i></i><span>Архитектурная</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Фасадов зданий</span></a>
+                <a><i></i><span>Фасадов зданий</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Прочих объектов</span></a>
+                <a><i></i><span>Прочих объектов</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Ворота</span></a>
+                <a><i></i><span>Ворота</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Входные группы</span></a>
+                <a><i></i><span>Входные группы</span></a>
               </li>
             </ul>
           </div>
@@ -81,19 +81,19 @@
             <div class="footer-services__groupTitle">Уличное</div>
             <ul class="footer-services__menu">
               <li>
-                <a href='#'><i></i><span>Территории</span></a>
+                <a><i></i><span>Территории</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Аллеи и парки</span></a>
+                <a><i></i><span>Аллеи и парки</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Сады, деревья</span></a>
+                <a><i></i><span>Сады, деревья</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Заборы</span></a>
+                <a><i></i><span>Заборы</span></a>
               </li>
               <li>
-                <a href='#'><i></i><span>Детские площадки</span></a>
+                <a><i></i><span>Детские площадки</span></a>
               </li>
             </ul>
           </div>

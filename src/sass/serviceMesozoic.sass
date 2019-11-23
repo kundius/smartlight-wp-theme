@@ -958,11 +958,14 @@
   top: 0
   left: 0
   z-index: 300
+  align-items: center
   background: #fff
   transform: scale(.9)
   transition: all ease .3s
   box-shadow: 0 0 8px rgba(0, 0, 0, .6)
   display: flex
+  +below(small)
+    flex-direction: column
   &._opened
     transform: scale(1)
     visibility: visible
@@ -1007,19 +1010,39 @@
     &::after
       background: #ffffff
 
+.modal-type__order
+  margin-top: 62px
+  width: 332px
+  max-width: 100%
+  &:hover .ui-arrow-right
+    width: 24px
+  +below(small)
+    margin-top: 30px
+
 .modal-type__image
   background-position: 50% 50%
   background-repeat: no-repeat
   background-size: cover
+  height: 100%
   width: calc(50vw - 693px + 554px)
   @media (max-width: 1385px)
     width: calc(40vw)
+  +below(small)
+    width: 100%
+    height: 280px
 
 .modal-type__body
   padding: 100px 165px 100px 90px
+  max-height: 100vh
+  overflow: auto
   width: calc(50vw - 693px + 831px)
   @media (max-width: 1385px)
     width: calc(60vw)
+  +below(large)
+    padding: 50px
+  +below(small)
+    width: 100%
+    padding: 20px
 
 .modal-type__title
   font-size: 36px
@@ -1028,9 +1051,16 @@
   color: #172037
   font-family: $font-family-alt
   font-weight: bold
-  padding-bottom: 35px
+  padding-bottom: 39px
   position: relative
-  margin-bottom: 56px
+  margin-bottom: 55px
+  +below(small)
+    font-size: 28px
+    padding-bottom: 20px
+    margin-bottom: 20px
+  span
+    position: relative
+    z-index: 20
   &::after
     content: ''
     position: absolute
@@ -1039,5 +1069,21 @@
     height: 1px
     width: 136px
     background: #ff8a00
+    z-index: 10
+  &::before
+    content: ''
+    position: absolute
+    left: 350px
+    top: 50%
+    z-index: 10
+    transform: translateY(-50%)
+    height: 205px
+    width: 625px
+    background: url('../img/bg-stripe-gray-transparent.png')
 
 .modal-type__content
+  +above(large)
+    max-height: 295px
+    overflow: auto
+  > * + *
+    margin-top: 25px
