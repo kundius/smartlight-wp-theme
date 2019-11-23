@@ -133,7 +133,7 @@ global $post;
                         <div class="mesozoic-types__figuresInner">
                           <div class="mesozoic-types__figuresTitle"><?php echo $item['title'] ?></div>
                           <div class="mesozoic-types__figuresDescription"><?php echo $item['description'] ?></div>
-                          <button class="ui-button-more mesozoic-types__figuresMore">
+                          <button class="ui-button-more mesozoic-types__figuresMore" data-modal="#modal-type-<?php echo $key ?>">
                             <span class="ui-button-more__arrow"></span>
                             Читать больше
                           </button>
@@ -147,6 +147,24 @@ global $post;
             </div>
           </div>
         </div>
+        
+        <?php foreach (get_field('types_list') as $key => $item): ?>
+        <div class="modal-type" id="modal-type-<?php echo $key ?>">
+          <button class="modal-type__close" data-modal-close></button>
+          <div class="modal-type__image" style="background-image: url(<?php echo $item['image']['url'] ?>)"></div>
+          <div class="modal-type__body">
+            <div class="modal-type__title"><span><?php echo $item['title'] ?></span></div>
+            <div class="modal-type__content"><?php echo $item['content'] ?></div>
+            <button class="ui-button-primary modal-type__order" data-modal="#feedback">
+              <span>
+                Заказать консультацию
+                <span class="ui-arrow-right"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <?php endforeach; ?>
+
       </div>
 
       <div class="mesozoic-videos">
