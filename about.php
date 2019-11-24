@@ -47,8 +47,8 @@ wp_enqueue_script('theme_about', get_template_directory_uri() . '/dist/about.js'
         <div class="container">
           <div class="about-projects">
             <?php foreach (get_field('projects') as $item): ?>
-            <div class="about-projects__item">
-              <img class="about-projects__itemImage" src="<?php echo get_the_post_thumbnail_url($item->ID, 'large') ?>" alt='' />
+            <div class="about-projects__item" data-project="<?php echo $item->ID ?>">
+              <img class="about-projects__itemImage" src="<?php echo get_the_post_thumbnail_url($item->ID, 'large') ?>" alt='' loading="lazy" />
               <span class="about-projects__itemMagnify">
                 <span class="ui-magnify-button">
                   <span class="ui-magnify-button__arrow"></span>
