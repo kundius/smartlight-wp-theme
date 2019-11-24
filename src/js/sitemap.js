@@ -1,7 +1,7 @@
 import forEach from 'lodash/forEach'
 
 
-forEach(document.querySelectorAll('.sitemap-list'), ul => {
+forEach(document.querySelectorAll('.js-sitemap-list'), ul => {
   forEach(ul.children, li => {
     if (li.children.length > 1) {
       let toggle = document.createElement('span')

@@ -23,7 +23,7 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitema
           <div class="sitemap-body">
             <div class="sitemap-grid">
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list">
+                <ul class="sitemap-list-first js-sitemap-list">
                   <li><a href="<?php the_permalink(2) ?>">Главная</a></li>
                   <li><a href="<?php the_permalink(7) ?>">О компании</a></li>
                   <li><a href="<?php the_permalink(39) ?>">Наши работы</a></li>
@@ -32,13 +32,13 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitema
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list">
+                <ul class="sitemap-list-first js-sitemap-list">
                   <li class="_opened">
                     <a href="<?php the_permalink(85) ?>">Освещение</a>
-                    <ul class="sitemap-list">
+                    <ul class="sitemap-list-second js-sitemap-list">
                       <li class="_opened">
                         <a href="#">Новогоднее освещение</a>
-                        <ul class="sitemap-list">
+                        <ul class="sitemap-list-third js-sitemap-list">
                           <li><a href="<?php the_permalink(341) ?>">Освещение домов, коттеджей</a></li>
                           <li><a href="<?php the_permalink(287) ?>">Освещение зданий и объектов</a></li>
                         </ul>
@@ -50,28 +50,28 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitema
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list">
+                <ul class="sitemap-list-first js-sitemap-list">
                   <li>
                     <a href="<?php the_permalink(76) ?>">Акции</a>
                   </li>
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list">
+                <ul class="sitemap-list-first js-sitemap-list">
                   <li>
                     <a href="<?php the_permalink(45) ?>">Статьи</a>
                   </li>
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list">
+                <ul class="sitemap-list-first js-sitemap-list">
                   <li>
                     <a href="<?php the_permalink(360) ?>">Пользовательское соглашение</a>
                   </li>
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list">
+                <ul class="sitemap-list-first js-sitemap-list">
                   <li>
                     <a href="<?php the_permalink(3) ?>">Политика конфиденциальности и обработки персональных данных</a>
                   </li>
