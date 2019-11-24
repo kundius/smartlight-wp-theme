@@ -1,0 +1,107 @@
+.sitemap-section
+  background: url('../img/bg-sitemap.jpg') no-repeat 50% 0
+  background-size: cover
+  background-color: #172037
+
+.sitemap-headline
+  font-family: $font-family-alt
+  font-size: 48px
+  letter-spacing: -0.01em
+  color: #ffffff
+  position: relative
+  margin: 23px 0
+  +below(small)
+    font-size: 32px
+
+.sitemap-headline span
+  position: relative
+  z-index: 20
+
+.sitemap-headline::before
+  content: ''
+  position: absolute
+  z-index: 10
+  top: -28px
+  left: 309px
+  width: 624px
+  height: 202px
+  background: url('../img/bg-stripe-gray.png')
+  +below(small)
+    width: 202px
+    right: -20px
+    top: auto
+    height: 68px
+    bottom: -20px
+    left: auto
+
+.sitemap-headline::after
+  content: ''
+  position: absolute
+  z-index: 10
+  top: 61px
+  left: 259px
+  width: 136px
+  height: 1px
+  background: #e4a76c
+  +below(small)
+    top: auto
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+
+.sitemap-grid
+  display: flex
+  flex-wrap: wrap
+  margin-left: -40px
+  margin-top: -100px
+
+.sitemap-grid__cell
+  width: 25%
+  padding-left: 40px
+  padding-top: 100px
+
+.sitemap-list
+  padding: 0
+  margin: 0
+  list-style: none
+.sitemap-list > li
+  margin: 10px 0
+.sitemap-list > li > a
+  color: #c7dcf4
+  text-decoration: none
+  font-family: $font-family-alt
+  font-size: 18px
+  letter-spacing: 0.05em
+  line-height: 1
+  text-transform: uppercase
+  font-weight: 300
+.sitemap-list > li > .sitemap-list__toggle
+
+.sitemap-list > li > ul
+  padding: 0 0 0 25px
+  margin: 0
+  list-style: none
+.sitemap-list > ul > li
+  margin: 10px 0
+.sitemap-list > li > ul > li > a
+  color: #a7b9cd
+  text-decoration: none
+  font-family: $font-family-alt
+  font-size: 18px
+  letter-spacing: 0.05em
+  line-height: 1
+.sitemap-list > li > ul > li > .sitemap-list__toggle
+
+.sitemap-list > li > ul > li > ul
+  padding: 0 0 0 25px
+  margin: 0
+  list-style: none
+.sitemap-list > li > ul > li > ul > li
+  margin: 10px 0
+.sitemap-list > li > ul > li > ul > li > a
+  color: #a7b9cd
+  text-decoration: underline
+  font-family: $font-family-alt
+  font-size: 14px
+  letter-spacing: 0.075em
+  line-height: 1
