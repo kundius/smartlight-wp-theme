@@ -3,6 +3,27 @@
 Template Name: Карта сайт
 */
 wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitemap.js', ['theme_common'], false, true);
+
+
+$articles = new WP_Query(array(
+	'tax_query' => [[
+    'taxonomy' => 'category',
+    'terms' => [2, 3]
+  ]],
+  'post_type' => 'post',
+  'posts_per_page' => 12,
+  'paged' => get_query_var('paged') ?: 1
+));
+
+$actions = new WP_Query(array(
+	'tax_query' => [[
+    'taxonomy' => 'category',
+    'terms' => [4]
+  ]],
+  'post_type' => 'post',
+  'posts_per_page' => 12,
+  'paged' => get_query_var('paged') ?: 1
+));
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -53,6 +74,11 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitema
                 <ul class="sitemap-list-first js-sitemap-list">
                   <li>
                     <a href="<?php the_permalink(76) ?>">Акции</a>
+                    <ul class="sitemap-list-second js-sitemap-list">
+                      <?php while($actions->have_posts()): $actions->the_post(); ?>
+                      <li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+                      <?php endwhile; ?>
+                    </ul>
                   </li>
                 </ul>
               </div>
@@ -60,6 +86,11 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitema
                 <ul class="sitemap-list-first js-sitemap-list">
                   <li>
                     <a href="<?php the_permalink(45) ?>">Статьи</a>
+                    <ul class="sitemap-list-second js-sitemap-list">
+                      <?php while($articles->have_posts()): $articles->the_post(); ?>
+                      <li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+                      <?php endwhile; ?>
+                    </ul>
                   </li>
                 </ul>
               </div>
