@@ -55,19 +55,19 @@ wp_enqueue_script('theme_article', get_template_directory_uri() . '/dist/article
                 Поделись с друзьями:
               </div>
               <div class="article-meta__shareButtons">
-                <button class="article-meta__shareButton article-meta__shareButton_fb" data-id="fb">
+                <button class="article-meta__shareButton article-meta__shareButton_fb share-btn" data-id="fb">
                   <?php icon('fb', .8) ?>
                 </button>
-                <button class="article-meta__shareButton article-meta__shareButton_tw" data-id="tw">
+                <button class="article-meta__shareButton article-meta__shareButton_tw share-btn" data-id="tw">
                   <?php icon('tw', .8) ?>
                 </button>
-                <button class="article-meta__shareButton article-meta__shareButton_pi" data-id="pi">
+                <button class="article-meta__shareButton article-meta__shareButton_pi share-btn" data-id="pi">
                   <?php icon('pi', .8) ?>
                 </button>
-                <button class="article-meta__shareButton article-meta__shareButton_vk" data-id="vk">
+                <button class="article-meta__shareButton article-meta__shareButton_vk share-btn" data-id="vk">
                   <?php icon('vk2', .8) ?>
                 </button>
-                <button class="article-meta__shareButton article-meta__shareButton_ok" data-id="ok">
+                <button class="article-meta__shareButton article-meta__shareButton_ok share-btn" data-id="ok">
                   <?php icon('ok2', .8) ?>
                 </button>
               </div>
