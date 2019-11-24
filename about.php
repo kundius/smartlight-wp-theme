@@ -46,48 +46,18 @@ wp_enqueue_script('theme_about', get_template_directory_uri() . '/dist/about.js'
       <div class="about-section-second">
         <div class="container">
           <div class="about-projects">
+            <?php foreach (get_field('projects') as $item): ?>
             <div class="about-projects__item">
-              <img class="about-projects__itemImage" src="https://via.placeholder.com/1000" alt='' />
+              <img class="about-projects__itemImage" src="<?php echo get_the_post_thumbnail_url($item->ID, 'large') ?>" alt='' />
               <span class="about-projects__itemMagnify">
                 <span class="ui-magnify-button">
                   <span class="ui-magnify-button__arrow"></span>
                 </span>
               </span>
             </div>
-            <div class="about-projects__item">
-              <img class="about-projects__itemImage" src="https://via.placeholder.com/1001" alt='' />
-              <span class="about-projects__itemMagnify">
-                <span class="ui-magnify-button">
-                  <span class="ui-magnify-button__arrow"></span>
-                </span>
-              </span>
-            </div>
-            <div class="about-projects__item">
-              <img class="about-projects__itemImage" src="https://via.placeholder.com/1002" alt='' />
-              <span class="about-projects__itemMagnify">
-                <span class="ui-magnify-button">
-                  <span class="ui-magnify-button__arrow"></span>
-                </span>
-              </span>
-            </div>
-            <div class="about-projects__item">
-              <img class="about-projects__itemImage" src="https://via.placeholder.com/1003" alt='' />
-              <span class="about-projects__itemMagnify">
-                <span class="ui-magnify-button">
-                  <span class="ui-magnify-button__arrow"></span>
-                </span>
-              </span>
-            </div>
-            <div class="about-projects__item">
-              <img class="about-projects__itemImage" src="https://via.placeholder.com/1004" alt='' />
-              <span class="about-projects__itemMagnify">
-                <span class="ui-magnify-button">
-                  <span class="ui-magnify-button__arrow"></span>
-                </span>
-              </span>
-            </div>
+            <?php endforeach; ?>
             <div class="about-projects__more">
-              <a href='#' class="about-projects__moreButton">
+              <a href='<?php the_permalink(39) ?>' class="about-projects__moreButton">
                 Больше работ<i></i>
               </a>
             </div>
