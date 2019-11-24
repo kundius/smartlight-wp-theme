@@ -71,8 +71,8 @@ $actions = new WP_Query(array(
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list-first js-sitemap-list">
-                  <li>
+                <ul class="sitemap-list-third js-sitemap-list">
+                  <li class="_opened">
                     <a href="<?php the_permalink(76) ?>">Акции</a>
                     <ul class="sitemap-list-second js-sitemap-list">
                       <?php while($actions->have_posts()): $actions->the_post(); ?>
@@ -83,8 +83,8 @@ $actions = new WP_Query(array(
                 </ul>
               </div>
               <div class="sitemap-grid__cell">
-                <ul class="sitemap-list-first js-sitemap-list">
-                  <li>
+                <ul class="sitemap-list-third js-sitemap-list">
+                  <li class="_opened">
                     <a href="<?php the_permalink(45) ?>">Статьи</a>
                     <ul class="sitemap-list-second js-sitemap-list">
                       <?php while($articles->have_posts()): $articles->the_post(); ?>
