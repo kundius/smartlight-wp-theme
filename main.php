@@ -219,7 +219,7 @@ $projects = new WP_Query(array(
             </div>
             <div class="main-advantages__item">
               <div class="main-advantages__icon">
-                <img src='<?php echo get_bloginfo('template_url') ?>/dist/img/advantages-1.svg' alt=''X />
+                <img src='<?php echo get_bloginfo('template_url') ?>/dist/img/advantages-1.svg' alt='' />
                 <div class="main-advantages__number">1</div>
               </div>
               <div class="main-advantages__title">
@@ -273,7 +273,7 @@ $projects = new WP_Query(array(
             <div class="main-projects__items">
               <?php while($projects->have_posts()): $projects->the_post(); ?>
               <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" class="main-projects__item js-main-projects-item" data-project="<?php echo get_the_ID() ?>">
-                <img class="main-projects__itemImage" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt='' />
+                <img class="main-projects__itemImage" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt='' loading="lazy" />
                 <span class="ui-magnify-button main-projects__itemMagnify">
                   <span class="ui-magnify-button__arrow"></span>
                 </span>
