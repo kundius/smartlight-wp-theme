@@ -81,32 +81,15 @@
   display: inline-block
   position: relative
 .sitemap-list-first > li > a > .sitemap-list__toggle
-  border: 1px solid rgb(153, 170, 190)
-  border-radius: 50%
-  background-color: transparent
-  position: absolute
-  width: 18px
-  height: 18px
-  left: -25px
-  top: 50%
-  transform: translateY(-50%)
-  cursor: pointer
-  &::before,
-  &::after
-    content: ''
-    background-color: rgb(153, 170, 190)
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-  &::before
-    width: 5px
-    height: 2px
-  &::after
-    width: 2px
-    height: 5px
-.sitemap-list-first > li._opened > a > .sitemap-list__toggle::after
-  display: none
+  width: 4px
+  height: 4px
+  border-left: 2px solid rgb(153, 170, 190)
+  border-bottom: 2px solid rgb(153, 170, 190)
+  display: inline-block
+  transform: rotate(-45deg)
+  vertical-align: middle
+.sitemap-list-first > li._opened > a > .sitemap-list__toggle
+  transform: rotate(-180deg)
 
 .sitemap-list-second
   padding: 0 0 0 25px
@@ -126,10 +109,32 @@
   line-height: 1
   text-transform: none
 .sitemap-list-second > li > a > .sitemap-list__toggle
-  width: 10px
-  height: 10px
-  display: inline-block
-  background: red
+  border: 1px solid rgb(153, 170, 190)
+  border-radius: 50%
+  background-color: transparent
+  position: absolute
+  width: 18px
+  height: 18px
+  left: -25px
+  top: 50%
+  transform: translateY(-50%)
+  cursor: pointer
+  &::before,
+  &::after
+    content: ''
+    background-color: rgb(153, 170, 190)
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+  &::before
+    width: 6px
+    height: 2px
+  &::after
+    width: 2px
+    height: 6px
+.sitemap-list-second > li._opened > a > .sitemap-list__toggle::after
+  display: none
 
 .sitemap-list-third
   padding: 0 0 0 25px
