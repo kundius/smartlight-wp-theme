@@ -1024,47 +1024,63 @@
     top: 0
     transition-delay: .06s
     transition-duration: .33s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(8n-6)
     width: 40%
     left: 20%
     top: 0
     transition-duration: .36s
+    .main-projects__itemImage_large
+      display: block
   .main-projects__item:nth-child(8n-5)
     width: 20%
     left: 60%
     top: 0
     transition-delay: .12s
     transition-duration: .39s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(8n-4)
     width: 20%
     left: 80%
     top: 0
     transition-delay: .15s
     transition-duration: .41s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(8n-3)
     width: 20%
     left: 0
     top: 33.33%
     transition-delay: .18s
     transition-duration: .44s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(8n-2)
     width: 40%
     left: 60%
     top: 33.33%
     transition-delay: .21s
     transition-duration: .47s
+    .main-projects__itemImage_large
+      display: block
   .main-projects__item:nth-child(8n-1)
     width: 20%
     left: 20%
     top: 66.66%
     transition-delay: .24s
     transition-duration: .5s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(8n)
     width: 20%
     left: 40%
     top: 66.66%
     transition-delay: .27s
     transition-duration: .53s
+    .main-projects__itemImage_small
+      display: block
 
 @media (max-width: $breakpoint-small-max)
   .main-projects__item:nth-child(5n-4)
@@ -1073,35 +1089,46 @@
     top: 0
     transition-delay: .15s
     transition-duration: .41s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(5n-3)
     width: 66.66%
     left: 33.33%
     top: 0
     transition-delay: .18s
     transition-duration: .44s
+    .main-projects__itemImage_large
+      display: block
   .main-projects__item:nth-child(5n-2)
     width: 33.33%
     left: 0
     top: 33.33%
     transition-delay: .21s
     transition-duration: .47s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(5n-1)
     width: 33.33%
     left: 66.66%
     top: 66.66%
     transition-delay: .24s
     transition-duration: .5s
+    .main-projects__itemImage_small
+      display: block
   .main-projects__item:nth-child(5n)
     width: 33.33%
     left: 33.33%
     top: 66.66%
     transition-delay: .27s
     transition-duration: .53s
+    .main-projects__itemImage_small
+      display: block
 
 .main-projects__itemImage
   @include pouring-image
   transition: 1s ease-out
   transition-property: transform, opacity
+  display: none
 
 .main-projects__itemMagnify
   @include absolute-centering

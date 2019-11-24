@@ -273,7 +273,8 @@ $projects = new WP_Query(array(
             <div class="main-projects__items">
               <?php while($projects->have_posts()): $projects->the_post(); ?>
               <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" class="main-projects__item js-main-projects-item" data-project="<?php echo get_the_ID() ?>">
-                <img class="main-projects__itemImage" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt='' loading="lazy" />
+                <img class="main-projects__itemImage main-projects__itemImage_large" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt='' loading="lazy" />
+                <img class="main-projects__itemImage main-projects__itemImage_small" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'w500h400') ?>" alt='' loading="lazy" />
                 <span class="ui-magnify-button main-projects__itemMagnify">
                   <span class="ui-magnify-button__arrow"></span>
                 </span>
