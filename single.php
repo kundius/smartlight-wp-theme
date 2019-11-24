@@ -54,22 +54,22 @@ wp_enqueue_script('theme_article', get_template_directory_uri() . '/dist/article
                 Понравилась статья?<br />
                 Поделись с друзьями:
               </div>
-              <div class="article-meta__shareButtons">
-                <button class="article-meta__shareButton article-meta__shareButton_fb share-btn" data-id="fb">
+              <div class="article-meta__shareButtons share-btn">
+                <a class="article-meta__shareButton article-meta__shareButton_fb" data-id="fb">
                   <?php icon('fb', .8) ?>
-                </button>
-                <button class="article-meta__shareButton article-meta__shareButton_tw share-btn" data-id="tw">
+                </a>
+                <a class="article-meta__shareButton article-meta__shareButton_tw" data-id="tw">
                   <?php icon('tw', .8) ?>
-                </button>
-                <button class="article-meta__shareButton article-meta__shareButton_pi share-btn" data-id="pi">
+                </a>
+                <a class="article-meta__shareButton article-meta__shareButton_pi" data-id="pi">
                   <?php icon('pi', .8) ?>
-                </button>
-                <button class="article-meta__shareButton article-meta__shareButton_vk share-btn" data-id="vk">
+                </a>
+                <a class="article-meta__shareButton article-meta__shareButton_vk" data-id="vk">
                   <?php icon('vk2', .8) ?>
-                </button>
-                <button class="article-meta__shareButton article-meta__shareButton_ok share-btn" data-id="ok">
+                </a>
+                <a class="article-meta__shareButton article-meta__shareButton_ok" data-id="ok">
                   <?php icon('ok2', .8) ?>
-                </button>
+                </a>
               </div>
             </div>
             <?php next_post_link('<div class="article-meta__next">%link</div>', '<span class="ui-arrow-right"></span>') ?>

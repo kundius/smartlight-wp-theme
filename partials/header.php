@@ -140,22 +140,22 @@ $flatMenu = fn($menu, 'root', null);
       
       <div class="header__email">info@s-lights.ru</div>
 
-      <div class="header__share">
-        <button class="header__shareButton share-btn" data-id="fb">
+      <div class="header__share share-btn">
+        <a class="header__shareButton" data-id="fb">
           <?php icon('fb', .8) ?>
-        </button>
-        <button class="header__shareButton share-btn" data-id="tw">
+        </a>
+        <a class="header__shareButton" data-id="tw">
           <?php icon('tw', .8) ?>
-        </button>
-        <button class="header__shareButton share-btn" data-id="pi">
+        </a>
+        <a class="header__shareButton" data-id="pi">
           <?php icon('pi', .8) ?>
-        </button>
-        <button class="header__shareButton share-btn" data-id="vk">
+        </a>
+        <a class="header__shareButton" data-id="vk">
           <?php icon('vk2', .8) ?>
-        </button>
-        <button class="header__shareButton share-btn" data-id="ok">
+        </a>
+        <a class="header__shareButton" data-id="ok">
           <?php icon('ok2', .8) ?>
-        </button>
+        </a>
       </div>
 
       <button class="header__scrollup js-scroll"><span></span></button>
