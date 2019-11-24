@@ -51,7 +51,7 @@
 
   .sitemap-body
     margin-left: 480px
-    
+
 .sitemap-grid
   display: flex
   flex-wrap: wrap
@@ -62,49 +62,64 @@
   width: 25%
   padding-left: 40px
   padding-top: 100px
+  & > .sitemap-list
+    padding: 0
+    margin: 0
+    list-style: none
+  & > .sitemap-list > li
+    margin: 10px 0
+  & > .sitemap-list > li > a
+    color: #c7dcf4
+    text-decoration: none
+    font-family: $font-family-alt
+    font-size: 18px
+    letter-spacing: 0.05em
+    line-height: 1
+    text-transform: uppercase
+    font-weight: 300
+  & > .sitemap-list > li > .sitemap-list__toggle
+    width: 10px
+    height: 10px
+    display: inline-block
+    background: red
 
-.sitemap-list
-  padding: 0
-  margin: 0
-  list-style: none
-.sitemap-list > li
-  margin: 10px 0
-.sitemap-list > li > a
-  color: #c7dcf4
-  text-decoration: none
-  font-family: $font-family-alt
-  font-size: 18px
-  letter-spacing: 0.05em
-  line-height: 1
-  text-transform: uppercase
-  font-weight: 300
-.sitemap-list > li > .sitemap-list__toggle
+  & > .sitemap-list > li > ul
+    padding: 0 0 0 25px
+    margin: 0
+    list-style: none
+    display: none
+  & > .sitemap-list > li._opened > ul
+    display: block
+  & > .sitemap-list > ul > li
+    margin: 10px 0
+  & > .sitemap-list > li > ul > li > a
+    color: #a7b9cd
+    text-decoration: none
+    font-family: $font-family-alt
+    font-size: 18px
+    letter-spacing: 0.05em
+    line-height: 1
+    text-transform: none
+  & > .sitemap-list > li > ul > li > .sitemap-list__toggle
+    width: 10px
+    height: 10px
+    display: inline-block
+    background: red
 
-.sitemap-list > li > ul
-  padding: 0 0 0 25px
-  margin: 0
-  list-style: none
-.sitemap-list > ul > li
-  margin: 10px 0
-.sitemap-list > li > ul > li > a
-  color: #a7b9cd
-  text-decoration: none
-  font-family: $font-family-alt
-  font-size: 18px
-  letter-spacing: 0.05em
-  line-height: 1
-.sitemap-list > li > ul > li > .sitemap-list__toggle
-
-.sitemap-list > li > ul > li > ul
-  padding: 0 0 0 25px
-  margin: 0
-  list-style: none
-.sitemap-list > li > ul > li > ul > li
-  margin: 10px 0
-.sitemap-list > li > ul > li > ul > li > a
-  color: #a7b9cd
-  text-decoration: underline
-  font-family: $font-family-alt
-  font-size: 14px
-  letter-spacing: 0.075em
-  line-height: 1
+  & > .sitemap-list > li > ul > li > ul
+    padding: 0 0 0 25px
+    margin: 0
+    list-style: none
+    display: none
+  & > .sitemap-list > li > ul > li._opened > ul
+    display: block
+  & > .sitemap-list > li > ul > li > ul > li
+    margin: 10px 0
+  & > .sitemap-list > li > ul > li > ul > li > a
+    color: #a7b9cd
+    text-decoration: underline
+    font-family: $font-family-alt
+    font-size: 14px
+    letter-spacing: 0.075em
+    line-height: 1
+    text-transform: none

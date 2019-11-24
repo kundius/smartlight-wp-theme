@@ -42,6 +42,7 @@ module.exports = {
         PATHS.source + 'sass/serviceCharlie.sass'
       ],
       sitemap: [
+        PATHS.source + 'js/sitemap.js',
         PATHS.source + 'sass/sitemap.sass'
       ],
       common: [

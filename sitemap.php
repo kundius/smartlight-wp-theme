@@ -73,7 +73,7 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/sitema
               <div class="sitemap-grid__cell">
                 <ul class="sitemap-list">
                   <li>
-                    <a href="<?php the_permalink(3) ?>">Политика конфиденциальности и обработкиперсональных данных</a>
+                    <a href="<?php the_permalink(3) ?>">Политика конфиденциальности и обработки персональных данных</a>
                   </li>
                 </ul>
               </div>
