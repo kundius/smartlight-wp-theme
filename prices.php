@@ -49,8 +49,8 @@ wp_enqueue_script('theme_prices', get_template_directory_uri() . '/dist/prices.j
             </table>
           </div>
 
-          <?php if ($price = get_field('price') && $price['file']): ?>
           <div class="prices-download">
+            <?php if ($price = get_field('price') && $price['file']): ?>
             <a href="<?php echo $price['file']['url'] ?>" class="ui-button-primary prices-download__button">
               <span>
                 Скачать прайс
@@ -58,11 +58,11 @@ wp_enqueue_script('theme_prices', get_template_directory_uri() . '/dist/prices.j
               </span>
             </a>
             <div class="prices-download__fileInfo"><?php echo $price['caption'] ?></div>
+            <?php endif; ?>
             <div class="prices-download__description">
               <?php the_content() ?>
             </div>
           </div>
-          <?php endif; ?>
 
           <?php endwhile; else: ?>
               <p>Извините, ничего не найдено.</p>
