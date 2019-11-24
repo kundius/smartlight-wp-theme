@@ -49,7 +49,7 @@ wp_enqueue_script('theme_prices', get_template_directory_uri() . '/dist/prices.j
             </table>
           </div>
 
-          <?php if ($price = get_field('price')): ?>
+          <?php if ($price = get_field('price') && $price['file']): ?>
           <div class="prices-download">
             <a href="<?php echo $price['file']['url'] ?>" class="ui-button-primary prices-download__button">
               <span>
