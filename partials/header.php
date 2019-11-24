@@ -140,7 +140,7 @@ $flatMenu = fn($menu, 'root', null);
       
       <div class="header__email">info@s-lights.ru</div>
 
-      <div class="header__share">
+      <div class="header__share" data-url="https://slmaster.ru/">
         <button class="header__shareButton" data-id="fb">
           <?php icon('fb', .8) ?>
         </button>
