@@ -4,6 +4,8 @@ import throttle from 'lodash/throttle'
 import share from 'share-buttons'
 import 'whatwg-fetch'
 
+console.log(share)
+
 
 const isVisible = elem => !!elem && !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length )
 // const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
