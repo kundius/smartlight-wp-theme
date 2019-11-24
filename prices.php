@@ -22,57 +22,47 @@ wp_enqueue_script('theme_prices', get_template_directory_uri() . '/dist/prices.j
 
           <h1 class="prices-headline"><span><?php the_title() ?></span></h1>
 
+          <?php if (has_excerpt()): ?>
           <div class="prices-description">
-            Точная смета определяется после выезда на объект специалиста и складывается из стоимости расходов на материалы и выполняемых работ.
+            <?php the_excerpt() ?>
           </div>
+          <?php endif; ?>
 
           <div class="prices-table-wrap">
             <table class="prices-table">
-              <caption>Новогоднее освещение - материалы</caption>
+              <caption><?php the_field('caption') ?></caption>
               <tbody>
                 <tr>
                   <th colspan="2">Материал</th>
                   <th>Описание</th>
                   <th>Цена за погонный метр, руб.</th>
                 </tr>
+                <?php foreach (get_field('list') as $row): ?>
                 <tr>
-                  <td><strong>ТВИНКЛ-ЛАЙт</strong></td>
-                  <td><img class="prices-table__image" src='https://via.placeholder.com/66' alt='' /></td>
-                  <td>Яркая и надёжная классическая гирлянда класса «премиум». Ресурс светодиодов составляет 100 000 ч</td>
-                  <td>от 200 руб за пог.метр</td>
+                  <td><strong><?php echo $row['title'] ?></strong></td>
+                  <td><img class="prices-table__image" src='<?php echo $row['image']['url'] ?>' alt='' /></td>
+                  <td><?php echo $row['description'] ?></td>
+                  <td><?php echo $row['price'] ?></td>
                 </tr>
-                <tr>
-                  <td><strong>ТАЮЩИЕ СОСУЛЬКИ</strong></td>
-                  <td><img class="prices-table__image" src='https://via.placeholder.com/66' alt='' /></td>
-                  <td>Яркая и надёжная классическая гирлянда класса «премиум». Ресурс светодиодов составляет 100 000 ч</td>
-                  <td>от 200 руб за пог.метр</td>
-                </tr>
-                <tr>
-                  <td><strong>ТВИНКЛ-ЛАЙт</strong></td>
-                  <td><img class="prices-table__image" src='https://via.placeholder.com/66' alt='' /></td>
-                  <td>Яркая и надёжная классическая гирлянда класса «премиум». Ресурс светодиодов составляет 100 000 ч</td>
-                  <td>от 200 руб за пог.метр</td>
-                </tr>
-                <tr>
-                  <td><strong>ТВИНКЛ-ЛАЙт</strong></td>
-                  <td><img class="prices-table__image" src='https://via.placeholder.com/66' alt='' /></td>
-                  <td>Яркая и надёжная классическая гирлянда класса «премиум». Ресурс светодиодов составляет 100 000 ч</td>
-                  <td>от 200 руб за пог.метр</td>
-                </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>
 
+          <?php if ($price = get_field('price')): ?>
           <div class="prices-download">
-            <a href="#" class="ui-button-primary prices-download__button">
+            <a href="<?php echo $price['file']['url'] ?>" class="ui-button-primary prices-download__button">
               <span>
                 Скачать прайс
                 <span class="ui-download-arrow prices-download__arrow"></span>
               </span>
             </a>
-            <div class="prices-download__fileInfo">price.xls (1,25 Mб)</div>
-            <div class="prices-download__description">Свяжитесь с нашими менеджерами любым удобным способом – и Вы получите предварительную смету проекта. При необходимости, мы готовы дать детальные консультации относительно всего спектра нашей продукции и объяснить на объекте, что и где планируется разместить.</div>
+            <div class="prices-download__fileInfo"><?php echo $price['caption'] ?></div>
+            <div class="prices-download__description">
+              <?php the_content() ?>
+            </div>
           </div>
+          <?php endif; ?>
 
           <?php endwhile; else: ?>
               <p>Извините, ничего не найдено.</p>
