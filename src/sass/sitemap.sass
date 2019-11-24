@@ -2,14 +2,16 @@
   background: url('../img/bg-sitemap.jpg') no-repeat 50% 0
   background-size: cover
   background-color: #172037
+  padding-bottom: 78px
 
 .sitemap-headline
   font-family: $font-family-alt
   font-size: 48px
-  letter-spacing: -0.01em
-  color: #ffffff
+  letter-spacing: -.01em
+  color: #fff
   position: relative
-  margin: 23px 0
+  margin: 43px 0
+  padding-bottom: 20px
   +below(small)
     font-size: 32px
 
@@ -38,7 +40,7 @@
   content: ''
   position: absolute
   z-index: 10
-  top: 61px
+  bottom: 0
   left: 259px
   width: 136px
   height: 1px
@@ -53,6 +55,8 @@
   position: relative
   z-index: 20
   margin-left: 30%
+  margin-top: 72px
+  margin-bottom: 72px
 
 .sitemap-grid
   display: flex
@@ -70,7 +74,7 @@
   margin: 0
   list-style: none
 .sitemap-list-first > li
-  margin: 10px 0
+  margin: 12px 0
 .sitemap-list-first > li > a
   color: #c7dcf4
   text-decoration: none
@@ -91,8 +95,11 @@
   display: inline-block
   transform: rotate(-45deg)
   vertical-align: middle
+  position: relative
+  top: -3px
 .sitemap-list-first > li._opened > a > .sitemap-list__toggle
   transform: rotate(-225deg)
+  top: 0
 
 .sitemap-list-second
   padding: 0 0 0 25px
