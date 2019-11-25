@@ -1,4 +1,4 @@
-<?php p_enqueue_script('theme_quiz', get_template_directory_uri() . '/dist/quiz.js', ['theme_common'], false, true) ?>
+<?php wp_enqueue_script('theme_quiz', get_template_directory_uri() . '/dist/quiz.js', ['theme_common'], false, true) ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/quiz.css" type="text/css" />
 <div class="quiz-section">
   <div class="container">
