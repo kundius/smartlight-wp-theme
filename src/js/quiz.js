@@ -11,6 +11,7 @@ forEach(document.querySelectorAll('.js-quiz'), wrapper => {
   let active = 0
 
   const show = index => {
+    active = index
     elDiscount.innerHTML = 2 * index
     elDescriptionBase.style.display = index < elsStep.length ? 'block' : 'none'
     elDescriptionSuccess.style.display = index < elsStep.length ? 'none' : 'block'
