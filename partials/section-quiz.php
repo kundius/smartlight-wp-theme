@@ -1,11 +1,12 @@
-<?php wp_enqueue_script('theme_quiz', get_template_directory_uri() . '/dist/quiz.js', ['theme_common'], false, true) ?>
+<?php
+wp_enqueue_script('theme_quiz', get_template_directory_uri() . '/dist/quiz.js', ['theme_common'], false, true);
+$questions = get_field('quiz_questions', 'option');
+?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/quiz.css" type="text/css" />
 <div class="quiz-section">
   <div class="container">
-    <div class="quiz">
-      <div class="quiz__title">
-        Получите <span>скидку на монтаж 10% </span> и&nbsp;расчет стоимости, ответив на&nbsp;5&nbsp;простых вопросов
-      </div>
+    <div class="quiz js-quiz">
+      <div class="quiz__title"><?php the_field('quiz_title', 'option') ?></div>
       <div class="quiz-decoration-1-1"></div>
       <div class="quiz-decoration-1-2"></div>
       <div class="quiz-decoration-1-3"></div>
@@ -31,20 +32,42 @@
 
       <div class="quiz-body">
         <div class="quiz-body__left">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+          <div class="quiz-form">
+            <div class="quiz-form__steps">
+              <?php foreach ($questions as $key => $question): ?>
+              <div class="quiz-form__steps-item js-quiz-step"><span><?php echo $key ?></span></div>
+              <div class="quiz-form__steps-item-separator"></div>
+              <?php endforeach; ?>
+            </div>
+            <div class="quiz-form__questions">
+              <?php foreach ($questions as $key => $question): ?>
+              <div class="quiz-form__questions-item js-quiz-group">
+                <div class="quiz-question">
+                  <div class="quiz-question__title"><?php echo $question['question'] ?></div>
+                  <div class="quiz-form__answers">
+                    <?php foreach ($question['question']['answers'] as $answer): ?>
+                    <label class="quiz-form__answers-item">
+                      <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key ?>">
+                      <span><?php echo $answer['answer'] ?></span>
+                    </label>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              </div>
+              <?php endforeach; ?>
+            </div>
+            <div class="quiz-form__next">
+              <button class="quiz-form__next-button ui-button-primary js-quiz-next">Следующий вопрос<span class="ui-arrow-right"></span></button>
+            </div>
+          </div>
         </div>
         <div class="quiz-body__right">
           <div class="quiz-description">
-            <p>Ответьте на вопросы и узнайте стоимость и сроки установки освещения.</p>
-            <p>За каждый ответ Вы получаете скидку на монтаж.</p>
-            <p>Максимальный размер скидки 10%</p>
+            <div class="js-quiz-description-base"><?php the_field('quiz_description_base', 'option') ?></div>
+            <div class="js-quiz-description-success"><?php the_field('quiz_description_success', 'option') ?></div>
           </div>
           <div class="quiz-discount">
-            <div class="quiz-discount__value">0<span>%</span></div>
+            <div class="quiz-discount__value"><span class="js-quiz-discount">0</span>%</div>
             <div class="quiz-discount__label">Ваша скидка<br />на монтаж</div>
           </div>
         </div>

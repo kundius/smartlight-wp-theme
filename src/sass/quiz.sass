@@ -250,8 +250,9 @@
   color: #f1caa4
   letter-spacing: 0.025em
   line-height: 1.333
+  margin: 72px 70px 32px
   p + p
-    margin-top: 20px
+    margin-top: 27px
 
 .quiz-discount
   width: 400px
@@ -259,13 +260,15 @@
   background: url('../img/quiz-decorations-10.png')
   display: flex
   align-items: center
+  margin: 0 auto
+  padding-bottom: 6px
 
 .quiz-discount__value
   border-radius: 50%
   background-color: rgba(0, 0, 0, 0.4)
   box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.5),inset 0px 1px 3px 0px rgba(0, 0, 0, 0.75)
-  font-weight: bold
-  font-size: 30px
+  font-weight: 600
+  font-size: 20px
   letter-spacing: 0.025em
   width: 68px
   height: 68px
@@ -274,13 +277,156 @@
   line-height: 68px
   text-align: center
   color: #ffffff
+  margin-right: 26px
+  margin-left: 52px
   span
-    font-size: 20px
-    font-weight: 600
+    font-size: 30px
+    font-weight: bold
+    vertical-align: middle
 
 .quiz-discount__label
   font-weight: bold
   font-size: 30px
   letter-spacing: 0.025em
   color: #ffffff
+  line-height: 24px
+
+.quiz-form
+
+.quiz-form__steps
+  display: flex
+  align-items: center
+
+.quiz-form__steps-item-separator
+  height: 1px
+  flex-grow: 1
+  background: rgba(255, 255, 255, 0.2)
+
+.quiz-form__steps-item
+  min-width: 72px
+  min-height: 72px
+  width: 72px
+  height: 72px
+  position: relative
+  span
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    font-weight: bold
+    color: #e4a76c
+    font-size: 24px
+    letter-spacing: 0.05em
+    z-index: 30
+  &::before
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 20
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    border: 2px solid rgba(255, 255, 255, 0.2)
+  &::after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 20
+
+.quiz-form__steps-item._active
+  span
+    color: #ffffff
+    font-size: 36px
+  &::before
+    width: 65px
+    height: 65px
+    border-color: #ffffff
+    border-style: dotted
+  &::after
+    width: 61px
+    height: 61px
+    background: #ff8a00
+
+.quiz-form__steps-item._past
+  span
+    color: #ffffff
+    font-size: 36px
+  &::before
+    width: 65px
+    height: 65px
+    border-color: #ffffff
+    border-style: dotted
+  &::after
+    width: 61px
+    height: 61px
+    background: #e4a76c
+
+.quiz-form__questions
+
+.quiz-form__questions-item
+  display: none
+  &._active
+    display: block
+
+.quiz-question
+
+.quiz-question__title
+  color: #ffc90d
+  font-size: 26px
+  letter-spacing: 0.025em
   line-height: 1
+  font-weight: 500
+  font-family: $font-family-alt
+
+.quiz-form__answers
+  display: flex
+  margin-left: -40px
+  margin-top: -16px
+
+.quiz-form__answers-item
+  width: 50%
+  padding-left: 40px
+  padding-top: 16px
+  font-size: 18px
+  letter-spacing: 0.075em
+  color: #ffffff
+  line-height: 1
+  font-weight: bold
+  display: flex
+  align-items: center
+  &:hover
+    color: #ffd852
+  input
+    display: none
+  input + span
+    display: inline-block
+    width: 32px
+    height: 32px
+    margin-right: 20px
+    align-self: flex-start
+    position: relative
+    border: 1px solid rgb(199, 199, 199)
+    border-radius: 50%
+    background-color: rgba(255, 255, 255, 0.102)
+  input:checked + span::before
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background: #c3f800
+
+.quiz-form__next
+  display: flex
+  justify-content: flex-end
+
+.quiz-form__next-button
+  background: #333742
+  width: 304px
+  max-width: 100%
