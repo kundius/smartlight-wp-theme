@@ -27,8 +27,6 @@
       <div class="quiz-decoration-7"></div>
       <div class="quiz-decoration-8"></div>
       <div class="quiz-decoration-9"></div>
-      <div class="quiz-decoration-10"></div>
-      <div class="quiz-decoration-11"></div>
       <div class="quiz-decoration-12"></div>
       <div class="quiz-body">
         <div class="quiz-body__left">
