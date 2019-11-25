@@ -59,7 +59,7 @@ $questions = get_field('quiz_questions', 'option');
             </div>
             <div class="quiz-form__next">
               <button class="quiz-form__next-button js-quiz-next">
-                <span>Следующий вопрос<span class="ui-arrow-right"></span></span>
+                Следующий вопрос<span class="ui-arrow-right"></span>
               </button>
             </div>
           </div>
