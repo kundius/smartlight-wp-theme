@@ -71,7 +71,6 @@ $questions = get_field('quiz_questions', 'option');
               <div class="quiz-form__success">
                 Ваше сообщение успешно отправлено!
               </div>
-              <div class="quiz-form__title">Заказать бесплатный дизайн-проект</div>
               <div class="quiz-form__rowField">
                 <input type='text' name='your-name' placeholder='Имя' class="quiz-form__input" />
               </div>
