@@ -45,6 +45,10 @@ module.exports = {
         PATHS.source + 'js/sitemap.js',
         PATHS.source + 'sass/sitemap.sass'
       ],
+      quiz: [
+        PATHS.source + 'js/quiz.js',
+        PATHS.source + 'sass/quiz.sass'
+      ],
       common: [
         PATHS.source + 'js/common.js',
         PATHS.source + 'sass/common.sass',

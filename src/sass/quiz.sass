@@ -1,0 +1,78 @@
+.quiz-section
+  background: #008fcd
+  display: none
+  padding-top: 267px
+  padding-bottom: 187px
+
+.quiz
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    background: url('../img/ng-form-title.png')
+    background-size: cover
+    width: 254px
+    height: 158px
+    left: -79px
+    top: -56px
+  &::after
+    content: ''
+    position: absolute
+    z-index: 15
+    width: 625px
+    height: 155px
+    top: -100px
+    right: -50px
+    background: url('../img/bg-stripe-gray.png')
+
+.quiz-decoration-1
+  position: absolute
+  z-index: 30
+  right: 615px
+  top: -140px
+  background: url('../img/quiz-decorations-3.png')
+  width: 103px
+  height: 164px
+
+.quiz-decoration-2
+  position: absolute
+  z-index: 10
+  right: 650px
+  top: -130px
+  background: url('../img/quiz-decorations-2.png')
+  width: 191px
+  height: 228px
+
+.quiz__title
+  position: absolute
+  right: -35px
+  top: -210px
+  z-index: 30
+  text-align: center
+  width: 629px
+  height: 228px
+  background: url('../img/quiz-decorations-11.png')
+  font-weight: 500
+  font-size: 30px
+  line-height: 34px
+  font-family: $font-family-alt
+  color: #1c296f
+  span
+    background-color: #f7442c
+    color: #ffffff
+  
+.quiz__decorations
+  
+.quiz-body
+  display: flex
+  position: relative
+  z-index: 20
+  
+.quiz-body__left
+  width: 70%
+  background-color: rgb(31, 150, 20)
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.11)
+  
+.quiz-body__right
+  background-color: rgb(15, 75, 10)
+  width: 30%

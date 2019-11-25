@@ -101,6 +101,8 @@ global $post;
 
         </div>
 
+        <?php get_template_part('partials/section-quiz') ?>
+
         <div class="mesozoic-types mesozoic-types_<?php echo $post->post_name ?>">
           <div class="container">
             <div class="mesozoic-types__wrapper">
