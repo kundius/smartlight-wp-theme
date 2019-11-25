@@ -32,21 +32,21 @@ $questions = get_field('quiz_questions', 'option');
 
       <div class="quiz-body">
         <div class="quiz-body__left">
-          <div class="quiz-form">
-            <div class="quiz-form__steps">
+          <div class="quiz-report js-quiz-report">
+            <div class="quiz-report__steps">
               <?php foreach ($questions as $key => $question): ?>
-              <div class="quiz-form__steps-item js-quiz-step"><span><?php echo $key + 1 ?></span></div>
-              <div class="quiz-form__steps-item-separator"></div>
+              <div class="quiz-report__steps-item js-quiz-step"><span><?php echo $key + 1 ?></span></div>
+              <div class="quiz-report__steps-item-separator"></div>
               <?php endforeach; ?>
             </div>
-            <div class="quiz-form__questions">
+            <div class="quiz-report__questions">
               <?php foreach ($questions as $key => $question): ?>
-              <div class="quiz-form__questions-item js-quiz-group">
+              <div class="quiz-report__questions-item js-quiz-group">
                 <div class="quiz-question">
                   <div class="quiz-question__title"><?php echo $question['question'] ?></div>
-                  <div class="quiz-form__answers">
+                  <div class="quiz-report__answers">
                     <?php foreach ($question['answers'] as $answer): ?>
-                    <label class="quiz-form__answers-item">
+                    <label class="quiz-report__answers-item">
                       <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key ?>">
                       <span></span>
                       <?php echo $answer['answer'] ?>
@@ -57,11 +57,50 @@ $questions = get_field('quiz_questions', 'option');
               </div>
               <?php endforeach; ?>
             </div>
-            <div class="quiz-form__next">
-              <button class="quiz-form__next-button js-quiz-next">
+            <div class="quiz-report__next">
+              <button class="quiz-report__next-button js-quiz-next">
                 Следующий вопрос <span class="ui-arrow-right"></span>
               </button>
             </div>
+          </div>
+
+          <div class="quiz-result js-quiz-result">
+            <div class="quiz-result__title">Благодарим за ответы!</div>
+            <div class="quiz-result__description">Введите свой телефон, что бы мы могли связаться с Вами для точной оценки стоимости и сроков.</div>
+            <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="quiz-form js-form">
+              <div class="quiz-form__success">
+                Ваше сообщение успешно отправлено!
+              </div>
+              <div class="quiz-form__title">Заказать бесплатный дизайн-проект</div>
+              <div class="quiz-form__rowField">
+                <input type='text' name='your-name' placeholder='Имя' class="quiz-form__input" />
+              </div>
+              <div class="quiz-form__rowField">
+                <span class="wpcf7-form-control-wrap your-phone">
+                  <input type='tel' name='your-phone' placeholder='Телефон*' class="quiz-form__input" />
+                </span>
+              </div>
+              <div class="quiz-form__rowSubmit">
+                <input type="hidden" name="referrer" value="<?php the_title() ?>">
+                <span class="wpcf7-form-control-wrap submit">
+                  <button class="ui-button-primary quiz-form__submit" type='submit'>
+                    <span>
+                      Отправить
+                      <span class="ui-arrow-right quiz-form__submitArrow"></span>
+                    </span>
+                  </button>
+                </span>
+              </div>
+              <div class="quiz-form__rowRules">
+                <label class="rules-field">
+                  <input type='checkbox' name='rules' value='1' class="rules-field__input" />
+                  <span class="rules-field__checkbox"></span>
+                  <span class="rules-field__text">
+                    Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
+                  </span>
+                </label>
+              </div>
+            </form>
           </div>
         </div>
         <div class="quiz-body__right">
