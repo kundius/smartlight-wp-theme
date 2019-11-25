@@ -15,6 +15,7 @@
       <div class="quiz-decoration-1-7"></div>
       <div class="quiz-decoration-1-8"></div>
       <div class="quiz-decoration-1-9"></div>
+      <div class="quiz-decoration-1-10"></div>
       <div class="quiz-decoration-2"></div>
       <div class="quiz-decoration-3"></div>
       <div class="quiz-decoration-4-1"></div>
