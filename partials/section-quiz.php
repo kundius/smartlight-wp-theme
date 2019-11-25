@@ -48,7 +48,8 @@ $questions = get_field('quiz_questions', 'option');
                     <?php foreach ($question['answers'] as $answer): ?>
                     <label class="quiz-form__answers-item">
                       <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key ?>">
-                      <span><?php echo $answer['answer'] ?></span>
+                      <span></span>
+                      <?php echo $answer['answer'] ?>
                     </label>
                     <?php endforeach; ?>
                   </div>
