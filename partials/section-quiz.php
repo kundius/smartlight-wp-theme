@@ -7,6 +7,7 @@
         Получите <span>скидку на монтаж 10% </span> и расчет стоимости, ответив на 5 простых вопросов
       </div>
       <div class="quiz-decoration-1"></div>
+      <div class="quiz-decoration-2"></div>
       <div class="quiz-body">
         <div class="quiz-body__left">
           <br>
