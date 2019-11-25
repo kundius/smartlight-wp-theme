@@ -386,6 +386,7 @@
 
 .quiz-form__answers
   display: flex
+  flex-wrap: wrap
   margin-left: -40px
   margin-top: -16px
 
@@ -400,14 +401,18 @@
   font-weight: bold
   display: flex
   align-items: center
+  cursor: pointer
   &:hover
     color: #ffd852
   input
     display: none
   input + span
     display: inline-block
+    cursor: pointer
     width: 32px
     height: 32px
+    min-width: 32px
+    min-height: 32px
     margin-right: 20px
     align-self: flex-start
     position: relative
@@ -421,6 +426,7 @@
     top: 50%
     width: 10px
     height: 10px
+    transform: translate(-50%, -50%)
     border-radius: 50%
     background: #c3f800
 
