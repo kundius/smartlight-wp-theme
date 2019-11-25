@@ -35,7 +35,7 @@ $questions = get_field('quiz_questions', 'option');
           <div class="quiz-form">
             <div class="quiz-form__steps">
               <?php foreach ($questions as $key => $question): ?>
-              <div class="quiz-form__steps-item js-quiz-step"><span><?php echo $key ?></span></div>
+              <div class="quiz-form__steps-item js-quiz-step"><span><?php echo $key + 1 ?></span></div>
               <div class="quiz-form__steps-item-separator"></div>
               <?php endforeach; ?>
             </div>
@@ -45,7 +45,7 @@ $questions = get_field('quiz_questions', 'option');
                 <div class="quiz-question">
                   <div class="quiz-question__title"><?php echo $question['question'] ?></div>
                   <div class="quiz-form__answers">
-                    <?php foreach ($question['question']['answers'] as $answer): ?>
+                    <?php foreach ($question['answers'] as $answer): ?>
                     <label class="quiz-form__answers-item">
                       <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key ?>">
                       <span><?php echo $answer['answer'] ?></span>
@@ -57,7 +57,9 @@ $questions = get_field('quiz_questions', 'option');
               <?php endforeach; ?>
             </div>
             <div class="quiz-form__next">
-              <button class="quiz-form__next-button ui-button-primary js-quiz-next">Следующий вопрос<span class="ui-arrow-right"></span></button>
+              <button class="quiz-form__next-button ui-button-primary js-quiz-next">
+                <span>Следующий вопрос<span class="ui-arrow-right"></span></span>
+              </button>
             </div>
           </div>
         </div>
