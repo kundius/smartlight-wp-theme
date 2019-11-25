@@ -28,7 +28,7 @@
       <div class="quiz-decoration-8"></div>
       <div class="quiz-decoration-9"></div>
       <div class="quiz-decoration-12"></div>
-      
+
       <div class="quiz-body">
         <div class="quiz-body__left">
           <br>
@@ -38,11 +38,15 @@
           <br>
         </div>
         <div class="quiz-body__right">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+          <div class="quiz-description">
+            <p>Ответьте на вопросы и узнайте стоимость и сроки установки освещения.</p>
+            <p>За каждый ответ Вы получаете скидку на монтаж.</p>
+            <p>Максимальный размер скидки 10%</p>
+          </div>
+          <div class="quiz-discount">
+            <div class="quiz-discount__value">0<span>%</span></div>
+            <div class="quiz-discount__label">Ваша скидка<br />на монтаж</div>
+          </div>
         </div>
       </div>
     </div>
