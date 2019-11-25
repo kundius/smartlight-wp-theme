@@ -3,7 +3,7 @@ wp_enqueue_script('theme_quiz', get_template_directory_uri() . '/dist/quiz.js', 
 $questions = get_field('quiz_questions', 'option');
 ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/quiz.css" type="text/css" />
-<div class="quiz-section">
+<div class="quiz-section" <?php if (empty($_GET['test'])): ?>style="display: none"<?php endif; ?>>
   <div class="container">
     <div class="quiz js-quiz">
       <div class="quiz__title"><?php the_field('quiz_title', 'option') ?></div>
