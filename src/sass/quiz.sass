@@ -496,10 +496,6 @@
   position: relative
   margin-left: px2em(-18)
   margin-right: px2em(-72)
-  &._validation-mail_sent > *
-    opacity: 0
-    &.quiz-form__success
-      opacity: 1
   +below(medium)
     background: rgb(68, 182, 232)
     padding-left: px2em(20)
@@ -526,6 +522,8 @@
 .quiz-form__rowField
   width: 34%
   padding-left: px2em(11)
+  ._validation-mail_sent &
+    opacity: 0
   +below(medium)
     width: 50%
     order: 10
@@ -536,6 +534,8 @@
 .quiz-form__rowSubmit
   width: 32%
   padding-left: px2em(16)
+  ._validation-mail_sent &
+    opacity: 0
   +below(medium)
     width: 50%
     order: 30
@@ -548,6 +548,8 @@
   padding-left: px2em(11)
   margin-top: px2em(11)
   color: rgba(255, 255, 255, 0.57)
+  ._validation-mail_sent &
+    opacity: 0
   +below(medium)
     width: 50%
     order: 20

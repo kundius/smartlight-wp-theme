@@ -30,7 +30,7 @@ $questions = get_field('quiz_questions', 'option');
       <div class="quiz-decoration-9"></div>
       <div class="quiz-decoration-12"></div>
 
-      <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="quiz-body js-form">
+      <form action="/wp-json/contact-form-7/v1/contact-forms/675/feedback" method="post" class="quiz-body js-form">
         <div class="quiz-body__left">
           <div class="quiz-report js-quiz-report">
             <div class="quiz-report__steps">
