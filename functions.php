@@ -309,7 +309,7 @@ function seo() {
 		echo '<meta name="description" content="' . $description . '">';
 	}
 
-	echo '<meta property="og:title" content="' . $title . '" />';
+	// echo '<meta property="og:title" content="' . $title . '" />';
 	// if (!empty($description)) {
 	// 	echo '<meta property="og:description" content="' . $description . '" />';
 	// }
