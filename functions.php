@@ -309,13 +309,13 @@ function seo() {
 		echo '<meta name="description" content="' . $description . '">';
 	}
 
-	// echo '<meta property="og:title" content="' . $title . '" />';
-	// if (!empty($description)) {
-	// 	echo '<meta property="og:description" content="' . $description . '" />';
-	// }
-	// echo '<meta property="og:image" content="' . echo get_the_post_thumbnail_url(null, 'full') . '" />';
-	// echo '<meta property="og:type" content="website" />';
-	// echo '<meta property="og:url" content="' . echo wp_get_canonical_url() . '" />';
+	echo '<meta property="og:title" content="' . $title . '" />';
+	if (!empty($description)) {
+		echo '<meta property="og:description" content="' . $description . '" />';
+	}
+	echo '<meta property="og:image" content="' . get_the_post_thumbnail_url(null, 'full') . '" />';
+	echo '<meta property="og:type" content="website" />';
+	echo '<meta property="og:url" content="' . wp_get_canonical_url() . '" />';
 }
 
 
