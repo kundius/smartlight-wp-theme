@@ -163,7 +163,7 @@ forEach(document.querySelectorAll('.js-slider'), function(slider) {
   const previous = () => {
     show((active - 1 + elItems.length) % elItems.length)
   }
-  
+
   const next = () => {
     show((active + 1) % elItems.length)
   }
@@ -274,8 +274,8 @@ forEach(document.querySelectorAll('.js-scroll'), function(el) {
   }
   el.addEventListener('click', () => {
     window.scroll({
-      top, 
-      left, 
+      top,
+      left,
       behavior: 'smooth'
     })
   })
@@ -487,6 +487,9 @@ forEach(document.querySelectorAll('.js-form'), form => {
       }
 
       if (response.status == 'mail_sent') {
+        if (typeof ym === 'function') {
+          ym(56370736, 'reachGoal', 'TARGET')
+        }
         form.reset()
         form.classList.add('_validation-mail_sent')
         setTimeout(() => {
