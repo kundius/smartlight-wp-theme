@@ -30,7 +30,7 @@ $questions = get_field('quiz_questions', 'option');
       <div class="quiz-decoration-9"></div>
       <div class="quiz-decoration-12"></div>
 
-      <div class="quiz-body">
+      <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="quiz-body js-form">
         <div class="quiz-body__left">
           <div class="quiz-report js-quiz-report">
             <div class="quiz-report__steps">
@@ -47,7 +47,7 @@ $questions = get_field('quiz_questions', 'option');
                   <div class="quiz-report__answers">
                     <?php foreach ($question['answers'] as $answer): ?>
                     <label class="quiz-report__answers-item">
-                      <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key ?>">
+                      <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key + 1 ?>">
                       <span></span>
                       <?php echo $answer['answer'] ?>
                     </label>
@@ -67,7 +67,7 @@ $questions = get_field('quiz_questions', 'option');
           <div class="quiz-result js-quiz-result">
             <div class="quiz-result__title">Благодарим за ответы!</div>
             <div class="quiz-result__description">Введите свой телефон, что бы мы могли связаться с Вами для точной оценки стоимости и сроков.</div>
-            <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="quiz-form js-form">
+            <div class="quiz-form">
               <div class="quiz-form__success">
                 Ваше сообщение успешно отправлено!
               </div>
@@ -99,7 +99,7 @@ $questions = get_field('quiz_questions', 'option');
                   </span>
                 </label>
               </div>
-            </form>
+            </div>
           </div>
         </div>
         <div class="quiz-body__right">
@@ -112,7 +112,7 @@ $questions = get_field('quiz_questions', 'option');
             <div class="quiz-discount__label">Ваша скидка<br />на монтаж</div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
