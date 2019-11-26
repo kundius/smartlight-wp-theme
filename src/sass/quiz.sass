@@ -302,7 +302,7 @@
 .quiz-report
   padding: px2em(48) px2em(95) px2em(48) px2em(195)
   +below(medium)
-    padding-left: px2em(95)
+    padding: px2em(48)
 
 .quiz-report__steps
   display: flex
@@ -479,7 +479,7 @@
 .quiz-result
   padding: px2em(71) px2em(95) px2em(71) px2em(219)
   +below(medium)
-    padding-left: px2em(95)
+    padding: px2em(48)
 
 .quiz-result__title
   font-weight: 500
@@ -504,14 +504,6 @@
   position: relative
   margin-left: px2em(-18)
   margin-right: px2em(-72)
-  +below(medium)
-    background: rgb(68, 182, 232)
-    padding-left: px2em(20)
-    padding-right: px2em(20)
-    padding-top: px2em(19)
-  +below(small)
-    margin: 0 px2em(-20)
-    max-width: 100vw
 
 .quiz-form__success
   display: none
@@ -557,6 +549,8 @@
   padding-left: px2em(11)
   margin-top: px2em(11)
   color: rgba(255, 255, 255, 0.57)
+  .rules-field__text
+    font-size: px2em(12)
   ._validation-mail_sent &
     opacity: 0
   +below(medium)
