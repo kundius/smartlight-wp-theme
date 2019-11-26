@@ -313,7 +313,11 @@ function seo() {
 	if (!empty($description)) {
 		echo '<meta property="og:description" content="' . $description . '" />';
 	}
-	echo '<meta property="og:image" content="' . (get_the_post_thumbnail_url(null, 'full') ||  get_template_directory_uri() . '/dist/img/bg-intro.jpg') . '" />';
+	$image = get_the_post_thumbnail_url(null, 'full');
+	if (empty($image)) {
+		$image = get_template_directory_uri() . '/dist/img/bg-intro.jpg';
+	}
+	echo '<meta property="og:image" content="' . $image . '" />';
 	echo '<meta property="og:type" content="website" />';
 	echo '<meta property="og:url" content="' . wp_get_canonical_url() . '" />';
 }
