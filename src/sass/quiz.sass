@@ -3,6 +3,8 @@
   padding-top: px2em(267)
   padding-bottom: px2em(187)
   overflow: hidden
+  +below(xlarge)
+    font-size: adaptive(16, 18, $breakpoint-medium, $breakpoint-xlarge)
 
 .quiz
   position: relative
@@ -511,6 +513,7 @@
   line-height: 1
   color: #ffffff
   font-family: $font-family-alt
+  text-align: center
   font-weight: 600
   position: absolute
   left: 50%
