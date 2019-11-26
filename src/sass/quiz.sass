@@ -19,8 +19,6 @@
     top: px2em(-97)
     right: px2em(-47)
     background: url('../img/bg-stripe-gray.png')
-    +below(small)
-      display: none
 
 @keyframes snowflake
   from
@@ -216,6 +214,8 @@
     left: px2em(-27)
     top: px2em(-136)
     z-index: 30
+    +below(small)
+      display: none
 
 .quiz__title
   position: absolute
@@ -316,6 +316,8 @@
   padding: px2em(48) px2em(95) px2em(48) px2em(195)
   +below(medium)
     padding: px2em(48)
+  +below(small)
+    padding: px2em(24)
 
 .quiz-report__steps
   display: flex
@@ -430,6 +432,8 @@
   display: flex
   align-items: center
   cursor: pointer
+  +below(small)
+    width: 100%
   &:hover
     color: #ffd852
   input
@@ -493,6 +497,8 @@
   padding: px2em(71) px2em(95) px2em(71) px2em(219)
   +below(medium)
     padding: px2em(48)
+  +below(small)
+    padding: px2em(24)
 
 .quiz-result__title
   font-weight: 500
