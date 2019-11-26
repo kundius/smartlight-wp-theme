@@ -6,7 +6,7 @@
   +below(xlarge)
     font-size: adaptive(10px, 18px, $breakpoint-small, $breakpoint-xlarge)
   +below(small)
-    font-size: 18px
+    font-size: 6px
 
 .quiz
   position: relative
@@ -19,6 +19,8 @@
     top: px2em(-97)
     right: px2em(-47)
     background: url('../img/bg-stripe-gray.png')
+    +below(small)
+      display: none
 
 @keyframes snowflake
   from
@@ -240,18 +242,28 @@
 
 .quiz-body
   display: flex
+  flex-wrap: wrap
   position: relative
   z-index: 20
+  +below(small)
+    font-size: 12px
 
 .quiz-body__left
   width: 66.66%
   background-color: rgb(31, 150, 20)
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.11)
   min-height: px2em(476)
+  +below(small)
+    min-height: initial
+    width: 100%
+    order: 2
 
 .quiz-body__right
   background-color: rgb(15, 75, 10)
   width: 33.33%
+  +below(small)
+    width: 100%
+    order: 1
 
 .quiz-description
   font-size: px2em(18)
@@ -270,6 +282,7 @@
   align-items: center
   margin: 0 auto
   padding-bottom: px2em(6)
+  margin-bottom: px2em(32)
   background-size: cover
 
 .quiz-discount__value
