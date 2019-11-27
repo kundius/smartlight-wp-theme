@@ -5,6 +5,9 @@ Template Name: Проекты
 wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
 
 global $wp_query;
+if ($_GET['terms']) {
+  print_r($_GET['terms']);
+}
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
