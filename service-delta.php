@@ -2,12 +2,14 @@
 /*
 Template Name: Шаблон услуги [4]
 */
+wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist/serviceMesozoic.js', ['theme_common'], false, true);
 wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/serviceDelta.js', ['theme_common'], false, true);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
+    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceMesozoic.css" type="text/css" />
     <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceDelta.css" type="text/css" />
   </head>
   <body>
@@ -102,6 +104,53 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
         <div class="container">
           <div class="service-delta-about__title"><?php the_field('about_title') ?></div>
           <div class="service-delta-about__content"><?php the_field('about_description') ?></div>
+        </div>
+      </div>
+
+      <div class="mesozoic-types mesozoic-types_<?php echo $post->post_name ?>">
+        <div class="container">
+          <div class="mesozoic-types__wrapper">
+            <div class="mesozoic-types__title">
+              <?php the_field('types_title') ?>
+            </div>
+            <div class="mesozoic-types__items">
+              <div class="mesozoic-types__grid js-masonry-grid">
+                <?php foreach (get_field('types_list') as $key => $item): ?>
+                <?php if ($item['type'] == 'primary'): ?>
+                <div class="mesozoic-types__cell">
+                  <div class="mesozoic-types__item">
+                    <div class="mesozoic-types__itemImage">
+                      <img src="<?php echo $item['image']['sizes']['w500h400'] ?>" alt='' />
+                    </div>
+                    <div class="mesozoic-types__itemTitle"><?php echo $item['title'] ?></div>
+                    <div class="mesozoic-types__itemDescription"><?php echo $item['description'] ?></div>
+                    <button class="ui-button-more mesozoic-types__itemMore" data-modal="#modal-type-<?php echo $key ?>">
+                      <span class="ui-button-more__arrow"></span>
+                      Читать больше
+                    </button>
+                  </div>
+                </div>
+                <?php else: ?>
+                <div class="mesozoic-types__cell">
+                  <div class="mesozoic-types__figures">
+                    <div class="mesozoic-types__figuresImage">
+                      <img src="<?php echo $item['image']['sizes']['w500h400'] ?>" alt='' />
+                    </div>
+                    <div class="mesozoic-types__figuresInner">
+                      <div class="mesozoic-types__figuresTitle"><?php echo $item['title'] ?></div>
+                      <div class="mesozoic-types__figuresDescription"><?php echo $item['description'] ?></div>
+                      <button class="ui-button-more mesozoic-types__figuresMore" data-modal="#modal-type-<?php echo $key ?>">
+                        <span class="ui-button-more__arrow"></span>
+                        Читать больше
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

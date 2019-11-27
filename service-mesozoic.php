@@ -15,7 +15,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
       <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
       <div class="service-mesozoic-section" style="background-image: url(<?php echo get_field('background')['url'] ?>)">
         <?php get_template_part('partials/header') ?>
-        
+
         <div class="container">
 
           <div class="mesozoic-intro">
@@ -60,8 +60,8 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
                 <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/office-lighting.jpg" alt="Освещение зданий, ЖК, торговых центров и пр" />
               </span>
             </a>
-          </div> 
-        
+          </div>
+
           <div class="mesozoic-about">
             <div class="mesozoic-about__title"><span><?php the_field('about_title') ?></span></div>
             <div class="mesozoic-about__description"><?php the_field('about_description') ?></div>
@@ -83,7 +83,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
 
         </div>
 
-        <div class="mesozoic-types mesozoic-types_primary">
+        <div class="mesozoic-types mesozoic-types_<?php echo $post->post_name ?>">
           <div class="container">
             <div class="mesozoic-types__wrapper">
               <div class="mesozoic-types__title">
@@ -129,7 +129,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
             </div>
           </div>
         </div>
-        
+
         <?php foreach (get_field('types_list') as $key => $item): ?>
         <div class="modal-type" id="modal-type-<?php echo $key ?>">
           <button class="modal-type__close" data-modal-close></button>
@@ -146,7 +146,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
           </div>
         </div>
         <?php endforeach; ?>
-      
+
       </div>
 
       <div class="mesozoic-videos">
