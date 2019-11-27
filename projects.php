@@ -10,10 +10,10 @@ $tax_query = $_GET['terms'] ? [[
   'terms' => $_GET['terms']
 ]] : null;
 $meta_query = $_GET['years'] ? [[
-  'key' => 'production_date',
+  'key' => 'start_date',
   'value' => [$_GET['years'] . '0101', $_GET['years'] . '1231'],
   'compare' => 'BETWEEN',
-  'type'    => 'NUMERIC'
+  'type' => 'NUMERIC'
 ]] : null;
 $projects = new WP_Query(array(
   'post_type' => 'project',
