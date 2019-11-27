@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Шаблон услуги [3]
+Template Name: Шаблон услуги [4]
 */
 wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist/serviceMesozoic.js', ['theme_common'], false, true);
 wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/serviceDelta.js', ['theme_common'], false, true);
