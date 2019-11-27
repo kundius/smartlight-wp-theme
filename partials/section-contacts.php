@@ -64,6 +64,7 @@
           </div>
           <div class="block-feedback__formSubmit">
             <input type="hidden" name="referrer" value="<?php the_title() ?>">
+            <input type="hidden" name="form" value="Форма внизу страницы">
             <span class="wpcf7-form-control-wrap submit">
               <button class="ui-button-primary block-feedback__submit" type='submit'>
                 <span>

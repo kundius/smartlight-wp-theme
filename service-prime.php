@@ -45,6 +45,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             </div>
             <div class="service-prime-order__rowSubmit">
               <input type="hidden" name="referrer" value="<?php the_title() ?>">
+              <input type="hidden" name="form" value="Форма в начале страницы">
               <span class="wpcf7-form-control-wrap submit">
                 <button class="ui-button-primary service-prime-order__submit" type='submit'>
                   <span>
@@ -159,7 +160,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             <div class="principles-section__resultsText">
               <?php the_field('principles_description') ?>
             </div>
-            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#consultation"><span>Заказать консультацию</span></button>
+            <button class="ui-button-primary principles-section__resultsOrder" data-modal-form="Кнопка в принципах" data-modal="#consultation"><span>Заказать консультацию</span></button>
           </div>
         </div>
       </div>

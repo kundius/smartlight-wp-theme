@@ -23,7 +23,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
               <?php the_field('intro_title') ?>
               <small><?php the_field('intro_description') ?></small>
             </div>
-            <button class="mesozoic-intro__button" data-modal="#consultation"><span>Заказать консультацию</span></button>
+            <button class="mesozoic-intro__button" data-modal-form="Кнопка в начале страницы" data-modal="#consultation"><span>Заказать консультацию</span></button>
             <?php if ($advantages = get_field('intro_advantages')): ?>
             <ul class="mesozoic-intro__advantages">
               <?php foreach ($advantages as $item): ?>
@@ -137,7 +137,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
           <div class="modal-type__body">
             <div class="modal-type__title"><span><?php echo $item['title'] ?></span></div>
             <div class="modal-type__content"><?php echo $item['content'] ?></div>
-            <button class="ui-button-primary modal-type__order" data-modal="#consultation">
+            <button class="ui-button-primary modal-type__order" data-modal-form="Кнопка в описании типа" data-modal="#consultation">
               <span>
                 Заказать консультацию
                 <span class="ui-arrow-right"></span>
@@ -218,7 +218,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
               </div>
               <div class="mesozoic-arsenal__contentRight">
                 <?php the_field('ng_arsenal_content_right', 'option') ?>
-                <button class="ui-button-primary mesozoic-arsenal__contentButton" data-modal="#consultation"><span>Заказать консультацию</span></button>
+                <button class="ui-button-primary mesozoic-arsenal__contentButton" data-modal-form="Кнопка в арсенале" data-modal="#consultation"><span>Заказать консультацию</span></button>
               </div>
             </div>
           </div>

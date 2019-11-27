@@ -114,6 +114,7 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                     </div>
                     <div class="contacts-form__rowSubmit">
                       <input type="hidden" name="referrer" value="<?php the_title() ?>">
+                      <input type="hidden" name="form" value="Форма на странице контактов">
                       <span class="wpcf7-form-control-wrap submit">
                         <button class="ui-button-primary contacts-form__submit" type='submit'>
                           <span>

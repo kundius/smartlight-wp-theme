@@ -25,7 +25,7 @@ $projects = new WP_Query(array(
         <div class="main-intro__container">
           <div class="main-intro__title">Новогодняя праздничная подсветка<br> Вашего дома</div>
           <div class="main-intro__description">под "ключ" в Москве и Московской области</div>
-          <button class="main-intro__button" data-modal="#calculation">
+          <button class="main-intro__button" data-modal-form="Кнопка в начале страницы" data-modal="#calculation">
             <span>Заказать расчет</span>
           </button>
         </div>
@@ -188,12 +188,12 @@ $projects = new WP_Query(array(
               </div>
             </div>
           </div>
-        
+
           <div class="main-about">
             <div class="main-about__title">
               <span>
                 SMART LIGHT -<br />
-                архитектурное уличное освещение, быстрый монтаж 
+                архитектурное уличное освещение, быстрый монтаж
               </span>
             </div>
             <div class="main-about__description">

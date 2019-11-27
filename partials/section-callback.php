@@ -17,6 +17,7 @@
         </div>
         <div class="s-callback-form__rowSubmit">
           <input type="hidden" name="referrer" value="<?php the_title() ?>">
+          <input type="hidden" name="form" value="Форма внизу страницы">
           <span class="wpcf7-form-control-wrap submit">
             <button class="ui-button-primary s-callback-form__submit" type='submit'>
               <span>

@@ -153,7 +153,7 @@
       </div>
       <div class="modal-form__row">
         <input type="hidden" name="referrer" value="<?php the_title() ?>">
-        <input type="hidden" name="form" value="">
+        <input type="hidden" name="form" value="Форма в модальном окне">
         <span class="wpcf7-form-control-wrap submit">
           <button class="ui-button-primary modal-form__submit" type='submit'>
             <span>
@@ -200,7 +200,7 @@
       </div>
       <div class="modal-form__row">
         <input type="hidden" name="referrer" value="<?php the_title() ?>">
-        <input type="hidden" name="form" value="">
+        <input type="hidden" name="form" value="Форма в модальном окне">
         <span class="wpcf7-form-control-wrap submit">
           <button class="ui-button-primary modal-form__submit" type='submit'>
             <span>
@@ -247,7 +247,7 @@
       </div>
       <div class="modal-form__row">
         <input type="hidden" name="referrer" value="<?php the_title() ?>">
-        <input type="hidden" name="form" value="">
+        <input type="hidden" name="form" value="Форма в модальном окне">
         <span class="wpcf7-form-control-wrap submit">
           <button class="ui-button-primary modal-form__submit" type='submit'>
             <span>
@@ -291,7 +291,7 @@
       </div>
       <div class="modal-form__row">
         <input type="hidden" name="referrer" value="<?php the_title() ?>">
-        <input type="hidden" name="form" value="">
+        <input type="hidden" name="form" value="Форма в модальном окне">
         <span class="wpcf7-form-control-wrap submit">
           <button class="ui-button-primary modal-form__submit" type='submit'>
             <span>

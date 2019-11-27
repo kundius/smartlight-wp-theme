@@ -61,6 +61,7 @@ global $post;
             </div>
             <div class="charlie-order__rowSubmit">
               <input type="hidden" name="referrer" value="<?php the_title() ?>">
+              <input type="hidden" name="form" value="Форма в начале страницы">
               <span class="wpcf7-form-control-wrap submit">
                 <button class="ui-button-primary charlie-order__submit" type='submit'>
                   <span>

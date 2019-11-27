@@ -130,11 +130,11 @@ $flatMenu = fn($menu, 'root', null);
         'theme_location' => 'headermenu'
       ]) ?>
 
-      <button class="header__callback" data-modal="#callback">
+      <button class="header__callback" data-modal-form="Кнопка в шапке" data-modal="#callback">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
       </button>
 
-      <button class="header__feedback" data-modal-form="Обратная связь в шапке" data-modal="#feedback">
+      <button class="header__feedback" data-modal-form="Кнопка в шапке" data-modal="#feedback">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
       </button>
 
