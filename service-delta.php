@@ -2,16 +2,12 @@
 /*
 Template Name: Шаблон услуги [4]
 */
-wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist/serviceMesozoic.js', ['theme_common'], false, true);
 wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/serviceDelta.js', ['theme_common'], false, true);
-
-global $post;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceMesozoic.css" type="text/css" />
     <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceDelta.css" type="text/css" />
   </head>
   <body>
@@ -19,26 +15,14 @@ global $post;
       <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
       <div class="service-delta-section" style="background-image: url(<?php echo get_field('background')['url'] ?>)">
         <?php get_template_part('partials/header') ?>
-
-        <div class="sticky-action js-sticky-action">
-          <div class="sticky-action__inner">
-            <button class="sticky-action__close js-sticky-action-close"></button>
-            <div class="sticky-action__discount">-25<span>%</span></div>
-            <div class="sticky-action__date">только сегодня</div>
-            <div class="sticky-action__title">На новогоднее освещение</div>
-            <div class="sticky-action__description">Оставьте заявку или позвоните по тел: +7( 495) 928-15-15, скажите "по акции"</div>
-          </div>
-        </div>
-
         <div class="container">
-
-          <div class="delta-intro">
-            <div class="delta-intro__title">
-              <?php the_field('intro_title') ?>
+          <div class="service-delta-intro">
+            <div class="service-delta-intro__title">
+              <span><?php the_field('intro_title') ?></span>
               <small><?php the_field('intro_description') ?></small>
             </div>
             <?php if ($advantages = get_field('intro_advantages')): ?>
-            <ul class="delta-intro__advantages">
+            <ul class="service-delta-intro__advantages">
               <?php foreach ($advantages as $item): ?>
               <li><?php echo $item['text'] ?></li>
               <?php endforeach; ?>
@@ -46,31 +30,31 @@ global $post;
             <?php endif; ?>
           </div>
 
-          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="delta-order js-form">
-            <div class="delta-order__success">
+          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="service-delta-order js-form">
+            <div class="service-delta-order__success">
               Ваше сообщение успешно отправлено!
             </div>
-            <div class="delta-order__title">Заказать бесплатный дизайн-проект</div>
-            <div class="delta-order__rowField">
-              <input type='text' name='your-name' placeholder='Имя' class="delta-order__input" />
+            <div class="service-delta-order__title">Заказать бесплатную консультацию</div>
+            <div class="service-delta-order__rowField">
+              <input type='text' name='your-name' placeholder='Введите Ваше имя' class="service-delta-order__input" />
             </div>
-            <div class="delta-order__rowField">
+            <div class="service-delta-order__rowField">
               <span class="wpcf7-form-control-wrap your-phone">
-                <input type='tel' name='your-phone' placeholder='Телефон*' class="delta-order__input" />
+                <input type='tel' name='your-phone' placeholder='Введите Ваш телефон*' class="service-delta-order__input" />
               </span>
             </div>
-            <div class="delta-order__rowSubmit">
+            <div class="service-delta-order__rowSubmit">
               <input type="hidden" name="referrer" value="<?php the_title() ?>">
               <span class="wpcf7-form-control-wrap submit">
-                <button class="ui-button-primary delta-order__submit" type='submit'>
+                <button class="ui-button-primary service-delta-order__submit" type='submit'>
                   <span>
                     Отправить
-                    <span class="ui-arrow-right delta-order__submitArrow"></span>
+                    <span class="ui-arrow-right service-delta-order__submitArrow"></span>
                   </span>
                 </button>
               </span>
             </div>
-            <div class="delta-order__rowRules">
+            <div class="service-delta-order__rowRules">
               <label class="rules-field">
                 <input type='checkbox' name='rules' value='1' class="rules-field__input" />
                 <span class="rules-field__checkbox"></span>
@@ -81,116 +65,128 @@ global $post;
             </div>
           </form>
 
-          <div class="delta-about">
-            <div class="delta-about__left">
-              <div class="delta-about__title"><?php the_field('about_title') ?></div>
-              <?php if ($banner = get_field('about_banner')): ?>
-              <div class="delta-about__banner">
-                <div class="delta-about__bannerDate"><?php echo $banner['date'] ?></div>
-                <div class="delta-about__bannerTitle"><?php echo $banner['title'] ?></div>
-                <div class="delta-about__bannerDesc"><?php echo $banner['description'] ?></div>
+          <div class="service-delta-actions">
+            <?php if ($projects_small = get_field('projects_small')): ?>
+            <div class="service-delta-actions__projects">
+              <div class="simple-slideshow js-slider">
+                <div class="simple-slideshow__items">
+                  <div class="simple-slideshow__slider js-slider-wrapper">
+                    <?php foreach ($projects_small as $item): ?>
+                    <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="simple-slideshow__item js-slider-item" data-project="<?php echo $item->ID ?>">
+                      <img class="simple-slideshow__image" src="<?php echo get_the_post_thumbnail_url($item->ID, 'w480h480') ?>" alt="<?php echo $item->post_title ?>" loading="lazy">
+                      <span class="ui-magnify-button simple-slideshow__magnify">
+                        <span class="ui-magnify-button__arrow" ></span>
+                        <span class="ui-magnify-button__text">Увеличить</span>
+                      </span>
+                    </a>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+                <button class="ui-slider-nav ui-slider-nav_small simple-slideshow__previous" data-slider-control="previous">
+                  <span class="ui-arrow-left"></span>
+                </button>
+                <button class="ui-slider-nav ui-slider-nav_small simple-slideshow__next" data-slider-control="next">
+                  <span class="ui-arrow-right"></span>
+                </button>
               </div>
-              <?php endif; ?>
             </div>
-            <div class="delta-about__right">
-              <div class="delta-about__content">
-                <?php the_field('about_description') ?>
-              </div>
-            </div>
-          </div>
+            <?php endif; ?>
 
-        </div>
-
-        <?php get_template_part('partials/section-quiz') ?>
-
-        <div class="mesozoic-types mesozoic-types_<?php echo $post->post_name ?>">
-          <div class="container">
-            <div class="mesozoic-types__wrapper">
-              <div class="mesozoic-types__title">
-                <?php the_field('types_title') ?>
-              </div>
-              <div class="mesozoic-types__items">
-                <div class="mesozoic-types__grid js-masonry-grid">
-                  <?php foreach (get_field('types_list') as $key => $item): ?>
-                  <?php if ($item['type'] == 'primary'): ?>
-                    <div class="mesozoic-types__cell">
-                      <div class="mesozoic-types__item">
-                        <div class="mesozoic-types__itemImage">
-                          <img src="<?php echo $item['image']['url'] ?>" alt='' />
-                        </div>
-                        <div class="mesozoic-types__itemTitle"><?php echo $item['title'] ?></div>
-                        <div class="mesozoic-types__itemDescription"><?php echo $item['description'] ?></div>
-                        <button class="ui-button-more mesozoic-types__itemMore" data-modal="#modal-type-<?php echo $key ?>">
-                          <span class="ui-button-more__arrow"></span>
-                          Читать больше
-                        </button>
-                      </div>
-                    </div>
-                  <?php else: ?>
-                    <div class="mesozoic-types__cell">
-                      <div class="mesozoic-types__figures">
-                        <div class="mesozoic-types__figuresImage">
-                          <img src="<?php echo $item['image']['url'] ?>" alt='' />
-                        </div>
-                        <div class="mesozoic-types__figuresInner">
-                          <div class="mesozoic-types__figuresTitle"><?php echo $item['title'] ?></div>
-                          <div class="mesozoic-types__figuresDescription"><?php echo $item['description'] ?></div>
-                          <button class="ui-button-more mesozoic-types__figuresMore" data-modal="#modal-type-<?php echo $key ?>">
-                            <span class="ui-button-more__arrow"></span>
-                            Читать больше
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  <?php endif; ?>
+            <div class="service-delta-actions__actions">
+              <?php if ($actions = get_field('actions_slider', 'option')): ?>
+              <div class="actions-slider js-slider">
+                <div class="actions-slider__slider">
+                  <div class="actions-slider__items js-slider-wrapper">
+                    <?php foreach ($actions as $action): ?>
+                    <?php if ($action['link']): ?>
+                    <a href="<?php echo $action['link'] ?>" class="actions-slider__item js-slider-item">
+                    <?php else: ?>
+                    <button class="actions-slider__item js-slider-item" data-modal="#calculation">
+                    <?php endif; ?>
+                        <span class="actions-slider__date"><?php echo $action['date'] ?></span>
+                        <span class="actions-slider__title"><?php echo $action['title'] ?></span>
+                        <span class="actions-slider__description"><?php echo $action['description'] ?></span>
+                    <?php if ($action['link']): ?>
+                    </a>
+                    <?php else: ?>
+                    </button>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+                <div class="actions-slider__dots">
+                  <?php foreach ($actions as $key => $action): ?>
+                    <button class="actions-slider__dot" data-slider-control="<?php echo $key ?>"></button>
                   <?php endforeach; ?>
                 </div>
               </div>
+              <?php endif; ?>
+            </div>
+
+            <div class="service-delta-actions__offer">
+              <button class="block-special-offer" data-modal="#calculation">
+                <span class="block-special-offer__text">Выезд для замера и оценки в день обращения</span>
+              </button>
             </div>
           </div>
-        </div>
 
-        <?php foreach (get_field('types_list') as $key => $item): ?>
-        <div class="modal-type" id="modal-type-<?php echo $key ?>">
-          <button class="modal-type__close" data-modal-close></button>
-          <div class="modal-type__image" style="background-image: url(<?php echo $item['image']['url'] ?>)"></div>
-          <div class="modal-type__body">
-            <div class="modal-type__title"><span><?php echo $item['title'] ?></span></div>
-            <div class="modal-type__content"><?php echo $item['content'] ?></div>
-            <button class="ui-button-primary modal-type__order" data-modal="#feedback">
-              <span>
-                Заказать консультацию
-                <span class="ui-arrow-right"></span>
-              </span>
-            </button>
+          <div class="service-delta-about">
+            <div class="service-delta-about__title"><?php the_field('about_title') ?></div>
+            <div class="service-delta-about__content"><?php the_field('about_description') ?></div>
           </div>
-        </div>
-        <?php endforeach; ?>
 
+        </div>
       </div>
 
-      <div class="mesozoic-videos">
+      <div class="principles-section">
         <div class="container">
-          <div class="video-gallery">
-            <?php foreach (get_field('videos_list') as $item): ?>
-            <div class="video-gallery__item">
-              <div class="video-gallery__title ui-hidden@s"><?php echo $item['title'] ?></div>
-              <div class="video-gallery__video ui-hidden@s"><?php echo $item['video'] ?></div>
-              <div class="video-gallery__description ui-hidden@s"><?php echo $item['description'] ?></div>
-
-              <div class="video-gallery__info ui-visible@s">
-                <div class="video-gallery__title"><?php echo $item['title'] ?></div>
-                <div class="video-gallery__description"><?php echo $item['description'] ?></div>
+          <div class="principles-section__title"><span><?php the_field('principles_title') ?></span></div>
+          <div class="principles-section__items">
+            <?php foreach (get_field('principles_list') as $key => $item): ?>
+            <div class="principles-section__item">
+              <div class="principles-section__itemIcon">
+                <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['title'] ?>" />
+                <div class="principles-section__itemNumber"><?php echo $key ?></div>
               </div>
-              <div class="video-gallery__video ui-visible@s"><?php echo $item['video'] ?></div>
+              <div class="principles-section__itemTitle"><span><?php echo $item['title'] ?></span></div>
+              <div class="principles-section__itemDescription">
+                <?php echo $item['description'] ?>
+              </div>
             </div>
+            <?php endforeach; ?>
+          </div>
+          <div class="principles-section__results">
+            <div class="principles-section__resultsText">
+              <?php the_field('principles_description') ?>
+            </div>
+            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#feedback"><span>Заказать консультацию</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="delta-types">
+        <div class="container">
+          <div class="delta-types__title"><?php the_field('types_title') ?></div>
+          <div class="delta-types__grid">
+            <?php foreach (get_field('types_list') as $item): ?>
+              <div class="delta-types__cell">
+                <div class="delta-types__item">
+                  <div class="delta-types__itemImage"><img src="<?php echo $item['image']['url'] ?>" alt="" /></div>
+                  <div class="delta-types__itemTitle"><?php echo $item['title'] ?></div>
+                  <div class="delta-types__itemInner">
+                    <div class="delta-types__itemInnerTitle"><?php echo $item['title'] ?></div>
+                    <img src="<?php echo $item['icon']['url'] ?>" alt="" class="delta-types__itemInnerIcon" />
+                    <div class="delta-types__itemInnerDesc"><?php echo $item['description'] ?></div>
+                  </div>
+                </div>
+              </div>
             <?php endforeach; ?>
           </div>
         </div>
       </div>
 
-      <?php if ($portfolio_list = get_field('portfolio_list')): ?>
-      <div class="service-objects service-objects_primary js-slider">
+      <?php if ($projects_large = get_field('projects_large')): ?>
+      <div class="service-objects service-objects_secondary js-slider">
         <div class="container">
           <div class="service-objects__wrapper">
             <div class="service-objects__title">Выполненные объекты</div>
@@ -210,7 +206,7 @@ global $post;
             <div class="service-objects__slider">
               <div class="service-objects__sliderItems">
                 <div class="service-objects__grid js-slider-wrapper">
-                  <?php foreach ($portfolio_list as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
+                  <?php foreach ($projects_large as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
                   <div class="service-objects__cell js-slider-item">
                     <div class="service-objects__item" data-project="<?php echo $item->ID ?>">
                       <img class="service-objects__itemImage" src="<?php echo $image ?>" alt='' />
@@ -241,63 +237,23 @@ global $post;
       </div>
       <?php endif; ?>
 
-      <div class="mesozoic-arsenal js-slider">
+      <?php get_template_part('partials/section-scheme') ?>
+
+      <div class="planning-section">
         <div class="container">
-          <div class="mesozoic-arsenal__wrapper">
-            <div class="mesozoic-arsenal__title"><?php the_field('ng_arsenal_title', 'option') ?></div>
-            <div class="mesozoic-arsenal__slider">
-              <button class="ui-slider-nav mesozoic-arsenal__sliderPrev" data-slider-control="previous">
-                <span class="ui-arrow-left"></span>
-              </button>
-              <button class="ui-slider-nav mesozoic-arsenal__sliderNext" data-slider-control="next">
-                <span class="ui-arrow-right"></span>
-              </button>
-              <div class="mesozoic-arsenal__sliderItems">
-                <div class="mesozoic-arsenal__grid js-slider-wrapper">
-
-                  <?php foreach (get_field('ng_arsenal_list', 'option') as $item): ?>
-                  <div class="mesozoic-arsenal__cell js-slider-item">
-                    <div class="mesozoic-arsenal-item">
-                      <div class="mesozoic-arsenal-item__box js-cube">
-                        <div class="mesozoic-arsenal-item__front js-cube-front">
-                          <img class="mesozoic-arsenal-item__image" src="<?php echo $item['image']['url'] ?>" alt='' />
-                          <div class="mesozoic-arsenal-item__info">
-                            <div class="mesozoic-arsenal-item__infoTitle"><?php echo $item['title'] ?></div>
-                            <div class="mesozoic-arsenal-item__infoPrice">Цена “под ключ”</div>
-                          </div>
-                          <div class="mesozoic-arsenal-item__price"><?php echo $item['price'] ?></div>
-                        </div>
-                        <div class="mesozoic-arsenal-item__back js-cube-back">
-                          <div class="mesozoic-arsenal-item__inner">
-                            <div class="mesozoic-arsenal-item__title"><?php echo $item['title'] ?></div>
-                            <div class="mesozoic-arsenal-item__thumb">
-                              <img src="<?php echo $item['icon']['url'] ?>" alt='' />
-                            </div>
-                            <div class="mesozoic-arsenal-item__description"><?php echo $item['description'] ?></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <?php endforeach; ?>
-
-                </div>
-              </div>
+          <div class="planning-section__wrapper">
+            <?php if ($image = get_field('planning_image')): ?>
+            <div class="planning-section__image">
+              <img src="<?php echo $image['url'] ?>" alt="" />
             </div>
-            <div class="mesozoic-arsenal__content">
-              <div class="mesozoic-arsenal__contentLeft">
-                <?php the_field('ng_arsenal_content_left', 'option') ?>
-              </div>
-              <div class="mesozoic-arsenal__contentRight">
-                <?php the_field('ng_arsenal_content_right', 'option') ?>
-                <button class="ui-button-primary mesozoic-arsenal__contentButton" data-modal="#feedback"><span>Заказать консультацию</span></button>
-              </div>
+            <?php endif; ?>
+            <div class="planning-section__info">
+              <div class="planning-section__title"><?php the_field('planning_title') ?></div>
+              <div class="planning-section__content"><?php the_field('planning_description') ?></div>
             </div>
           </div>
         </div>
       </div>
-
-      <?php get_template_part('partials/section-scheme') ?>
 
       <div class="service-content">
         <div class="container">
