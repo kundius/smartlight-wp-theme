@@ -98,16 +98,10 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
         </div>
       </div>
 
-
-
-      <div class="service-delta-section">
+      <div class="service-delta-about">
         <div class="container">
-
-          <div class="service-delta-about">
-            <div class="service-delta-about__title"><?php the_field('about_title') ?></div>
-            <div class="service-delta-about__content"><?php the_field('about_description') ?></div>
-          </div>
-
+          <div class="service-delta-about__title"><?php the_field('about_title') ?></div>
+          <div class="service-delta-about__content"><?php the_field('about_description') ?></div>
         </div>
       </div>
 
