@@ -5,16 +5,15 @@ Template Name: Проекты
 wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
 
 global $wp_query;
-$terms = get_query_var('terms') ? get_query_var('terms') : null;
-print_r($terms);
+$tax_query = $_GET['terms'] ? [[
+  'taxonomy' => 'project_category',
+  'terms' => $_GET['terms']
+]] : null;
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
   'paged' => get_query_var('paged') ?: 1,
-	// 'tax_query' => $terms ? [[
-  //   'taxonomy' => 'project_category',
-  //   'terms' => $terms
-  // ]] : null
+	'tax_query' => $tax_query
 ));
 ?>
 <!DOCTYPE html>
