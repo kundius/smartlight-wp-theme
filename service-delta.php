@@ -124,10 +124,12 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
                     </div>
                     <div class="mesozoic-types__itemTitle"><?php echo $item['title'] ?></div>
                     <div class="mesozoic-types__itemDescription"><?php echo $item['description'] ?></div>
+                    <?php if (!empty($item['content'])): ?>
                     <button class="ui-button-more mesozoic-types__itemMore" data-modal="#modal-type-<?php echo $key ?>">
                       <span class="ui-button-more__arrow"></span>
                       Читать больше
                     </button>
+                    <?php endif; ?>
                   </div>
                 </div>
                 <?php else: ?>
@@ -139,10 +141,12 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
                     <div class="mesozoic-types__figuresInner">
                       <div class="mesozoic-types__figuresTitle"><?php echo $item['title'] ?></div>
                       <div class="mesozoic-types__figuresDescription"><?php echo $item['description'] ?></div>
+                      <?php if (!empty($item['content'])): ?>
                       <button class="ui-button-more mesozoic-types__figuresMore" data-modal="#modal-type-<?php echo $key ?>">
                         <span class="ui-button-more__arrow"></span>
                         Читать больше
                       </button>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>
