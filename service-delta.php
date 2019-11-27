@@ -203,6 +203,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
 
       <div class="planning-section">
         <div class="container">
+          <div class="planning-section__title"><?php the_field('planning_title') ?></div>
           <div class="planning-section__wrapper">
             <?php if ($image = get_field('planning_image')): ?>
             <div class="planning-section__image">
@@ -210,7 +211,6 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
             </div>
             <?php endif; ?>
             <div class="planning-section__info">
-              <div class="planning-section__title"><?php the_field('planning_title') ?></div>
               <div class="planning-section__content"><?php the_field('planning_description') ?></div>
             </div>
           </div>
@@ -218,7 +218,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
       </div>
 
       <?php if ($projects_large = get_field('projects_large')): ?>
-      <div class="service-objects service-objects_secondary js-slider">
+      <div class="service-objects service-objects_<?php echo $post->post_name ?> js-slider">
         <div class="container">
           <div class="service-objects__wrapper">
             <div class="service-objects__title">Выполненные объекты</div>
