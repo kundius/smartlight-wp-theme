@@ -41,11 +41,11 @@ $projects = new WP_Query(array(
             <div class="projects-filter__categories">
               <a href="<?php echo wp_get_canonical_url() ?>" class="ui-button-filter _active projects-filter__category">Все</a>
               <?php foreach ($terms as $key => $term): ?>
-              <a href="<?php echo wp_get_canonical_url() ?>?terms=<?php echo $term['term_id'] ?>" class="ui-button-filter projects-filter__category">
+              <a href="<?php echo wp_get_canonical_url() ?>?terms=<?php echo $term->term_id ?>" class="ui-button-filter projects-filter__category">
                 <svg role='img'>
-                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term['slug'] ?>" />
+                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term->slug ?>" />
                 </svg>
-                <?php echo $term['name'] ?>
+                <?php echo $term->name ?>
               </a>
               <?php endforeach; ?>
               <!-- lighting-new-year -->
