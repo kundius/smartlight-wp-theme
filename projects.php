@@ -11,18 +11,13 @@ $tax_query = $_GET['terms'] ? [[
   'terms' => $_GET['terms']
 ]] : null;
 
-$meta_query = $_GET['years'] ? [[
-  'key' => 'post_date',
-  'value' => [$_GET['years'] . '0101', $_GET['years'] . '1231'],
-  'compare' => 'BETWEEN',
-  'type' => 'NUMERIC'
-]] : null;
+$year = $_GET['years'] ? $_GET['years'] : null;
 
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
   'paged' => get_query_var('paged') ?: 1,
-  'meta_query' => $meta_query,
+  'year' => $year,
 	'tax_query' => $tax_query
 ));
 
