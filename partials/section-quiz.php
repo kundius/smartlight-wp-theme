@@ -47,8 +47,9 @@ if (count($questions) > 0):
                   <div class="quiz-question__title"><?php echo $question['question'] ?></div>
                   <div class="quiz-report__answers">
                     <?php foreach ($question['answers'] as $answer): ?>
+                    <?php $type = !empty($answer['type']) ? $answer['type'] : 'radio' ?>
                     <label class="quiz-report__answers-item">
-                      <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key + 1 ?>">
+                      <input type="<?php echo $type ?>" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key + 1 ?>">
                       <span></span>
                       <?php echo $answer['answer'] ?>
                     </label>
