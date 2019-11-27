@@ -9,9 +9,9 @@ $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
 ]] : null;
-$meta_query = $_GET['year'] ? [[
+$meta_query = $_GET['years'] ? [[
   'key' => 'production_date',
-  'value' => [$_GET['year'] . '0101', $_GET['year'] . '1231'],
+  'value' => [$_GET['years'] . '0101', $_GET['years'] . '1231'],
   'compare' => 'BETWEEN',
   'type'    => 'NUMERIC'
 ]] : null;
@@ -59,10 +59,10 @@ $canonical = wp_get_canonical_url();
             </div>
             <div class="projects-filter__years">
               <a href="<?php echo $canonical ?>" class="projects-filter__year">Все</a>
-              <a href="<?php echo $canonical ?>?year=2017" class="projects-filter__year">2017</a>
-              <a href="<?php echo $canonical ?>?year=2018" class="projects-filter__year">2018</a>
-              <a href="<?php echo $canonical ?>?year=2019" class="projects-filter__year">2019</a>
-              <a href="<?php echo $canonical ?>?year=2020" class="projects-filter__year">2020</a>
+              <a href="<?php echo $canonical ?>?years=2017" class="projects-filter__year">2017</a>
+              <a href="<?php echo $canonical ?>?years=2018" class="projects-filter__year">2018</a>
+              <a href="<?php echo $canonical ?>?years=2019" class="projects-filter__year">2019</a>
+              <a href="<?php echo $canonical ?>?years=2020" class="projects-filter__year">2020</a>
             </div>
           </div>
 
