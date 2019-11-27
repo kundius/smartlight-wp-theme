@@ -5,13 +5,17 @@ Template Name: Проекты
 wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
 
 global $wp_query;
-if ($_GET['terms']) {
-  print_r($_GET['terms']);
-}
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
 ]] : null;
+if ($_GET['terms']) {
+  $terms = get_terms('project_category', [
+    'hide_empty' => true
+  ]);
+  print_r($terms);
+
+}
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
