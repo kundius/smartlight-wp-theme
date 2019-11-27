@@ -2779,9 +2779,11 @@ svg
   color: #ff8a00
   position: relative
   font-family: $font-family-alt
-  margin: 93px 0
+  margin-bottom: 93px
   display: flex
   align-items: center
+  * + &
+    margin-top: 93px
   @media (max-width: $breakpoint-small-max)
     font-size: 20px
     margin: 33px 0 66px
