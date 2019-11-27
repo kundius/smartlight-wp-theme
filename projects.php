@@ -59,10 +59,10 @@ $canonical = wp_get_canonical_url();
             </div>
             <div class="projects-filter__years">
               <a href="<?php echo $canonical ?>" class="projects-filter__year">Все</a>
-              <a href="<?php echo $canonical ?>?years=2017" class="projects-filter__year">2017</a>
-              <a href="<?php echo $canonical ?>?years=2018" class="projects-filter__year">2018</a>
+              <!-- <a href="<?php echo $canonical ?>?years=2017" class="projects-filter__year">2017</a>
+              <a href="<?php echo $canonical ?>?years=2018" class="projects-filter__year">2018</a> -->
               <a href="<?php echo $canonical ?>?years=2019" class="projects-filter__year">2019</a>
-              <a href="<?php echo $canonical ?>?years=2020" class="projects-filter__year">2020</a>
+              <!-- <a href="<?php echo $canonical ?>?years=2020" class="projects-filter__year">2020</a> -->
             </div>
           </div>
 
