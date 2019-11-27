@@ -132,7 +132,7 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 		} else {
 			$output .= '</span>';
 		}
-		
+
 		if ($custom_hildren) {
 			$output .= $custom_hildren;
 		}
@@ -264,7 +264,7 @@ function seo() {
 	$title = '';
 	$description = '';
 	$keywords = '';
-	
+
 	if (is_archive()) {
 		$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 		if ($term) {
@@ -300,7 +300,7 @@ function seo() {
 		$description = get_field('seo_description');
 		$keywords = get_field('seo_keywords');
 	}
-	
+
 	echo '<title>' . $title . '</title>';
 	if (!empty($description)) {
 		echo '<meta name="keywords" content="' . $keywords . '">';
@@ -308,6 +308,18 @@ function seo() {
 	if (!empty($keywords)) {
 		echo '<meta name="description" content="' . $description . '">';
 	}
+
+	echo '<meta property="og:title" content="' . $title . '" />';
+	if (!empty($description)) {
+		echo '<meta property="og:description" content="' . $description . '" />';
+	}
+	$image = get_the_post_thumbnail_url(null, 'full');
+	if (empty($image)) {
+		$image = get_template_directory_uri() . '/dist/img/bg-intro.jpg';
+	}
+	echo '<meta property="og:image" content="' . $image . '" />';
+	echo '<meta property="og:type" content="website" />';
+	echo '<meta property="og:url" content="' . wp_get_canonical_url() . '" />';
 }
 
 
@@ -322,7 +334,7 @@ add_action('wp_enqueue_scripts', function () {
 
 	wp_localize_script('theme_common', 'myajax', [
 		'url' => admin_url('admin-ajax.php')
-	]);  
+	]);
 }, 99);
 
 

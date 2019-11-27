@@ -4,7 +4,7 @@ $questions = get_field('quiz_questions');
 if (count($questions) > 0):
 ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/quiz.css" type="text/css" />
-<div class="quiz-section" <?php if (empty($_GET['test'])): ?>style="display: none"<?php endif; ?>>
+<div class="quiz-section">
   <div class="container">
     <div class="quiz js-quiz">
       <div class="quiz__title"><?php the_field('quiz_title') ?></div>
@@ -31,7 +31,7 @@ if (count($questions) > 0):
       <div class="quiz-decoration-9"></div>
       <div class="quiz-decoration-12"></div>
 
-      <div class="quiz-body">
+      <form action="/wp-json/contact-form-7/v1/contact-forms/675/feedback" method="post" class="quiz-body js-form">
         <div class="quiz-body__left">
           <div class="quiz-report js-quiz-report">
             <div class="quiz-report__steps">
@@ -48,7 +48,7 @@ if (count($questions) > 0):
                   <div class="quiz-report__answers">
                     <?php foreach ($question['answers'] as $answer): ?>
                     <label class="quiz-report__answers-item">
-                      <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key ?>">
+                      <input type="radio" value="<?php echo $answer['answer'] ?>" name="question-<?php echo $key + 1 ?>">
                       <span></span>
                       <?php echo $answer['answer'] ?>
                     </label>
@@ -68,7 +68,7 @@ if (count($questions) > 0):
           <div class="quiz-result js-quiz-result">
             <div class="quiz-result__title">Благодарим за ответы!</div>
             <div class="quiz-result__description">Введите свой телефон, что бы мы могли связаться с Вами для точной оценки стоимости и сроков.</div>
-            <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="quiz-form js-form">
+            <div class="quiz-form">
               <div class="quiz-form__success">
                 Ваше сообщение успешно отправлено!
               </div>
@@ -100,7 +100,7 @@ if (count($questions) > 0):
                   </span>
                 </label>
               </div>
-            </form>
+            </div>
           </div>
         </div>
         <div class="quiz-body__right">
@@ -113,7 +113,7 @@ if (count($questions) > 0):
             <div class="quiz-discount__label">Ваша скидка<br />на монтаж</div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

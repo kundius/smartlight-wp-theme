@@ -40,8 +40,6 @@ forEach(document.querySelectorAll('.js-quiz'), wrapper => {
           el.classList.remove('_active')
         }
       })
-    } else {
-      alert('Приехали')
     }
   }
 
