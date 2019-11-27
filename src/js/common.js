@@ -428,6 +428,7 @@ forEach(document.querySelectorAll('[data-project]'), function(button) {
 forEach(document.querySelectorAll('[data-modal]'), function(button) {
   let modal = document.querySelector(button.dataset.modal)
   let close = modal.querySelector('[data-modal-close]')
+  let formName = modal.querySelector('[name="form"]')
   const outsideClickListener = event => {
     if (!modal.contains(event.target) && isVisible(modal) && !button.contains(event.target)) {
       hide()
@@ -439,11 +440,8 @@ forEach(document.querySelectorAll('[data-modal]'), function(button) {
   }
   const show = () => {
     modal.classList.add('_opened')
-    if (button.dataset.modalForm) {
-      let input = modal.querySelector('[name="form"]')
-      if (input) {
-        input.value = button.dataset.modalForm
-      }
+    if (formName) {
+      formName.value = button.dataset.modalForm ? button.dataset.modalForm : 'Форма в модальном окне'
     }
     document.addEventListener('click', outsideClickListener)
   }
