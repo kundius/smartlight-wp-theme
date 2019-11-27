@@ -13,57 +13,23 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
   <body>
     <div class="wrapper">
       <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-      <div class="service-delta-section" style="background-image: url(<?php echo get_field('background')['url'] ?>)">
+      <div class="service-delta-intro" style="background-image: url(<?php echo get_field('background')['url'] ?>)">
         <?php get_template_part('partials/header') ?>
         <div class="container">
-          <div class="service-delta-intro">
-            <div class="service-delta-intro__title">
-              <span><?php the_field('intro_title') ?></span>
-              <small><?php the_field('intro_description') ?></small>
-            </div>
-            <?php if ($advantages = get_field('intro_advantages')): ?>
-            <ul class="service-delta-intro__advantages">
-              <?php foreach ($advantages as $item): ?>
-              <li><?php echo $item['text'] ?></li>
-              <?php endforeach; ?>
-            </ul>
-            <?php endif; ?>
+          <div class="service-delta-intro__title">
+            <span><?php the_field('intro_title') ?></span>
+            <small><?php the_field('intro_description') ?></small>
           </div>
 
-          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="service-delta-order js-form">
-            <div class="service-delta-order__success">
-              Ваше сообщение успешно отправлено!
-            </div>
-            <div class="service-delta-order__title">Заказать бесплатную консультацию</div>
-            <div class="service-delta-order__rowField">
-              <input type='text' name='your-name' placeholder='Введите Ваше имя' class="service-delta-order__input" />
-            </div>
-            <div class="service-delta-order__rowField">
-              <span class="wpcf7-form-control-wrap your-phone">
-                <input type='tel' name='your-phone' placeholder='Введите Ваш телефон*' class="service-delta-order__input" />
-              </span>
-            </div>
-            <div class="service-delta-order__rowSubmit">
-              <input type="hidden" name="referrer" value="<?php the_title() ?>">
-              <span class="wpcf7-form-control-wrap submit">
-                <button class="ui-button-primary service-delta-order__submit" type='submit'>
-                  <span>
-                    Отправить
-                    <span class="ui-arrow-right service-delta-order__submitArrow"></span>
-                  </span>
-                </button>
-              </span>
-            </div>
-            <div class="service-delta-order__rowRules">
-              <label class="rules-field">
-                <input type='checkbox' name='rules' value='1' class="rules-field__input" />
-                <span class="rules-field__checkbox"></span>
-                <span class="rules-field__text">
-                  Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
-                </span>
-              </label>
-            </div>
-          </form>
+          <button class="service-delta-intro__button" data-modal="#feedback"><span>Заказать консультацию</span></button>
+
+          <?php if ($advantages = get_field('intro_advantages')): ?>
+          <ul class="service-delta-intro__advantages">
+            <?php foreach ($advantages as $item): ?>
+            <li><?php echo $item['text'] ?></li>
+            <?php endforeach; ?>
+          </ul>
+          <?php endif; ?>
 
           <div class="service-delta-actions">
             <?php if ($projects_small = get_field('projects_small')): ?>
@@ -129,6 +95,13 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+
+
+      <div class="service-delta-section">
+        <div class="container">
 
           <div class="service-delta-about">
             <div class="service-delta-about__title"><?php the_field('about_title') ?></div>
