@@ -183,7 +183,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
             <div class="principles-section__item">
               <div class="principles-section__itemIcon">
                 <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['title'] ?>" />
-                <div class="principles-section__itemNumber"><?php echo $key ?></div>
+                <div class="principles-section__itemNumber"><?php echo $key + 1 ?></div>
               </div>
               <div class="principles-section__itemTitle"><span><?php echo $item['title'] ?></span></div>
               <div class="principles-section__itemDescription">
@@ -197,6 +197,22 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
               <?php the_field('principles_description') ?>
             </div>
             <button class="ui-button-primary principles-section__resultsOrder" data-modal="#feedback"><span>Заказать консультацию</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="planning-section">
+        <div class="container">
+          <div class="planning-section__wrapper">
+            <?php if ($image = get_field('planning_image')): ?>
+            <div class="planning-section__image">
+              <img src="<?php echo $image['url'] ?>" alt="" />
+            </div>
+            <?php endif; ?>
+            <div class="planning-section__info">
+              <div class="planning-section__title"><?php the_field('planning_title') ?></div>
+              <div class="planning-section__content"><?php the_field('planning_description') ?></div>
+            </div>
           </div>
         </div>
       </div>
@@ -254,22 +270,6 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
       <?php endif; ?>
 
       <?php get_template_part('partials/section-scheme') ?>
-
-      <div class="planning-section">
-        <div class="container">
-          <div class="planning-section__wrapper">
-            <?php if ($image = get_field('planning_image')): ?>
-            <div class="planning-section__image">
-              <img src="<?php echo $image['url'] ?>" alt="" />
-            </div>
-            <?php endif; ?>
-            <div class="planning-section__info">
-              <div class="planning-section__title"><?php the_field('planning_title') ?></div>
-              <div class="planning-section__content"><?php the_field('planning_description') ?></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="service-content">
         <div class="container">
