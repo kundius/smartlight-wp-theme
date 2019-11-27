@@ -1,6 +1,4 @@
 .service-delta-intro
-  margin-top: 8.15%
-  margin-bottom: 4.15%
   background-color: #152344
   background-repeat: no-repeat
   background-position: 50% 0
@@ -19,10 +17,8 @@
   text-align: center
   font-family: $font-family-alt
   margin-bottom: 48px
-  span
-    background-color: rgba(0, 0, 0, 0.4)
   small
-    display: inline-block
+    display: block
     font-size: 24px
     letter-spacing: 0.025em
     font-weight: 300
@@ -34,6 +30,56 @@
     small
       font-size: adaptive(16px, 35px, $breakpoint-xsmall, $breakpoint-medium)
       margin-top: adaptive(8px, 28px, $breakpoint-xsmall, $breakpoint-medium)
+
+.service-delta-intro__button
+  font-family: $font-family-alt
+  font-size: 24px
+  letter-spacing: 0.05em
+  line-height: 72px
+  border-radius: 36px
+  text-align: center
+  cursor: pointer
+  color: rgb(255, 255, 255)
+  font-weight: 600
+  background-color: #ff8a00
+  border: none
+  width: 387px
+  display: block
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  transition: .3s ease
+  transition-property: background-color, text-shadow
+  position: relative
+  span
+    position: relative
+    z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    transition: .3s ease
+    transition-property: border-radius, background-color, left, top, right, bottom
+    background-color: #ff8a00
+    border-radius: 36px
+    z-index: 1
+  &:hover
+    background-color: #ff7e00
+    text-shadow: -1px -1px 0px rgba(185, 91, 0, 0.8)
+    &::before
+      left: -10px
+      top: -10px
+      right: -10px
+      bottom: -10px
+      background-color: #ff7e00
+      border-radius: 46px
+  +below(medium)
+    font-size: 18px
+    line-height: 48px
+    width: 268px
 
 .service-delta-intro__advantages
   padding: 9px 12px 4px

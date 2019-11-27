@@ -17,7 +17,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
         <?php get_template_part('partials/header') ?>
         <div class="container">
           <div class="service-delta-intro__title">
-            <span><?php the_field('intro_title') ?></span>
+            <?php the_field('intro_title') ?>
             <small><?php the_field('intro_description') ?></small>
           </div>
 
