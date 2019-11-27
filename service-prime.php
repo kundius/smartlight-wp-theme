@@ -29,8 +29,8 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             </ul>
             <?php endif; ?>
           </div>
-          
-          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="service-prime-order js-form">
+
+          <form action="/wp-json/contact-form-7/v1/contact-forms/788/feedback" method="post" class="service-prime-order js-form">
             <div class="service-prime-order__success">
               Ваше сообщение успешно отправлено!
             </div>
@@ -64,7 +64,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
               </label>
             </div>
           </form>
-                
+
           <div class="service-prime-actions">
             <?php if ($projects_small = get_field('projects_small')): ?>
             <div class="service-prime-actions__projects">
@@ -159,7 +159,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             <div class="principles-section__resultsText">
               <?php the_field('principles_description') ?>
             </div>
-            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#feedback"><span>Заказать консультацию</span></button>
+            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#consultation"><span>Заказать консультацию</span></button>
           </div>
         </div>
       </div>

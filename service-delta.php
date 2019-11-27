@@ -23,7 +23,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
             <small><?php the_field('intro_description') ?></small>
           </div>
 
-          <button class="service-delta-intro__button" data-modal="#feedback"><span>Заказать консультацию</span></button>
+          <button class="service-delta-intro__button" data-modal="#consultation"><span>Заказать консультацию</span></button>
 
           <?php if ($advantages = get_field('intro_advantages')): ?>
           <ul class="service-delta-intro__advantages">
@@ -165,7 +165,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
         <div class="modal-type__body">
           <div class="modal-type__title"><span><?php echo $item['title'] ?></span></div>
           <div class="modal-type__content"><?php echo $item['content'] ?></div>
-          <button class="ui-button-primary modal-type__order" data-modal="#feedback">
+          <button class="ui-button-primary modal-type__order" data-modal="#consultation">
             <span>
               Заказать консультацию
               <span class="ui-arrow-right"></span>
@@ -196,7 +196,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
             <div class="principles-section__resultsText">
               <?php the_field('principles_description') ?>
             </div>
-            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#feedback"><span>Заказать консультацию</span></button>
+            <button class="ui-button-primary principles-section__resultsOrder" data-modal="#consultation"><span>Заказать консультацию</span></button>
           </div>
         </div>
       </div>

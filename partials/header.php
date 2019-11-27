@@ -124,7 +124,7 @@ $flatMenu = fn($menu, 'root', null);
 
       <div class="header__phone">+7 (495) 928-15-15</div>
 
-      <?php wp_nav_menu([ 
+      <?php wp_nav_menu([
         'container_class' => 'header__menu',
         'menu_class' => 'header-menu__list',
         'theme_location' => 'headermenu'
@@ -134,10 +134,10 @@ $flatMenu = fn($menu, 'root', null);
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
       </button>
 
-      <button class="header__feedback" data-modal="#feedback">
+      <button class="header__feedback" data-modal-form="Обратная связь в шапке" data-modal="#feedback">
         <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
       </button>
-      
+
       <div class="header__email">info@s-lights.ru</div>
 
       <div class="header__share share-btn">

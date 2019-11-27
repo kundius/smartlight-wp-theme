@@ -439,6 +439,12 @@ forEach(document.querySelectorAll('[data-modal]'), function(button) {
   }
   const show = () => {
     modal.classList.add('_opened')
+    if (button.dataset.modalForm) {
+      let input = modal.querySelector('[name="form"]')
+      if (input) {
+        input.value = button.dataset.modalForm
+      }
+    }
     document.addEventListener('click', outsideClickListener)
   }
   const hide = () => {
