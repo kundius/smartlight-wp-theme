@@ -105,6 +105,27 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
         </div>
       </div>
 
+      <div class="delta-types">
+        <div class="container">
+          <div class="delta-types__title"><?php the_field('types_title') ?></div>
+          <div class="delta-types__grid">
+            <?php foreach (get_field('types_list') as $item): ?>
+              <div class="delta-types__cell">
+                <div class="delta-types__item">
+                  <div class="delta-types__itemImage"><img src="<?php echo $item['image']['url'] ?>" alt="" /></div>
+                  <div class="delta-types__itemTitle"><?php echo $item['title'] ?></div>
+                  <div class="delta-types__itemInner">
+                    <div class="delta-types__itemInnerTitle"><?php echo $item['title'] ?></div>
+                    <img src="<?php echo $item['icon']['url'] ?>" alt="" class="delta-types__itemInnerIcon" />
+                    <div class="delta-types__itemInnerDesc"><?php echo $item['description'] ?></div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+
       <div class="principles-section">
         <div class="container">
           <div class="principles-section__title"><span><?php the_field('principles_title') ?></span></div>
@@ -127,27 +148,6 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
               <?php the_field('principles_description') ?>
             </div>
             <button class="ui-button-primary principles-section__resultsOrder" data-modal="#feedback"><span>Заказать консультацию</span></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="delta-types">
-        <div class="container">
-          <div class="delta-types__title"><?php the_field('types_title') ?></div>
-          <div class="delta-types__grid">
-            <?php foreach (get_field('types_list') as $item): ?>
-              <div class="delta-types__cell">
-                <div class="delta-types__item">
-                  <div class="delta-types__itemImage"><img src="<?php echo $item['image']['url'] ?>" alt="" /></div>
-                  <div class="delta-types__itemTitle"><?php echo $item['title'] ?></div>
-                  <div class="delta-types__itemInner">
-                    <div class="delta-types__itemInnerTitle"><?php echo $item['title'] ?></div>
-                    <img src="<?php echo $item['icon']['url'] ?>" alt="" class="delta-types__itemInnerIcon" />
-                    <div class="delta-types__itemInnerDesc"><?php echo $item['description'] ?></div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
           </div>
         </div>
       </div>
