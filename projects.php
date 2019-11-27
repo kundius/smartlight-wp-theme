@@ -9,10 +9,10 @@ $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
   'paged' => get_query_var('paged') ?: 1,
-	'tax_query' => [[
-    'taxonomy' => 'project_category',
-    'terms' => []
-  ]]
+	// 'tax_query' => [[
+  //   'taxonomy' => 'project_category',
+  //   'terms' => []
+  // ]]
 ));
 ?>
 <!DOCTYPE html>
