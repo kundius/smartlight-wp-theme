@@ -39,9 +39,9 @@ $projects = new WP_Query(array(
 
           <div class="projects-filter">
             <div class="projects-filter__categories">
-              <a href="<?php echo wp_get_canonical_url() ?>" class="ui-button-filter _active projects-filter__category">Все</a>
+              <a href="<?php echo wp_get_canonical_url() ?>" class="ui-button-filter projects-filter__category<?php if (empty($_GET['terms'])): ?> _active<?php endif; ?>">Все</a>
               <?php foreach ($terms as $key => $term): ?>
-              <a href="<?php echo wp_get_canonical_url() ?>?terms=<?php echo $term->term_id ?>" class="ui-button-filter projects-filter__category">
+              <a href="<?php echo wp_get_canonical_url() ?>?terms=<?php echo $term->term_id ?>" class="ui-button-filter projects-filter__category<?php if ($term->term_id == $_GET['terms']): ?> _active<?php endif; ?>">
                 <svg role='img'>
                   <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term->slug ?>" />
                 </svg>
