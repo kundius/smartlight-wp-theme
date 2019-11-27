@@ -5,16 +5,19 @@ Template Name: Проекты
 wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
 
 global $wp_query;
+
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
 ]] : null;
+
 $meta_query = $_GET['years'] ? [[
   'key' => 'post_date',
   'value' => [$_GET['years'] . '0101', $_GET['years'] . '1231'],
   'compare' => 'BETWEEN',
   'type' => 'NUMERIC'
 ]] : null;
+
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
@@ -22,9 +25,11 @@ $projects = new WP_Query(array(
   'meta_query' => $meta_query,
 	'tax_query' => $tax_query
 ));
+
 $terms = get_terms('project_category', [
   'hide_empty' => true
 ]);
+
 $canonical = wp_get_canonical_url();
 ?>
 <!DOCTYPE html>
