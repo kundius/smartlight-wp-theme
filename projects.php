@@ -5,17 +5,13 @@ Template Name: Проекты
 wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
 
 global $wp_query;
+$terms = get_terms('project_category', [
+  'hide_empty' => true
+]);
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
 ]] : null;
-if ($_GET['terms']) {
-  $terms = get_terms('project_category', [
-    'hide_empty' => true
-  ]);
-  print_r($terms);
-
-}
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
@@ -41,16 +37,19 @@ $projects = new WP_Query(array(
 
           <h1 class="ui-headline"><span><?php the_title() ?></span></h1>
 
-          <!-- <div class="projects-filter">
+          <div class="projects-filter">
             <div class="projects-filter__categories">
-              <button class="ui-button-filter _active projects-filter__category">Все</button>
-              <button class="ui-button-filter projects-filter__category">
+              <a href="<?php echo wp_get_canonical_url() ?>" class="ui-button-filter _active projects-filter__category">Все</a>
+              <?php foreach ($terms as $key => $term): ?>
+              <a href="<?php echo wp_get_canonical_url() ?>?terms=<?php echo $term['term_id'] ?>" class="ui-button-filter projects-filter__category">
                 <svg role='img'>
-                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-new-year" />
+                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term['slug'] ?>" />
                 </svg>
-                Новогоднее<br /> освещение
-              </button>
-              <button class="ui-button-filter projects-filter__category">
+                <?php echo $term['name'] ?>
+              </a>
+              <?php endforeach; ?>
+              <!-- lighting-new-year -->
+              <!-- <button class="ui-button-filter projects-filter__category">
                 <svg role='img'>
                   <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-architectural" />
                 </svg>
@@ -61,7 +60,7 @@ $projects = new WP_Query(array(
                   <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-street" />
                 </svg>
                 Уличное<br /> освещение
-              </button>
+              </button> -->
             </div>
             <div class="projects-filter__years">
               <button class="projects-filter__year">Все</button>
@@ -70,7 +69,7 @@ $projects = new WP_Query(array(
               <button class="projects-filter__year">2019</button>
               <button class="projects-filter__year">2020</button>
             </div>
-          </div> -->
+          </div>
 
           <?php if ($projects->have_posts()): ?>
           <div class="projects-list">
