@@ -8,7 +8,11 @@ global $wp_query;
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
-  'paged' => get_query_var('paged') ?: 1
+  'paged' => get_query_var('paged') ?: 1,
+	'tax_query' => [[
+    'taxonomy' => 'project_category',
+    'terms' => []
+  ]]
 ));
 ?>
 <!DOCTYPE html>
@@ -59,7 +63,7 @@ $projects = new WP_Query(array(
               <button class="projects-filter__year">2020</button>
             </div>
           </div> -->
-    
+
           <?php if ($projects->have_posts()): ?>
           <div class="projects-list">
             <?php $wp_query = $projects ?>

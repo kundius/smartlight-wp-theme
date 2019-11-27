@@ -41,6 +41,9 @@ module.exports = {
       serviceCharlie: [
         PATHS.source + 'sass/serviceCharlie.sass'
       ],
+      serviceDelta: [
+        PATHS.source + 'sass/serviceDelta.sass'
+      ],
       sitemap: [
         PATHS.source + 'js/sitemap.js',
         PATHS.source + 'sass/sitemap.sass'

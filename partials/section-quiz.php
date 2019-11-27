@@ -1,12 +1,13 @@
 <?php
 wp_enqueue_script('theme_quiz', get_template_directory_uri() . '/dist/quiz.js', ['theme_common'], false, true);
-$questions = get_field('quiz_questions', 'option');
+$questions = get_field('quiz_questions');
+if (count($questions) > 0):
 ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/quiz.css" type="text/css" />
 <div class="quiz-section" <?php if (empty($_GET['test'])): ?>style="display: none"<?php endif; ?>>
   <div class="container">
     <div class="quiz js-quiz">
-      <div class="quiz__title"><?php the_field('quiz_title', 'option') ?></div>
+      <div class="quiz__title"><?php the_field('quiz_title') ?></div>
       <div class="quiz-decoration-1-1"></div>
       <div class="quiz-decoration-1-2"></div>
       <div class="quiz-decoration-1-3"></div>
@@ -104,8 +105,8 @@ $questions = get_field('quiz_questions', 'option');
         </div>
         <div class="quiz-body__right">
           <div class="quiz-description">
-            <div class="js-quiz-description-base"><?php the_field('quiz_description_base', 'option') ?></div>
-            <div class="js-quiz-description-success"><?php the_field('quiz_description_success', 'option') ?></div>
+            <div class="js-quiz-description-base"><?php the_field('quiz_description_base') ?></div>
+            <div class="js-quiz-description-success"><?php the_field('quiz_description_success') ?></div>
           </div>
           <div class="quiz-discount">
             <div class="quiz-discount__value"><span class="js-quiz-discount">0</span>%</div>
@@ -116,3 +117,4 @@ $questions = get_field('quiz_questions', 'option');
     </div>
   </div>
 </div>
+<?php endif; ?>

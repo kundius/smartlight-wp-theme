@@ -3,7 +3,7 @@
 Template Name: Шаблон услуги [3]
 */
 wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist/serviceMesozoic.js', ['theme_common'], false, true);
-wp_enqueue_script('theme_serviceCharlie', get_template_directory_uri() . '/dist/serviceCharlie.js', ['theme_common'], false, true);
+wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/serviceDelta.js', ['theme_common'], false, true);
 
 global $post;
 ?>
@@ -12,12 +12,12 @@ global $post;
   <head>
     <?php get_template_part('partials/head') ?>
     <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceMesozoic.css" type="text/css" />
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceCharlie.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceDelta.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">
       <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-      <div class="service-charlie-section" style="background-image: url(<?php echo get_field('background')['url'] ?>)">
+      <div class="service-delta-section" style="background-image: url(<?php echo get_field('background')['url'] ?>)">
         <?php get_template_part('partials/header') ?>
 
         <div class="sticky-action js-sticky-action">
@@ -32,13 +32,13 @@ global $post;
 
         <div class="container">
 
-          <div class="charlie-intro">
-            <div class="charlie-intro__title">
+          <div class="delta-intro">
+            <div class="delta-intro__title">
               <?php the_field('intro_title') ?>
               <small><?php the_field('intro_description') ?></small>
             </div>
             <?php if ($advantages = get_field('intro_advantages')): ?>
-            <ul class="charlie-intro__advantages">
+            <ul class="delta-intro__advantages">
               <?php foreach ($advantages as $item): ?>
               <li><?php echo $item['text'] ?></li>
               <?php endforeach; ?>
@@ -46,31 +46,31 @@ global $post;
             <?php endif; ?>
           </div>
 
-          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="charlie-order js-form">
-            <div class="charlie-order__success">
+          <form action="/wp-json/contact-form-7/v1/contact-forms/369/feedback" method="post" class="delta-order js-form">
+            <div class="delta-order__success">
               Ваше сообщение успешно отправлено!
             </div>
-            <div class="charlie-order__title">Заказать бесплатный дизайн-проект</div>
-            <div class="charlie-order__rowField">
-              <input type='text' name='your-name' placeholder='Имя' class="charlie-order__input" />
+            <div class="delta-order__title">Заказать бесплатный дизайн-проект</div>
+            <div class="delta-order__rowField">
+              <input type='text' name='your-name' placeholder='Имя' class="delta-order__input" />
             </div>
-            <div class="charlie-order__rowField">
+            <div class="delta-order__rowField">
               <span class="wpcf7-form-control-wrap your-phone">
-                <input type='tel' name='your-phone' placeholder='Телефон*' class="charlie-order__input" />
+                <input type='tel' name='your-phone' placeholder='Телефон*' class="delta-order__input" />
               </span>
             </div>
-            <div class="charlie-order__rowSubmit">
+            <div class="delta-order__rowSubmit">
               <input type="hidden" name="referrer" value="<?php the_title() ?>">
               <span class="wpcf7-form-control-wrap submit">
-                <button class="ui-button-primary charlie-order__submit" type='submit'>
+                <button class="ui-button-primary delta-order__submit" type='submit'>
                   <span>
                     Отправить
-                    <span class="ui-arrow-right charlie-order__submitArrow"></span>
+                    <span class="ui-arrow-right delta-order__submitArrow"></span>
                   </span>
                 </button>
               </span>
             </div>
-            <div class="charlie-order__rowRules">
+            <div class="delta-order__rowRules">
               <label class="rules-field">
                 <input type='checkbox' name='rules' value='1' class="rules-field__input" />
                 <span class="rules-field__checkbox"></span>
@@ -81,19 +81,19 @@ global $post;
             </div>
           </form>
 
-          <div class="charlie-about">
-            <div class="charlie-about__left">
-              <div class="charlie-about__title"><?php the_field('about_title') ?></div>
+          <div class="delta-about">
+            <div class="delta-about__left">
+              <div class="delta-about__title"><?php the_field('about_title') ?></div>
               <?php if ($banner = get_field('about_banner')): ?>
-              <div class="charlie-about__banner">
-                <div class="charlie-about__bannerDate"><?php echo $banner['date'] ?></div>
-                <div class="charlie-about__bannerTitle"><?php echo $banner['title'] ?></div>
-                <div class="charlie-about__bannerDesc"><?php echo $banner['description'] ?></div>
+              <div class="delta-about__banner">
+                <div class="delta-about__bannerDate"><?php echo $banner['date'] ?></div>
+                <div class="delta-about__bannerTitle"><?php echo $banner['title'] ?></div>
+                <div class="delta-about__bannerDesc"><?php echo $banner['description'] ?></div>
               </div>
               <?php endif; ?>
             </div>
-            <div class="charlie-about__right">
-              <div class="charlie-about__content">
+            <div class="delta-about__right">
+              <div class="delta-about__content">
                 <?php the_field('about_description') ?>
               </div>
             </div>
