@@ -10,7 +10,7 @@ $tax_query = $_GET['terms'] ? [[
   'terms' => $_GET['terms']
 ]] : null;
 $meta_query = $_GET['years'] ? [[
-  'key' => 'start_date',
+  'key' => 'post_date',
   'value' => [$_GET['years'] . '0101', $_GET['years'] . '1231'],
   'compare' => 'BETWEEN',
   'type' => 'NUMERIC'
