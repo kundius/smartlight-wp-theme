@@ -5,19 +5,26 @@ Template Name: Проекты
 wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projects.js', ['theme_common'], false, true);
 
 global $wp_query;
-$terms = get_terms('project_category', [
-  'hide_empty' => true
-]);
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
+]] : null;
+$meta_query = $_GET['year'] ? [[
+  'key' => 'production_date',
+  'value' => [$_GET['year'] . '0101', $_GET['year'] . '1231'],
+  'compare' => 'BETWEEN',
+  'type'    => 'NUMERIC'
 ]] : null;
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
   'paged' => get_query_var('paged') ?: 1,
+  'meta_query' => $meta_query,
 	'tax_query' => $tax_query
 ));
+$terms = get_terms('project_category', [
+  'hide_empty' => true
+]);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -48,26 +55,13 @@ $projects = new WP_Query(array(
                 <?php echo $term->name ?>
               </a>
               <?php endforeach; ?>
-              <!-- lighting-new-year -->
-              <!-- <button class="ui-button-filter projects-filter__category">
-                <svg role='img'>
-                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-architectural" />
-                </svg>
-                Архитектурное<br /> освещение
-              </button>
-              <button class="ui-button-filter projects-filter__category">
-                <svg role='img'>
-                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-street" />
-                </svg>
-                Уличное<br /> освещение
-              </button> -->
             </div>
             <div class="projects-filter__years">
-              <button class="projects-filter__year">Все</button>
-              <button class="projects-filter__year">2017</button>
-              <button class="projects-filter__year">2018</button>
-              <button class="projects-filter__year">2019</button>
-              <button class="projects-filter__year">2020</button>
+              <a href="<?php echo wp_get_canonical_url() ?>" class="projects-filter__year">Все</a>
+              <a href="<?php echo wp_get_canonical_url() ?>?year=2017" class="projects-filter__year">2017</a>
+              <a href="<?php echo wp_get_canonical_url() ?>?year=2018" class="projects-filter__year">2018</a>
+              <a href="<?php echo wp_get_canonical_url() ?>?year=2019" class="projects-filter__year">2019</a>
+              <a href="<?php echo wp_get_canonical_url() ?>?year=2020" class="projects-filter__year">2020</a>
             </div>
           </div>
 
