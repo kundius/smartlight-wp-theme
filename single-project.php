@@ -10,8 +10,9 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
     <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/project.css" type="text/css" />
   </head>
   <body>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); $gallery = get_field('gallery'); ?>
+    <?php print_r($gallery) ?>
     <div class="wrapper">
-      <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
       <div class="project-section">
         <?php get_template_part('partials/header') ?>
         <div class="container">
@@ -32,6 +33,15 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
               <?php endif; ?>
             </div>
             <div class="project-main__center">
+              <div class="project-main-gallery">
+                <img class="project-details__image" src="<?php echo '$gallery' ?>">
+                <button class="ui-slider-nav ui-slider-nav_small project-details__previous">
+                  <span class="ui-arrow-left"></span>
+                </button>
+                <button class="ui-slider-nav ui-slider-nav_small project-details__next">
+                  <span class="ui-arrow-right"></span>
+                </button>
+              </div>
             </div>
             <div class="project-main__right">
             </div>
@@ -82,7 +92,6 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
           </div>
         </div>
       </div>
-      <?php endwhile; endif; ?>
 
       <?php
         $also_query = null;
@@ -137,5 +146,6 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
 
       <?php get_template_part('partials/footer') ?>
     </div>
+    <?php endwhile; endif; ?>
   </body>
 </html>
