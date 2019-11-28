@@ -1,10 +1,12 @@
 <?php
+wp_enqueue_script('theme_article', get_template_directory_uri() . '/dist/article.js', ['theme_common'], false, true);
 wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project.js', ['theme_common'], false, true);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
+    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/article.css" type="text/css" />
     <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/project.css" type="text/css" />
   </head>
   <body>
