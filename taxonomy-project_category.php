@@ -8,7 +8,7 @@ global $wp_query;
 
 // $category = get_category();
 print_r('dd 1');
-print_r(get_query_var('cat'));
+print_r(get_query_var('taxonomy'));
 print_r('dd 2');
 
 $tax_query = $_GET['terms'] ? [[
