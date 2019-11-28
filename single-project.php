@@ -69,6 +69,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
 
       <?php
         $also_query = null;
+        print_r(get_field('related'));
         if ($related = get_field('related')) {
             $also_query = new WP_Query([
                 'caller_get_posts' => 1,
