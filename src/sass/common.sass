@@ -380,6 +380,66 @@ svg
   border-top: 2px solid currentColor
   border-left: 5px solid transparent
 
+.ui-arrow-up
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  height: 20px
+  width: 1
+  background: currentColor
+  transition: .3s ease
+  transition-property: box-shadow, width
+
+.ui-arrow-up::before
+  content: ''
+  position: absolute
+  top: 0
+  left: -2px
+  width: 0
+  height: 0
+  border-top: 5px solid currentColor
+  border-right: 2px solid transparent
+
+.ui-arrow-up::after
+  content: ''
+  position: absolute
+  top: 0
+  right: -2px
+  width: 0
+  height: 0
+  border-top: 5px solid currentColor
+  border-left: 2px solid transparent
+
+.ui-arrow-down
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  height: 20px
+  width: 1
+  background: currentColor
+  transition: .3s ease
+  transition-property: box-shadow, width
+
+.ui-arrow-down::before
+  content: ''
+  position: absolute
+  bottom: 0
+  left: -2px
+  width: 0
+  height: 0
+  border-bottom: 5px solid currentColor
+  border-right: 2px solid transparent
+
+.ui-arrow-down::after
+  content: ''
+  position: absolute
+  bottom: 0
+  right: -2px
+  width: 0
+  height: 0
+  border-bottom: 5px solid currentColor
+  border-left: 2px solid transparent
+
 .ui-button-primary
   font-family: $font-family-alt
   font-size: px2em(22)

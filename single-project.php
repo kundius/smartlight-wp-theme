@@ -60,10 +60,10 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
                   <?php endforeach; ?>
                 </div>
                 <button class="ui-slider-nav ui-slider-nav_small project-main-thumbs__previous" data-slider-control="previous">
-                  <span class="ui-arrow-left"></span>
+                  <span class="ui-arrow-up"></span>
                 </button>
                 <button class="ui-slider-nav ui-slider-nav_small project-main-thumbs__next" data-slider-control="next">
-                  <span class="ui-arrow-right"></span>
+                  <span class="ui-arrow-down"></span>
                 </button>
               </div>
             </div>
