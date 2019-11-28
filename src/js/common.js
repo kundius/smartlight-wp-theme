@@ -107,14 +107,20 @@ const parseParams = (str) => {
   let params = {}
   arr.forEach(row => {
     let arr2 = row.split(':').map(row => row.trim())
-    params[arr2[0]] = arr2[1]
+    if (arr2.length === 2) {
+      params[arr2[0]] = arr2[1]
+    }
   })
   return params
 }
 class Timeline {
+  constructor(params) {
+    this.step = params.velocity / 2
+  }
+
   promise = null
   queue = []
-  step = 0.03
+  // step = 0.03
 
   add = callback => {
     this.queue.push({
@@ -145,7 +151,8 @@ class Timeline {
 }
 forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   const params = Object.assign({
-    vartical: false
+    vertical: false,
+    velocity: 1
   }, parseParams(slider.dataset.slider))
 
   console.log('params', params)
@@ -154,7 +161,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   let elWrapper = slider.querySelector('[data-slider-wrapper]')
   let controls = slider.querySelectorAll('[data-slider-control]')
   let active = 0
-  let timeline = new Timeline()
+  let timeline = new Timeline(params)
   let prevElements = []
   let nextElements = []
   let dotElements = []
