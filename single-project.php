@@ -80,7 +80,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
             //     'compare' => 'IN'
             //   ]
             // ],
-            'caller_get_posts' => 1,
+            // 'caller_get_posts' => 1,
             'post__in' => $related
           ]);
         } else if ($tags = wp_get_post_tags($post->ID)) {
