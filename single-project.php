@@ -11,7 +11,6 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
   </head>
   <body>
     <?php if (have_posts()) : while (have_posts()) : the_post(); $gallery = get_field('gallery'); ?>
-    <?php print_r($gallery) ?>
     <div class="wrapper">
       <div class="project-section">
         <?php get_template_part('partials/header') ?>
@@ -33,12 +32,18 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
               <?php endif; ?>
             </div>
             <div class="project-main__center">
-              <div class="project-main-gallery">
-                <img class="project-details__image" src="<?php echo '$gallery' ?>">
-                <button class="ui-slider-nav ui-slider-nav_small project-details__previous">
+              <div class="project-main-gallery js-slider">
+                <div class="project-main-gallery__wrapper js-slider-wrapper">
+                  <?php foreach ($gallery as $item): ?>
+                  <div class="project-main-gallery__item js-slider-item">
+                    <img src="<?php echo $item['url'] ?>">
+                  </div>
+                  <?php endforeach; ?>
+                </div>
+                <button class="ui-slider-nav ui-slider-nav_small project-main-gallery__previous" data-slider-control="previous">
                   <span class="ui-arrow-left"></span>
                 </button>
-                <button class="ui-slider-nav ui-slider-nav_small project-details__next">
+                <button class="ui-slider-nav ui-slider-nav_small project-main-gallery__next" data-slider-control="next">
                   <span class="ui-arrow-right"></span>
                 </button>
               </div>
