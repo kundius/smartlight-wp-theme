@@ -71,29 +71,28 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
         $also_query = null;
         print_r(get_field('related'));
         if ($related = get_field('related')) {
-            $also_query = new WP_Query([
-                'caller_get_posts' => 1,
-                'post__in' => $related
-            ]);
-        } else {
-            $tags = wp_get_post_tags($post->ID);
-            if ($tags) {
-                $tag_ids = [];
-                foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-                $also_query = new WP_Query([
-                    'tag__in' => $tag_ids,
-                    'orderby' => 'rand',
-                    'caller_get_posts' => 1,
-                    'post__not_in' => [$post->ID],
-                    'showposts' => 3
-                ]);
-            }
+          $also_query = new WP_Query([
+            'post_type' => 'project',
+            'caller_get_posts' => 1,
+            'post__in' => $related
+          ]);
+        } else if ($tags = wp_get_post_tags($post->ID)) {
+          $tag_ids = [];
+          foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+          $also_query = new WP_Query([
+            'post_type' => 'project',
+            'tag__in' => $tag_ids,
+            'orderby' => 'rand',
+            'caller_get_posts' => 1,
+            'post__not_in' => [$post->ID],
+            'showposts' => 3
+          ]);
         }
       ?>
       <?php if ($also_query && $also_query->have_posts()): ?>
       <div class="project-also">
         <div class="container">
-          <div class="project-also__title">Читайте также</div>
+          <div class="project-also__title">Смотрите также</div>
           <div class="ui-grid">
             <?php while ($also_query->have_posts()): $also_query->the_post(); ?>
             <div class="ui-width-1-2@s ui-width-1-3@m">
@@ -105,7 +104,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
                 <div class="post-item__description"><?php the_excerpt() ?></div>
                 <a href="<?php the_permalink() ?>" class="ui-button-more post-item__more">
                   <span class="ui-button-more__arrow"></span>
-                  Читать больше
+                  Смотреть
                 </a>
               </div>
             </div>
