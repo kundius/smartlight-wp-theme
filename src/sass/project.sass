@@ -2,17 +2,16 @@
   background: #172037 url('../img/bg-articles.jpg')
 
 .project-also
-  padding-top: 49px
-  padding-bottom: 54px
+  padding-top: 97px
+  padding-bottom: 90px
   background: #2b303e
-  text-transform: uppercase
 
 .project-also__title
   color: #ffffff
   font-size: 36px
   line-height: 1
   letter-spacing: 0.093em
-  margin-bottom: 35px
+  margin-bottom: 79px
   font-family: $font-family-alt
   display: flex
   align-items: center
@@ -22,3 +21,17 @@
     width: 136px
     background: #e4a76c
     margin-left: 52px
+
+.project-also__grid
+  padding: 0 40px
+  position: relative
+  > *
+    position: relative
+  &::before
+    content: ''
+    position: absolute
+    width: 624px
+    height: 202px
+    top: -60px
+    right: -60px
+    background: url('../img/bg-stripe-gray.png')

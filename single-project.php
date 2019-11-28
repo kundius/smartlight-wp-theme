@@ -69,21 +69,11 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
 
       <?php
         $also_query = null;
-        print_r(array_map(function($row) { return $row->ID; }, get_field('related')));
         if ($related = get_field('related')) {
           $also_query = new WP_Query([
             'post_type' => 'project',
-            // 'meta_query' => [
-            //   [
-            //     'key' => 'ID',
-            //     'value' => array_map(function($row) { return $row->ID; }, $related),
-            //     'compare' => 'IN'
-            //   ]
-            // ],
-            // 'caller_get_posts' => 1,
-            'post__in' => array_map(function($row) { return $row->ID; }, $related)
+            'post__in' => array_map(function($row) { return $row->ID }, $related)
           ]);
-
         } else if ($tags = wp_get_post_tags($post->ID)) {
           $tag_ids = [];
           foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
@@ -101,22 +91,24 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
       <div class="project-also">
         <div class="container">
           <div class="project-also__title">Смотрите также</div>
-          <div class="ui-grid">
-            <?php while ($also_query->have_posts()): $also_query->the_post(); ?>
-            <div class="ui-width-1-2@s ui-width-1-3@m">
-              <div class="post-item">
-                <div class="post-item__image">
-                  <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'w500h400') ?>" alt="" loading="lazy" />
+          <div class="project-also__grid">
+            <div class="ui-grid ui-grid-large@m">
+              <?php while ($also_query->have_posts()): $also_query->the_post(); ?>
+              <div class="ui-width-1-2@s ui-width-1-3@m">
+                <div class="post-item">
+                  <div class="post-item__image">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'w500h400') ?>" alt="" loading="lazy" />
+                  </div>
+                  <div class="post-item__title"><?php the_title() ?></div>
+                  <div class="post-item__description"><?php the_excerpt() ?></div>
+                  <a href="<?php the_permalink() ?>" class="ui-button-more post-item__more">
+                    <span class="ui-button-more__arrow"></span>
+                    Смотреть
+                  </a>
                 </div>
-                <div class="post-item__title"><?php the_title() ?></div>
-                <div class="post-item__description"><?php the_excerpt() ?></div>
-                <a href="<?php the_permalink() ?>" class="ui-button-more post-item__more">
-                  <span class="ui-button-more__arrow"></span>
-                  Смотреть
-                </a>
               </div>
+              <?php endwhile; wp_reset_query(); ?>
             </div>
-            <?php endwhile; wp_reset_query(); ?>
           </div>
         </div>
       </div>

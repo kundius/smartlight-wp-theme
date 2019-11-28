@@ -266,24 +266,151 @@
 /* Gutter
  ========================================================================== */
 
-// .ui-grid
-//   margin-left: (-$grid-gutter-horizontal)
-//   margin-top: (-$grid-gutter-vertical)
+.ui-grid
+  margin-left: -20px
+  margin-top: -20px
 
-// .ui-grid > *
-//   padding-left: $grid-gutter-horizontal
-//   padding-top: $grid-gutter-vertical
+.ui-grid > *
+  padding-left: 20px
+  padding-top: 20px
 
-/*
- * Collapse
- */
+.ui-grid-collapse
+  margin-left: 0
+  margin-top: 0
 
-// .ui-grid-collapse,
-// .ui-grid-column-collapse
-//   margin-left: 0
-//   margin-top: 0
+.ui-grid-collapse > *
+  padding-left: 0
+  padding-top: 0
 
-// .ui-grid-collapse > *,
-// .ui-grid-column-collapse > *
-//   padding-left: 0
-//   padding-top: 0
+.ui-grid-small
+  margin-left: -10px
+  margin-top: -10px
+
+.ui-grid-small > *
+  padding-left: 10px
+  padding-top: 10px
+
+.ui-grid-medium
+  margin-left: -40px
+  margin-top: -40px
+
+.ui-grid-medium > *
+  padding-left: 40px
+  padding-top: 40px
+
+.ui-grid-large
+  margin-left: -80px
+  margin-top: -80px
+
+.ui-grid-large > *
+  padding-left: 80px
+  padding-top: 80px
+
+
+  /* Phone landscape and bigger */
+  @media (min-width: $breakpoint-small)
+    .ui-grid-collapse\@s
+      margin-left: 0
+      margin-top: 0
+    .ui-grid-collapse\@s > *
+      padding-left: 0
+      padding-top: 0
+    .ui-grid-small\@s
+      margin-left: -10px
+      margin-top: -10px
+    .ui-grid-small\@s > *
+      padding-left: 10px
+      padding-top: 10px
+    .ui-grid-medium\@s
+      margin-left: -40px
+      margin-top: -40px
+    .ui-grid-medium\@s > *
+      padding-left: 40px
+      padding-top: 40px
+    .ui-grid-large\@s
+      margin-left: -80px
+      margin-top: -80px
+    .ui-grid-large\@s > *
+      padding-left: 80px
+      padding-top: 80px
+
+  /* Tablet landscape and bigger */
+  @media (min-width: $breakpoint-medium)
+    .ui-grid-collapse\@m
+      margin-left: 0
+      margin-top: 0
+    .ui-grid-collapse\@m > *
+      padding-left: 0
+      padding-top: 0
+    .ui-grid-small\@m
+      margin-left: -10px
+      margin-top: -10px
+    .ui-grid-small\@m > *
+      padding-left: 10px
+      padding-top: 10px
+    .ui-grid-medium\@m
+      margin-left: -40px
+      margin-top: -40px
+    .ui-grid-medium\@m > *
+      padding-left: 40px
+      padding-top: 40px
+    .ui-grid-large\@m
+      margin-left: -80px
+      margin-top: -80px
+    .ui-grid-large\@m > *
+      padding-left: 80px
+      padding-top: 80px
+
+  /* Desktop and bigger */
+  @media (min-width: $breakpoint-large)
+    .ui-grid-collapse\@l
+      margin-left: 0
+      margin-top: 0
+    .ui-grid-collapse\@l > *
+      padding-left: 0
+      padding-top: 0
+    .ui-grid-small\@l
+      margin-left: -10px
+      margin-top: -10px
+    .ui-grid-small\@l > *
+      padding-left: 10px
+      padding-top: 10px
+    .ui-grid-medium\@l
+      margin-left: -40px
+      margin-top: -40px
+    .ui-grid-medium\@l > *
+      padding-left: 40px
+      padding-top: 40px
+    .ui-grid-large\@l
+      margin-left: -80px
+      margin-top: -80px
+    .ui-grid-large\@l > *
+      padding-left: 80px
+      padding-top: 80px
+
+  /* Large screen and bigger */
+  @media (min-width: $breakpoint-xlarge)
+    .ui-grid-collapse\@xl
+      margin-left: 0
+      margin-top: 0
+    .ui-grid-collapse\@xl > *
+      padding-left: 0
+      padding-top: 0
+    .ui-grid-small\@xl
+      margin-left: -10px
+      margin-top: -10px
+    .ui-grid-small\@xl > *
+      padding-left: 10px
+      padding-top: 10px
+    .ui-grid-medium\@xl
+      margin-left: -40px
+      margin-top: -40px
+    .ui-grid-medium\@xl > *
+      padding-left: 40px
+      padding-top: 40px
+    .ui-grid-large\@xl
+      margin-left: -80px
+      margin-top: -80px
+    .ui-grid-large\@xl > *
+      padding-left: 80px
+      padding-top: 80px
