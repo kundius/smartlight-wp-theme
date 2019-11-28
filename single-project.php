@@ -69,10 +69,17 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
 
       <?php
         $also_query = null;
-        print_r(get_field('related'));
+        print_r(array_map(function($row) { return $row->ID; }, get_field('related')));
         if ($related = get_field('related')) {
           $also_query = new WP_Query([
             'post_type' => 'project',
+            'meta_query' => [
+              [
+                'key' => 'ID',
+                'value' => array_map(function($row) { return $row->ID; }, $related),
+                'compare' => 'IN'
+              ]
+            ]
             'caller_get_posts' => 1,
             // 'post__in' => $related
           ]);
