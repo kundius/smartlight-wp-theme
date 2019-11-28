@@ -6,7 +6,7 @@ wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projec
 
 global $wp_query;
 
-$term = get_queried_object();
+$queried_term = get_queried_object();
 
 $projects = new WP_Query(array(
   'post_type' => 'project',
@@ -15,7 +15,7 @@ $projects = new WP_Query(array(
   'year' => $_GET['years'] ?: null,
 	'tax_query' => [[
     'taxonomy' => 'project_category',
-    'terms' => $term->term_id
+    'terms' => $queried_term->term_id
   ]]
 ));
 
@@ -46,9 +46,9 @@ $canonical = wp_get_canonical_url();
 
           <div class="projects-filter">
             <div class="projects-filter__categories">
-              <a href="<?php echo get_term_link(14, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if (empty($_GET['terms'])): ?> _active<?php endif; ?>">Все</a>
+              <a href="<?php echo get_term_link(14, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id == 14): ?> _active<?php endif; ?>">Все</a>
               <?php foreach ($terms as $key => $term): ?>
-              <a href="<?php echo get_term_link($term->term_id, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if ($term->term_id == $_GET['terms']): ?> _active<?php endif; ?>">
+              <a href="<?php echo get_term_link($term->term_id, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id === $term->term_id): ?> _active<?php endif; ?>">
                 <svg role='img'>
                   <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term->slug ?>" />
                 </svg>
