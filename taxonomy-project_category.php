@@ -6,6 +6,9 @@ wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projec
 
 global $wp_query;
 
+$category = get_category(get_query_var('cat'));
+print_r($category);
+
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
   'terms' => $_GET['terms']
@@ -83,23 +86,6 @@ $canonical = wp_get_canonical_url();
                     <span class="ui-magnify-button__text">Увеличить</span>
                   </span>
                 </span>
-                <!-- <div class="projects-item__tags">
-                  <button class="projects-item__tag">
-                    <svg role='img'>
-                      <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-new-year" />
-                    </svg>
-                  </button>
-                  <button class="projects-item__tag">
-                    <svg role='img'>
-                      <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-architectural" />
-                    </svg>
-                  </button>
-                  <button class="projects-item__tag">
-                    <svg role='img'>
-                      <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#lighting-street" />
-                    </svg>
-                  </button>
-                </div> -->
               </div>
             </div>
             <?php endwhile; ?>
