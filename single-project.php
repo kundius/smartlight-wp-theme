@@ -81,7 +81,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
             //   ]
             // ],
             // 'caller_get_posts' => 1,
-            'post__in' => [509]
+            'post__in' => array_map(function($row) { return $row->ID; }, $related)
           ]);
 
         } else if ($tags = wp_get_post_tags($post->ID)) {
