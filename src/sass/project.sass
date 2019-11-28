@@ -74,12 +74,6 @@
   overflow: hidden
   img
     +pouring-image
-    // display: block
-    // margin: 0 auto
-    // max-height: 540px
-    // max-width: 100%
-    // width: auto
-    // height: auto
 
 .project-main-gallery__previous
   position: absolute
@@ -104,10 +98,17 @@
 .project-main-thumbs__item
   flex: none
   height: 25%
-  background: red
+  position: relative
 
 .project-main-thumbs__image
-  display: none
+  position: absolute
+  left: 10px
+  right: 10px
+  top: 10px
+  bottom: 10px
+  overflow: hidden
+  img
+    +pouring-image
 
 .project-main-thumbs__previous
   position: absolute
