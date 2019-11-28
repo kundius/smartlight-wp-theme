@@ -7,7 +7,9 @@ wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projec
 global $wp_query;
 
 // $category = get_category();
+print_r('dd 1');
 print_r(get_query_var('cat'));
+print_r('dd 2');
 
 $tax_query = $_GET['terms'] ? [[
   'taxonomy' => 'project_category',
