@@ -102,6 +102,15 @@ forEach(document.querySelectorAll('.js-drawer'), function(drawer) {
 })
 
 
+const parseParams = (str) => {
+  let arr = str.split(';').map(row => row.trim())
+  let params = {}
+  arr.forEach(row => {
+    let arr2 = row.split(':').map(row => row.trim())
+    params[arr2[0]] = arr2[1]
+  })
+  return params
+}
 class Timeline {
   promise = null
   queue = []
@@ -135,6 +144,12 @@ class Timeline {
   }
 }
 forEach(document.querySelectorAll('[data-slider]'), function(slider) {
+  const params = Object.assign({
+    vartical: false
+  }, parseParams(slider.dataset.slider))
+
+  console.log('params', params)
+
   let elItems = slider.querySelectorAll('[data-slider-item]')
   let elWrapper = slider.querySelector('[data-slider-wrapper]')
   let controls = slider.querySelectorAll('[data-slider-control]')
@@ -192,7 +207,11 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             slide.style.order = null
           })
         }
-        elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
+        if (params.vertical) {
+          elWrapper.style.transform = `translate3d(0px, -${width * progress}px, 0px)`
+        } else {
+          elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
+        }
       })
     } else {
       timeline.add(progress => {
@@ -200,7 +219,11 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
         elItems.forEach((slide, i) => {
           slide.style.order = i < active ? null : -1
         })
-        elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
+        if (params.vertical) {
+          elWrapper.style.transform = `translate3d(0px, -${width - (width * progress)}px, 0px)`
+        } else {
+          elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
+        }
       })
     }
 
