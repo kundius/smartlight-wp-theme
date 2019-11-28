@@ -40,7 +40,7 @@ $wp_query = $projects;
             <?php bcn_display() ?>
           </div>
 
-          <h1 class="ui-headline"><span><?php the_title() ?></span></h1>
+          <h1 class="ui-headline"><span><?php echo $queried_term->name ?></span></h1>
 
           <div class="projects-filter">
             <div class="projects-filter__categories">
@@ -89,7 +89,7 @@ $wp_query = $projects;
             'next_text' => '<span class="ui-arrow-right"></span>'
           ]) ?>
 
-          <?php endif; wp_reset_query(); ?>
+          <?php endif; ?>
         </div>
       </div>
 

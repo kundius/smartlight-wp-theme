@@ -41,6 +41,8 @@ $types = [
   'news' => 'Новость',
   'actions' => 'Акция'
 ];
+
+$wp_query = $articles;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -59,7 +61,7 @@ $types = [
 
           <h1 class="articles-headline"><span><?php echo $category->name ?></span></h1>
 
-          <?php if ($articles->have_posts()): ?>
+          <?php if (have_posts()): ?>
           <div class="articles-list">
             <div class="articles-list__grid">
               <?php if (!empty($favorite_posts[0])): ?>
@@ -83,7 +85,7 @@ $types = [
               </div>
               <?php endif; ?>
 
-              <?php while($articles->have_posts()): $articles->the_post(); ?>
+              <?php while(have_posts()): the_post(); ?>
               <?php $cats = get_the_category(get_the_ID()) ?>
               <div class="articles-list__cell">
                 <div class="articles-item">
@@ -131,7 +133,7 @@ $types = [
             'next_text' => '<span class="ui-arrow-right"></span>'
           ]) ?>
 
-          <?php endif; wp_reset_query(); ?>
+          <?php endif; ?>
 
         </div>
       </div>
