@@ -46,9 +46,9 @@ $canonical = wp_get_canonical_url();
 
           <div class="projects-filter">
             <div class="projects-filter__categories">
-              <a href="<?php echo $canonical ?>" class="ui-button-filter projects-filter__category<?php if (empty($_GET['terms'])): ?> _active<?php endif; ?>">Все</a>
+              <a href="<?php echo get_term_link(14, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if (empty($_GET['terms'])): ?> _active<?php endif; ?>">Все</a>
               <?php foreach ($terms as $key => $term): ?>
-              <a href="<?php echo $canonical ?>?terms=<?php echo $term->term_id ?>" class="ui-button-filter projects-filter__category<?php if ($term->term_id == $_GET['terms']): ?> _active<?php endif; ?>">
+              <a href="<?php echo get_term_link($term->term_id, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if ($term->term_id == $_GET['terms']): ?> _active<?php endif; ?>">
                 <svg role='img'>
                   <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term->slug ?>" />
                 </svg>

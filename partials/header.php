@@ -30,7 +30,7 @@ $menu = [
   ], [
     'key' => 'works',
     'title' => 'Наши работы',
-    'href' => get_the_permalink(39),
+    'href' => get_term_link(14, 'project_category'),
     'icon' => 'menu-works'
   ], [
     'key' => 'prices',
