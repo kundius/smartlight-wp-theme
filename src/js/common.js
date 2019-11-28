@@ -115,7 +115,7 @@ const parseParams = (str) => {
 }
 class Timeline {
   constructor(params) {
-    this.step = params.velocity / 2
+    this.step = parseInt(params.velocity) / 2
   }
 
   promise = null

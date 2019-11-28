@@ -49,7 +49,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
               </div>
             </div>
             <div class="project-main__right">
-              <div class="project-main-thumbs" id="project-thumbs" data-slider="vertical: true">
+              <div class="project-main-thumbs" id="project-thumbs" data-slider="vertical: true; velocity: 10">
                 <div class="project-main-thumbs__wrapper" data-slider-wrapper>
                   <?php foreach ($gallery as $key => $item): ?>
                   <div class="project-main-thumbs__item" data-index="<?php echo $key ?>" data-slider-item>
