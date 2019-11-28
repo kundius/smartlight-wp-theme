@@ -30,17 +30,19 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
             <div class="content">
               <?php the_content() ?>
             </div>
+            <?php if ($tags = get_the_tags('', '')): ?>
             <div class="article-body__tags">
               <div class="tags">
-                <?php the_tags('', '') ?>
+                <?php echo $tags ?>
               </div>
             </div>
+            <?php endif; ?>
           </div>
           <div class="article-meta">
             <?php previous_post_link('<div class="article-meta__prev">%link</div>', '<span class="ui-arrow-left"></span>') ?>
             <div class="article-meta__share">
               <div class="article-meta__shareLabel">
-                Понравилась статья?<br />
+                Понравился проект?<br />
                 Поделись с друзьями:
               </div>
               <div class="article-meta__shareButtons share-btn">
