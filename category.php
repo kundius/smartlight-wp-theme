@@ -58,7 +58,7 @@ $types = [
           </div>
 
           <h1 class="articles-headline"><span><?php echo $category->name ?></span></h1>
-    
+
           <?php if ($articles->have_posts()): ?>
           <div class="articles-list">
             <div class="articles-list__grid">

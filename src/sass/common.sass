@@ -3787,3 +3787,43 @@ svg
 //   border-radius: 0
 //   width: 100%
 //   display: block
+
+.post-item
+  position: relative
+
+.post-item__image
+  display: block
+  width: 100%
+  margin-bottom: 36px
+  overflow: hidden
+  position: relative
+  &::before
+    content: ''
+    display: block
+    position: relative
+    width: 100%
+    padding-bottom: 80%
+  img
+    +pouring-image
+
+.post-item__title
+  font-weight: 600
+  font-family: $font-family-alt
+  font-size: 28px
+  line-height: 24px
+  color: #ff8a00
+  margin-bottom: 28px
+
+.post-item__description
+  font-size: 18px
+  color: #68768a
+  line-height: 24px
+  margin-bottom: 25px
+
+.post-item__more::after
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
