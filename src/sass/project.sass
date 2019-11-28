@@ -47,15 +47,17 @@
   display: flex
   background: #2b303e
   margin-bottom: -65px
+  position: relative
+  z-index: 20
 
 .project-main__left
   width: 20%
 
 .project-main__center
-  width: 60%
+  flex-grow: 1
 
 .project-main__right
-  width: 20%
+  width: 200px
 
 .project-main-gallery
   position: relative
@@ -88,3 +90,29 @@
   position: absolute
   top: 10px
   right: 10px
+
+.project-main-thumbs
+  position: relative
+  overflow: hidden
+  height: 100%
+
+.project-main-thumbs__wrapper
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.project-main-thumbs__item
+  flex: none
+  height: 25%
+
+.project-main-thumbs__previous
+  position: absolute
+  left: 50%
+  top: 10px
+  transform: translateX(-50%)
+
+.project-main-thumbs__next
+  position: absolute
+  left: 50%
+  botton: 10px
+  transform: translateX(-50%)

@@ -169,7 +169,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
         </div>
       </div>
 
-      <div class="mesozoic-arsenal js-slider">
+      <div class="mesozoic-arsenal" data-slider>
         <div class="container">
           <div class="mesozoic-arsenal__wrapper">
             <div class="mesozoic-arsenal__title"><?php the_field('ng_arsenal_title', 'option') ?></div>
@@ -181,10 +181,10 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
                 <span class="ui-arrow-right"></span>
               </button>
               <div class="mesozoic-arsenal__sliderItems">
-                <div class="mesozoic-arsenal__grid js-slider-wrapper">
+                <div class="mesozoic-arsenal__grid" data-slider-wrapper>
 
                   <?php foreach (get_field('ng_arsenal_list', 'option') as $item): ?>
-                  <div class="mesozoic-arsenal__cell js-slider-item">
+                  <div class="mesozoic-arsenal__cell" data-slider-item>
                     <div class="mesozoic-arsenal-item">
                       <div class="mesozoic-arsenal-item__box js-cube">
                         <div class="mesozoic-arsenal-item__front js-cube-front">
@@ -226,7 +226,7 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
       </div>
 
       <?php if ($portfolio_list = get_field('portfolio_list')): ?>
-      <div class="service-objects service-objects_primary js-slider">
+      <div class="service-objects service-objects_primary" data-slider>
         <div class="container">
           <div class="service-objects__wrapper">
             <div class="service-objects__title">Выполненные объекты</div>
@@ -245,9 +245,9 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
             </div>
             <div class="service-objects__slider">
               <div class="service-objects__sliderItems">
-                <div class="service-objects__grid js-slider-wrapper">
+                <div class="service-objects__grid" data-slider-wrapper>
                   <?php foreach ($portfolio_list as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
-                  <div class="service-objects__cell js-slider-item">
+                  <div class="service-objects__cell" data-slider-item>
                     <div class="service-objects__item" data-project="<?php echo $item->ID ?>">
                       <img class="service-objects__itemImage" src="<?php echo $image ?>" alt='' />
                       <span class="service-objects__itemMagnify">

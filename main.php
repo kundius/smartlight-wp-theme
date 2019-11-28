@@ -71,11 +71,11 @@ $projects = new WP_Query(array(
               <div class="ui-width-1-4@m">
                 <div class="ui-visible@m">
                   <?php if ($projects_small = get_field('projects_small')): ?>
-                  <div class="main-services-projects js-slider">
+                  <div class="main-services-projects" data-slider>
                     <div class="main-services-projects__items">
-                      <div class="main-services-projects__slider js-slider-wrapper">
+                      <div class="main-services-projects__slider" data-slider-wrapper>
                         <?php foreach ($projects_small as $item): ?>
-                        <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="main-services-projects__item js-slider-item" data-project="<?php echo $item->ID ?>">
+                        <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="main-services-projects__item" data-slider-item data-project="<?php echo $item->ID ?>">
                           <span class="main-services-projects__image">
                             <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'w480h480') ?>" alt="" />
                           </span>
@@ -111,14 +111,14 @@ $projects = new WP_Query(array(
                 <div class="ui-grid">
                   <div class="ui-width-2-3@m">
                     <?php if ($actions = get_field('actions_slider', 'option')): ?>
-                    <div class="actions-slider js-slider">
+                    <div class="actions-slider" data-slider>
                       <div class="actions-slider__slider">
-                        <div class="actions-slider__items js-slider-wrapper">
+                        <div class="actions-slider__items" data-slider-wrapper>
                           <?php foreach ($actions as $action): ?>
                           <?php if ($action['link']): ?>
-                          <a href="<?php echo $action['link'] ?>" class="actions-slider__item js-slider-item">
+                          <a href="<?php echo $action['link'] ?>" class="actions-slider__item" data-slider-item>
                           <?php else: ?>
-                          <button class="actions-slider__item js-slider-item" data-modal="#calculation">
+                          <button class="actions-slider__item" data-slider-item data-modal="#calculation">
                           <?php endif; ?>
                               <span class="actions-slider__date"><?php echo $action['date'] ?></span>
                               <span class="actions-slider__title"><?php echo $action['title'] ?></span>

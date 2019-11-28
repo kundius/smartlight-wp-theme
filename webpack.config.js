@@ -33,6 +33,7 @@ module.exports = {
         PATHS.source + 'sass/article.sass',
       ],
       project: [
+        PATHS.source + 'js/project.js',
         PATHS.source + 'sass/project.sass',
       ],
       servicePrime: [

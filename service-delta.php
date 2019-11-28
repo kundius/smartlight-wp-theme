@@ -36,11 +36,11 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
           <div class="service-delta-actions">
             <?php if ($projects_small = get_field('projects_small')): ?>
             <div class="service-delta-actions__projects">
-              <div class="simple-slideshow js-slider">
+              <div class="simple-slideshow" data-slider>
                 <div class="simple-slideshow__items">
-                  <div class="simple-slideshow__slider js-slider-wrapper">
+                  <div class="simple-slideshow__slider" data-slider-wrapper>
                     <?php foreach ($projects_small as $item): ?>
-                    <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="simple-slideshow__item js-slider-item" data-project="<?php echo $item->ID ?>">
+                    <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="simple-slideshow__item" data-slider-item data-project="<?php echo $item->ID ?>">
                       <img class="simple-slideshow__image" src="<?php echo get_the_post_thumbnail_url($item->ID, 'w480h480') ?>" alt="<?php echo $item->post_title ?>" loading="lazy">
                       <span class="ui-magnify-button simple-slideshow__magnify">
                         <span class="ui-magnify-button__arrow" ></span>
@@ -62,14 +62,14 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
 
             <div class="service-delta-actions__actions">
               <?php if ($actions = get_field('actions_slider', 'option')): ?>
-              <div class="actions-slider js-slider">
+              <div class="actions-slider" data-slider>
                 <div class="actions-slider__slider">
-                  <div class="actions-slider__items js-slider-wrapper">
+                  <div class="actions-slider__items" data-slider-wrapper>
                     <?php foreach ($actions as $action): ?>
                     <?php if ($action['link']): ?>
-                    <a href="<?php echo $action['link'] ?>" class="actions-slider__item js-slider-item">
+                    <a href="<?php echo $action['link'] ?>" class="actions-slider__item" data-slider-item>
                     <?php else: ?>
-                    <button class="actions-slider__item js-slider-item" data-modal="#calculation">
+                    <button class="actions-slider__item" data-slider-item data-modal="#calculation">
                     <?php endif; ?>
                         <span class="actions-slider__date"><?php echo $action['date'] ?></span>
                         <span class="actions-slider__title"><?php echo $action['title'] ?></span>
@@ -218,7 +218,7 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
       </div>
 
       <?php if ($projects_large = get_field('projects_large')): ?>
-      <div class="service-objects service-objects_<?php echo $post->post_name ?> js-slider">
+      <div class="service-objects service-objects_<?php echo $post->post_name ?>" data-slider>
         <div class="container">
           <div class="service-objects__wrapper">
             <div class="service-objects__title">Выполненные объекты</div>
@@ -237,9 +237,9 @@ wp_enqueue_script('theme_serviceDelta', get_template_directory_uri() . '/dist/se
             </div>
             <div class="service-objects__slider">
               <div class="service-objects__sliderItems">
-                <div class="service-objects__grid js-slider-wrapper">
+                <div class="service-objects__grid" data-slider-wrapper>
                   <?php foreach ($projects_large as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
-                  <div class="service-objects__cell js-slider-item">
+                  <div class="service-objects__cell" data-slider-item>
                     <div class="service-objects__item" data-project="<?php echo $item->ID ?>">
                       <img class="service-objects__itemImage" src="<?php echo $image ?>" alt='' />
                       <span class="service-objects__itemMagnify">

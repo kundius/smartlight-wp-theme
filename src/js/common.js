@@ -134,9 +134,9 @@ class Timeline {
     this.queue = []
   }
 }
-forEach(document.querySelectorAll('.js-slider'), function(slider) {
-  let elItems = slider.querySelectorAll('.js-slider-item')
-  let elWrapper = slider.querySelector('.js-slider-wrapper')
+forEach(document.querySelectorAll('[data-slider]'), function(slider) {
+  let elItems = slider.querySelectorAll('[data-slider-item]')
+  let elWrapper = slider.querySelector('[data-slider-wrapper]')
   let controls = slider.querySelectorAll('[data-slider-control]')
   let active = 0
   let timeline = new Timeline()
@@ -208,6 +208,8 @@ forEach(document.querySelectorAll('.js-slider'), function(slider) {
   }
 
   show(active)
+
+  slider.slider = { previous, next, show }
 })
 
 
