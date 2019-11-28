@@ -6,7 +6,7 @@ wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projec
 
 global $wp_query;
 
-$category = get_category();
+// $category = get_category();
 print_r(get_query_var('cat'));
 
 $tax_query = $_GET['terms'] ? [[
