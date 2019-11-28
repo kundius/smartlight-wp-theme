@@ -72,11 +72,11 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
         if ($related = get_field('related')) {
           $also_query = new WP_Query([
             'post_type' => 'project',
-            'post__in' => array_map(function($row) { return $row->ID }, $related)
+            'post__in' => array_map(function($row) { return $row->ID; }, $related)
           ]);
         } else if ($tags = wp_get_post_tags($post->ID)) {
           $tag_ids = [];
-          foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+          foreach ($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
           $also_query = new WP_Query([
             'post_type' => 'project',
             'tag__in' => $tag_ids,
