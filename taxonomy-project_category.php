@@ -38,7 +38,6 @@ $terms = get_terms('project_category', [
           <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <?php bcn_display() ?>
           </div>
-          <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
 
           <h1 class="ui-headline"><span><?php the_title() ?></span></h1>
 
@@ -91,10 +90,6 @@ $terms = get_terms('project_category', [
           ]) ?>
 
           <?php endif; wp_reset_query(); ?>
-
-          <?php endwhile; else: ?>
-              <p>Извините, ничего не найдено.</p>
-          <?php endif; ?>
         </div>
       </div>
 
