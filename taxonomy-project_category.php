@@ -6,29 +6,22 @@ wp_enqueue_script('theme_projects', get_template_directory_uri() . '/dist/projec
 
 global $wp_query;
 
-// $category = get_category();
-print_r('dd 1');
-$q_obj = get_queried_object();
-print_r($q_obj->term_id);
-print_r('dd 2');
-
-$tax_query = $_GET['terms'] ? [[
-  'taxonomy' => 'project_category',
-  'terms' => $_GET['terms']
-]] : null;
-
-$year = $_GET['years'] ? $_GET['years'] : null;
+$term = get_queried_object();
 
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 27,
   'paged' => get_query_var('paged') ?: 1,
-  'year' => $year,
-	'tax_query' => $tax_query
+  'year' => $_GET['years'] ?: null,
+	'tax_query' => [[
+    'taxonomy' => 'project_category',
+    'terms' => $term->term_id
+  ]]
 ));
 
 $terms = get_terms('project_category', [
-  'hide_empty' => true
+  'hide_empty' => true,
+  'parent' => 14
 ]);
 
 $canonical = wp_get_canonical_url();
