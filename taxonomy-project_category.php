@@ -23,8 +23,6 @@ $terms = get_terms('project_category', [
   'hide_empty' => true,
   'parent' => 14
 ]);
-
-$canonical = wp_get_canonical_url();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -46,9 +44,9 @@ $canonical = wp_get_canonical_url();
 
           <div class="projects-filter">
             <div class="projects-filter__categories">
-              <a href="<?php echo get_term_link(14, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id == 14): ?> _active<?php endif; ?>">Все</a>
+              <a href="<?php echo get_term_link(14) ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id == 14): ?> _active<?php endif; ?>">Все</a>
               <?php foreach ($terms as $key => $term): ?>
-              <a href="<?php echo get_term_link($term->term_id, 'project_category') ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id === $term->term_id): ?> _active<?php endif; ?>">
+              <a href="<?php echo get_term_link($term->term_id) ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id === $term->term_id): ?> _active<?php endif; ?>">
                 <svg role='img'>
                   <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $term->slug ?>" />
                 </svg>
@@ -57,11 +55,11 @@ $canonical = wp_get_canonical_url();
               <?php endforeach; ?>
             </div>
             <div class="projects-filter__years">
-              <a href="<?php echo $canonical ?>" class="projects-filter__year<?php if (empty($_GET['years'])): ?> _active<?php endif; ?>">Все</a>
-              <!-- <a href="<?php echo $canonical ?>?years=2017" class="projects-filter__year">2017</a>
-              <a href="<?php echo $canonical ?>?years=2018" class="projects-filter__year">2018</a> -->
-              <a href="<?php echo $canonical ?>?years=2019" class="projects-filter__year<?php if ($_GET['years'] == '2019'): ?> _active<?php endif; ?>">2019</a>
-              <!-- <a href="<?php echo $canonical ?>?years=2020" class="projects-filter__year">2020</a> -->
+              <a href="<?php echo get_term_link($queried_term->term_id) ?>" class="projects-filter__year<?php if (empty($_GET['years'])): ?> _active<?php endif; ?>">Все</a>
+              <!-- <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2017" class="projects-filter__year">2017</a>
+              <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2018" class="projects-filter__year">2018</a> -->
+              <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2019" class="projects-filter__year<?php if ($_GET['years'] == '2019'): ?> _active<?php endif; ?>">2019</a>
+              <!-- <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2020" class="projects-filter__year">2020</a> -->
             </div>
           </div>
 
