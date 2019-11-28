@@ -79,7 +79,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
                 'value' => array_map(function($row) { return $row->ID; }, $related),
                 'compare' => 'IN'
               ]
-            ]
+            ],
             'caller_get_posts' => 1,
             // 'post__in' => $related
           ]);
