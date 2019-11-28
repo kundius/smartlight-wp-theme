@@ -92,7 +92,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
         <div class="container">
           <div class="project-also__title">Смотрите также</div>
           <div class="project-also__grid">
-            <div class="ui-grid ui-grid-large@m">
+            <div class="ui-grid ui-grid-medium@l ui-grid-large@xl">
               <?php while ($also_query->have_posts()): $also_query->the_post(); ?>
               <div class="ui-width-1-2@s ui-width-1-3@m">
                 <div class="post-item">
