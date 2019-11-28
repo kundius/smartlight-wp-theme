@@ -116,6 +116,8 @@ const parseParams = (str) => {
 class Timeline {
   constructor(params) {
     this.step = parseInt(params.velocity) / 2
+
+    console.log('this.step', this.step)
   }
 
   promise = null
@@ -154,8 +156,6 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     vertical: false,
     velocity: 1
   }, parseParams(slider.dataset.slider))
-
-  console.log('params', params)
 
   let elItems = slider.querySelectorAll('[data-slider-item]')
   let elWrapper = slider.querySelector('[data-slider-wrapper]')
