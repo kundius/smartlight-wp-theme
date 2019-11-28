@@ -40,12 +40,12 @@ $menu = [
   ], [
     'key' => 'stocks',
     'title' => 'Акции',
-    'href' => get_the_permalink(76),
+    'href' => get_term_link(4, 'category'),
     'icon' => 'menu-stocks'
   ], [
     'key' => 'articles',
     'title' => 'Статьи',
-    'href' => get_the_permalink(45),
+    'href' => get_term_link(15, 'category'),
     'icon' => 'menu-articles'
   ], [
     'key' => 'contacts',

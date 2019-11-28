@@ -18,9 +18,24 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
           <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <?php bcn_display() ?>
           </div>
+
           <h1 class="ui-headline">
             <span><?php the_title() ?></span>
           </h1>
+
+          <div class="project-main">
+            <div class="project-main__left">
+              <a href="#" class="project-main__category">cat</a>
+              <a href="<?php get_the_date('j F Y') ?>" class="project-main__year"><?php the_date('Y') ?></a>
+              <?php if (has_excerpt()): ?>
+              <div class="project-main__description"><?php the_excerpt() ?></div>
+              <?php endif; ?>
+            </div>
+            <div class="project-main__center">
+            </div>
+            <div class="project-main__right">
+            </div>
+          </div>
         </div>
       </div>
 
