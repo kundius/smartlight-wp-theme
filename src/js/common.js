@@ -221,13 +221,13 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
             // slide.style.order = i < active - 1 ? 1 : null
-            if (i === active - 1) {
+            if (i === retreat) {
               slide.style.order = -1
             }
-            if (i > active - 1) {
+            if (i >= active) {
               slide.style.order = null
             }
-            if (i < active - 1) {
+            if (i < retreat) {
               slide.style.order = 1
             }
           })
