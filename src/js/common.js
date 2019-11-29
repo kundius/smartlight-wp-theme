@@ -159,7 +159,7 @@ class Timeline {
 forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   const params = Object.assign({
     vertical: false,
-    velocity: 0.2
+    velocity: 1
   }, parseParams(slider.dataset.slider))
 
   let elItems = slider.querySelectorAll('[data-slider-item]')
