@@ -228,7 +228,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
               slide.style.order = null
             }
             if (i < active - 1) {
-              slide.style.order = -2
+              slide.style.order = 1
             }
           })
           if (params.vertical) {
