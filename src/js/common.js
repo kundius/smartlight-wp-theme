@@ -202,8 +202,8 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
     console.log(dir, dist)
 
-    if (dir < 0) {
-      timeline.add(progress => {
+    timeline.add(progress => {
+      if (dir < 0) {
         elItems.forEach((slide, i) => {
           slide.style.order = i < retreat ? 1 : null
         })
@@ -214,9 +214,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
           let width = elItems[retreat].offsetWidth
           elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
         }
-      })
-    } else {
-      timeline.add(progress => {
+      } else {
         elItems.forEach((slide, i) => {
           if (i === active) {
             slide.style.order = -2
@@ -231,8 +229,8 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
           let width = elItems[active].offsetWidth
           elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
         }
-      })
-    }
+      }
+    })
 
     timeline.play()
   }
