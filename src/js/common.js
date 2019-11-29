@@ -120,15 +120,17 @@ class Timeline {
 
   promise = null
   playing = false
+  acceleration = 0
   queue = []
 
   run = () => {
     if (!this.queue.length) {
       this.playing = false
+      this.acceleration = 0
     } else {
       let item = this.queue[0]
   
-      item.progress += this.step + (this.queue.length * (this.step * 0.5))
+      item.progress += this.step + this.acceleration
       if (item.progress > 1) item.progress = 1
   
       // item.callback(item.progress)
@@ -146,6 +148,7 @@ class Timeline {
       progress: 0,
       callback
     })
+    this.acceleration = this.step * this.queue.length
   }
   play = () => {
     if (this.playing) return
