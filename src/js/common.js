@@ -204,7 +204,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
 
     if (dir < 0) {
       timeline.add(progress => {
-        if (retreat > 0) {
+        if (retreat > 0 - dist) {
           for (let i = 1; i <= dist; i++) {
             elItems[retreat - i].style.order = 1
           }
@@ -224,7 +224,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     } else {
       timeline.add(progress => {
         elItems.forEach((slide, i) => {
-          slide.style.order = i < active ? null : -1 * dist
+          slide.style.order = i < active + dist ? null : -1 * dist
         })
         if (params.vertical) {
           let height = elItems[active].offsetHeight
