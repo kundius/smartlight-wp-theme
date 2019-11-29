@@ -213,8 +213,9 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
         //     slide.style.order = null
         //   })
         // }
+        // 3
         elItems.forEach((slide, i) => {
-          if (i > retreat - dist && i <= retreat) {
+          if (i < retreat) {
             slide.style.order = 1
           } else {
             slide.style.order = null
