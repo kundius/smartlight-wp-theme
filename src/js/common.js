@@ -190,14 +190,14 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   forEach(dotElements, el => el.addEventListener('click', () => show(el.dataset.sliderControl)))
 
   const previous = () => {
-    show((active - 1 + elItems.length) % elItems.length)
+    show((active - 1 + elItems.length) % elItems.length, -1)
   }
 
   const next = () => {
-    show((active + 1) % elItems.length)
+    show((active + 1) % elItems.length, 1)
   }
 
-  const show = (index) => {
+  const show = (index, dir) => {
     let retreat = active
     active = parseInt(index)
 
@@ -208,10 +208,14 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       }
     })
 
-    let dist = Math.abs(retreat - active)
-    let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
+    if (typeof dir === 'undefined') {
+      dir = retreat > active ? -1 : 1
+    }
 
-    // console.log('dist', dist)
+    let dist = Math.abs(retreat - active)
+    // let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
+
+    console.log('dir', dir)
 
     for (let k = 1; k <= dist; k++) {
       if (dir < 0) {
