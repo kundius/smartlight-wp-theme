@@ -223,7 +223,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             let height = elItems[active].offsetHeight
             elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
           } else {
-            let width = elItems[retreat].offsetWidth
+            let width = elItems[active].offsetWidth
             elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
