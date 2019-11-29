@@ -267,7 +267,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     timeline.play()
   }
 
-  show(active)
+  move(active, 1)
 
   slider.slider = { previous, next, show }
 })
