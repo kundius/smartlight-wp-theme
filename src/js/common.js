@@ -205,7 +205,6 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
 
     if (dir < 0) {
-      let width = elItems[retreat].offsetWidth
       timeline.add(progress => {
         if (retreat > 0) {
           elItems[retreat - 1].style.order = 1
@@ -215,20 +214,23 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
           })
         }
         if (params.vertical) {
-          elWrapper.style.transform = `translate3d(0px, -${width * progress}px, 0px)`
+          let height = elItems[active].offsetHeight
+          elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
         } else {
+          let width = elItems[retreat].offsetWidth
           elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
         }
       })
     } else {
       timeline.add(progress => {
-        let width = elItems[active].offsetWidth
         elItems.forEach((slide, i) => {
           slide.style.order = i < active ? null : -1
         })
         if (params.vertical) {
-          elWrapper.style.transform = `translate3d(0px, -${width - (width * progress)}px, 0px)`
+          let height = elItems[active].offsetHeight
+          elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
         } else {
+          let width = elItems[active].offsetWidth
           elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
         }
       })
