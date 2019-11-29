@@ -227,8 +227,8 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
-        console.log('вперед', active, dist, k, k)
-        timeline.add(callback.bind(this, retreat, k))
+        console.log('вперед', active, dist, k, active - dist - k)
+        timeline.add(callback.bind(this, retreat, active - dist - k))
       } else {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
