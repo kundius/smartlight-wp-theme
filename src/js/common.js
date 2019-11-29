@@ -199,7 +199,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
 
   const show = (index) => {
     let retreat = active
-    active = index
+    active = parseInt(index)
 
     forEach(dotElements, dot => {
       dot.classList.remove('_active')
