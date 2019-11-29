@@ -128,7 +128,7 @@ class Timeline {
     } else {
       let item = this.queue[0]
   
-      item.progress += this.step + (this.queue.length * (this.step * 0.2))
+      item.progress += this.step + (this.queue.length * (this.step * 0.5))
       if (item.progress > 1) item.progress = 1
   
       // item.callback(item.progress)
