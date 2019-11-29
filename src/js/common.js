@@ -204,15 +204,23 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
 
     if (dir < 0) {
       timeline.add(progress => {
-        if (retreat > dist - 1) {
-          for (let i = 1; i <= dist; i++) {
-            elItems[retreat - i].style.order = 1
-          }
-        } else {
-          elItems.forEach(slide => {
+        // if (retreat > dist - 1) {
+        //   for (let i = 1; i <= dist; i++) {
+        //     elItems[retreat - i].style.order = 1
+        //   }
+        // } else {
+        //   elItems.forEach(slide => {
+        //     slide.style.order = null
+        //   })
+        // }
+        elItems.forEach((slide, i) => {
+          if (i > retreat - dist && i <= retreat) {
+            slide.style.order = 1
+          } else {
             slide.style.order = null
-          })
-        }
+          }
+          // slide.style.order = null
+        })
         if (params.vertical) {
           let height = elItems[active].offsetHeight
           elWrapper.style.transform = `translate3d(0px, -${height * dist * progress}px, 0px)`
