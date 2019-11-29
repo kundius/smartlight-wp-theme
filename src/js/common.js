@@ -191,14 +191,14 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   forEach(dotElements, el => el.addEventListener('click', () => show(el.dataset.sliderControl)))
 
   const previous = () => {
-    show((active - 1 + elItems.length) % elItems.length, 1, params.span)
+    show((active - params.span + elItems.length) % elItems.length, 1)
   }
 
   const next = () => {
-    show((active + 1) % elItems.length, -1, params.span)
+    show((active + params.span) % elItems.length, -1)
   }
 
-  const show = (index, dir, span) => {
+  const show = (index, dir) => {
     let retreat = active
     active = parseInt(index)
 
@@ -220,20 +220,45 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     // for (let k = 1; k <= span; k++) {
       if (dir < 0) {
         let callback = (span, retreat, active, progress) => {
-          elItems.forEach((slide, i) => {
-            if (
-              (i >= retreat && i < retreat + span) ||
-              (i + span > elItems.length && i >= active)
-            ) {
-              slide.style.order = -1
-            }
-            if (i > retreat || (i + span > elItems.length && i < active)) {
-              slide.style.order = null
-            }
+          // elItems.forEach((slide, i) => {
+            // if (
+            //   (i >= retreat && i < retreat + span) ||
+            //   (i + span > elItems.length && i >= active)
+            // ) {
+            //   slide.style.order = -1
+            // }
+            // if (i > retreat || (i + span > elItems.length && i < active)) {
+            //   slide.style.order = null
+            // }
             // if (i < retreat) {
             //   slide.style.order = 1
             // }
-          })
+          // })
+
+          // elItems[retreat]
+          // let k = retreat
+          // if ((retreat + span) % elItems.length) {
+
+          // }
+          // while (k <= retreat + span - 1) {
+
+          // }
+          // (active + i) % elItems.length
+
+          if (active < retreat) {
+            forEach(elItems.slice(retreat), row => row.style.order = -1)
+            forEach(elItems.slice(0, active), row => row.style.order = -1)
+            forEach(elItems.slice(active, retreat), row => row.style.order = 0)
+          } else {
+            forEach(elItems.slice(0, retreat), row => row.style.order = 1)
+            forEach(elItems.slice(retreat, active), row => row.style.order = -1)
+            forEach(elItems.slice(active), row => row.style.order = 0)
+          }
+
+          // уходящие = -1
+          // текущий и больше = 0
+          // перед уходящими = 1
+
           if (params.vertical) {
             let height = elItems[active].offsetHeight
             elWrapper.style.transform = `translate3d(0px, -${height * span * progress}px, 0px)`
