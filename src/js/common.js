@@ -224,7 +224,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             if (i === retreat) {
               slide.style.order = -1
             }
-            if (i >= active) {
+            if (i > retreat) {
               slide.style.order = null
             }
             if (i < retreat) {
