@@ -131,8 +131,8 @@ class Timeline {
       item.progress += this.step
       if (item.progress > 1) item.progress = 1
   
-      // item.callback(item.progress)
-      item.callback(easing.easeOutCubic(item.progress))
+      item.callback(item.progress, item.params)
+      // item.callback(easing.easeOutCubic(item.progress, item.params))
   
       if (item.progress === 1) {
         this.queue.shift()
@@ -141,9 +141,10 @@ class Timeline {
       requestAnimationFrame(this.run)
     }
   }
-  add = callback => {
+  add = (callback, params) => {
     this.queue.push({
       progress: 0,
+      params,
       callback
     })
   }
@@ -210,35 +211,35 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
     console.log(dir, dist)
 
-    timeline.add(progress => {
-      if (dir < 0) {
+    timeline.add((progress, p) => {
+      if (p.dir < 0) {
         elItems.forEach((slide, i) => {
-          slide.style.order = i < retreat ? 1 : null
+          slide.style.order = i < p.retreat ? 1 : null
         })
         if (params.vertical) {
-          let height = elItems[active].offsetHeight
+          let height = elItems[p.active].offsetHeight
           elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
         } else {
-          let width = elItems[retreat].offsetWidth
+          let width = elItems[p.retreat].offsetWidth
           elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
         }
       } else {
         elItems.forEach((slide, i) => {
-          if (i === active) {
+          if (i === p.active) {
             slide.style.order = -2
           } else {
             slide.style.order = -1
           }
         })
         if (params.vertical) {
-          let height = elItems[active].offsetHeight
+          let height = elItems[p.active].offsetHeight
           elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
         } else {
-          let width = elItems[active].offsetWidth
+          let width = elItems[p.active].offsetWidth
           elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
         }
       }
-    })
+    }, { dir, retreat, active })
 
     timeline.play()
   }
