@@ -231,22 +231,22 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       } else {
         let callback = (retreat, active, dist, progress) => {
           elItems.forEach((slide, i) => {
-            if (i === active) {
+            if (i === active + (dist - 1)) {
               slide.style.order = -2
             }
-            if (i > active) {
+            if (i > active + (dist - 1)) {
               slide.style.order = -1
             }
-            if (i < active) {
+            if (i < active + (dist - 1)) {
               slide.style.order = null
             }
           })
           if (params.vertical) {
             let height = elItems[active].offsetHeight
-            elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
+            elWrapper.style.transform = `translate3d(0px, -${height * dist - (height * dist * progress)}px, 0px)`
           } else {
             let width = elItems[active].offsetWidth
-            elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
+            elWrapper.style.transform = `translate3d(-${width * dist - (width * dist * progress)}px, 0px, 0px)`
           }
         }
         timeline.add(callback.bind(this, retreat, active, dist))

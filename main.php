@@ -108,7 +108,7 @@ $projects = new WP_Query(array(
                 </div>
               </div>
               <div class="ui-width-3-4@m">
-                <div class="ui-grid">
+                <div class="ui-grid ui-grid-collapse">
                   <div class="ui-width-2-3@m">
                     <?php if ($actions = get_field('actions_slider', 'option')): ?>
                     <div class="actions-slider" data-slider>
