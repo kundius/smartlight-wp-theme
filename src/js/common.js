@@ -228,7 +228,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
           }
         }
         console.log('вперед', active, dist, k)
-        timeline.add(callback.bind(this, retreat, active - dist + k))
+        timeline.add(callback.bind(this, retreat, active + dist - k))
       } else {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
