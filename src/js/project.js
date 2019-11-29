@@ -9,7 +9,8 @@ if (thumbs && gallery) {
     item.addEventListener('click', () => {
       forEach(items, v => v.classList.remove('_active'))
       item.classList.add('_active')
-      gallery.next()
+      console.log(item.parentNode.children.indexOf(item))
+      gallery.slider.show(item.parentNode.children.indexOf(item))
     })
   })
 }
