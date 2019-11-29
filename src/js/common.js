@@ -213,9 +213,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       dir = retreat > active ? 1 : -1
     }
 
-    if (typeof span === 'undefined') {
-      span = Math.abs(retreat - active)
-    }
+    let span = Math.abs(retreat - active)
 
     // for (let k = 1; k <= span; k++) {
       if (dir < 0) {
