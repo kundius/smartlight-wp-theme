@@ -216,7 +216,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     for (let k = 1; k <= dist; k++) {
       if (dir < 0) {
         let callback = (retreat, active, progress) => {
-          console.log('вперед')
+          console.log('вперед', active, dist, k)
           elItems.forEach((slide, i) => {
             slide.style.order = i < active - 1 ? 1 : null
           })
@@ -231,7 +231,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
         timeline.add(callback.bind(this, retreat, active - dist + k))
       } else {
         let callback = (retreat, active, progress) => {
-          console.log('взад')
+          console.log('взад', active, dist, k)
           elItems.forEach((slide, i) => {
             if (i === active) {
               slide.style.order = -2
