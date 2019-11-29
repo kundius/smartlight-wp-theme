@@ -14,7 +14,8 @@ if (thumbs && gallery) {
     })
   })
 
-  gallery.addEventListener('slide.start', (a, b) => {
-    console.log('slide.start', a, b)
+  gallery.addEventListener('slide.start', e => {
+    console.log('slide.start', e.slider)
+    thumbs.slide.show(e.slider.active)
   })
 }

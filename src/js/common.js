@@ -279,8 +279,8 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       }
     }
     timeline.add(callback.bind(this, retreat, active), {
-      onStart: slider.dispatchEvent(new Event('slide.start')),
-      onEnd: slider.dispatchEvent(new Event('slide.end'))
+      onStart: slider.dispatchEvent(new Event('slide.start', { slider: { retreat, active } })),
+      onEnd: slider.dispatchEvent(new Event('slide.end', { slider: { retreat, active } }))
     })
     timeline.play()
   }
