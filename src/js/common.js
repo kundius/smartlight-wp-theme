@@ -231,7 +231,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
-        console.log('вперед', active, dist, k, active - (dist - k))
+        console.log('вперед', retreat, active, dist, k, active - (dist - k))
         timeline.add(callback.bind(this, retreat, active - (dist - k)))
       } else {
         let callback = (retreat, active, progress) => {
@@ -254,7 +254,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
           }
         }
-        console.log('взад', active, dist, k, active - (active - dist + k))
+        console.log('взад', retreat, active, dist, k, active - (active - dist + k))
         timeline.add(callback.bind(this, retreat, active - (active - dist + k)))
       }
     }
