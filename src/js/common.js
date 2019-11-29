@@ -204,7 +204,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
 
     if (dir < 0) {
       timeline.add(progress => {
-        if (retreat > 0 - dist) {
+        if (retreat > dist - 1) {
           for (let i = 1; i <= dist; i++) {
             elItems[retreat - i].style.order = 1
           }
