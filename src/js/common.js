@@ -204,43 +204,28 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
 
     if (dir < 0) {
       timeline.add(progress => {
-        // if (retreat > dist - 1) {
-        //   for (let i = 1; i <= dist; i++) {
-        //     elItems[retreat - i].style.order = 1
-        //   }
-        // } else {
-        //   elItems.forEach(slide => {
-        //     slide.style.order = null
-        //   })
-        // }
-        // 3
         elItems.forEach((slide, i) => {
-          if (i < retreat) {
-            slide.style.order = 1
-          } else {
-            slide.style.order = null
-          }
-          // slide.style.order = null
+          slide.style.order = i < retreat ? 1 : null
         })
         if (params.vertical) {
           let height = elItems[active].offsetHeight
-          elWrapper.style.transform = `translate3d(0px, -${height * dist * progress}px, 0px)`
+          elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
         } else {
           let width = elItems[retreat].offsetWidth
-          elWrapper.style.transform = `translate3d(-${width * dist * progress}px, 0px, 0px)`
+          elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
         }
       })
     } else {
       timeline.add(progress => {
         elItems.forEach((slide, i) => {
-          slide.style.order = i < active + dist ? null : -1 * dist
+          slide.style.order = i < active ? null : -1
         })
         if (params.vertical) {
           let height = elItems[active].offsetHeight
-          elWrapper.style.transform = `translate3d(0px, -${height * dist - (height * dist * progress)}px, 0px)`
+          elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
         } else {
           let width = elItems[active].offsetWidth
-          elWrapper.style.transform = `translate3d(-${width * dist - (width * dist * progress)}px, 0px, 0px)`
+          elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
         }
       })
     }
