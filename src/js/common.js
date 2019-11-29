@@ -211,80 +211,47 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     let dist = Math.abs(retreat - active)
     let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
 
-    if (dir < 0) {
-      let callback = (retreat, active, progress) => {
-        elItems.forEach((slide, i) => {
-          slide.style.order = i < retreat ? 1 : null
-        })
-        if (params.vertical) {
-          let height = elItems[active].offsetHeight
-          elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
-        } else {
-          let width = elItems[retreat].offsetWidth
-          elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
-        }
-      }
-      timeline.add(callback.bind(this, retreat, active))
-    } else {
-      let callback = (retreat, active, progress) => {
-        elItems.forEach((slide, i) => {
-          // if (i === active) {
-          //   slide.style.order = -2
-          // } else if (i === retreat) {
-          //   slide.style.order = -1
-          // } else  {
-          //   slide.style.order = null
-          // }
-          if (i === active) {
-            slide.style.order = -2
-          }
-          if (i > active) {
-            slide.style.order = -1
-          }
-          if (i < active) {
-            slide.style.order = null
-          }
-        })
-        if (params.vertical) {
-          let height = elItems[active].offsetHeight
-          elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
-        } else {
-          let width = elItems[active].offsetWidth
-          elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
-        }
-      }
-      timeline.add(callback.bind(this, retreat, active))
-    }
+    console.log('dist', dist)
 
-    // timeline.add((progress, p) => {
-    //   if (p.dir < 0) {
-    //     elItems.forEach((slide, i) => {
-    //       slide.style.order = i < p.retreat ? 1 : null
-    //     })
-    //     if (params.vertical) {
-    //       let height = elItems[p.active].offsetHeight
-    //       elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
-    //     } else {
-    //       let width = elItems[p.retreat].offsetWidth
-    //       elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
-    //     }
-    //   } else {
-    //     elItems.forEach((slide, i) => {
-    //       if (i === p.active) {
-    //         slide.style.order = -2
-    //       } else {
-    //         slide.style.order = -1
-    //       }
-    //     })
-    //     if (params.vertical) {
-    //       let height = elItems[p.active].offsetHeight
-    //       elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
-    //     } else {
-    //       let width = elItems[p.active].offsetWidth
-    //       elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
-    //     }
-    //   }
-    // }, { dir, retreat, active })
+    // for (let k = 1; k <= dist; k++) {
+      if (dir < 0) {
+        let callback = (retreat, active, progress) => {
+          elItems.forEach((slide, i) => {
+            slide.style.order = i < retreat ? 1 : null
+          })
+          if (params.vertical) {
+            let height = elItems[active].offsetHeight
+            elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
+          } else {
+            let width = elItems[retreat].offsetWidth
+            elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
+          }
+        }
+        timeline.add(callback.bind(this, retreat, active))
+      } else {
+        let callback = (retreat, active, progress) => {
+          elItems.forEach((slide, i) => {
+            if (i === active) {
+              slide.style.order = -2
+            }
+            if (i > active) {
+              slide.style.order = -1
+            }
+            if (i < active) {
+              slide.style.order = null
+            }
+          })
+          if (params.vertical) {
+            let height = elItems[active].offsetHeight
+            elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
+          } else {
+            let width = elItems[active].offsetWidth
+            elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
+          }
+        }
+        timeline.add(callback.bind(this, retreat, active))
+      }
+    // }
 
     timeline.play()
   }
