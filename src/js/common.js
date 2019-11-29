@@ -212,7 +212,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       dir = retreat > active ? 1 : -1
     }
 
-    let dist = Math.abs(retreat - active)
+    let dist = 1
     // let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
 
     console.log('dir', dir)
