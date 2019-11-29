@@ -132,8 +132,8 @@ class Timeline {
       item.progress += this.step + this.acceleration
       if (item.progress > 1) item.progress = 1
   
-      // item.callback(item.progress)
-      item.callback(easing.easeOutCubic(item.progress))
+      item.callback(item.progress)
+      // item.callback(easing.easeOutCubic(item.progress))
   
       if (item.progress === 1) {
         this.queue.shift()
