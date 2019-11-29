@@ -119,8 +119,28 @@ class Timeline {
   }
 
   promise = null
+  playing = false
   queue = []
 
+  run = () => {
+    if (!this.queue.length) {
+      this.playing = false
+    } else {
+      let item = this.queue[0]
+  
+      item.progress += this.step
+      if (item.progress > 1) item.progress = 1
+  
+      // item.callback(item.progress)
+      item.callback(easing.easeOutCubic(item.progress))
+  
+      if (item.progress === 1) {
+        this.queue.shift()
+      }
+  
+      requestAnimationFrame(this.run)
+    }
+  }
   add = callback => {
     this.queue.push({
       progress: 0,
@@ -128,21 +148,9 @@ class Timeline {
     })
   }
   play = () => {
-    if (!this.queue.length) return
-
-    let item = this.queue[0]
-
-    item.progress += this.step
-    if (item.progress > 1) item.progress = 1
-
-    // item.callback(item.progress)
-    item.callback(easing.easeOutCubic(item.progress))
-
-    if (item.progress === 1) {
-      this.queue.shift()
-    }
-
-    requestAnimationFrame(this.play)
+    if (this.playing) return
+    this.playing = true
+    this.run()
   }
   destroy = () => {
     this.queue = []
