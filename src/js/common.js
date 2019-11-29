@@ -218,7 +218,15 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     } else {
       timeline.add(progress => {
         elItems.forEach((slide, i) => {
-          slide.style.order = i < active ? -2 : -1
+          if (i > active) {
+            slide.style.order = 1
+          }
+          if (i === active) {
+            slide.style.order = null
+          }
+          if (i < active) {
+            slide.style.order = -1
+          }
         })
         if (params.vertical) {
           let height = elItems[active].offsetHeight
