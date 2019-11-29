@@ -128,6 +128,9 @@ class Timeline {
       this.playing = false
     } else {
       let item = this.queue[0]
+
+      if (item.progress === 0 && typeof item.onStart === 'function')
+        item.onStart()
   
       item.progress += this.step + this.acceleration
       if (item.progress > 1) item.progress = 1
@@ -136,14 +139,18 @@ class Timeline {
       // item.callback(easing.easeOutCubic(item.progress))
   
       if (item.progress === 1) {
+        if (typeof item.onEnd === 'function')
+          item.onEnd()
+
         this.queue.shift()
       }
   
       requestAnimationFrame(this.run)
     }
   }
-  add = callback => {
+  add = (callback, params) => {
     this.queue.push({
+      ...params,
       progress: 0,
       callback
     })
@@ -271,8 +278,10 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
         elWrapper.style.transform = `translate3d(-${x}px, 0px, 0px)`
       }
     }
-    timeline.add(callback.bind(this, retreat, active))
-
+    timeline.add(callback.bind(this, retreat, active), {
+      onStart: slider.dispatchEvent(new Event('slide.start')),
+      onEnd: slider.dispatchEvent(new Event('slide.end'))
+    })
     timeline.play()
   }
 
