@@ -190,14 +190,14 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   forEach(dotElements, el => el.addEventListener('click', () => show(el.dataset.sliderControl)))
 
   const previous = () => {
-    show((active - 1 + elItems.length) % elItems.length, 1)
+    show((active - 1 + elItems.length) % elItems.length, 1, 1)
   }
 
   const next = () => {
-    show((active + 1) % elItems.length, -1)
+    show((active + 1) % elItems.length, -1, 1)
   }
 
-  const show = (index, dir) => {
+  const show = (index, dir, dist) => {
     let retreat = active
     active = parseInt(index)
 
@@ -212,16 +212,24 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       dir = retreat > active ? 1 : -1
     }
 
-    let dist = 1
-    // let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
-
-    console.log('dir', dir)
+    if (typeof dist === 'undefined') {
+      dist = Math.abs(retreat - active)
+    }
 
     for (let k = 1; k <= dist; k++) {
       if (dir < 0) {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
-            slide.style.order = i < active - 1 ? 1 : null
+            // slide.style.order = i < active - 1 ? 1 : null
+            if (i === active) {
+              slide.style.order = -2
+            }
+            if (i > active) {
+              slide.style.order = -1
+            }
+            if (i < active) {
+              slide.style.order = null
+            }
           })
           if (params.vertical) {
             let height = elItems[active].offsetHeight
