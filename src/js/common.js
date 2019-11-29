@@ -218,13 +218,9 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     } else {
       timeline.add(progress => {
         elItems.forEach((slide, i) => {
-          if (i > active) {
-            slide.style.order = 1
-          }
           if (i === active) {
-            slide.style.order = null
-          }
-          if (i < active) {
+            slide.style.order = -2
+          } else {
             slide.style.order = -1
           }
         })
