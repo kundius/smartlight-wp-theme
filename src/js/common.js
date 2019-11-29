@@ -218,7 +218,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
           elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
         } else {
           let width = elItems[retreat].offsetWidth
-          elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
+          elWrapper.style.transform = `translate3d(-${width * dist * progress}px, 0px, 0px)`
         }
       })
     } else {
