@@ -217,7 +217,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       if (dir < 0) {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
-            slide.style.order = i < retreat ? 1 : null
+            slide.style.order = i < active - 1 ? 1 : null
           })
           if (params.vertical) {
             let height = elItems[active].offsetHeight
@@ -227,7 +227,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
-        timeline.add(callback.bind(this, retreat - dist + k, active - dist + k))
+        timeline.add(callback.bind(this, retreat, active - dist + k))
       } else {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
