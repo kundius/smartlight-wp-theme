@@ -190,11 +190,11 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   forEach(dotElements, el => el.addEventListener('click', () => show(el.dataset.sliderControl)))
 
   const previous = () => {
-    show((active - 1 + elItems.length) % elItems.length, -1)
+    show((active - 1 + elItems.length) % elItems.length, 1)
   }
 
   const next = () => {
-    show((active + 1) % elItems.length, 1)
+    show((active + 1) % elItems.length, -1)
   }
 
   const show = (index, dir) => {
