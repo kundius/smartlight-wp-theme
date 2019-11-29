@@ -209,7 +209,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     })
 
     if (typeof dir === 'undefined') {
-      dir = retreat > active ? -1 : 1
+      dir = retreat > active ? 1 : -1
     }
 
     let dist = Math.abs(retreat - active)
