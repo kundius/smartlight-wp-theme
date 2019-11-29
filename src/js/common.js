@@ -211,47 +211,47 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     let dist = Math.abs(retreat - active)
     let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
 
-    console.log('dist', dist)
+    // console.log('dist', dist)
 
-    // for (let k = 1; k <= dist; k++) {
+    for (let k = 1; k <= dist; k++) {
       if (dir < 0) {
-        let callback = (retreat, active, dist, progress) => {
+        let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
-            slide.style.order = i < retreat - (dist - 1) ? 1 : null
+            slide.style.order = i < retreat ? 1 : null
           })
           if (params.vertical) {
             let height = elItems[active].offsetHeight
-            elWrapper.style.transform = `translate3d(0px, -${height * dist * progress}px, 0px)`
+            elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
           } else {
-            let width = elItems[active].offsetWidth
-            elWrapper.style.transform = `translate3d(-${width * dist * progress}px, 0px, 0px)`
+            let width = elItems[retreat].offsetWidth
+            elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
-        timeline.add(callback.bind(this, retreat, active, dist))
+        timeline.add(callback.bind(this, retreat - dist + k, active - dist + k))
       } else {
-        let callback = (retreat, active, dist, progress) => {
+        let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
-            if (i === active + (dist - 1)) {
+            if (i === active) {
               slide.style.order = -2
             }
-            if (i > active + (dist - 1)) {
+            if (i > active) {
               slide.style.order = -1
             }
-            if (i < active + (dist - 1)) {
+            if (i < active) {
               slide.style.order = null
             }
           })
           if (params.vertical) {
             let height = elItems[active].offsetHeight
-            elWrapper.style.transform = `translate3d(0px, -${height * dist - (height * dist * progress)}px, 0px)`
+            elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
           } else {
             let width = elItems[active].offsetWidth
-            elWrapper.style.transform = `translate3d(-${width * dist - (width * dist * progress)}px, 0px, 0px)`
+            elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
           }
         }
-        timeline.add(callback.bind(this, retreat, active, dist))
+        timeline.add(callback.bind(this, retreat, active))
       }
-    // }
+    }
 
     timeline.play()
   }
