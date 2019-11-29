@@ -216,11 +216,10 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       dist = Math.abs(retreat - active)
     }
 
-    for (let k = 1; k <= dist; k++) {
+    // for (let k = 1; k <= dist; k++) {
       if (dir < 0) {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
-            // slide.style.order = i < active - 1 ? 1 : null
             if (i === retreat) {
               slide.style.order = -1
             }
@@ -239,8 +238,9 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
-        console.log('вперед', retreat, active, dist, k, Math.abs(active - (dist - k)))
-        timeline.add(callback.bind(this, retreat, Math.abs(active - (dist - k))))
+        // console.log('вперед', retreat, active, dist, k, Math.abs(active - (dist - k)))
+        // timeline.add(callback.bind(this, retreat, Math.abs(active - (dist - k))))
+        timeline.add(callback.bind(this, retreat, active))
       } else {
         let callback = (retreat, active, progress) => {
           elItems.forEach((slide, i) => {
@@ -262,10 +262,11 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
           }
         }
-        console.log('взад', retreat, active, dist, k, active + (dist - k))
-        timeline.add(callback.bind(this, retreat, active + (dist - k)))
+        // console.log('взад', retreat, active, dist, k, active + (dist - k))
+        // timeline.add(callback.bind(this, retreat, active + (dist - k)))
+        timeline.add(callback.bind(this, retreat, active))
       }
-    }
+    // }
 
     timeline.play()
   }
