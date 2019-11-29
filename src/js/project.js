@@ -1,6 +1,15 @@
+import forEach from 'lodash/forEach'
+
 const thumbs = document.getElementById('project-thumbs')
-if (thumbs) {
-  thumbs.addEventListener('click', e => {
-    console.log(e.target)
+const gallery = document.getElementById('project-gallery')
+
+if (thumbs && gallery) {
+  let items = thumbs.querySelectorAll('[data-slider-item]')
+  forEach(items, item => {
+    item.addEventListener('click', () => {
+      forEach(items, v => v.classList.remove('_active'))
+      item.classList.add('_active')
+      gallery.next()
+    })
   })
 }

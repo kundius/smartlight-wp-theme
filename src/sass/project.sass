@@ -58,6 +58,7 @@
 
 .project-main__right
   width: 200px
+  padding: 10px
 
 .project-main-gallery
   position: relative
@@ -90,7 +91,6 @@
   position: relative
   overflow: hidden
   height: 100%
-  padding: 10px
 
 .project-main-thumbs__wrapper
   display: flex
@@ -101,6 +101,8 @@
   flex: none
   height: 25%
   position: relative
+  &._active
+    border: 3px solid #e4a76c
 
 .project-main-thumbs__image
   position: absolute
@@ -115,11 +117,11 @@
 .project-main-thumbs__previous
   position: absolute
   left: 50%
-  top: 10px
+  top: 0
   transform: translateX(-50%)
 
 .project-main-thumbs__next
   position: absolute
   left: 50%
-  bottom: 10px
+  bottom: 0
   transform: translateX(-50%)

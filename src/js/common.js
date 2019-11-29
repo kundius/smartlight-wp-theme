@@ -105,7 +105,7 @@ forEach(document.querySelectorAll('.js-drawer'), function(drawer) {
 const parseParams = (str) => {
   let arr = str.split(';').map(row => row.trim())
   let params = {}
-  arr.forEach(row => {
+  forEach(arr, row => {
     let arr2 = row.split(':').map(row => row.trim())
     if (arr2.length === 2) {
       params[arr2[0]] = arr2[1]
