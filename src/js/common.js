@@ -227,6 +227,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             elWrapper.style.transform = `translate3d(-${width * progress}px, 0px, 0px)`
           }
         }
+        
         console.log('вперед', active, dist, k)
         timeline.add(callback.bind(this, retreat, active + dist - k))
       } else {
