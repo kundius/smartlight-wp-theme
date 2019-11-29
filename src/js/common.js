@@ -1,5 +1,6 @@
 import svg4everybody from 'svg4everybody'
 import forEach from 'lodash/forEach'
+import slice from 'lodash/slice'
 import throttle from 'lodash/throttle'
 import share from 'share-buttons'
 import 'whatwg-fetch'
@@ -244,13 +245,13 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
           // (active + i) % elItems.length
 
           if (active < retreat) {
-            forEach(elItems.slice(retreat), row => row.style.order = -1)
-            forEach(elItems.slice(0, active), row => row.style.order = -1)
-            forEach(elItems.slice(active, retreat), row => row.style.order = 0)
+            forEach(slice(elItems, retreat), row => row.style.order = -1)
+            forEach(slice(elItems, 0, active), row => row.style.order = -1)
+            forEach(slice(elItems, active, retreat), row => row.style.order = 0)
           } else {
-            forEach(elItems.slice(0, retreat), row => row.style.order = 1)
-            forEach(elItems.slice(retreat, active), row => row.style.order = -1)
-            forEach(elItems.slice(active), row => row.style.order = 0)
+            forEach(slice(elItems, 0, retreat), row => row.style.order = 1)
+            forEach(slice(elItems, retreat, active), row => row.style.order = -1)
+            forEach(slice(elItems, active), row => row.style.order = 0)
           }
 
           // уходящие = -1
