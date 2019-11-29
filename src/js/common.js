@@ -191,18 +191,27 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   forEach(dotElements, el => el.addEventListener('click', () => show(el.dataset.sliderControl)))
 
   const previous = () => {
+    if (active === (active - params.span + elItems.length) % elItems.length) {
+      return
+    }
     for (let i = 0; i < params.span; i++) {
       move((active - 1 + elItems.length) % elItems.length, 1)
     }
   }
   
   const next = () => {
+    if (active === (active + params.span) % elItems.length) {
+      return
+    }
     for (let i = 0; i < params.span; i++) {
       move((active + 1) % elItems.length, -1)
     }
   }
   
   const show = (index) => {
+    if (active === index) {
+      return
+    }
     let span = Math.abs(index - active)
     if (index > active) {
       for (let i = 0; i < span; i++) {
