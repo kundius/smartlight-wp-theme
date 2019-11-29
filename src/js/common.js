@@ -131,8 +131,8 @@ class Timeline {
       item.progress += this.step
       if (item.progress > 1) item.progress = 1
   
-      item.callback(item.progress, item.params)
-      // item.callback(easing.easeOutCubic(item.progress, item.params))
+      item.callback(item.progress)
+      // item.callback(easing.easeOutCubic(item.progress))
   
       if (item.progress === 1) {
         this.queue.shift()
@@ -141,10 +141,9 @@ class Timeline {
       requestAnimationFrame(this.run)
     }
   }
-  add = (callback, params) => {
+  add = callback => {
     this.queue.push({
       progress: 0,
-      params,
       callback
     })
   }
@@ -227,10 +226,10 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     } else {
       let callback = (retreat, active, progress) => {
         elItems.forEach((slide, i) => {
-          if (i === active) {
-            slide.style.order = -2
-          } else {
+          if (i < retreat) {
             slide.style.order = -1
+          } else {
+            slide.style.order = null
           }
         })
         if (params.vertical) {
