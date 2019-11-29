@@ -215,7 +215,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
         }
         if (params.vertical) {
           let height = elItems[active].offsetHeight
-          elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
+          elWrapper.style.transform = `translate3d(0px, -${height * dist * progress}px, 0px)`
         } else {
           let width = elItems[retreat].offsetWidth
           elWrapper.style.transform = `translate3d(-${width * dist * progress}px, 0px, 0px)`
@@ -224,14 +224,14 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     } else {
       timeline.add(progress => {
         elItems.forEach((slide, i) => {
-          slide.style.order = i < active ? null : -1
+          slide.style.order = i < active ? null : -1 * dist
         })
         if (params.vertical) {
           let height = elItems[active].offsetHeight
-          elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
+          elWrapper.style.transform = `translate3d(0px, -${height * dist - (height * dist * progress)}px, 0px)`
         } else {
           let width = elItems[active].offsetWidth
-          elWrapper.style.transform = `translate3d(-${width - (width * progress)}px, 0px, 0px)`
+          elWrapper.style.transform = `translate3d(-${width * dist - (width * dist * progress)}px, 0px, 0px)`
         }
       })
     }
