@@ -205,9 +205,9 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
   const show = (index) => {
     let span = Math.abs(index - active)
     if (index > active) {
-        for (let i = 0; i < span; i++) {
-          move((active + 1) % elItems.length, -1)
-        }
+      for (let i = 0; i < span; i++) {
+        move((active + 1) % elItems.length, -1)
+      }
     }
     if (index < active) {
       for (let i = 0; i < params.span; i++) {
@@ -220,16 +220,16 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
     let retreat = active
     active = parseInt(index)
 
-    forEach(dotElements, dot => {
-      dot.classList.remove('_active')
-      if (dot.dataset.sliderControl == active) {
-        dot.classList.add('_active')
-      }
-    })
-
     if (dir < 0) {
       let callback = (retreat, active, progress) => {
-        elItems.forEach((slide, i) => {
+        forEach(dotElements, dot => {
+          dot.classList.remove('_active')
+          if (dot.dataset.sliderControl == active) {
+            dot.classList.add('_active')
+          }
+        })
+
+        forEach(elItems, (slide, i) => {
           if (i === retreat) {
             slide.style.order = -1
           }
@@ -240,6 +240,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             slide.style.order = 1
           }
         })
+
         if (params.vertical) {
           let height = elItems[active].offsetHeight
           elWrapper.style.transform = `translate3d(0px, -${height * progress}px, 0px)`
@@ -251,7 +252,14 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       timeline.add(callback.bind(this, retreat, active))
     } else {
       let callback = (retreat, active, progress) => {
-        elItems.forEach((slide, i) => {
+        forEach(dotElements, dot => {
+          dot.classList.remove('_active')
+          if (dot.dataset.sliderControl == active) {
+            dot.classList.add('_active')
+          }
+        })
+
+        forEach(elItems, (slide, i) => {
           if (i === active) {
             slide.style.order = -2
           }
@@ -262,6 +270,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
             slide.style.order = null
           }
         })
+
         if (params.vertical) {
           let height = elItems[active].offsetHeight
           elWrapper.style.transform = `translate3d(0px, -${height - (height * progress)}px, 0px)`
