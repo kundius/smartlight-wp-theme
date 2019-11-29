@@ -116,13 +116,10 @@ const parseParams = (str) => {
 class Timeline {
   constructor(params) {
     this.step = parseFloat(params.velocity) / 60
-
-    console.log('this.step', this.step)
   }
 
   promise = null
   queue = []
-  // step = 0.03
 
   add = callback => {
     this.queue.push({
@@ -203,6 +200,7 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
 
     let dist = Math.abs(retreat - active)
     let dir = (dist > elItems.length / 2 ? 1 : -1) * Math.sign(active - retreat)
+    console.log(dir, dist)
 
     if (dir < 0) {
       timeline.add(progress => {
@@ -442,7 +440,6 @@ forEach(document.querySelectorAll('[data-project]'), function(button) {
     })
     .then(response => response.json())
     .then(json => {
-      console.log(json)
       title.innerHTML = json.post.post_title
       desc.innerHTML = json.post.post_excerpt
       image.src = json.gallery[active].url
