@@ -183,6 +183,32 @@
   img
     +pouring-image
 
+.project-main-gallery__loupe
+  position: absolute
+  z-index: 20
+  right: 8px
+  bottom: 8px
+  width: 84px
+  height: 84px
+  border-radius: 50%
+  background-color: rgba(29, 30, 33, 0.2)
+  border: none
+  padding: 0
+  text-align: center
+  line-height: 84px
+  color: #ffffff
+  border: 1px solid transparent
+  cursor: pointer
+  svg
+    display: inline-block
+    vertical-align: middle
+  &:hover
+    border-color: rgb(79, 80, 84)
+    background-color: rgba(29, 30, 33, 0.8)
+  +below(small)
+    width: 40px
+    height: 40px
+
 .project-main-gallery__previous
   position: absolute
   top: 10px

@@ -15,17 +15,17 @@ $menu = [
       'key' => 'lighting-new-year',
       'title' => 'Новогоднее Освещение',
       'href' => get_the_permalink(214),
-      'icon' => 'lighting-new-year'
+      'icon' => 'novogodnee-osveshhenie'
     ], [
       'key' => 'lighting-architectural',
       'title' => 'Архитектурное Освещение',
       'href' => get_the_permalink(160),
-      'icon' => 'lighting-architectural'
+      'icon' => 'arhitekturnoe-osveshhenie'
     ], [
       'key' => 'lighting-street',
       'title' => 'Уличное Освещение',
       'href' => get_the_permalink(87),
-      'icon' => 'lighting-street'
+      'icon' => 'ulichnoe-osveshhenie'
     ]]
   ], [
     'key' => 'works',

@@ -48,6 +48,9 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
                   <?php foreach ($gallery as $item): ?>
                   <div class="project-main-gallery__item" data-slider-item>
                     <img src="<?php echo $item['url'] ?>">
+                    <button class="project-main-gallery__loupe">
+                      <?php icon('loupe') ?>
+                    </button>
                   </div>
                   <?php endforeach; ?>
                 </div>
