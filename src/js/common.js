@@ -269,11 +269,11 @@ forEach(document.querySelectorAll('[data-slider]'), function(slider) {
       })
 
       if (params.vertical) {
-        let height = elItems[active].offsetHeight
+        let height = elItems[retreat].offsetHeight
         let y = dir < 0 ? height * progress : height - (height * progress)
         elWrapper.style.transform = `translate3d(0px, -${y}px, 0px)`
       } else {
-        let width = elItems[active].offsetWidth
+        let width = elItems[retreat].offsetWidth
         let x = dir < 0 ? width * progress : width - (width * progress)
         elWrapper.style.transform = `translate3d(-${x}px, 0px, 0px)`
       }
