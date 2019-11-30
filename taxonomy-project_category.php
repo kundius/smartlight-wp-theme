@@ -67,19 +67,19 @@ $wp_query = $projects;
           <div class="projects-list">
             <?php while(have_posts()): the_post(); ?>
             <div class="projects-list__cell">
-              <div class="projects-item" data-project="<?php echo get_the_ID() ?>">
+              <a class="projects-item" href="<?php the_permalink() ?>">
                 <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), 'large')): ?>
                 <img class="projects-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>" loading="lazy">
                 <?php else: ?>
                 <img class="projects-item__image" src="https://via.placeholder.com/600" alt='' loading="lazy" />
                 <?php endif; ?>
-                <span class="projects-item__magnify">
+                <span class="projects-item__magnify" data-project="<?php echo get_the_ID() ?>">
                   <span class="ui-magnify-button">
                     <span class="ui-magnify-button__arrow"></span>
                     <span class="ui-magnify-button__text">Увеличить</span>
                   </span>
                 </span>
-              </div>
+              </a>
             </div>
             <?php endwhile; ?>
           </div>
