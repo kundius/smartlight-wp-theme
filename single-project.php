@@ -60,7 +60,8 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
               </div>
             </div>
             <div class="project-main__right">
-              <div class="project-main-thumbs" id="project-thumbs" data-slider="vertical: true; span: 4">
+              
+              <div class="project-main-thumbs" id="project-thumbs-vertical" data-slider="vertical: true; span: 4">
                 <div class="project-main-thumbs__wrapper" data-slider-wrapper>
                   <?php foreach ($gallery as $key => $item): ?>
                   <div class="project-main-thumbs__item<?php if ($key == 0): ?> _active<?php endif; ?>" data-index="<?php echo $key ?>" data-slider-item>
@@ -77,6 +78,25 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
                   <span class="ui-arrow-down"></span>
                 </button>
               </div>
+
+              <div class="project-main-thumbs" id="project-thumbs-horizontal" data-slider="span: 4">
+                <div class="project-main-thumbs__wrapper" data-slider-wrapper>
+                  <?php foreach ($gallery as $key => $item): ?>
+                  <div class="project-main-thumbs__item<?php if ($key == 0): ?> _active<?php endif; ?>" data-index="<?php echo $key ?>" data-slider-item>
+                    <div class="project-main-thumbs__image">
+                      <img src="<?php echo $item['url'] ?>">
+                    </div>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
+                <button class="ui-slider-nav ui-slider-nav_small project-main-thumbs__previous" data-slider-control="previous">
+                  <span class="ui-arrow-left"></span>
+                </button>
+                <button class="ui-slider-nav ui-slider-nav_small project-main-thumbs__next" data-slider-control="next">
+                  <span class="ui-arrow-right"></span>
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
