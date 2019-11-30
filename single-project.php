@@ -37,7 +37,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
                 <?php echo $cats[0]->name ?>
               </a>
               <?php endif; ?>
-              <a href="<?php get_the_date('j F Y') ?>" class="project-main__year"><?php the_date('Y') ?></a>
+              <span class="project-main__year"><?php the_date('Y') ?></span>
               <?php if (has_excerpt()): ?>
               <div class="project-main__description"><div><?php the_excerpt() ?></div></div>
               <?php endif; ?>
