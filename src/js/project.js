@@ -25,12 +25,12 @@ if (thumbsV && thumbsH && gallery) {
   })
 
   thumbsV.addEventListener('slide.start', e => {
-    forEach(items, v => v.classList.remove('_active'))
-    items[e.detail.active].classList.add('_active')
+    forEach(itemsV, v => v.classList.remove('_active'))
+    itemsV[e.detail.active].classList.add('_active')
   })
 
   thumbsH.addEventListener('slide.start', e => {
-    forEach(items, v => v.classList.remove('_active'))
-    items[e.detail.active].classList.add('_active')
+    forEach(itemsH, v => v.classList.remove('_active'))
+    itemsH[e.detail.active].classList.add('_active')
   })
 }
