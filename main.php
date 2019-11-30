@@ -75,11 +75,11 @@ $projects = new WP_Query(array(
                     <div class="main-services-projects__items">
                       <div class="main-services-projects__slider" data-slider-wrapper>
                         <?php foreach ($projects_small as $item): ?>
-                        <a href="<?php echo get_the_post_thumbnail_url($item->ID, 'full') ?>" class="main-services-projects__item" data-slider-item data-project="<?php echo $item->ID ?>">
+                        <a href="<?php the_permalink($item->ID) ?>" class="main-services-projects__item" data-slider-item>
                           <span class="main-services-projects__image">
                             <img src="<?php echo get_the_post_thumbnail_url($item->ID, 'w480h480') ?>" alt="" />
                           </span>
-                          <span class="main-services-projects__magnify">
+                          <span class="main-services-projects__magnify" data-project="<?php echo $item->ID ?>">
                             <span class="ui-magnify-button">
                               <span class="ui-magnify-button__arrow"></span>
                               <span class="ui-magnify-button__text">Увеличить</span>
@@ -94,7 +94,7 @@ $projects = new WP_Query(array(
                       </div>
                     </div>
                     <span class="main-services-projects__more">
-                      <a href="<?php the_permalink(39) ?>" class="ui-more-button">
+                      <a href="<?php echo get_term_link(14, 'project_category') ?>" class="ui-more-button">
                         <span class="ui-more-button__arrow"></span>
                         <span class="ui-more-button__text">Смотреть больше</span>
                       </a>
@@ -176,7 +176,7 @@ $projects = new WP_Query(array(
                       <div class="main-h-service__moreWrap">
                         <span class="main-h-service__placeholder"></span>
                         <span class="main-h-service__moreButton">
-                          <a href="<?php the_permalink(39) ?>" class="ui-more-button">
+                          <a href="<?php echo get_term_link(13, 'project_category') ?>" class="ui-more-button">
                             <span class="ui-more-button__arrow"></span>
                             <span class="ui-more-button__text">Смотреть больше</span>
                           </a>
@@ -272,10 +272,10 @@ $projects = new WP_Query(array(
             </div>
             <div class="main-projects__items">
               <?php while($projects->have_posts()): $projects->the_post(); ?>
-              <a href="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" class="main-projects__item js-main-projects-item" data-project="<?php echo get_the_ID() ?>">
+              <a href="<?php the_permalink(get_the_ID()) ?>" class="main-projects__item js-main-projects-item">
                 <img class="main-projects__itemImage main-projects__itemImage_large" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt='' loading="lazy" />
                 <img class="main-projects__itemImage main-projects__itemImage_small" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'w500h400') ?>" alt='' loading="lazy" />
-                <span class="ui-magnify-button main-projects__itemMagnify">
+                <span class="ui-magnify-button main-projects__itemMagnify" data-project="<?php echo get_the_ID() ?>">
                   <span class="ui-magnify-button__arrow"></span>
                 </span>
               </a>
