@@ -57,7 +57,7 @@ wp_enqueue_script('theme_about', get_template_directory_uri() . '/dist/about.js'
             </div>
             <?php endforeach; ?>
             <div class="about-projects__more">
-              <a href='<?php the_permalink(39) ?>' class="about-projects__moreButton">
+              <a href='<?php echo get_term_link(14, 'project_category') ?>' class="about-projects__moreButton">
                 Больше работ<i></i>
               </a>
             </div>

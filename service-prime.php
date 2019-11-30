@@ -229,7 +229,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
                 <span class="ui-arrow-right"></span>
               </button>
             </div>
-            <a href="<?php the_permalink(39) ?>" class="ui-button-secondary service-objects__more">
+            <a href="<?php echo get_term_link(14, 'project_category') ?>" class="ui-button-secondary service-objects__more">
               Больше работ
               <span class="ui-arrow-right service-objects__moreArrow"></span>
             </a>

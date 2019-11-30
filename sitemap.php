@@ -47,7 +47,7 @@ $actions = new WP_Query(array(
                 <ul class="sitemap-list-first js-sitemap-list">
                   <li><a href="<?php the_permalink(2) ?>">Главная</a></li>
                   <li><a href="<?php the_permalink(7) ?>">О компании</a></li>
-                  <li><a href="<?php the_permalink(39) ?>">Наши работы</a></li>
+                  <li><a href="<?php echo get_term_link(14, 'project_category') ?>">Наши работы</a></li>
                   <li><a href="<?php the_permalink(11) ?>">Цены</a></li>
                   <li><a href="<?php the_permalink(9) ?>">Контакты</a></li>
                 </ul>
