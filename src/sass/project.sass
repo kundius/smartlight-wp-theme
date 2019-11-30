@@ -51,6 +51,9 @@
   z-index: 20
   +below(medium)
     flex-wrap: wrap
+  +below(small)
+    margin-left: -20px
+    margin-right: -20px
   &::after
     content: ''
     position: absolute
@@ -82,7 +85,9 @@
   z-index: 20
   background: #2b303e
   +below(medium)
-    width: calc(100% - 200px)
+    width: calc(100% - 160px)
+  +below(small)
+    width: calc(100% - 80px)
 
 .project-main__right
   width: 200px
@@ -90,6 +95,11 @@
   position: relative
   z-index: 20
   background: #2b303e
+  +below(medium)
+    width: 160px
+  +below(small)
+    width: 80px
+    padding: 0
 
 .project-main__category
   padding: 0 15px
@@ -162,6 +172,8 @@
   height: 450px
   position: relative
   overflow: hidden
+  +below(small)
+    height: 360px
   img
     +pouring-image
 
@@ -174,7 +186,6 @@
   position: absolute
   top: 10px
   right: 10px
-
 
 .project-main-thumbs
   position: relative
@@ -192,6 +203,8 @@
   position: relative
   &._active
     border: 3px solid #e4a76c
+    +below(small)
+      border-width: 2px
 
 .project-main-thumbs__image
   position: absolute
@@ -200,6 +213,11 @@
   top: 10px
   bottom: 10px
   overflow: hidden
+  +below(small)
+    left: 5px
+    right: 5px
+    top: 5px
+    bottom: 5px
   img
     +pouring-image
 
