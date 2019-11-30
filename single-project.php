@@ -13,7 +13,7 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
     <?php
     if (have_posts()) : while (have_posts()) : the_post();
     $gallery = get_field('gallery');
-    $cats = get_the_category(get_the_ID());
+    $cats = get_the_terms();
     print_r($cats);
     ?>
     <div class="wrapper">
