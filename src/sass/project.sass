@@ -49,6 +49,8 @@
   margin-bottom: -65px
   position: relative
   z-index: 20
+  +below(medium)
+    flex-wrap: wrap
   &::after
     content: ''
     position: absolute
@@ -68,12 +70,19 @@
   position: relative
   z-index: 20
   background: #2b303e
+  +below(medium)
+    width: 100%
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
 
 .project-main__center
   flex-grow: 1
   position: relative
   z-index: 20
   background: #2b303e
+  +below(medium)
+    width: 100%
 
 .project-main__right
   width: 200px
@@ -83,8 +92,7 @@
   background: #2b303e
 
 .project-main__category
-  padding: 0 10px
-  width: 100%
+  padding: 0 15px
   min-height: 46px
   display: flex
   align-items: center
@@ -104,6 +112,8 @@
   svg
     width: 16px
     height: 16px
+    min-width: 16px
+    min-height: 16px
     position: relative
     vertical-align: middle
     top: -1px
@@ -131,6 +141,10 @@
   color: #cacaca
   text-transform: uppercase
   font-family: $font-family-alt
+  +below(xlarge)
+    padding-left: 0
+  +below(medium)
+    width: 100%
   p + p
     margin-top: 25px
 
