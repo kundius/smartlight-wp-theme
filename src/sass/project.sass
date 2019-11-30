@@ -63,6 +63,9 @@
     top: -60px
     right: -60px
     background: url('../img/bg-stripe-gray.png')
+    +below(small)
+      top: -15px
+      right: -250px
 
 .project-main__left
   width: 20%
@@ -89,7 +92,7 @@
   +below(medium)
     width: calc(100% - 160px)
   +below(small)
-    width: calc(100% - 80px)
+    width: 100%
 
 .project-main__right
   width: 200px
@@ -100,7 +103,7 @@
   +below(medium)
     width: 160px
   +below(small)
-    width: 80px
+    width: 100%
     padding: 0
 
 .project-main__category
@@ -196,6 +199,16 @@
   +below(small)
     width: 100%
     height: 80px
+
+#project-thumbs-vertical
+  display: block
+  +below(small)
+    display: none
+
+#project-thumbs-horizontal
+  display: none
+  +below(small)
+    display: block
 
 .project-main-thumbs__wrapper
   display: flex
