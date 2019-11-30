@@ -196,13 +196,16 @@
   padding: 0
   text-align: center
   line-height: 84px
-  color: #ffffff
+  color: rgba(255, 255, 255, .8)
   border: 1px solid transparent
   cursor: pointer
+  transition: .3s ease
+  transition-property: background-color, border-color, color
   svg
     display: inline-block
     vertical-align: middle
   &:hover
+    color: rgba(255, 255, 255, 1)
     border-color: rgb(79, 80, 84)
     background-color: rgba(29, 30, 33, 0.8)
   +below(small)

@@ -45,10 +45,10 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
             <div class="project-main__center">
               <div class="project-main-gallery" id="project-gallery" data-slider>
                 <div class="project-main-gallery__wrapper" data-slider-wrapper>
-                  <?php foreach ($gallery as $item): ?>
+                  <?php foreach ($gallery as $key => $item): ?>
                   <div class="project-main-gallery__item" data-slider-item>
                     <img src="<?php echo $item['url'] ?>">
-                    <button class="project-main-gallery__loupe">
+                    <button class="project-main-gallery__loupe" data-project="<?php echo get_the_ID() ?>" data-project-index="<?php echo $key ?>">
                       <?php icon('loupe') ?>
                     </button>
                   </div>

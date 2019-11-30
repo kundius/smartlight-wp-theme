@@ -411,6 +411,7 @@ forEach(document.querySelectorAll('.js-cube'), function(cube) {
 
 forEach(document.querySelectorAll('[data-project]'), function(button) {
   let id = button.dataset.project
+  let active = button.dataset.projectIndex || 0
   let action = 'get_project'
 
   button.addEventListener('click', (e) => {
@@ -458,8 +459,6 @@ forEach(document.querySelectorAll('[data-project]'), function(button) {
     modal.appendChild(overlay)
     modal.appendChild(close)
     modal.appendChild(body)
-
-    let active = 0
 
     document.body.appendChild(modal)
     close.addEventListener('click', () => {
