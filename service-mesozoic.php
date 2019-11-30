@@ -248,15 +248,15 @@ wp_enqueue_script('theme_serviceMesozoic', get_template_directory_uri() . '/dist
                 <div class="service-objects__grid" data-slider-wrapper>
                   <?php foreach ($portfolio_list as $item): $image = get_the_post_thumbnail_url($item->ID, 'full'); ?>
                   <div class="service-objects__cell" data-slider-item>
-                    <div class="service-objects__item" data-project="<?php echo $item->ID ?>">
+                    <a href="<?php the_permalink($item->ID) ?>" class="service-objects__item">
                       <img class="service-objects__itemImage" src="<?php echo $image ?>" alt='' />
                       <span class="service-objects__itemMagnify">
-                        <a href="<?php echo $image ?>" class="ui-magnify-button">
+                        <button class="ui-magnify-button" data-project="<?php echo $item->ID ?>">
                           <span class="ui-magnify-button__arrow"></span>
                           <span class="ui-magnify-button__text">Увеличить</span>
-                        </a>
+                        </button>
                       </span>
-                    </div>
+                    </a>
                   </div>
                   <?php endforeach; ?>
                 </div>
