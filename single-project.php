@@ -30,7 +30,14 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
 
           <div class="project-main">
             <div class="project-main__left">
-              <a href="#" class="project-main__category">cat</a>
+              <?php if ($cats): ?>
+              <a href="<?php echo get_term_link($cats[0]->term_id) ?>" class="ui-button-filter projects-filter__category">
+                <svg role='img'>
+                  <use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $cats[0]->slug ?>" />
+                </svg>
+                <?php echo $cats[0]->name ?>
+              </a>
+              <?php endif; ?>
               <a href="<?php get_the_date('j F Y') ?>" class="project-main__year"><?php the_date('Y') ?></a>
               <?php if (has_excerpt()): ?>
               <div class="project-main__description"><?php the_excerpt() ?></div>
