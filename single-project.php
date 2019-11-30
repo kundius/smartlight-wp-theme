@@ -10,7 +10,12 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
     <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/project.css" type="text/css" />
   </head>
   <body>
-    <?php if (have_posts()) : while (have_posts()) : the_post(); $gallery = get_field('gallery'); ?>
+    <?php
+    if (have_posts()) : while (have_posts()) : the_post();
+    $gallery = get_field('gallery');
+    $cats = get_the_category();
+    print_r($cats);
+    ?>
     <div class="wrapper">
       <div class="project-section">
         <?php get_template_part('partials/header') ?>
