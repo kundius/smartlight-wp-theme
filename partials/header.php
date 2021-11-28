@@ -210,7 +210,7 @@ $flatMenu = fn($menu, 'root', null);
 			<img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.svg" />
 		</a>
 
-		<div class="header__phone">+7 (919) 960-93-43</div>
+		<a href="tel:+7 (919) 960-93-43" class="header__phone">+7 (919) 960-93-43</a>
 
 		<?php wp_nav_menu([
 	'container_class' => 'header__menu',
@@ -218,7 +218,7 @@ $flatMenu = fn($menu, 'root', null);
 	'theme_location' => 'headermenu'
 ]) ?>
 
-		<button class="header__callback" data-modal-form="Кнопка в шапке" data-modal="#callback">
+		<button class="header__callback js-call-or-modal" data-modal-form="Кнопка в шапке" data-target="#callback" data-tel="+7 (919) 960-93-43">
 			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
 		</button>
 
