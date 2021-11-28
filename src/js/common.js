@@ -651,12 +651,12 @@ forEach(document.querySelectorAll(".js-form"), (form) => {
 const callOrModalButtons = document.querySelectorAll(".js-call-or-modal");
 if (callOrModalButtons.length) {
   callOrModalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        initModal(button, document.querySelector(button.dataset.target));
-      } else {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      initModal(button, document.querySelector(button.dataset.target));
+    } else {
+      button.addEventListener("click", () => {
         window.location.href = `tel:${button.dataset.tel}`;
-      }
-    });
+      });
+    }
   });
 }
