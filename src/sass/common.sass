@@ -563,6 +563,38 @@ svg
     text-decoration: underline
     color: inherit
 
+.rules-field-default
+  position: relative
+  display: flex
+  align-items: center
+  cursor: pointer
+  +below(large)
+    line-height: 1
+  .wpcf7-form-control-wrap
+    position: relative
+    display: inline-block
+    width: auto
+
+.rules-field-default__input
+  width: 18px
+  height: 18px
+  min-width: 18px
+  min-height: 18px
+  border: 1px solid currentColor
+  color: #0a0f37
+  background: #ffffff
+  opacity: 0.75
+  margin: 0 8px 0 0
+
+.rules-field-default__text
+  color: inherit
+  font-size: 12px
+  line-height: 1.25
+  letter-spacing: 0.025em
+  a
+    text-decoration: underline
+    color: inherit
+
 // боковые линии проходят на 120px/48px/28px
 .header__drawer
   position: fixed
@@ -1731,6 +1763,7 @@ svg
   width: 60%
   padding-left: 53px
   padding-right: 73px
+  padding-bottom: 20px
   padding-top: 139px
   @media (max-width: $breakpoint-large-max)
     width: 66.66%
@@ -3900,3 +3933,24 @@ svg
   top: 0
   bottom: 0
   right: 0
+
+body
+  span.wpcf7-list-item
+    display: inline-block
+    margin: 0
+  .wpcf7 form .wpcf7-response-output
+    background: #ff8a00
+    color: #ffffff
+    padding: 12px 24px
+    border-radius: 0px
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.11)
+    border: 1px solid #ffaa46
+    margin-top: 20px
+    margin: 2em 0 0
+  .wpcf7 form.invalid .wpcf7-response-output,
+  .wpcf7 form.unaccepted .wpcf7-response-output
+    border-color: #ff8473
+    background: #f7442c
+  .wpcf7 form.sent .wpcf7-response-output
+    border-color: #38af2b
+    background: #1f9513

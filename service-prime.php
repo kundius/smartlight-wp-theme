@@ -29,42 +29,8 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
             </ul>
             <?php endif; ?>
           </div>
-
-          <form action="/wp-json/contact-form-7/v1/contact-forms/788/feedback" method="post" class="service-prime-order js-form">
-            <div class="service-prime-order__success">
-              Ваше сообщение успешно отправлено!
-            </div>
-            <div class="service-prime-order__title">Заказать бесплатную консультацию</div>
-            <div class="service-prime-order__rowField">
-              <input type='text' name='your-name' placeholder='Введите Ваше имя' class="service-prime-order__input" />
-            </div>
-            <div class="service-prime-order__rowField">
-              <span class="wpcf7-form-control-wrap your-phone">
-                <input type='tel' name='your-phone' placeholder='Введите Ваш телефон*' class="service-prime-order__input" />
-              </span>
-            </div>
-            <div class="service-prime-order__rowSubmit">
-              <input type="hidden" name="referrer" value="<?php the_title() ?>">
-              <input type="hidden" name="form" value="Форма в начале страницы">
-              <span class="wpcf7-form-control-wrap submit">
-                <button class="ui-button-primary service-prime-order__submit" type='submit'>
-                  <span>
-                    Отправить
-                    <span class="ui-arrow-right service-prime-order__submitArrow"></span>
-                  </span>
-                </button>
-              </span>
-            </div>
-            <div class="service-prime-order__rowRules">
-              <label class="rules-field">
-                <input type='checkbox' name='rules' value='1' class="rules-field__input" />
-                <span class="rules-field__checkbox"></span>
-                <span class="rules-field__text">
-                  Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
-                </span>
-              </label>
-            </div>
-          </form>
+			
+          <?php echo do_shortcode('[contact-form-7 id="1091" title="Консультация по уличному освещению"]') ?>
 
           <div class="service-prime-actions">
             <?php if ($projects_small = get_field('projects_small')): ?>

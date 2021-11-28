@@ -1,6 +1,5 @@
 import forEach from 'lodash/forEach'
 
-
 forEach(document.querySelectorAll('.js-quiz'), wrapper => {
   let elDiscount = wrapper.querySelector('.js-quiz-discount')
   let elDescriptionBase = wrapper.querySelector('.js-quiz-description-base')
@@ -11,10 +10,19 @@ forEach(document.querySelectorAll('.js-quiz'), wrapper => {
   let elsStep = wrapper.querySelectorAll('.js-quiz-step')
   let elsGroup = wrapper.querySelectorAll('.js-quiz-group')
   let active = 0
+  forEach(wrapper.querySelectorAll('[name="question-1"]'), el => el.addEventListener('change', () => {
+    wrapper.querySelector('input[name="question-1-value"]').value = wrapper.querySelector('input[name="question-1"]:checked').value
+  }))
+  forEach(wrapper.querySelectorAll('[name="question-2"]'), el => el.addEventListener('change', () => {
+    wrapper.querySelector('input[name="question-2-value"]').value = wrapper.querySelector('input[name="question-2"]:checked').value
+  }))
+  forEach(wrapper.querySelectorAll('[name="question-3"]'), el => el.addEventListener('change', () => {
+    wrapper.querySelector('input[name="question-3-value"]').value = wrapper.querySelector('input[name="question-3"]:checked').value
+  }))
 
   const show = index => {
     active = index
-    elDiscount.innerHTML = 2 * index
+    elDiscount.innerHTML = 4 * index
     elDescriptionBase.style.display = index < elsStep.length ? 'block' : 'none'
     elDescriptionSuccess.style.display = index < elsStep.length ? 'none' : 'block'
     elReport.style.display = index < elsStep.length ? 'block' : 'none'

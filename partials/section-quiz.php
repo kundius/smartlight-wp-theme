@@ -31,7 +31,7 @@ if (count($questions) > 0):
       <div class="quiz-decoration-9"></div>
       <div class="quiz-decoration-12"></div>
 
-      <form action="/wp-json/contact-form-7/v1/contact-forms/675/feedback" method="post" class="quiz-body js-form">
+      <div class="quiz-body">
         <div class="quiz-body__left">
           <div class="quiz-report js-quiz-report">
             <div class="quiz-report__steps">
@@ -66,43 +66,7 @@ if (count($questions) > 0):
             </div>
           </div>
 
-          <div class="quiz-result js-quiz-result">
-            <div class="quiz-result__title">Благодарим за ответы!</div>
-            <div class="quiz-result__description">Введите свой телефон, что бы мы могли связаться с Вами для точной оценки стоимости и сроков.</div>
-            <div class="quiz-form">
-              <div class="quiz-form__success">
-                Ваше сообщение успешно отправлено!
-              </div>
-              <div class="quiz-form__rowField">
-                <input type='text' name='your-name' placeholder='Имя' class="quiz-form__input" />
-              </div>
-              <div class="quiz-form__rowField">
-                <span class="wpcf7-form-control-wrap your-phone">
-                  <input type='tel' name='your-phone' placeholder='Телефон*' class="quiz-form__input" />
-                </span>
-              </div>
-              <div class="quiz-form__rowSubmit">
-                <input type="hidden" name="referrer" value="<?php the_title() ?>">
-                <span class="wpcf7-form-control-wrap submit">
-                  <button class="ui-button-primary quiz-form__submit" type='submit'>
-                    <span>
-                      Отправить
-                      <span class="ui-arrow-right quiz-form__submitArrow"></span>
-                    </span>
-                  </button>
-                </span>
-              </div>
-              <div class="quiz-form__rowRules">
-                <label class="rules-field">
-                  <input type='checkbox' name='rules' value='1' class="rules-field__input" />
-                  <span class="rules-field__checkbox"></span>
-                  <span class="rules-field__text">
-                    Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
+          <?php echo do_shortcode('[contact-form-7 id="675" title="Квиз"]') ?>
         </div>
         <div class="quiz-body__right">
           <div class="quiz-description">
@@ -114,7 +78,7 @@ if (count($questions) > 0):
             <div class="quiz-discount__label">Ваша скидка<br />на монтаж</div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

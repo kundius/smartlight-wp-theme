@@ -35,49 +35,56 @@ wp_enqueue_script('theme_article', get_template_directory_uri() . '/dist/article
         </div>
       </div>
 
-      <div class="article-body">
-        <div class="container">
-          <div class="article-body__content">
-            <div class="content">
-              <?php the_content() ?>
-            </div>
-            <div class="article-body__tags">
-              <div class="tags">
-                <?php the_tags('', '') ?>
-              </div>
-            </div>
-          </div>
-          <div class="article-meta">
-            <?php previous_post_link('<div class="article-meta__prev">%link</div>', '<span class="ui-arrow-left"></span>') ?>
-            <div class="article-meta__share">
-              <div class="article-meta__shareLabel">
-                Понравилась статья?<br />
-                Поделись с друзьями:
-              </div>
-              <div class="article-meta__shareButtons share-btn">
-                <a class="article-meta__shareButton article-meta__shareButton_fb" data-id="fb">
-                  <?php icon('fb', .8) ?>
-                </a>
-                <a class="article-meta__shareButton article-meta__shareButton_tw" data-id="tw">
-                  <?php icon('tw', .8) ?>
-                </a>
-                <a class="article-meta__shareButton article-meta__shareButton_pi" data-id="pi">
-                  <?php icon('pi', .8) ?>
-                </a>
-                <a class="article-meta__shareButton article-meta__shareButton_vk" data-id="vk">
-                  <?php icon('vk2', .8) ?>
-                </a>
-                <a class="article-meta__shareButton article-meta__shareButton_ok" data-id="ok">
-                  <?php icon('ok2', .8) ?>
-                </a>
-              </div>
-            </div>
-            <?php next_post_link('<div class="article-meta__next">%link</div>', '<span class="ui-arrow-right"></span>') ?>
-          </div>
-        </div>
-      </div>
+		<div class="article-body">
+			<div class="container">
+				<div class="article-body__content content">
+					<?php the_content() ?>
+				</div>
+				
+				<div class="s-callback-wall" style="margin: 40px 0">
+					<div class="s-callback-wall__title">Заказать Обратный&nbsp;звонок</div>
+					<div class="s-callback-wall__description">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
+					<?php echo do_shortcode('[contact-form-7 id="1093" title="Обратный звонок на странице"]') ?>
+				</div>
+
+				<div class="article-body__content article-body__tags">
+					<div class="tags">
+						<?php the_tags('', '') ?>
+					</div>
+				</div>
+
+				<div class="article-meta">
+					<?php previous_post_link('<div class="article-meta__prev">%link</div>', '<span class="ui-arrow-left"></span>') ?>
+					<div class="article-meta__share">
+						<div class="article-meta__shareLabel">
+							Понравилась статья?<br />
+							Поделись с друзьями:
+						</div>
+						<div class="article-meta__shareButtons share-btn">
+							<a class="article-meta__shareButton article-meta__shareButton_fb" data-id="fb">
+								<?php icon('fb', .8) ?>
+							</a>
+							<a class="article-meta__shareButton article-meta__shareButton_tw" data-id="tw">
+								<?php icon('tw', .8) ?>
+							</a>
+							<a class="article-meta__shareButton article-meta__shareButton_pi" data-id="pi">
+								<?php icon('pi', .8) ?>
+							</a>
+							<a class="article-meta__shareButton article-meta__shareButton_vk" data-id="vk">
+								<?php icon('vk2', .8) ?>
+							</a>
+							<a class="article-meta__shareButton article-meta__shareButton_ok" data-id="ok">
+								<?php icon('ok2', .8) ?>
+							</a>
+						</div>
+					</div>
+					<?php next_post_link('<div class="article-meta__next">%link</div>', '<span class="ui-arrow-right"></span>') ?>
+				</div>
+			</div>
+		</div>
       <?php endwhile; endif; ?>
 
+		
       <?php
         $also_query = null;
         if ($related = get_field('related')) {

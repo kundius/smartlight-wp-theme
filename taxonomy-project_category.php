@@ -58,8 +58,8 @@ $wp_query = $projects;
               <a href="<?php echo get_term_link($queried_term->term_id) ?>" class="projects-filter__year<?php if (empty($_GET['years'])): ?> _active<?php endif; ?>">Все</a>
               <!-- <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2017" class="projects-filter__year">2017</a>
               <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2018" class="projects-filter__year">2018</a> -->
-              <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2019" class="projects-filter__year<?php if ($_GET['years'] == '2019'): ?> _active<?php endif; ?>">2019</a>
-              <!-- <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2020" class="projects-filter__year">2020</a> -->
+              <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2019" class="projects-filter__year<?php if ($_GET['years'] == '2021'): ?> _active<?php endif; ?>">2021</a>
+              <!-- <a href="<?php echo get_term_link($queried_term->term_id) ?>?years=2021" class="projects-filter__year">2020</a> -->
             </div>
           </div>
 

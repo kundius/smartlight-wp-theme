@@ -35,13 +35,13 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                   <div class="contacts-content__left">
                     <div class="contacts-content__phone">
                       <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone-circle' /></svg>
-                      +7 (495) 928-15-15
+                      +7&nbsp;(919)&nbsp;960-93-43 +7&nbsp;(495)&nbsp;928-15-15
                     </div>
                   </div>
                   <div class="contacts-content__right">
-                    <div class="contacts-content__phone">
-                      +7 (977) 575-00-30
-                    </div>
+<!--                     <div class="contacts-content__phone">
+                      +7 (919) 960-93-43
+                    </div> -->
                   </div>
                   <div class="contacts-content__left">
                     <div class="contacts-content__email">
@@ -50,10 +50,10 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                     </div>
                   </div>
                   <div class="contacts-content__right">
-                    <div class="contacts-content__whatsapp">
+<!--                     <div class="contacts-content__whatsapp">
                       <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>
-                      +7 (906) 764-76-91 <small>(WhatsApp)</small>
-                    </div>
+                      +7 (919) 960-93-43 <small>(WhatsApp)</small>
+                    </div> -->
                   </div>
                 </div>
                 <hr class="contacts-content__separator" />
@@ -83,49 +83,7 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                     Возникли вопросы или сложности? Напишите&nbsp;нам.
                   </div>
                 </div>
-                <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="contacts-form js-form">
-                  <div class="contacts-form__success">
-                    Ваше сообщение<br /> успешно отправлено!
-                  </div>
-                  <div class="contacts-form__description">Обязательно укажите телефон для связи</div>
-                  <div class="contacts-form__fields">
-                    <div class="contacts-form__row">
-                      <input type='text' name='your-name' placeholder='Имя' class="contacts-form__input" />
-                    </div>
-                    <div class="contacts-form__row">
-                      <input type='email' name='your-email' placeholder='E-mail' class="contacts-form__input" />
-                    </div>
-                    <div class="contacts-form__row">
-                      <span class="wpcf7-form-control-wrap your-phone">
-                        <input type='tel' name='your-phone' placeholder='Телефон*' class="contacts-form__input" />
-                      </span>
-                    </div>
-                    <div class="contacts-form__row">
-                      <textarea name='your-message' placeholder='Текст сообщение' class="contacts-form__textarea"></textarea>
-                    </div>
-                    <div class="contacts-form__row contacts-form__row_rules">
-                      <label class="rules-field">
-                        <input type='checkbox' name='rules' value='1' class="rules-field__input" />
-                        <span class="rules-field__checkbox"></span>
-                        <span class="rules-field__text">
-                          Прочитал(-а) <a href='<?php the_permalink(360) ?>' target='_blank'>Пользовательское соглашение</a> и соглашаюсь с <a href='<?php the_permalink(3) ?>' target='_blank'>Политикой обработки персональных данных</a>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="contacts-form__rowSubmit">
-                      <input type="hidden" name="referrer" value="<?php the_title() ?>">
-                      <input type="hidden" name="form" value="Форма на странице контактов">
-                      <span class="wpcf7-form-control-wrap submit">
-                        <button class="ui-button-primary contacts-form__submit" type='submit'>
-                          <span>
-                            Отправить
-                            <span class="ui-arrow-right contacts-form__submitArrow"></span>
-                          </span>
-                        </button>
-                      </span>
-                    </div>
-                  </div>
-                </form>
+                <?php echo do_shortcode('[contact-form-7 id="5" title="Обратная связь"]') ?>
               </div>
             </div>
           </div>

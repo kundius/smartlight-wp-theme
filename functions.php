@@ -1,7 +1,7 @@
 <?php
 
-add_filter( 'wpcf7_load_js', '__return_false' );
-add_filter( 'wpcf7_load_css', '__return_false' );
+// add_filter( 'wpcf7_load_js', '__return_false' );
+// add_filter( 'wpcf7_load_css', '__return_false' );
 
 add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);
@@ -329,7 +329,7 @@ add_filter('navigation_markup_template', function ($template, $class) {
 
 
 add_action('wp_enqueue_scripts', function () {
-	wp_deregister_script('jquery');
+	//wp_deregister_script('jquery');
 	wp_enqueue_script('theme_common', get_template_directory_uri() . '/dist/common.js', [], false, true);
 
 	wp_localize_script('theme_common', 'myajax', [
