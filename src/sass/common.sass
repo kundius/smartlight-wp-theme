@@ -124,7 +124,6 @@ svg
 .wrapper
   overflow: hidden
 
-
 .wpcf7-form-control-wrap
   position: relative
   display: inline-block
@@ -2433,18 +2432,18 @@ svg
   flex-wrap: wrap
 
 .breadcrumbs > span::before
-    content: ''
-    margin: 0 15px
-    width: 4px
-    height: 4px
-    display: inline-block
-    vertical-align: middle
-    transform: rotate(-45deg)
-    border-bottom: 1px solid #a7b9cd
-    border-right: 1px solid #a7b9cd
+  content: ''
+  margin: 0 15px
+  width: 4px
+  height: 4px
+  display: inline-block
+  vertical-align: middle
+  transform: rotate(-45deg)
+  border-bottom: 1px solid #a7b9cd
+  border-right: 1px solid #a7b9cd
 
 .breadcrumbs > span:first-child::before
-    display: none
+  display: none
 
 .breadcrumbs > span > a
   text-decoration: none
@@ -2487,13 +2486,13 @@ svg
   font-family: $font-family-alt
   position: relative
   &::after
-   content: ''
-   position: absolute
-   bottom: 0
-   left: 0
-   width: 136px
-   height: 1px
-   background: #e4a76c
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 136px
+    height: 1px
+    background: #e4a76c
 
 .s-callback-contacts__grid
   display: flex
@@ -2835,6 +2834,22 @@ svg
     font-size: 16px
     line-height: 1.15
 
+.content .wp-block-image figure
+  position: relative
+
+.content .wp-block-image figcaption
+  position: absolute
+  bottom: 0
+  left: 0
+  background: #00000059
+  color: #fff
+  padding: 20px
+  margin: 0
+
+@media (min-height: 640px)
+  .header-drawer__list
+    height: 553px
+
 .content a
   text-decoration: underline
   color: #007dff
@@ -3016,10 +3031,10 @@ svg
   border-color: transparent #252d40 transparent transparent
 
 .tags a:hover
-    color: #ffffff
-    background: #3f55c8
-    &::after
-      border-right-color: #3f55c8
+  color: #ffffff
+  background: #3f55c8
+  &::after
+    border-right-color: #3f55c8
 
 .block-special-offer
   display: block
@@ -3881,7 +3896,6 @@ svg
     border-color: #ffcb15
   ._validation-error &
     border-color: #fc3b5a
-
 
 // .block-feedback__textarea
 //   border: 4px solid #bebebe

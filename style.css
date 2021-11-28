@@ -1,28 +1,7 @@
 /*
-Theme Name: Smartlight
+Theme Name: smartlight-wp-theme
 Author: DomenART
 Author URI: http://domenart-studio.ru/
-GitHub Theme URI: https://github.com/kundius/smartlight
 */
 
 @import 'dist/common.css';
-
-.content .wp-block-image figure {
-	position: relative;
-}
-
-.content .wp-block-image figcaption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background: #00000059;
-	color: #fff;
-	padding: 20px;
-	margin: 0;
-}
-
-@media (min-height: 640px) {
-	.header-drawer__list {
-		height: 553px;
-	}
-}
