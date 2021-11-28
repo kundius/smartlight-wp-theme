@@ -985,6 +985,64 @@ svg
   @media (min-width: 1900px)
     right: 92px
 
+.header__whatsapp
+  position: absolute
+  right: 8px
+  top: 50%
+  transform: translateY(-50%)
+  display: block
+  background-color: transparent
+  color: #ffffff
+  border: none
+  width: 40px
+  height: 40px
+  min-width: 40px
+  min-height: 40px
+  cursor: pointer
+  svg
+    display: block
+    width: 16px
+    height: 17px
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 2
+    transition: transform .2s ease
+  &::before
+    content: ''
+    z-index: 1
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    border-radius: 50%
+    background-color: #ff8900
+    transition: .2s ease
+    transition-property: background-color, left, top, right, bottom
+  &:hover
+    &::before
+      background-color: rgb(255, 174, 0)
+  &:active
+    outline: none
+    svg
+      transform: translate(-50%, -50%) scale(1.1)
+    &::before
+      background-color: rgb(255, 138, 0)
+      left: 4px
+      top: 4px
+      right: 4px
+      bottom: 4px
+  @media (min-width: $breakpoint-xlarge)
+    width: 56px
+    height: 56px
+    min-width: 56px
+    min-height: 56px
+    right: 20px
+  @media (min-width: 1900px)
+    right: 92px
+
 .header__toggle
   position: absolute
   top: 50%

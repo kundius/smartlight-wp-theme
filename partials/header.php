@@ -218,6 +218,10 @@ $flatMenu = fn($menu, 'root', null);
 	'theme_location' => 'headermenu'
 ]) ?>
 
+		<a href="whatsapp://send?text=Hello&phone=+79199609343" class="header__whatsapp">
+			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>
+		</a>
+
 		<button class="header__callback js-call-or-modal" data-modal-form="Кнопка в шапке" data-target="#callback" data-tel="+7 (919) 960-93-43">
 			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
 		</button>
