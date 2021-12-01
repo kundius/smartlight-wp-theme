@@ -42,6 +42,8 @@ $wp_query = $projects;
 
           <h1 class="ui-headline"><span><?php echo $queried_term->name ?></span></h1>
 
+          <div class="content"><?php echo $queried_term->description ?></div>
+
           <div class="projects-filter">
             <div class="projects-filter__categories">
               <a href="<?php echo get_term_link(14) ?>" class="ui-button-filter projects-filter__category<?php if ($queried_term->term_id == 14): ?> _active<?php endif; ?>">Все</a>
