@@ -11,8 +11,8 @@ global $post;
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceMesozoic.css" type="text/css" />
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/serviceCharlie.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/serviceMesozoic.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/serviceCharlie.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">

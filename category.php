@@ -48,7 +48,7 @@ $wp_query = $articles;
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/articles.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/articles.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">

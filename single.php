@@ -6,8 +6,8 @@ wp_enqueue_script('theme_article', get_template_directory_uri() . '/dist/article
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/articles.css" type="text/css" />
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/article.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/articles.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/article.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">

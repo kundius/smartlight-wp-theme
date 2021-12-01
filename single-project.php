@@ -6,8 +6,8 @@ wp_enqueue_script('theme_project', get_template_directory_uri() . '/dist/project
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/article.css" type="text/css" />
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/project.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/article.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/project.css" type="text/css" />
   </head>
   <body>
     <?php

@@ -9,7 +9,7 @@
             </div>
             <div class="footer-information__infoContent">
               <div class="footer-information__infoName">
-                SmartLight
+                smartlight-wp-theme
               </div>
               <div class="footer-information__infoDescription">
                 Освещение дома. Москва
@@ -30,7 +30,7 @@
               <a class="footer-information__socialsItem footer-information__socialsItem_youtube" href='https://www.youtube.com/channel/UCwnWSiuZZvSa-4fBYg4j0nA' target="_blank">
                 <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#youtube' /></svg>
               </a>
-				      <a class="footer-information__socialsItem footer-information__socialsItem_facebook" href='https://www.facebook.com/OOOSmartLight/' target="_blank">
+				      <a class="footer-information__socialsItem footer-information__socialsItem_facebook" href='https://www.facebook.com/OOOsmartlight-wp-theme/' target="_blank">
                 <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#facebook' /></svg>
               </a>
             </div>

@@ -8,7 +8,7 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/contacts.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/contacts.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">

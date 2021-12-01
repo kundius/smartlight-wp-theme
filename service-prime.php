@@ -8,7 +8,7 @@ wp_enqueue_script('theme_servicePrime', get_template_directory_uri() . '/dist/se
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/servicePrime.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/servicePrime.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">

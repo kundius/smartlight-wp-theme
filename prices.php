@@ -8,7 +8,7 @@ wp_enqueue_script('theme_prices', get_template_directory_uri() . '/dist/prices.j
 <html lang="ru">
   <head>
     <?php get_template_part('partials/head') ?>
-    <link rel="stylesheet" href="/wp-content/themes/smartlight/dist/prices.css" type="text/css" />
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/prices.css" type="text/css" />
   </head>
   <body>
     <div class="wrapper">

@@ -70,7 +70,7 @@ module.exports = {
 
   output: {
     path: PATHS.build,
-    publicPath: "/wp-content/themes/smartlight/dist/",
+    publicPath: "/wp-content/themes/smartlight-wp-theme/dist/",
     filename: "[name].js",
     chunkFilename: "[name].js",
   },
