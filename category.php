@@ -61,6 +61,8 @@ $wp_query = $articles;
 
           <h1 class="articles-headline"><span><?php echo $category->name ?></span></h1>
 
+          <div class="content"><?php echo $category->description ?></div>
+
           <?php if (have_posts()): ?>
           <div class="articles-list">
             <div class="articles-list__grid">
