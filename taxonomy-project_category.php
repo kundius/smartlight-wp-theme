@@ -42,7 +42,7 @@ $wp_query = $projects;
 
           <h1 class="ui-headline"><span><?php echo $queried_term->name ?></span></h1>
 
-          <div class="content"><?php echo $queried_term->description ?></div>
+          <div class="projects-content content"><?php echo $queried_term->description ?></div>
 
           <div class="projects-filter">
             <div class="projects-filter__categories">
