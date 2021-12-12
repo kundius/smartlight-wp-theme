@@ -117,10 +117,10 @@ module.exports = {
         use: [
           {
             loader: "file-loader",
-            // options: {
+            options: {
             //   name: "[name].[ext]?[hash]",
-            //   outputPath: "img/",
-            // },
+              outputPath: "img/",
+            },
           },
         ],
       },
