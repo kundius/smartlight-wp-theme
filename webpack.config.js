@@ -114,27 +114,32 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg|webm|mp4|ogg|ogv)/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]?[hash]",
-              outputPath: "img/",
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator : {
+          filename : 'img/[name][ext][query]',
+        }
+        // use: [
+        //   {
+        //     loader: "file-loader",
+        //     options: {
+        //       name: "[name].[ext]?[hash]",
+        //       outputPath: "img/",
+        //     },
+        //   },
+        // ],
       },
       {
         test: /\.(eot|woff|woff2|ttf|otf)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]?[hash]",
-              outputPath: "fonts/",
-            },
-          },
-        ],
+        type: 'asset/resource'
+        // use: [
+        //   {
+        //     loader: "file-loader",
+        //     options: {
+        //       name: "[name].[ext]?[hash]",
+        //       outputPath: "fonts/",
+        //     },
+        //   },
+        // ],
       },
     ],
   },
