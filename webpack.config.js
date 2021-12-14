@@ -118,28 +118,13 @@ module.exports = {
         generator : {
           filename : 'img/[name][ext][query]',
         }
-        // use: [
-        //   {
-        //     loader: "file-loader",
-        //     options: {
-        //       name: "[name].[ext]?[hash]",
-        //       outputPath: "img/",
-        //     },
-        //   },
-        // ],
       },
       {
         test: /\.(eot|woff|woff2|ttf|otf)$/,
-        type: 'asset/resource'
-        // use: [
-        //   {
-        //     loader: "file-loader",
-        //     options: {
-        //       name: "[name].[ext]?[hash]",
-        //       outputPath: "fonts/",
-        //     },
-        //   },
-        // ],
+        type: 'asset/resource',
+        generator : {
+          filename : 'fonts/[name][ext][query]',
+        }
       },
     ],
   },
