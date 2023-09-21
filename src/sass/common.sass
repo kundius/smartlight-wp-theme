@@ -895,7 +895,10 @@ svg
 .header__phones
   display: flex
   flex-wrap: wrap
-  gap: 12px
+  gap: 16px
+  @media (max-width: $breakpoint-medium-max)
+    gap: 4px
+    flex-direction: column
   @media (max-width: $breakpoint-xsmall-max)
     display: none
 
@@ -919,6 +922,7 @@ svg
   top: -4px
   width: 130px
   height: 64px
+  flex-shrink: 0
   img
     display: block
   @media (max-width: $breakpoint-medium-max)
