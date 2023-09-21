@@ -9,7 +9,7 @@
             </div>
             <div class="footer-information__infoContent">
               <div class="footer-information__infoName">
-                smartlight-wp-theme
+                Смартлайт
               </div>
               <div class="footer-information__infoDescription">
                 Освещение дома. Москва
@@ -109,7 +109,7 @@
   <div class="container">
     <div class="footer-minor">
       <div class="footer-minor__copyright">
-        © 2006-2021, Все права защищены
+        © 2006-2023, Все права защищены
       </div>
       <div class="footer-minor__rules">
         <a href="<?php the_permalink(360) ?>">Пользовательское соглашение</a>
