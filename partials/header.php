@@ -211,8 +211,8 @@ $flatMenu = fn($menu, 'root', null);
 		</a>
 
 		<div class="header__phones">
-			<a href="tel:+7 (919) 960-93-43" class="header__phone">+7 (919) 960-93-43</a>
-			<a href="tel:+7 (919) 960-93-43" class="header__phone">+7 (919) 960-93-43</a>
+			<a href="tel:+79199609343" class="header__phone">+7 (919) 960-93-43</a>
+			<a href="tel:+74959281515" class="header__phone">+7 (495) 928-15-15</a>
 		</div>
 
 		<?php wp_nav_menu([
