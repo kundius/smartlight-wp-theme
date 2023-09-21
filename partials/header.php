@@ -210,13 +210,16 @@ $flatMenu = fn($menu, 'root', null);
 			<img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.svg" />
 		</a>
 
-		<a href="tel:+7 (919) 960-93-43" class="header__phone">+7 (919) 960-93-43</a>
+		<div class="header__phones">
+			<a href="tel:+7 (919) 960-93-43" class="header__phone">+7 (919) 960-93-43</a>
+			<a href="tel:+7 (919) 960-93-43" class="header__phone">+7 (919) 960-93-43</a>
+		</div>
 
 		<?php wp_nav_menu([
-	'container_class' => 'header__menu',
-	'menu_class' => 'header-menu__list',
-	'theme_location' => 'headermenu'
-]) ?>
+			'container_class' => 'header__menu',
+			'menu_class' => 'header-menu__list',
+			'theme_location' => 'headermenu'
+		]) ?>
 
 		<a href="whatsapp://send?text=Hello&phone=+79199609343" class="header__whatsapp">
 			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>

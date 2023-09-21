@@ -892,6 +892,13 @@ svg
     padding-top: 4px
     padding-bottom: 4px
 
+.header__phones
+  display: flex
+  flex-wrap: wrap
+  gap: 12px
+  @media (max-width: $breakpoint-xsmall-max)
+    display: none
+
 .header__phone
   font-size: 24px
   font-family: 'Jura', sans-serif
@@ -900,12 +907,11 @@ svg
   line-height: 1
   text-decoration: none
   display: inline-block
+  white-space: nowrap
   @media (max-width: $breakpoint-small-max)
     font-size: 20px
     letter-spacing: 0.015em
     font-weight: 600
-  @media (max-width: $breakpoint-xsmall-max)
-    display: none
 
 .header__logo
   display: block
