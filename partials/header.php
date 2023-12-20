@@ -163,6 +163,11 @@ $flatMenu = fn($menu, 'root', null);
 ?>
 <div class="header js-header">
 	<div class="header__inner">
+		<?php if (is_new_year()): ?>
+		<div class="header_new_year_left_top_2"></div>
+		<div class="header_new_year_right_top_2"></div>
+		<div class="header_new_year_middle_top_1"></div>
+		<?php endif; ?>
 		<div class="header__drawer js-drawer">
 			<?php foreach ($flatMenu as $parent => $row): ?>
 			<div class="header-drawer<?php if ($parent == 'root'): ?> header-drawer_opened<?php endif; ?><?php if ($parent != 'root'): ?> header-drawer_deep<?php endif; ?>" data-parent="<?php echo $parent ?>">
