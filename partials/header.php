@@ -168,48 +168,6 @@ $flatMenu = fn($menu, 'root', null);
 		<div class="header_new_year_right_top_2"></div>
 		<div class="header_new_year_middle_top_1"></div>
 		<?php endif; ?>
-		<div class="header__drawer js-drawer">
-			<?php foreach ($flatMenu as $parent => $row): ?>
-			<div class="header-drawer<?php if ($parent == 'root'): ?> header-drawer_opened<?php endif; ?><?php if ($parent != 'root'): ?> header-drawer_deep<?php endif; ?>" data-parent="<?php echo $parent ?>">
-				<div class="header-drawer__list">
-					<?php if ($parent != 'root'): ?>
-					<div class="header-drawer__listItem">
-						<a class="header-drawer__link" data-next="<?php echo $row['previous'] ?>">
-							<span class="header-drawer__linkIcon">
-								<button class="header-drawer__arrowPrevious"></button>
-							</span>
-							<span class="header-drawer__linkTitle">Назад</span>
-						</a>
-						<span class="header-drawer__listItemArrow"></span>
-					</div>
-					<?php endif; ?>
-					<?php foreach ($row['items'] as $item): ?>
-					<div class="header-drawer__listItem">
-						<a href="<?php echo $item['href'] ?>" class="header-drawer__link">
-							<span class="header-drawer__linkIcon">
-								<svg role='img'>
-									<use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $item['icon'] ?>" />
-								</svg>
-							</span>
-							<span class="header-drawer__linkTitle"><?php echo $item['title'] ?></span>
-						</a>
-						<span class="header-drawer__listItemArrow">
-							<?php if ($item['hasChildren']): ?>
-							<button class="header-drawer__arrowNext" data-next="<?php echo $item['key'] ?>"></button>
-							<?php endif; ?>
-						</span>
-					</div>
-					<?php endforeach; ?>
-				</div>
-			</div>
-			<?php endforeach; ?>
-		</div>
-
-		<button class="header__toggle js-drawer-toggle">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button>
 
 		<a href='/' class="header__logo">
 			<img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.svg" />
@@ -225,44 +183,87 @@ $flatMenu = fn($menu, 'root', null);
 			'menu_class' => 'header-menu__list',
 			'theme_location' => 'headermenu'
 		]) ?>
-
-		<a href="whatsapp://send?text=Hello&phone=+79199609343" class="header__whatsapp">
-			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>
-		</a>
-
-		<button class="header__callback js-call-or-modal" data-modal-form="Кнопка в шапке" data-target="#callback" data-tel="+7 (919) 960-93-43">
-			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
-		</button>
-
-		<button class="header__feedback" data-modal-form="Кнопка в шапке" data-modal="#feedback">
-			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
-		</button>
-
-		<div class="header__email">info@s-lights.ru</div>
-
-		<div class="header__share share-btn">
-			<a class="header__shareButton" data-id="fb">
-				<?php icon('fb', .8) ?>
-			</a>
-			<a class="header__shareButton" data-id="tw">
-				<?php icon('tw', .8) ?>
-			</a>
-			<a class="header__shareButton" data-id="pi">
-				<?php icon('pi', .8) ?>
-			</a>
-			<a class="header__shareButton" data-id="vk">
-				<?php icon('vk2', .8) ?>
-			</a>
-			<a class="header__shareButton" data-id="ok">
-				<?php icon('ok2', .8) ?>
-			</a>
+	</div>
+	
+	<div class="header__drawer js-drawer">
+		<?php foreach ($flatMenu as $parent => $row): ?>
+		<div class="header-drawer<?php if ($parent == 'root'): ?> header-drawer_opened<?php endif; ?><?php if ($parent != 'root'): ?> header-drawer_deep<?php endif; ?>" data-parent="<?php echo $parent ?>">
+			<div class="header-drawer__list">
+				<?php if ($parent != 'root'): ?>
+				<div class="header-drawer__listItem">
+					<a class="header-drawer__link" data-next="<?php echo $row['previous'] ?>">
+						<span class="header-drawer__linkIcon">
+							<button class="header-drawer__arrowPrevious"></button>
+						</span>
+						<span class="header-drawer__linkTitle">Назад</span>
+					</a>
+					<span class="header-drawer__listItemArrow"></span>
+				</div>
+				<?php endif; ?>
+				<?php foreach ($row['items'] as $item): ?>
+				<div class="header-drawer__listItem">
+					<a href="<?php echo $item['href'] ?>" class="header-drawer__link">
+						<span class="header-drawer__linkIcon">
+							<svg role='img'>
+								<use href="<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#<?php echo $item['icon'] ?>" />
+							</svg>
+						</span>
+						<span class="header-drawer__linkTitle"><?php echo $item['title'] ?></span>
+					</a>
+					<span class="header-drawer__listItemArrow">
+						<?php if ($item['hasChildren']): ?>
+						<button class="header-drawer__arrowNext" data-next="<?php echo $item['key'] ?>"></button>
+						<?php endif; ?>
+					</span>
+				</div>
+				<?php endforeach; ?>
+			</div>
 		</div>
+		<?php endforeach; ?>
+	</div>
 
-		<button class="header__scrollup js-scroll"><span></span></button>
+	<button class="header__toggle js-drawer-toggle">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
 
-		<a href="<?php the_permalink(367) ?>" class="header__sitemap">
-			<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#sitemap' /></svg>
+	<a href="whatsapp://send?text=Hello&phone=+79199609343" class="header__whatsapp">
+		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>
+	</a>
+
+	<button class="header__callback js-call-or-modal" data-modal-form="Кнопка в шапке" data-target="#callback" data-tel="+7 (919) 960-93-43">
+		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone' /></svg>
+	</button>
+
+	<button class="header__feedback" data-modal-form="Кнопка в шапке" data-modal="#feedback">
+		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
+	</button>
+
+	<div class="header__email">info@s-lights.ru</div>
+
+	<div class="header__share share-btn">
+		<a class="header__shareButton" data-id="fb">
+			<?php icon('fb', .8) ?>
+		</a>
+		<a class="header__shareButton" data-id="tw">
+			<?php icon('tw', .8) ?>
+		</a>
+		<a class="header__shareButton" data-id="pi">
+			<?php icon('pi', .8) ?>
+		</a>
+		<a class="header__shareButton" data-id="vk">
+			<?php icon('vk2', .8) ?>
+		</a>
+		<a class="header__shareButton" data-id="ok">
+			<?php icon('ok2', .8) ?>
 		</a>
 	</div>
+
+	<button class="header__scrollup js-scroll"><span></span></button>
+
+	<a href="<?php the_permalink(367) ?>" class="header__sitemap">
+		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#sitemap' /></svg>
+	</a>
 </div>
 <div class="header__placeholder"></div>
