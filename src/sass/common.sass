@@ -4039,6 +4039,8 @@ body
   z-index: -1
   .header_fixed &
     top: -10px
+  @media (max-height: 800px), (max-width: $breakpoint-medium-max)
+    top: -10px
   @media (max-width: 479px)
     left: -320px
 
@@ -4053,6 +4055,8 @@ body
   z-index: -1
   .header_fixed &
     top: -10px
+  @media (max-height: 800px), (max-width: $breakpoint-medium-max)
+    top: -10px
   @media (max-width: 479px)
     right: -280px
 
@@ -4066,4 +4070,6 @@ body
   width: 133px
   transform: translateX(-50%)
   .header_fixed &
+    top: -10px
+  @media (max-height: 800px), (max-width: $breakpoint-medium-max)
     top: -10px
