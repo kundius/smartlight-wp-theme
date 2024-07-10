@@ -1020,54 +1020,28 @@
   .main-projects__item:nth-child(16n-13)
     grid-column: 3 / span 2
     grid-row: 1 / span 2
+  .main-projects__itemImage_small
+    display: none
+  .main-projects__itemImage_large
+    display: block
   .main-projects__item:nth-child(16n-8)
     grid-column: 1 / span 2
     grid-row: 3 / span 2
+  .main-projects__itemImage_small
+    display: none
+  .main-projects__itemImage_large
+    display: block
   .main-projects__item:nth-child(16n-3)
     grid-column: 4 / span 2
     grid-row: 4 / span 2
+  .main-projects__itemImage_small
+    display: none
+  .main-projects__itemImage_large
+    display: block
 
 @media (max-width: $breakpoint-small-max)
-  .main-projects__item:nth-child(5n-4)
-    width: 33.33%
-    left: 0
-    top: 0
-    transition-delay: .15s
-    transition-duration: .41s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(5n-3)
-    width: 66.66%
-    left: 33.33%
-    top: 0
-    transition-delay: .18s
-    transition-duration: .44s
-    .main-projects__itemImage_large
-      display: block
-  .main-projects__item:nth-child(5n-2)
-    width: 33.33%
-    left: 0
-    top: 33.33%
-    transition-delay: .21s
-    transition-duration: .47s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(5n-1)
-    width: 33.33%
-    left: 66.66%
-    top: 66.66%
-    transition-delay: .24s
-    transition-duration: .5s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(5n)
-    width: 33.33%
-    left: 33.33%
-    top: 66.66%
-    transition-delay: .27s
-    transition-duration: .53s
-    .main-projects__itemImage_small
-      display: block
+  .main-projects__items
+    grid-template-columns: 20% 20% 20%
 
 .main-projects__itemMagnify
   @include absolute-centering
