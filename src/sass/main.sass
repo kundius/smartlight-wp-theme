@@ -967,6 +967,7 @@
 
 .main-projects__items
   position: relative
+  display: grid
   z-index: 20
   @media (max-width: $breakpoint-xsmall-max)
     margin-left: -20px
@@ -1013,70 +1014,13 @@
   transition-delay: .03s
   transition-duration: .3s
 
+.main-projects__itemImage_small
+  display: block
+
 @media (min-width: $breakpoint-medium)
-  .main-projects__item:nth-child(8n-7)
-    width: 20%
-    left: 0
-    top: 0
-    transition-delay: .06s
-    transition-duration: .33s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(8n-6)
-    width: 40%
-    left: 20%
-    top: 0
-    transition-duration: .36s
-    .main-projects__itemImage_large
-      display: block
-  .main-projects__item:nth-child(8n-5)
-    width: 20%
-    left: 60%
-    top: 0
-    transition-delay: .12s
-    transition-duration: .39s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(8n-4)
-    width: 20%
-    left: 80%
-    top: 0
-    transition-delay: .15s
-    transition-duration: .41s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(8n-3)
-    width: 20%
-    left: 0
-    top: 33.33%
-    transition-delay: .18s
-    transition-duration: .44s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(8n-2)
-    width: 40%
-    left: 60%
-    top: 33.33%
-    transition-delay: .21s
-    transition-duration: .47s
-    .main-projects__itemImage_large
-      display: block
-  .main-projects__item:nth-child(8n-1)
-    width: 20%
-    left: 20%
-    top: 66.66%
-    transition-delay: .24s
-    transition-duration: .5s
-    .main-projects__itemImage_small
-      display: block
-  .main-projects__item:nth-child(8n)
-    width: 20%
-    left: 40%
-    top: 66.66%
-    transition-delay: .27s
-    transition-duration: .53s
-    .main-projects__itemImage_small
-      display: block
+  .main-projects__items
+    grid-template-columns: 20% 20% 20% 20% 20%
+    grid-template-rows: 20% 20% 20% 20% 20%
 
 @media (max-width: $breakpoint-small-max)
   .main-projects__item:nth-child(5n-4)
