@@ -349,7 +349,7 @@ forEach(document.querySelectorAll(".js-main-projects"), function (projects) {
   let next = projects.querySelector(".js-main-projects-next");
   let items = projects.querySelectorAll(".js-main-projects-item");
   let page = 1;
-  let limit = window.matchMedia("(max-width: 960px)").matches ? "19" : "16";
+  let limit = window.matchMedia("(max-width: 960px)").matches ? "18" : "16";
   let pages = Math.ceil(items.length / limit);
 
   const isVisible = (i) => {
