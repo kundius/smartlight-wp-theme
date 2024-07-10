@@ -973,21 +973,10 @@
     margin-left: -20px
     margin-right: -20px
 
-.main-projects__items::before
-  content: ''
-  display: block
-  width: 100%
-  padding-bottom: 48%
-  @media (max-width: $breakpoint-small-max)
-    padding-bottom: 80%
-
 .main-projects__item
-  position: absolute
+  aspect-ratio: 1 / 1
   text-decoration: none
   display: block
-  width: 20%
-  left: 0
-  top: 0
   overflow: hidden
   opacity: 0
   visibility: hidden
@@ -1013,6 +1002,12 @@
   padding-bottom: 80%
   transition-delay: .03s
   transition-duration: .3s
+
+.main-projects__itemImage
+  @include pouring-image
+  transition: 1s ease-out
+  transition-property: transform, opacity
+  display: none
 
 .main-projects__itemImage_small
   display: block
@@ -1063,12 +1058,6 @@
     transition-duration: .53s
     .main-projects__itemImage_small
       display: block
-
-.main-projects__itemImage
-  @include pouring-image
-  transition: 1s ease-out
-  transition-property: transform, opacity
-  display: none
 
 .main-projects__itemMagnify
   @include absolute-centering
