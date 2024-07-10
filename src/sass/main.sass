@@ -984,10 +984,12 @@
   transition-property: visibility, opacity, transform
   transition-timing-function: ease
   transition-duration: .4s
+  display: none
   &._visible
     opacity: 1
     transform: translateX(0)
     visibility: visible
+    display: block
   &:hover
     .main-projects__itemMagnify
       opacity: 1
