@@ -1017,7 +1017,9 @@
 @media (min-width: $breakpoint-medium)
   .main-projects__items
     grid-template-columns: 20% 20% 20% 20% 20%
-    grid-template-rows: 20% 20% 20% 20% 20%
+  .main-projects__item:nth-child(16n-13)
+    grid-column: 3 / span 2
+    grid-row: 1 / span 2
 
 @media (max-width: $breakpoint-small-max)
   .main-projects__item:nth-child(5n-4)
