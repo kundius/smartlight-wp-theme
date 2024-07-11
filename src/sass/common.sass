@@ -3804,9 +3804,8 @@ svg
 
 .project-details__image
   display: block
-  max-height: calc(100vh - 360px)
-  +below(large)
-    max-height: calc(100vh - 180px)
+  object-fit: cover
+  aspect-ratio: 1
 
 .project-details__previous
   position: absolute
