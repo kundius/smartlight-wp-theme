@@ -445,7 +445,6 @@ forEach(document.querySelectorAll(".js-cube"), function (cube) {
 
 forEach(document.querySelectorAll("[data-project]"), function (button) {
   let id = button.dataset.project;
-  let active = button.dataset.projectIndex || 0;
   let action = "get_project";
 
   button.addEventListener("click", (e) => {
@@ -469,32 +468,11 @@ forEach(document.querySelectorAll("[data-project]"), function (button) {
     title.classList.add("project-details__title");
     let desc = document.createElement("div");
     desc.classList.add("project-details__desc");
-    let image = document.createElement("img");
-    image.classList.add("project-details__image");
-    let prev = document.createElement("button");
-    prev.classList.add(
-      "ui-slider-nav",
-      "ui-slider-nav_small",
-      "project-details__previous"
-    );
-    let prevArrow = document.createElement("span");
-    prevArrow.classList.add("ui-arrow-left");
-    let next = document.createElement("button");
-    next.classList.add(
-      "ui-slider-nav",
-      "ui-slider-nav_small",
-      "project-details__next"
-    );
-    let nextArrow = document.createElement("span");
-    nextArrow.classList.add("ui-arrow-right");
 
     next.appendChild(nextArrow);
     prev.appendChild(prevArrow);
     info.appendChild(title);
     info.appendChild(desc);
-    gallery.appendChild(image);
-    gallery.appendChild(prev);
-    gallery.appendChild(next);
     details.appendChild(gallery);
     details.appendChild(info);
     body.appendChild(details);
@@ -510,16 +488,6 @@ forEach(document.querySelectorAll("[data-project]"), function (button) {
       modal.parentElement.removeChild(modal);
     });
 
-    const show = (url) => {
-      let img = document.createElement("img");
-      body.classList.add("modal-project__body_loading");
-      img.onload = () => {
-        image.src = url;
-        body.classList.remove("modal-project__body_loading");
-      };
-      img.src = url;
-    };
-
     let formData = new FormData();
     formData.append("id", id);
     formData.append("action", action);
@@ -531,15 +499,12 @@ forEach(document.querySelectorAll("[data-project]"), function (button) {
       .then((json) => {
         title.innerHTML = json.post.post_title;
         desc.innerHTML = json.post.post_excerpt;
-        image.src = json.gallery[active].url;
-        prev.addEventListener("click", () => {
-          active = (active - 1 + json.gallery.length) % json.gallery.length;
-          show(json.gallery[active].url);
-        });
-        next.addEventListener("click", () => {
-          active = (active + 1) % json.gallery.length;
-          show(json.gallery[active].url);
-        });
+        for (const img of json.gallery) {
+          let image = document.createElement("img");
+          image.classList.add("project-details__image");
+          image.src = img.url;
+          gallery.appendChild(image);
+        }
       });
   });
 });
