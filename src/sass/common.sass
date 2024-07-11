@@ -3773,7 +3773,8 @@ svg
 .project-details__gallery
   margin: 0 40px 0 240px
   display: grid
-  grid-template-columns: 33.33% 33.33% 33.33%
+  gap: 24px
+  grid-template-columns: calc(33.33% - 24px * 2 / 3) calc(33.33% - 24px * 2 / 3) calc(33.33% - 24px * 2 / 3)
   position: relative
   +below(xlarge)
     margin-left: 0
