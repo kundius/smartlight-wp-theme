@@ -469,8 +469,6 @@ forEach(document.querySelectorAll("[data-project]"), function (button) {
     let desc = document.createElement("div");
     desc.classList.add("project-details__desc");
 
-    next.appendChild(nextArrow);
-    prev.appendChild(prevArrow);
     info.appendChild(title);
     info.appendChild(desc);
     details.appendChild(gallery);
