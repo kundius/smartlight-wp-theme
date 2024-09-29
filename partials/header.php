@@ -266,7 +266,7 @@ $flatMenu = fn($menu, 'root', null);
 		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#sitemap' /></svg>
 	</a>
 </div>
-<button class="header__request" data-modal-form="Получить предложение!" data-modal-title="Получить оценку монтажа праздничного освещение с бесплатной визуализацией!" data-modal="#callback">
+<button class="header__request" data-modal-form="Получить предложение!" data-modal-title="Получить оценку монтажа праздничного освещения с бесплатной визуализацией!" data-modal="#callback">
 Получить предложение!
 </button>
 <div class="header__placeholder"></div>
