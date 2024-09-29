@@ -510,6 +510,7 @@ forEach(document.querySelectorAll("[data-project]"), function (button) {
 function initModal(button, target) {
   let close = target.querySelector("[data-modal-close]");
   let formName = target.querySelector('[name="form"]');
+  let modalTitle = target.querySelector('.modal__title');
   const outsideClickListener = (event) => {
     if (
       !target.contains(event.target) &&
@@ -529,6 +530,12 @@ function initModal(button, target) {
       formName.value = button.dataset.modalForm
         ? button.dataset.modalForm
         : "Форма в модальном окне";
+    }
+    if (modalTitle) {
+      if (!modalTitle.dataset.defaultTitle) {
+        modalTitle.dataset.defaultTitle = modalTitle.dataset.defaultTitle
+      }
+      modalTitle.innerHTML = button.dataset.modalTitle || modalTitle.innerHTML
     }
     document.addEventListener("click", outsideClickListener);
   };
