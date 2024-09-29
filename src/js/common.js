@@ -533,7 +533,7 @@ function initModal(button, target) {
     }
     if (modalTitle) {
       if (!modalTitle.dataset.defaultTitle) {
-        modalTitle.dataset.defaultTitle = modalTitle.dataset.defaultTitle
+        modalTitle.dataset.defaultTitle = modalTitle.innerHTML
       }
       modalTitle.innerHTML = button.dataset.modalTitle || modalTitle.dataset.defaultTitle
     }
