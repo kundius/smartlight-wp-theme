@@ -266,4 +266,5 @@ $flatMenu = fn($menu, 'root', null);
 		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#sitemap' /></svg>
 	</a>
 </div>
+<button class="header__request">Получить подарок!</button>
 <div class="header__placeholder"></div>
