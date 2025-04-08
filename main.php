@@ -23,8 +23,8 @@ $projects = new WP_Query(array(
           <?php get_template_part('partials/header'); ?>
         </div>
         <div class="main-intro__container">
-          <div class="main-intro__title">Новогодняя праздничная подсветка<br> Вашего дома</div>
-          <div class="main-intro__description">под "ключ" в Москве и МО 2025-2026</div>
+          <div class="main-intro__title"><?php the_field('intro_title') ?></div>
+          <div class="main-intro__description"><?php the_field('intro_description') ?></div>
           <button class="main-intro__button" data-modal-form="Кнопка в начале страницы" data-modal="#calculation">
             <span>Заказать расчет</span>
           </button>
