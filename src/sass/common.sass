@@ -38,7 +38,7 @@
 *:focus
   outline: none
 
-html :global .page-focusable *:focus
+html.page-focusable *:focus
   outline: 2px solid #ff8a00
 
 /* Remove default margin */
@@ -1980,16 +1980,6 @@ svg
     font-size: 14px
     line-height: 1.25
 
-.block-contacts__left
-  width: 44%
-  @media (max-width: $breakpoint-large-max)
-    width: 100%
-
-.block-contacts__right
-  width: 56%
-  @media (max-width: $breakpoint-large-max)
-    width: 100%
-
 .block-feedback
   margin-left: -17px
   display: flex
@@ -2578,7 +2568,7 @@ svg
   letter-spacing: 0.05em
   line-height: 1.25
   color: #f6f7fb
-  width: 40%
+  width: calc(100% / 3)
   padding-right: 5%
   +below(medium)
     width: 100%
@@ -2587,9 +2577,7 @@ svg
 .s-callback-contacts__contacts
   display: flex
   flex-wrap: wrap
-  width: 40%
-  +below(xlarge)
-    width: 60%
+  width: calc(100% / 3)
   +below(medium)
     width: 100%
 
@@ -2647,12 +2635,9 @@ svg
     font-weight: normal
 
 .s-callback-contacts__schedules
-  width: 20%
+  width: calc(100% / 3)
   display: flex
   flex-wrap: wrap
-  +below(xlarge)
-    width: 60%
-    margin-left: 40%
   +below(medium)
     width: 100%
     margin-left: 0
@@ -2675,42 +2660,6 @@ svg
   @media (max-width: $breakpoint-small-max)
     font-size: 14px
     line-height: 1.25
-
-.s-callback-contacts__contactsLeft
-  width: 44%
-  margin: 3px 0
-  +below(medium)
-    margin: 5px 0
-  +below(small)
-    width: 100%
-
-.s-callback-contacts__contactsRight
-  width: 56%
-  margin: 3px 0
-  +below(medium)
-    margin: 5px 0
-  +below(small)
-    width: 100%
-
-.s-callback-contacts__schedulesLeft
-  width: 100%
-  margin: 3px 0
-  +below(xlarge)
-    width: 44%
-  +below(medium)
-    margin: 5px 0
-  +below(small)
-    width: 100%
-
-.s-callback-contacts__schedulesRight
-  width: 100%
-  margin: 3px 0
-  +below(xlarge)
-    width: 56%
-  +below(medium)
-    margin: 5px 0
-  +below(small)
-    width: 100%
 
 .s-callback-wall
   padding: 60px 52px 52px

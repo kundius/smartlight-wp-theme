@@ -1,0 +1,33 @@
+<?php
+/*
+Template Name: Наши работы
+*/
+wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/works.js', ['theme_common'], false, true);
+?>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <?php get_template_part('partials/head') ?>
+    <link rel="stylesheet" href="/wp-content/themes/smartlight-wp-theme/dist/contacts.css" type="text/css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="projects-section">
+        <?php get_template_part('partials/header') ?>
+
+        <div class="container">
+          <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+            <?php bcn_display() ?>
+          </div>
+
+          <h1 class="ui-headline"><span><?php the_title() ?></span></h1>
+
+          <div class="projects-content content"><?php the_content() ?></div>
+        </div>
+      </div>
+
+      <?php get_template_part('partials/section-contacts') ?>
+      <?php get_template_part('partials/footer') ?>
+    </div>
+  </body>
+</html>

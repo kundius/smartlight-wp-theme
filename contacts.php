@@ -32,42 +32,21 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                 <div class="contacts-content__address">101000, Москва, ул. Покровка, д. 1/13/6, стр. 2, эт. 3, пом. 1, комн. 1, офис 2к.</div>
                 <hr class="contacts-content__separator" />
                 <div class="contacts-content__contacts">
-                  <div class="contacts-content__left">
-                    <div class="contacts-content__phone">
-                      <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone-circle' /></svg>
-                      +7&nbsp;(919)&nbsp;960-93-43 +7&nbsp;(495)&nbsp;928-15-15
-                    </div>
+                  <div class="contacts-content__phone">
+                    <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone-circle' /></svg>
+                    +7&nbsp;(919)&nbsp;960-93-43 +7&nbsp;(495)&nbsp;928-15-15
                   </div>
-                  <div class="contacts-content__right">
-<!--                     <div class="contacts-content__phone">
-                      +7 (919) 960-93-43
-                    </div> -->
-                  </div>
-                  <div class="contacts-content__left">
-                    <div class="contacts-content__email">
-                      <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
-                      <a href='mailto:info@s-lights.ru'>info@s-lights.ru</a>
-                    </div>
-                  </div>
-                  <div class="contacts-content__right">
-<!--                     <div class="contacts-content__whatsapp">
-                      <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>
-                      +7 (919) 960-93-43 <small>(WhatsApp)</small>
-                    </div> -->
+                  <div class="contacts-content__email">
+                    <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
+                    <a href='mailto:info@s-lights.ru'>info@s-lights.ru</a>
                   </div>
                 </div>
                 <hr class="contacts-content__separator" />
                 <div class="contacts-content__schedules">
-                  <div class="contacts-content__left">
-                    <div class="contacts-content__schedule">
-                      <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#time' /></svg>
-                      Пн-пт 09:00 – 21:00
-                    </div>
-                  </div>
-                  <div class="contacts-content__right">
-                    <div class="contacts-content__schedule">
-                      Суббота  09:00 – 19:00
-                    </div>
+                  <div class="contacts-content__schedule">
+                    <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#time' /></svg>
+                    Пн-пт 09:00 – 21:00<br>
+                    Суббота  09:00 – 19:00
                   </div>
                 </div>
                 <div class="contacts-content__map">

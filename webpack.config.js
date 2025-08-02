@@ -15,6 +15,7 @@ module.exports = {
       PATHS.source + "sass/about.sass",
       PATHS.source + "img/main-logo.png",
     ],
+    works: [PATHS.source + "sass/works.sass"],
     contacts: [PATHS.source + "sass/contacts.sass"],
     prices: [PATHS.source + "sass/prices.sass"],
     projects: [PATHS.source + "sass/projects.sass"],
@@ -115,15 +116,15 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg|webm|mp4|ogg|ogv)/,
         type: 'asset/resource',
-        generator : {
-          filename : 'img/[name][ext][query]',
+        generator: {
+          filename: 'img/[name][ext][query]',
         }
       },
       {
         test: /\.(eot|woff|woff2|ttf|otf)$/,
         type: 'asset/resource',
-        generator : {
-          filename : 'fonts/[name][ext][query]',
+        generator: {
+          filename: 'fonts/[name][ext][query]',
         }
       },
     ],
