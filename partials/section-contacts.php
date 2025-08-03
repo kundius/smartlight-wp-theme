@@ -9,7 +9,8 @@
           <div class="block-contacts__contacts">
             <div class="block-contacts__phone">
               <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone-circle' /></svg>
-              +7&nbsp;(919)&nbsp;960-93-43 +7&nbsp;(495)&nbsp;928-15-15
+              +7&nbsp;(919)&nbsp;960-93-43<br>
+              +7&nbsp;(495)&nbsp;928-15-15
             </div>
             <div class="block-contacts__email">
               <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>

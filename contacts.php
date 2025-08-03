@@ -34,7 +34,8 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                 <div class="contacts-content__contacts">
                   <div class="contacts-content__phone">
                     <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone-circle' /></svg>
-                    +7&nbsp;(919)&nbsp;960-93-43 +7&nbsp;(495)&nbsp;928-15-15
+                    +7&nbsp;(919)&nbsp;960-93-43<br>
+                    +7&nbsp;(495)&nbsp;928-15-15
                   </div>
                   <div class="contacts-content__email">
                     <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
