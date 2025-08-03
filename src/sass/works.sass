@@ -8,3 +8,27 @@
 .works-content
   margin: 30px 0
   color: #fff
+
+.works-gallery
+  margin-top: 24px
+  margin-bottom: 37px
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  +below(medium)
+    grid-template-columns: 1fr 1fr 1fr
+  +below(small)
+    margin-left: -20px
+    margin-right: -20px
+    grid-template-columns: 1fr 1fr
+
+.works-gallery__item:nth-child(2),
+.works-gallery__item:nth-child(6),
+.works-gallery__item:nth-child(10),
+.works-gallery__item:nth-child(11),
+.works-gallery__item:nth-child(20),
+.works-gallery__item:nth-child(24)
+  grid-row: span 2
+  grid-column: span 2
+  +below(medium)
+    grid-row: span 1
+    grid-column: span 1
