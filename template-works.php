@@ -28,7 +28,7 @@ $gallery = get_field('gallery');
           <div class="works-gallery">
             <?php foreach ($gallery as $key => $item): ?>
             <a href="<?php echo $item['url'] ?>" class="works-gallery__item" data-fslightbox="gallery">
-              <img src="<?php echo $item['sizes']['large'] ?>">
+              <img src="<?php echo $item['sizes']['w480h480'] ?>">
             </a>
             <?php endforeach; ?>
           </div>
