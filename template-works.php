@@ -26,11 +26,11 @@ $gallery = get_field('gallery');
           <div class="works-content content"><?php the_content() ?></div>
 
           <div class="works-gallery">
-          <?php foreach ($gallery as $key => $item): ?>
-          <a href="<?php echo $item['url'] ?>" class="works-gallery__item">
-            <img src="<?php echo $item['sizes']['thumbnail'] ?>">
-          </a>
-          <?php endforeach; ?>
+            <?php foreach ($gallery as $key => $item): ?>
+            <a href="<?php echo $item['url'] ?>" class="works-gallery__item">
+              <img src="<?php echo $item['sizes']['thumbnail'] ?>">
+            </a>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
