@@ -29,6 +29,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
+    "fslightbox": "^3.7.4",
     "lodash": "^4.17.21",
     "share-buttons": "^1.9.0",
     "svg4everybody": "^2.1.9",
