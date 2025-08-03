@@ -3,6 +3,7 @@
 Template Name: Наши работы
 */
 wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/works.js', ['theme_common'], false, true);
+$gallery = get_field('gallery');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -23,6 +24,14 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/works.
           <h1 class="ui-headline"><span><?php the_title() ?></span></h1>
 
           <div class="works-content content"><?php the_content() ?></div>
+
+          <div class="works-gallery">
+          <?php foreach ($gallery as $key => $item): print_r($item); ?>
+          <a href="<?php echo $item['url'] ?>" class="works-gallery__item">
+            <img src="<?php echo $item['url'] ?>">
+          </a>
+          <?php endforeach; ?>
+          </div>
         </div>
       </div>
 
