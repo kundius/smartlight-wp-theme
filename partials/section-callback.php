@@ -13,7 +13,7 @@
         <div class="s-callback-contacts__contacts">
           <div class="s-callback-contacts__phone">
             <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#phone-circle' /></svg>
-            +7&nbsp;(919)&nbsp;<br>
+            +7&nbsp;(919)&nbsp;960-93-43<br>
             +7&nbsp;(495)&nbsp;928-15-15
           </div>
           <div class="s-callback-contacts__email">
