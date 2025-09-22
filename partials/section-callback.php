@@ -18,7 +18,7 @@
           </div>
           <div class="s-callback-contacts__email">
             <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
-            <a href='mailto:info@s-lights.ru'>info@s-lights.ru</a>
+            <a href='mailto:infi5@mail.ru'>infi5@mail.ru</a>
           </div>
         </div>
         <div class="s-callback-contacts__schedules">

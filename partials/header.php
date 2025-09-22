@@ -240,7 +240,7 @@ $flatMenu = fn($menu, 'root', null);
 		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
 	</button>
 
-	<div class="header__email">info@s-lights.ru</div>
+	<div class="header__email">infi5@mail.ru</div>
 
 	<div class="header__share share-btn">
 		<a class="header__shareButton" data-id="fb">

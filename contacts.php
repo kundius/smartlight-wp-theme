@@ -39,7 +39,7 @@ wp_enqueue_script('theme_contacts', get_template_directory_uri() . '/dist/contac
                   </div>
                   <div class="contacts-content__email">
                     <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#email' /></svg>
-                    <a href='mailto:info@s-lights.ru'>info@s-lights.ru</a>
+                    <a href='mailto:infi5@mail.ru'>infi5@mail.ru</a>
                   </div>
                 </div>
                 <hr class="contacts-content__separator" />
