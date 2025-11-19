@@ -8,6 +8,9 @@ global $wp_query;
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 30,
+  
+    'orderby' => 'date',
+    'order'   => 'DESC'
 ));
 ?>
 <!DOCTYPE html>
