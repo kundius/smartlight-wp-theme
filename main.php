@@ -266,7 +266,7 @@ $projects = new WP_Query(array(
             <div class="main-projects__headline">
               <div class="main-projects__title">Выполненные проекты</div>
               <div class="main-projects__filter">
-                <button class="main-projects__filterItem _active">2017-`24</button>
+                <button class="main-projects__filterItem _active">2025-`17</button>
               </div>
               <div class="main-projects__nav">
                 <button class="main-projects__prev js-main-projects-prev"></button>
