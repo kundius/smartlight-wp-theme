@@ -304,10 +304,10 @@ function seo() {
 	}
 
 	echo '<title>' . $title . '</title>';
-	if (!empty($description)) {
+	if (!empty($keywords)) {
 		echo '<meta name="keywords" content="' . $keywords . '">';
 	}
-	if (!empty($keywords)) {
+	if (!empty($description)) {
 		echo '<meta name="description" content="' . $description . '">';
 	}
 
