@@ -63,6 +63,7 @@
     grid-template-columns: 1fr
 
 .articles-list__cell
+  min-width: 0
   +below(medium)
     grid-column: span 2
   +below(small)
@@ -178,6 +179,14 @@
   min-height: 100%
   display: flex
   flex-direction: column
+  +below(xlarge)
+    zoom: 0.9
+  +below(large)
+    zoom: 0.8
+  +below(medium)
+    zoom: 0.7
+  +below(small)
+    zoom: 0.6
 
 .articles-favorite::before
   content: ''
