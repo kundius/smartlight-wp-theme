@@ -228,8 +228,8 @@ $flatMenu = fn($menu, 'root', null);
 		<span></span>
 	</button>
 
-	<a href="whatsapp://send?text=Hello&phone=+79199609343" class="header__whatsapp">
-		<svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#whatsapp' /></svg>
+	<a href="https://max.ru/u/f9LHodD0cOLdn7bJkBrotGRjdcCbth-Q4fXUitUyIQnKcUqJm_ViaCn44FE" class="header__max" target="_blank">
+		<img src="<?php bloginfo('template_url'); ?>/assets/icon-max.png" alt="" />
 	</a>
 
 	<button class="header__callback js-call-or-modal" data-modal-form="Кнопка в шапке" data-target="#callback" data-tel="+7 (919) 960-93-43">
@@ -242,21 +242,15 @@ $flatMenu = fn($menu, 'root', null);
 
 	<div class="header__email">infi5@mail.ru</div>
 
-	<div class="header__share share-btn">
-		<a class="header__shareButton" data-id="fb">
-			<?php icon('fb', .8) ?>
+	<div class="header__share">
+		<a href="https://max.ru/u/f9LHodD0cOLdn7bJkBrotGRjdcCbth-Q4fXUitUyIQnKcUqJm_ViaCn44FE" class="header__shareButton" target="_blank">
+			<img src="<?php bloginfo('template_url'); ?>/assets/icon-max.png" alt="" />
 		</a>
-		<a class="header__shareButton" data-id="tw">
-			<?php icon('tw', .8) ?>
+		<a href="https://vk.com/ooo_smart_light" class="header__shareButton" target="_blank">
+			<img src="<?php bloginfo('template_url'); ?>/assets/icon-vk.png" alt="" />
 		</a>
-		<a class="header__shareButton" data-id="pi">
-			<?php icon('pi', .8) ?>
-		</a>
-		<a class="header__shareButton" data-id="vk">
-			<?php icon('vk2', .8) ?>
-		</a>
-		<a class="header__shareButton" data-id="ok">
-			<?php icon('ok2', .8) ?>
+		<a href="https://ok.ru/group/54438972162208" class="header__shareButton" target="_blank">
+			<img src="<?php bloginfo('template_url'); ?>/assets/icon-ok.png" alt="" />
 		</a>
 	</div>
 

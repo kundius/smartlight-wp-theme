@@ -655,7 +655,7 @@ svg
   > *
     cursor: pointer
     & + *
-      margin-top: 15px
+      margin-top: 12px
   @media (min-width: $breakpoint-xlarge)
     right: 32px
   @media (min-width: 1900px)
@@ -664,33 +664,21 @@ svg
     display: none
 
 .header__shareButton
-  width: 32px
-  height: 32px
-  min-width: 32px
-  min-height: 32px
-  line-height: 32px
-  text-align: center
+  width: 48px
+  height: 48px
   border-radius: 50%
   background: rgba(22, 35, 74, 0.6)
   color: rgba(255, 255, 255, .8)
   cursor: pointer
   padding: 0
   border: none
-  &[data-id="fb"]
-    &:hover
-      background: #3b5998
-  &[data-id="tw"]
-    &:hover
-      background: #55acee
-  &[data-id="pi"]
-    &:hover
-      background: #cb2027
-  &[data-id="vk"]
-    &:hover
-      background: #436eab
-  &[data-id="ok"]
-    &:hover
-      background: #ff9800
+  display: flex
+  align-items: center
+  justify-content: center
+
+.header__shareButton img
+  width: 24px
+  height: 24px
 
 .header__email
   font-size: 18px
@@ -1014,45 +1002,21 @@ svg
   @media (min-width: 1900px)
     right: 92px
 
-.header__whatsapp
+.header__max
   position: absolute
   right: 54px
   top: 50%
   transform: translateY(-50%)
-  display: block
-  background-color: transparent
-  color: #ffffff
+  display: flex
   border: none
   width: 32px
   height: 32px
   min-width: 32px
   min-height: 32px
   cursor: pointer
-  svg
-    display: block
-    width: 20px
-    height: 20px
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    z-index: 2
-    transition: transform .2s ease
-  &::before
-    content: ''
-    z-index: 1
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    border-radius: 50%
-    background-color: #25d366
-    transition: .2s ease
-    transition-property: background-color, left, top, right, bottom
-  &:hover
-    &::before
-      background-color: #34e976
+  img
+    width: 32px
+    height: 32px
   @media (min-width: $breakpoint-small)
     display: none
 
@@ -2242,15 +2206,7 @@ svg
   margin-left: px2em(24)
   &:first-child
     margin-left: 0
-  &_vk:hover
-    color: #556b9a
-  &_instagram:hover
-    color: #8e98ac
-  &_ok:hover
-    color: #ee931d
-  &_youtube:hover
-    color: #ca2018
-  svg
+  img
     width: 24px
     height: 24px
     display: block

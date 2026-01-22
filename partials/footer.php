@@ -18,20 +18,14 @@
           </div>
           <div class="footer-information__social">
             <div class="footer-information__socialItems">
-              <a class="footer-information__socialsItem footer-information__socialsItem_vk" href='https://vk.com/ooo_smart_light' target="_blank">
-                <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#vk' /></svg>
+              <a class="footer-information__socialsItem" href='https://max.ru/u/f9LHodD0cOLdn7bJkBrotGRjdcCbth-Q4fXUitUyIQnKcUqJm_ViaCn44FE' target="_blank">
+                <img src="<?php bloginfo('template_url'); ?>/assets/icon-max.png" alt="" />
               </a>
-              <a class="footer-information__socialsItem footer-information__socialsItem_instagram" href='https://www.instagram.com/ooosmart_lights/' target="_blank">
-                <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#instagram' /></svg>
+              <a class="footer-information__socialsItem" href='https://vk.com/ooo_smart_light' target="_blank">
+                <img src="<?php bloginfo('template_url'); ?>/assets/icon-vk.png" alt="" />
               </a>
-              <a class="footer-information__socialsItem footer-information__socialsItem_ok" href='https://ok.ru/group/54438972162208' target="_blank">
-                <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#ok' /></svg>
-              </a>
-              <a class="footer-information__socialsItem footer-information__socialsItem_youtube" href='https://www.youtube.com/channel/UCwnWSiuZZvSa-4fBYg4j0nA' target="_blank">
-                <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#youtube' /></svg>
-              </a>
-				      <a class="footer-information__socialsItem footer-information__socialsItem_facebook" href='https://www.facebook.com/OOOsmartlight-wp-theme/' target="_blank">
-                <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#facebook' /></svg>
+              <a class="footer-information__socialsItem" href='https://ok.ru/group/54438972162208' target="_blank">
+                <img src="<?php bloginfo('template_url'); ?>/assets/icon-ok.png" alt="" />
               </a>
             </div>
             <a class="footer-information__socialSitemap" href='<?php the_permalink(367) ?>'>Карта сайта</a>
@@ -73,7 +67,7 @@
                 <a href="https://sl-master.ru/stati-novosti-akcii/articles/novogodnee-osveshhenie-obektov"><i></i><span>Объектов</span></a>
               </li>
               <li>
-                 <a href="https://sl-master.ru/stati-novosti-akcii/articles/novogodnee-osveshhenie-montazh-osveshhenija-na-vorota"><i></i><span>Ворота</span></a>
+                <a href="https://sl-master.ru/stati-novosti-akcii/articles/novogodnee-osveshhenie-montazh-osveshhenija-na-vorota"><i></i><span>Ворота</span></a>
               </li>
               <li>
                 <a href="https://sl-master.ru/stati-novosti-akcii/articles/montazh-novogodnego-osveshhenija-na-vhodnye-gruppy"><i></i><span>Входные группы</span></a>
@@ -96,7 +90,7 @@
                 <a href="https://sl-master.ru/stati-novosti-akcii/articles/montazh-girljand-na-zabory-ograzhdenija"><i></i><span>Заборы</span></a>
               </li>
               <li>
-                 <a href="https://sl-master.ru/stati-novosti-akcii/articles/novogodnee-ukrashenie-detskih-ploshhadok"><i></i><span>Детские площадки</span></a>
+                <a href="https://sl-master.ru/stati-novosti-akcii/articles/novogodnee-ukrashenie-detskih-ploshhadok"><i></i><span>Детские площадки</span></a>
               </li>
             </ul>
           </div>

@@ -1,7 +1,6 @@
 import svg4everybody from "svg4everybody";
 import forEach from "lodash/forEach";
 import throttle from "lodash/throttle";
-import share from "share-buttons";
 import "whatwg-fetch";
 import fslightbox from 'fslightbox';
 
