@@ -22,7 +22,7 @@
             <div class="block-contacts__schedule">
               <svg role='img'><use href='<?php echo get_bloginfo('template_url') ?>/dist/img/sprite.svg#time' /></svg>
               Пн-пт 09:00 – 21:00<br>
-              Суббота  09:00 – 19:00
+              Суббота  09:00 – 21:00
             </div>
           </div>
         </div>
